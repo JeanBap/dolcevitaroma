@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dolce Vita Roma Blog - Authentic expat guides, practical tips, and stories about living the good life in Rome.">
+  <meta name="keywords" content="Rome, expat, life, blog, Italy, living abroad, travel">
+  <meta name="author" content="Dolce Vita Roma">
+  <meta name="geo.region" content="IT-RM">
+  <meta name="geo.placename" content="Rome, Italy">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Dolce Vita Roma - Blog">
+  <meta property="og:description" content="Authentic expat guides and practical tips for living in Rome">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog">
+  <meta property="og:image" content="https://dolcevitaroma.com/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dolce Vita Roma - Blog">
+  <meta name="twitter:description" content="Authentic expat guides and practical tips for living in Rome">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <title>Dolce Vita Roma - Blog</title>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <section class="blog-listing">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Latest Stories from Rome</h2>
+
+      <div class="blog-grid" id="blog-grid">
+        <!-- Blog cards will be inserted here by JavaScript -->
+      </div>
+
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <div class="empty-state-icon">📝</div>
+        <h2>No Posts Yet</h2>
+        <p>Check back soon for stories and guides about living la dolce vita in Rome.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Located in the heart of Rome, Italy</p>
+    <p><a href="https://dolcevitaroma.com">Visit our main site</a></p>
+  </footer>
+
+  <script src="/blog_data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const blogGrid = document.getElementById('blog-grid');
+      const emptyState = document.getElementById('empty-state');
+      const posts = getBlogPosts();
+
+      if (posts.length === 0) {
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      posts.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'blog-card';
+        card.innerHTML = `
+          <div class="blog-card-header">
+            <div class="blog-card-category">${escapeHtml(post.category)}</div>
+            <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">${formatDate(post.publishDate)}</span>
+            <span class="blog-card-readtime">${escapeHtml(post.readTime)}</span>
+          </div>
+          <div class="blog-card-content">
+            <p class="blog-card-tldr">${escapeHtml(post.tldr)}</p>
+            <a href="/post.html?slug=${encodeURIComponent(post.slug)}" class="blog-card-link">Read Full Post →</a>
+          </div>
+        `;
+        blogGrid.appendChild(card);
+      });
+    });
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dolce Vita Roma - Authentic expat guide and practical tips about living in Rome.">
+  <meta name="keywords" content="Rome, expat, Italy, living abroad, travel, guide">
+  <meta name="author" content="Dolce Vita Roma">
+  <meta name="geo.region" content="IT-RM">
+  <meta name="geo.placename" content="Rome, Italy">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog">
+  <meta property="og:image" content="https://dolcevitaroma.com/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <title>Dolce Vita Roma - Blog Post</title>
+  <script type="application/ld+json" id="schema-org"></script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main id="post-container">
+    <!-- Post will be loaded here -->
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Located in the heart of Rome, Italy</p>
+    <p><a href="https://dolcevitaroma.com">Visit our main site</a></p>
+  </footer>
+
+  <script src="/blog_data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get slug from URL params
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('slug');
+
+      if (!slug) {
+        showErrorPage('Post not found.');
+        return;
+      }
+
+      const post = getPostBySlug(slug);
+
+      if (!post) {
+        showErrorPage('Post not found.');
+        return;
+      }
+
+      renderPost(post);
+      updateMetaTags(post);
+      generateSchemaMarkup(post);
+    });
+
+    function renderPost(post) {
+      const container = document.getElementById('post-container');
+
+      const heroHtml = `
+        <section class="post-hero">
+          <div class="post-hero-content">
+            <h1>${escapeHtml(post.title)}</h1>
+            <div class="post-meta-bar">
+              <span class="post-meta-item">
+                <span>${escapeHtml(post.category)}</span>
+              </span>
+              <span class="post-meta-item">
+                ${formatDate(post.publishDate)}
+              </span>
+              <span class="post-meta-item">
+                ${escapeHtml(post.readTime)}
+              </span>
+            </div>
+          </div>
+        </section>
+      `;
+
+      const contentHtml = `
+        <section class="post-content">
+          ${post.body}
+        </section>
+
+        <section class="post-footer">
+          <a href="/" class="post-footer-back">← Back to Blog</a>
+        </section>
+      `;
+
+      container.innerHTML = heroHtml + contentHtml;
+    }
+
+    function showErrorPage(message) {
+      const container = document.getElementById('post-container');
+      container.innerHTML = `
+        <section class="empty-state" style="padding: 4rem 1rem;">
+          <div class="empty-state-icon">😕</div>
+          <h2>${escapeHtml(message)}</h2>
+          <p>The post you're looking for doesn't exist or hasn't been published yet.</p>
+          <a href="/" class="post-footer-back" style="display: inline-block; margin-top: 1rem;">← Back to Blog</a>
+        </section>
+      `;
+    }
+
+    function updateMetaTags(post) {
+      // Update page title
+      document.title = post.title + ' - Dolce Vita Roma Blog';
+
+      // Update meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', post.tldr);
+      }
+
+      // Update Open Graph tags
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute('content', post.title);
+      }
+
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      if (ogDescription) {
+        ogDescription.setAttribute('content', post.tldr);
+      }
+
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) {
+        ogUrl.setAttribute('content', 'https://dolcevitaroma.com/post?slug=' + post.slug);
+      }
+
+      // Update Twitter Card
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) {
+        twitterTitle.setAttribute('content', post.title);
+      }
+
+      const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDescription) {
+        twitterDescription.setAttribute('content', post.tldr);
+      }
+    }
+
+    function generateSchemaMarkup(post) {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.tldr,
+        "datePublished": post.publishDate,
+        "author": {
+          "@type": "Organization",
+          "name": "Dolce Vita Roma",
+          "url": "https://dolcevitaroma.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Dolce Vita Roma",
+          "url": "https://dolcevitaroma.com"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dolcevitaroma.com/post?slug=" + post.slug
+        }
+      };
+
+      const schemaScript = document.getElementById('schema-org');
+      schemaScript.textContent = JSON.stringify(schema);
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
