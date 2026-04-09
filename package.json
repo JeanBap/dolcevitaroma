@@ -1,0 +1,9 @@
+{
+  "name": "dolcevitaroma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dolce Vita Roma static site. package.json exists so Vercel runs the sitemap generator at build time.",
+  "scripts": {
+    "build": "node scripts/generate-sitemap.js"
+  }
+}
