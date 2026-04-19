@@ -19731,7 +19731,56 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
     "image": "/images/neighborhoods/trastevere-rome.jpg",
     "imageAlt": "Cobblestone streets of Trastevere Rome with ivy-covered medieval buildings and golden hour light",
     "standaloneUrl": "/public/blog/blog-post-34.html",
-    "body": `<h1>Trastevere Rome: Living in the Heart of the Eternal City</h1>
+    "body": `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Trastevere safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Trastevere is safe. It's well-policed, well-lit, and busy enough that crime is rare. Standard precautions apply (don't flash valuables, be aware late at night), but it's genuinely one of Rome's safest neighborhoods. The reputation is well-earned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I afford Trastevere on a budget?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not really. Rents start at €1,000 and go to €1,500+. Restaurants average €12-18 for a main course. If you're budget-focused, Testaccio or Pigneto are better options. Trastevere requires accepting higher costs as part of the trade-off for beauty and convenience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Trastevere too touristy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes and no. Tourist density is high, especially in Piazza Santa Maria. But locals live here genuinely, neighborhoods still function, and off-peak times (early morning, winter months) show the neighborhood's authentic character. It's touristy but not fake."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I avoid the crowds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Live on side streets, not piazzas. Shop at San Cosimato market early morning. Eat lunch, not dinner. Visit in winter months. Accept that some parts will be crowded and enjoy other parts that are quiet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best time to visit or move there?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "October-April is best—weather is pleasant, crowds are lower, the neighborhood shows its authentic character. Summer is hot and chaotic. If you move, any time works, but spring (April-May) gives you time to establish yourself before summer chaos."
+      }
+    }
+  ]
+}
+</script>
+
+<h1>Trastevere Rome: Living in the Heart of the Eternal City</h1>
 
 <h2>Where to Eat: Trastevere's Best Restaurants</h2>
 
@@ -19821,6 +19870,7 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Tiber riverbanks</strong> offer evening walks away from the chaos. The Ponte Sisto crossing is beautiful at sunset. Take a walk along the river, you'll understand Rome's geography and feel the neighborhood's quieter side.</p>
 
+<div itemscope itemtype="https://schema.org/FAQPage">
 <h2>Frequently Asked Questions About Trastevere</h2>
 
 <p><strong>Is Trastevere safe?</strong> Yes, Trastevere is safe. It's well-policed, well-lit, and busy enough that crime is rare. Standard precautions apply (don't flash valuables, be aware late at night), but it's genuinely one of Rome's safest neighborhoods. The reputation is well-earned.</p>
@@ -19831,7 +19881,8 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>How do I avoid the crowds?</strong> Live on side streets, not piazzas. Shop at San Cosimato market early morning. Eat lunch, not dinner. Visit in winter months. Accept that some parts will be crowded and enjoy other parts that are quiet.</p>
 
-<p><strong>What's the best time to visit or move there?</strong> October-April is best—weather is pleasant, crowds are lower, the neighborhood shows its authentic character. Summer is hot and chaotic. If you move, any time works, but spring (April-May) gives you time to establish yourself before summer chaos.</p><h2>A Week in the Life: Daily Rhythms in Trastevere</h2>
+<p><strong>What's the best time to visit or move there?</strong> October-April is best—weather is pleasant, crowds are lower, the neighborhood shows its authentic character. Summer is hot and chaotic. If you move, any time works, but spring (April-May) gives you time to establish yourself before summer chaos.</p>
+</div><h2>A Week in the Life: Daily Rhythms in Trastevere</h2>
 
 <p>Monday morning in Trastevere starts early. You grab espresso at your local bar around 8 AM—the barista already has your cup warming. By mid-morning, Piazza Santa Maria in Trastevere begins filling with tourists, but the locals know to get their errands done before noon. Lunch is sacred, especially on weekends.</p>
 
@@ -20320,7 +20371,56 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
     "image": "/images/neighborhoods/testaccio-rome.jpg",
     "imageAlt": "Testaccio neighborhood street with family-run restaurants and traditional Roman architecture",
     "standaloneUrl": "/public/blog/blog-post-35.html",
-    "body": `<h1>Testaccio Rome: Where Real Romans Live and Eat</h1>
+    "body": `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Testaccio safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, very safe. It's a family neighborhood with low crime, good police presence, and strong community. It's one of Rome's safest areas. Multi-generational families live here, which sets the security tone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I actually meet Romans here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eat at neighborhood trattorias regularly. Shop at the market. Sit at neighborhood bars. The community is tight but not exclusive—consistency and respect earn you entry into neighborhood social networks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Testaccio good for young people?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not particularly. It's family and retiree focused. Young expats go to Pigneto, San Lorenzo, or Monti. Testaccio is best for those wanting authentic Rome, not nightlife or creative scenes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I find an apartment here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but rental competition is lower than Trastevere. Prices are fair—€900-1,200 gets solid apartments. Word-of-mouth is important; many apartments rent through neighborhood networks before appearing online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't speak Italian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You'll need it. Testaccio is less touristy, so English is less common. But residents are patient with learners and appreciate effort. It's a good neighborhood for serious Italian learners."
+      }
+    }
+  ]
+}
+</script>
+
+<h1>Testaccio Rome: Where Real Romans Live and Eat</h1>
 
 <h2>Where to Eat: Testaccio's Legendary Food Scene</h2>
 
@@ -20408,6 +20508,7 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Monte Testaccio</strong> itself is worth climbing—an ancient mound made of broken pottery shards, now green and beautiful. From the top, you see Rome spreading out, understand the neighborhood's geography and history in one view.</p>
 
+<div itemscope itemtype="https://schema.org/FAQPage">
 <h2>Frequently Asked Questions About Testaccio</h2>
 
 <p><strong>Is Testaccio safe?</strong> Yes, very safe. It's a family neighborhood with low crime, good police presence, and strong community. It's one of Rome's safest areas. Multi-generational families live here, which sets the security tone.</p>
@@ -20418,7 +20519,8 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Can I find an apartment here?</strong> Yes, but rental competition is lower than Trastevere. Prices are fair—€900-1,200 gets solid apartments. Word-of-mouth is important; many apartments rent through neighborhood networks before appearing online.</p>
 
-<p><strong>What if I don't speak Italian?</strong> You'll need it. Testaccio is less touristy, so English is less common. But residents are patient with learners and appreciate effort. It's a good neighborhood for serious Italian learners.</p><h2>A Week in the Life: Daily Rhythms in Testaccio</h2>
+<p><strong>What if I don't speak Italian?</strong> You'll need it. Testaccio is less touristy, so English is less common. But residents are patient with learners and appreciate effort. It's a good neighborhood for serious Italian learners.</p>
+</div><h2>A Week in the Life: Daily Rhythms in Testaccio</h2>
 
 <p>Monday in Testaccio starts with the market. Via Zabeta comes alive early with vendors, locals shopping for lunch ingredients, and the smell of fresh produce. You grab vegetables, maybe some fresh cheese from the dairy vendor, and plan the week's meals. This isn't a tourist activity—it's how Testaccio residents actually eat.</p>
 
@@ -20949,7 +21051,56 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
     "image": "/images/neighborhoods/monti-rome.jpg",
     "imageAlt": "Monti neighborhood with boutique shops, ivy-covered buildings, and cobblestone streets of ancient Rome",
     "standaloneUrl": "/public/blog/blog-post-36.html",
-    "body": `<h1>Monti Rome: Rome's Creative Heart Near the Colosseum</h1>
+    "body": `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Monti touristy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but differently than Trastevere. Tourists come for the Colosseum and stumble into Monti. But the neighborhood isn't built for tourism—it's built for residents. The balance is delicate but real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I afford Monti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's expensive but less than Trastevere—€1,000-1,400 is typical. Restaurants are pricey (€13-20 for main courses), but quality justifies it. It's a good neighborhood for those with moderate budgets wanting quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Monti good for nightlife?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not particularly. Wine bars yes, clubs no. If you want to party, go to San Lorenzo or Pigneto. Monti is wine and conversation, not dancing and chaos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I work from Monti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, excellently. Many Monti residents are remote workers, freelancers, creatives. Cafes are work-friendly. The neighborhood attracts independent workers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the creative community like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Strong and genuine. Designers, architects, artists, writers actually live here. It's not performative creativity—it's people who work creatively living where they can afford it with quality around them."
+      }
+    }
+  ]
+}
+</script>
+
+<h1>Monti Rome: Rome's Creative Heart Near the Colosseum</h1>
 
 <h2>Where to Eat: Monti's Curated Food Scene</h2>
 
@@ -21035,6 +21186,7 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Trajan's Markets</strong> are steps away—ancient Roman shopping in a neighborhood of contemporary shopping. The juxtaposition is Monti's essence: Rome's past visible from Rome's present creative community.</p>
 
+<div itemscope itemtype="https://schema.org/FAQPage">
 <h2>Frequently Asked Questions About Monti</h2>
 
 <p><strong>Is Monti touristy?</strong> Yes, but differently than Trastevere. Tourists come for the Colosseum and stumble into Monti. But the neighborhood isn't built for tourism—it's built for residents. The balance is delicate but real.</p>
@@ -21045,7 +21197,8 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Can I work from Monti?</strong> Yes, excellently. Many Monti residents are remote workers, freelancers, creatives. Cafes are work-friendly. The neighborhood attracts independent workers.</p>
 
-<p><strong>What's the creative community like?</strong> Strong and genuine. Designers, architects, artists, writers actually live here. It's not performative creativity—it's people who work creatively living where they can afford it with quality around them.</p><h2>A Week in the Life: Daily Rhythms in Monti</h2>
+<p><strong>What's the creative community like?</strong> Strong and genuine. Designers, architects, artists, writers actually live here. It's not performative creativity—it's people who work creatively living where they can afford it with quality around them.</p>
+</div><h2>A Week in the Life: Daily Rhythms in Monti</h2>
 
 <p>Monday in Monti means walking past the same independent boutiques you see every day: vintage clothing shops, design studios, independent bookstores, independent coffee roasters. You grab espresso at one of three serious coffee spots—not a chain, but a carefully curated cafe run by someone who cares about beans and extraction.</p>
 
@@ -22350,7 +22503,56 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
     "image": "/images/neighborhoods/san-lorenzo-rome.jpg",
     "imageAlt": "San Lorenzo street with young people at outdoor bars and university buildings of Sapienza University Rome",
     "standaloneUrl": "/public/blog/blog-post-38.html",
-    "body": `<h1>San Lorenzo Rome: University Quarter with Young Energy</h1>
+    "body": `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is San Lorenzo safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, very safe. It's a young neighborhood with lots of activity. Crime exists but is manageable and visible rather than hidden. The noise is mostly fun chaos, not danger."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I'm not a student?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can live here, but you need to embrace student culture. Living conditions are basic, noise is constant, social life revolves around university. Non-students often feel like visitors in someone else's party."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is San Lorenzo worth the noise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depends on your priorities. If you're young, social, and enjoy nightlife, it's excellent. If you value peace, quiet, sleep, it's exhausting. The trade-off is real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I work here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many do. Noise during the day is manageable. Late nights are loud. It's workable if you can shut out background noise; challenging if you need silence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I meet people in San Lorenzo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Go to bars Friday and Saturday nights. That's it. The neighborhood's social life is open to anyone willing to join. Friendships form quickly among transient populations."
+      }
+    }
+  ]
+}
+</script>
+
+<h1>San Lorenzo Rome: University Quarter with Young Energy</h1>
 
 <h2>Where to Eat: San Lorenzo's Pizza and Student Life</h2>
 
@@ -22442,6 +22644,7 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>University of Rome buildings</strong> are scattered throughout—Sapienza University's historic campus is nearby. Walk toward it and you understand San Lorenzo's essential nature: a neighborhood built around young people, education, transformation.</p>
 
+<div itemscope itemtype="https://schema.org/FAQPage">
 <h2>Frequently Asked Questions About San Lorenzo</h2>
 
 <p><strong>Is San Lorenzo safe?</strong> Yes, very safe. It's a young neighborhood with lots of activity. Crime exists but is manageable and visible rather than hidden. The noise is mostly fun chaos, not danger.</p>
@@ -22452,7 +22655,8 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Can I work here?</strong> Yes, many do. Noise during the day is manageable. Late nights are loud. It's workable if you can shut out background noise; challenging if you need silence.</p>
 
-<p><strong>How do I meet people in San Lorenzo?</strong> Go to bars Friday and Saturday nights. That's it. The neighborhood's social life is open to anyone willing to join. Friendships form quickly among transient populations.</p><h2>A Week in the Life: Daily Rhythms in San Lorenzo</h2>
+<p><strong>How do I meet people in San Lorenzo?</strong> Go to bars Friday and Saturday nights. That's it. The neighborhood's social life is open to anyone willing to join. Friendships form quickly among transient populations.</p>
+</div><h2>A Week in the Life: Daily Rhythms in San Lorenzo</h2>
 
 <p>Monday in San Lorenzo is genuinely chaotic. University students are everywhere—in bars, at the library, on the streets. If you're not a student yourself, you're surrounded by the energy of people studying, socializing, and living cheaply. The neighborhood doesn't feel like Rome; it feels like any university town with young people and limited budgets.</p>
 
@@ -22997,7 +23201,56 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
     "image": "/images/neighborhoods/garbatella-rome.jpg",
     "imageAlt": "Garbatella tree-lined streets and distinctive 1930s garden district architecture with red-brick buildings",
     "standaloneUrl": "/public/blog/blog-post-39.html",
-    "body": `<h1>Garbatella Rome: Fascist Garden District with Village Character</h1>
+    "body": `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Garbatella boring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depends on personality. If you want nightlife and constant activity, yes. If you want peace, family-friendly community, and neighborhood stability, no. It's deliberately quiet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it far from Rome's attractions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "25-30 minutes by foot or metro from the center. It's intentionally removed. That's the appeal for those seeking quiet; the frustration for those wanting immediate access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I find apartments easily?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, supply is higher than demand. The neighborhood is less competitive for housing. Prices are fair—€900-1,300 for good space. It's a buyer's market compared to central neighborhoods."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's it like for families?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Excellent. Safe streets, parks, schools, family culture, community focus. This is where Romans with families actually choose to live long-term. It's the neighborhood for raising children."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there anything to do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not nightlife or tourism. But Teatrino di Garbatella has events, parks offer space, restaurants are neighborhood gathering places. The point is living well, not being entertained. Different value system."
+      }
+    }
+  ]
+}
+</script>
+
+<h1>Garbatella Rome: Fascist Garden District with Village Character</h1>
 
 <h2>Where to Eat: Garbatella's Neighborhood Restaurants</h2>
 
@@ -23083,6 +23336,7 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Parks and green spaces</strong> exist throughout—unusual for Rome. Walk through them, see families, children, elderly people. The neighborhood invests in actual quality-of-life amenities for residents, not tourism.</p>
 
+<div itemscope itemtype="https://schema.org/FAQPage">
 <h2>Frequently Asked Questions About Garbatella</h2>
 
 <p><strong>Is Garbatella boring?</strong> Depends on personality. If you want nightlife and constant activity, yes. If you want peace, family-friendly community, and neighborhood stability, no. It's deliberately quiet.</p>
@@ -23093,7 +23347,8 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>What's it like for families?</strong> Excellent. Safe streets, parks, schools, family culture, community focus. This is where Romans with families actually choose to live long-term. It's the neighborhood for raising children.</p>
 
-<p><strong>Is there anything to do?</strong> Not nightlife or tourism. But Teatrino di Garbatella has events, parks offer space, restaurants are neighborhood gathering places. The point is living well, not being entertained. Different value system.</p><h2>A Week in the Life: Daily Rhythms in Garbatella</h2>
+<p><strong>Is there anything to do?</strong> Not nightlife or tourism. But Teatrino di Garbatella has events, parks offer space, restaurants are neighborhood gathering places. The point is living well, not being entertained. Different value system.</p>
+</div><h2>A Week in the Life: Daily Rhythms in Garbatella</h2>
 
 <p>Monday in Garbatella feels suburban despite being inside the city. You might walk to the local market (Mercato Rionale Garbatella) for vegetables and bread. The streets are wide, tree-lined, and quiet. You see families with children, elderly couples walking dogs, people moving slowly through their day without urgency.</p>
 
@@ -23650,7 +23905,56 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
     "image": "/images/neighborhoods/prati-rome.jpg",
     "imageAlt": "Prati tree-lined streets with residential buildings, restaurants, and peaceful Rome neighborhood character near Vatican",
     "standaloneUrl": "/public/blog/blog-post-40.html",
-    "body": `<h1>Prati Rome: Peaceful Expat Haven Near Vatican and River</h1>
+    "body": `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Prati boring compared to Trastevere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, deliberately. That's the appeal. Trastevere is performance; Prati is living. If you want excitement, Prati disappoints. If you want peace, it's perfect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I work here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Excellently. The neighborhood is work-friendly, professional, organized. Many remote workers and professionals live here. Cafes are comfortable work spaces. It's ideal for working professionals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it good for expats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It's expat-friendly precisely because it's orderly and doesn't require perfect Italian or cultural immersion. You can move here and function immediately. Some find that alienating; others find it relieving."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is it expensive if it's not tourist-focused?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because professionals and families pay premium prices for peace, order, and safety. Tourism isn't the driver; desirability for long-term residents is. Established neighborhoods command higher prices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the nightlife like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minimal. Wine bars, aperitivo, early dinners. If you want nightlife, go elsewhere. If you want peace in the evening, Prati is perfect. The trade-off is clear."
+      }
+    }
+  ]
+}
+</script>
+
+<h1>Prati Rome: Peaceful Expat Haven Near Vatican and River</h1>
 
 <h2>Where to Eat: Prati's Non-Touristy Roman Dining</h2>
 
@@ -23736,6 +24040,7 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Tiber riverbanks</strong> offer evening walks away from the neighborhood proper. Trees, river views, Rome's relationship to water. Walk here in late afternoon and you understand why this neighborhood feels peaceful despite being central Rome.</p>
 
+<div itemscope itemtype="https://schema.org/FAQPage">
 <h2>Frequently Asked Questions About Prati</h2>
 
 <p><strong>Is Prati boring compared to Trastevere?</strong> Yes, deliberately. That's the appeal. Trastevere is performance; Prati is living. If you want excitement, Prati disappoints. If you want peace, it's perfect.</p>
@@ -23746,7 +24051,8 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p><strong>Why is it expensive if it's not tourist-focused?</strong> Because professionals and families pay premium prices for peace, order, and safety. Tourism isn't the driver; desirability for long-term residents is. Established neighborhoods command higher prices.</p>
 
-<p><strong>What's the nightlife like?</strong> Minimal. Wine bars, aperitivo, early dinners. If you want nightlife, go elsewhere. If you want peace in the evening, Prati is perfect. The trade-off is clear.</p><h2>A Week in the Life: Daily Rhythms in Prati</h2>
+<p><strong>What's the nightlife like?</strong> Minimal. Wine bars, aperitivo, early dinners. If you want nightlife, go elsewhere. If you want peace in the evening, Prati is perfect. The trade-off is clear.</p>
+</div><h2>A Week in the Life: Daily Rhythms in Prati</h2>
 
 <p>Monday in Prati starts with a calm morning. You might walk to the Mercato Trionfale (one of Rome's largest covered markets) for groceries. Unlike central neighborhoods, this feels like an actual neighborhood—people are living here, not passing through. You see familiar faces: the woman with her shopping cart, the man walking his dog, the group of retirees meeting for espresso.</p>
 
