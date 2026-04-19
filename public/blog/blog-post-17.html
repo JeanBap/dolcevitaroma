@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tivoli Day Trip from Rome: Villa d'Este & Hadrian's Villa | Dolce Vita Roma</title>
+  <meta name="description" content="Complete day trip itinerary to Tivoli from Rome: Villa d'Este (100 fountains), Hadrian's Villa, transport, costs, and crowd-beating tips.">
+  <meta name="keywords" content="Tivoli day trip, Villa d'Este, Hadrian's Villa, day trip from Rome, Tivoli Italy">
+  <meta name="author" content="Dolce Vita Roma">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/day-trip-tivoli-from-rome">
+  <meta property="og:title" content="Tivoli Day Trip from Rome: Villa d'Este & Hadrian's Villa">
+  <meta property="og:description" content="Complete itinerary, real costs, and insider tips for visiting two UNESCO sites in one day.">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/day-trip-tivoli-from-rome">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/day-trips/tivoli-villa-este-fountains.jpg">
+  <meta property="article:published_time" content="2026-04-19">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .itinerary {
+      background: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-gold);
+    }
+    .itinerary h3 {
+      margin: 0 0 1.5rem 0;
+      color: var(--color-green);
+    }
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline li {
+      padding: 1rem;
+      border-left: 3px solid var(--color-gold);
+      margin-bottom: 1rem;
+      background: white;
+      border-radius: 4px;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 1.5rem;
+      width: 16px;
+      height: 16px;
+      background: var(--color-gold);
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+    .timeline-time {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 0.95rem;
+    }
+    .timeline-event {
+      margin: 0.25rem 0 0 0;
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .cost-box {
+      background: #F0F8F0;
+      border: 2px solid var(--color-green);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .cost-box h4 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+    }
+    .cost-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(43, 58, 27, 0.2);
+    }
+    .cost-item:last-child {
+      border-bottom: none;
+    }
+    .cost-label {
+      font-weight: 500;
+      color: var(--color-green);
+    }
+    .cost-amount {
+      color: var(--color-text-light);
+    }
+    .cost-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid var(--color-green);
+      font-weight: 600;
+      color: var(--color-green);
+    }
+    .tip-box {
+      background: #FFFBF0;
+      border-left: 4px solid var(--color-salmon);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .tip-box h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--color-salmon);
+    }
+    .tip-box p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    #map {
+      height: 450px;
+      margin: 2rem 0;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .villa-section {
+      background: white;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    .villa-section h3 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 0.5rem;
+    }
+    .villa-section ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .villa-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+    .faq-answer {
+      color: var(--color-text-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2.5rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .cta-box h3 {
+      color: var(--color-gold);
+      margin: 0 0 1rem 0;
+    }
+    .cta-box p {
+      margin: 0 0 1.5rem 0;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    .cta-button {
+      background-color: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #B09440;
+    }
+    .back-link {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .post-meta {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      #map {
+        height: 300px;
+      }
+      .cost-item {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .cost-total {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BlogPosting", "Article"],
+    "headline": "Tivoli Day Trip from Rome: Villa d'Este & Hadrian's Villa",
+    "description": "Complete itinerary, costs, and insider tips for visiting two UNESCO World Heritage sites in one day.",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "datePublished": "2026-04-19",
+    "image": "https://dolcevitaroma.com/images/day-trips/tivoli-villa-este-fountains.jpg",
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you get from Rome to Tivoli?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take Trenitalia regional train FL2 from Roma Tiburtina station to Tivoli. Journey time: 1 hour. Cost: EUR 3.50. Trains depart hourly. Buy tickets at Tiburtina ticket window or via Trenitalia app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to visit Villa d'Este?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plan 2.5-3 hours. The villa has 100+ fountains and elaborate gardens. Most visitors spend 2 hours in summer (heat forces faster pace) and 3 hours in cooler seasons. Audio guides available in English for EUR 6."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Hadrian's Villa worth visiting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It's a UNESCO site and one of the best-preserved Roman villas in Italy. Visit if you're interested in archaeology and have 2+ hours. It's less crowded than Villa d'Este but requires a bus or taxi ride from Tivoli town center (6km)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you visit both villas in one day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but it's tight. Arrive Tivoli 9:00am, spend 2.5 hours at Villa d'Este, lunch, then 2 hours at Hadrian's Villa, return to Rome 18:00-19:00. Doable if you're efficient but you'll skip Villa Gregoriana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the best time of day to visit Tivoli?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Arrive early (9:00am or before) to avoid tour groups at Villa d'Este. OR visit after 14:00 when morning crowds leave. Summer hours are 8:30am-7:45pm, so you have flexibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Tivoli day trip easy for a first-timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it's one of the easiest day trips from Rome. The train journey is straightforward (no transfers), arrival in Tivoli is clear (small town, easy navigation), and villas are well-signposted. No car required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in the Villa d'Este entry fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The EUR 10 entry gives access to all fountains, gardens, and palace rooms. Audio guide is an additional EUR 6 (recommended for history context). Photos allowed except in certain rooms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there good food in Tivoli?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Ristorante Sibilla (on the central square) is well-known and traditional (EUR 25-35). Trattoria da Giancarlo is smaller and cheaper (EUR 15-25). Both do lunch 12:00-15:00."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dolce Vita Roma",
+        "item": "https://dolcevitaroma.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Day Trips",
+        "item": "https://dolcevitaroma.com/blog/best-day-trips-from-rome"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Tivoli Day Trip",
+        "item": "https://dolcevitaroma.com/blog/day-trip-tivoli-from-rome"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/blog/blog-post-16.html">Day Trips</a> / Tivoli
+      </div>
+
+      <a href="/blog/blog-post-16.html" class="back-link">Back to Day Trips Guide</a>
+
+      <h1>Tivoli Day Trip from Rome: Villa d'Este & Hadrian's Villa</h1>
+
+      <div class="post-meta">
+        Published April 19, 2026 | Updated April 2026 | Reading time: 8 minutes
+      </div>
+
+      <img src="/images/day-trips/tivoli-villa-este-fountains.jpg" alt="Villa d'Este fountains and gardens in Tivoli" loading="eager" style="width: 100%; height: auto; margin-bottom: 2rem; border-radius: 8px;">
+
+      <h2>The Essentials</h2>
+
+      <p>Tivoli is 28 kilometers northeast of Rome. Two UNESCO World Heritage sites sit here: Villa d'Este (the Renaissance villa with 100+ fountains) and Hadrian's Villa (the emperor's 2nd-century retreat). Together they form the most accessible and rewarding day trip from Rome. The journey is simple--one train, one hour, flat EUR 3.50 price. You'll spend a morning walking through gardens built by cardinals with unlimited budgets, a Renaissance obsession with hydraulics, and the resources to level hillsides. By afternoon, you're exploring the ruins of Hadrian's secret palace.</p>
+
+      <p>This guide walks you through the exact route, timings that work, and the logistics that make it smooth.</p>
+
+      <h2>The Day at a Glance</h2>
+
+      <div class="itinerary">
+        <h3>Complete Timeline</h3>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-time">07:30</div>
+            <div class="timeline-event">Leave your apartment with comfortable shoes, sunscreen, and a water bottle</div>
+          </li>
+          <li>
+            <div class="timeline-time">08:00</div>
+            <div class="timeline-event">Trenitalia train FL2 departs Roma Tiburtina station (see directions below)</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:00</div>
+            <div class="timeline-event">Arrive Tivoli train station. Walk 15 minutes uphill to Villa d'Este (or take local bus 4, EUR 1.50)</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:30</div>
+            <div class="timeline-event">Enter Villa d'Este (arrive early to skip morning crowds)</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:30--12:00</div>
+            <div class="timeline-event">Explore Villa d'Este: 100+ fountains, gardens, Cardinal's palace, Fountain of Neptune, Fountain of the Oval</div>
+          </li>
+          <li>
+            <div class="timeline-time">12:15</div>
+            <div class="timeline-event">Exit Villa d'Este, walk down to Tivoli center (Piazza Trevi area)</div>
+          </li>
+          <li>
+            <div class="timeline-time">12:30--13:45</div>
+            <div class="timeline-event">Lunch at Ristorante Sibilla or Trattoria da Giancarlo (EUR 20-35 per person)</div>
+          </li>
+          <li>
+            <div class="timeline-time">14:00</div>
+            <div class="timeline-event">Bus 4 or taxi to Hadrian's Villa (6km from center, EUR 10-15 taxi or EUR 2 bus)</div>
+          </li>
+          <li>
+            <div class="timeline-time">14:30--16:30</div>
+            <div class="timeline-event">Explore Hadrian's Villa: Canopus canal, palace rooms, baths, libraries, theatres. Walk 2-3km around grounds</div>
+          </li>
+          <li>
+            <div class="timeline-time">16:45</div>
+            <div class="timeline-event">Return taxi/bus to Tivoli station or town center (optional: visit Villa Gregoriana for waterfall, EUR 7)</div>
+          </li>
+          <li>
+            <div class="timeline-time">17:00--18:00</div>
+            <div class="timeline-event">Train back to Roma Tiburtina (arrive 18:00-19:00)</div>
+          </li>
+        </ul>
+      </div>
+
+      <h2>Getting There: Roma Tiburtina to Tivoli</h2>
+
+      <h3>Step 1: Travel to Roma Tiburtina Station</h3>
+
+      <p>You must depart from Roma Tiburtina (Stazione Tiburtina), not Roma Termini. Tiburtina is the terminus for regional trains heading northeast toward Tivoli. If you live on the west side of Rome, this means taking metro Line B to Tiburtina station (about 20 minutes depending on where you start).</p>
+
+      <p><strong>From central Rome (e.g., Colosseum area):</strong> Metro Line B (blue) direction Rebibbia, get off at Tiburtina stop. Exit the metro and follow signs to Trenitalia Regionale platform.</p>
+
+      <p><strong>From Trastevere or south Rome:</strong> Metro Line B direction Laurentina, change to Line B direction Rebibbia at Termini, get off Tiburtina.</p>
+
+      <p><strong>The train:</strong> Look for Trenitalia regional train labeled "FL2" or "Tivoli." Not Frecciarossa (high-speed). Departs Tiburtina hourly (roughly 8:00, 9:00, 10:00, etc.). Journey time: exactly 1 hour. Seats are first-come, first-served (no reservation).</p>
+
+      <h3>Step 2: Buy Your Ticket</h3>
+
+      <p>Cost: EUR 3.50 one-way per person (EUR 7 round-trip). Options to buy:</p>
+
+      <ul>
+        <li><strong>At Tiburtina ticket window:</strong> Show up 10 minutes early, tell them "Tivoli" and they'll hand you a ticket.</li>
+        <li><strong>Self-service machine:</strong> Faster. Select "Tivoli" as destination, pay EUR 3.50, print ticket.</li>
+        <li><strong>Trenitalia app:</strong> Buy ahead of time (though it's unnecessary since trains are frequent and cheap).</li>
+      </ul>
+
+      <p>The ticket is valid for 2 hours after purchase. You can also buy a round-trip (andata-ritorno) for EUR 7 if you want to lock in your return time.</p>
+
+      <h3>Step 3: Arrive in Tivoli (09:00)</h3>
+
+      <p>The train pulls into a small, manageable station. Exit and look for signs to "Villa d'Este" or "Centro Storico" (old town). You have two options:</p>
+
+      <ul>
+        <li><strong>Walk (recommended):</strong> 15 minutes uphill. It's a modest climb but straightforward. Follow the main road (Via Roma or Via Nazionale). You'll see signs. The walk wakes you up and gets you into the rhythm.</li>
+        <li><strong>Bus 4:</strong> Departs from the station every 15-20 minutes. Cost EUR 1.50. Takes 5 minutes. Buy ticket on board (small surcharge) or at a newsstand in the station.</li>
+        <li><strong>Taxi:</strong> EUR 10-15 from station to Villa d'Este. Overkill for this distance but an option if you're tired or running late.</li>
+      </ul>
+
+      <div class="tip-box">
+        <h4>Pro Tip: Early Arrival Advantage</h4>
+        <p>If you arrive at Villa d'Este before 9:30am, you'll avoid the 10:00-11:30 window when organized tour groups cluster around the most famous fountains. The Fountain of the Oval is packed 10:30-12:00. Arrive early, see it first, then explore at your own pace.</p>
+      </div>
+
+      <h2>Villa d'Este: The Renaissance Water Palace</h2>
+
+      <div class="villa-section">
+        <h3>Overview & History</h3>
+        <p>Villa d'Este was built in 1550 by Cardinal Ippolito d'Este (nephew of Pope Alexander VI) as a retreat and a demonstration of power. It's simultaneously a palace and an engineering marvel -- a building where Renaissance architects experimented with hydraulic systems to create the most elaborate fountain display ever built. The result is 100+ fountains across 5 hectares of gardens.</p>
+        <p>It's a UNESCO World Heritage site and one of the most important Renaissance villas in Italy.</p>
+      </div>
+
+      <div class="villa-section">
+        <h3>Entry & Hours</h3>
+        <ul>
+          <li><strong>Cost:</strong> EUR 10 (online or at gate)</li>
+          <li><strong>Hours:</strong> April-October: 8:30am-7:45pm | November-March: 8:30am-4:30pm</li>
+          <li><strong>Audio guide (recommended):</strong> EUR 6 in English. Provides context for major fountains.</li>
+          <li><strong>Booking:</strong> No pre-booking required. Walk-up is fine except peak summer (July-August) when you might wait 20 minutes at entry.</li>
+        </ul>
+      </div>
+
+      <div class="villa-section">
+        <h3>What to See (2.5-3 hour route)</h3>
+        <ul>
+          <li><strong>Palazzo (Central Palace):</strong> Climbing up from the lower gardens. Decorated rooms, original art, frescoes. Count on 30 minutes.</li>
+          <li><strong>Fontana dell'Ovale (Fountain of the Oval):</strong> Center of the lower gardens, the most photographed fountain. Massive, dramatic, Instagram-famous. Arrive early.</li>
+          <li><strong>Cento Fontane (100 Fountains):</strong> A long avenue of small decorative fountains, each different. One of the most charming sections.</li>
+          <li><strong>Fontana di Nettuno (Fountain of Neptune):</strong> Depicts the god of the sea. Lower gardens. Worth 10 minutes for photos.</li>
+          <li><strong>Fontana della Civetta (Fountain of the Owl):</strong> A mechanical fountain that produced bird sounds via hydraulics. Historic engineering.</li>
+          <li><strong>Upper gardens:</strong> Less crowded, more peaceful. Fewer fountains but better for quiet reflection.</li>
+        </ul>
+      </div>
+
+      <div class="villa-section">
+        <h3>Practical Notes</h3>
+        <ul>
+          <li><strong>Walking distance:</strong> 3-4km of walking total (terrain is hilly, mostly downhill going, uphill returning).</li>
+          <li><strong>Shade:</strong> Gardens have mature trees but not everywhere is shaded. Summer sun is intense. Sunscreen mandatory.</li>
+          <li><strong>Bathrooms:</strong> Available on the grounds (basic but clean). One near the Palazzo, one near the lower gardens.</li>
+          <li><strong>Water fountains:</strong> Available. Bring a water bottle and refill (fountain water is potable).</li>
+          <li><strong>Photos:</strong> Allowed everywhere. The gardens are wildly photogenic.</li>
+          <li><strong>Food/drinks:</strong> There's a small cafe near the entrance (overpriced). Better to eat in town at lunch time.</li>
+        </ul>
+      </div>
+
+      <h2>Lunch in Tivoli (12:30-13:45)</h2>
+
+      <p>After exiting Villa d'Este around 12:15, walk downhill 10 minutes to Piazza Trevi and the historic center of Tivoli town. Several good restaurants cluster around this square and the adjacent streets.</p>
+
+      <div class="villa-section">
+        <h3>Best Restaurants</h3>
+        <ul>
+          <li><strong>Ristorante Sibilla:</strong> The most famous, on the edge of the Piazza Trevi with views across the landscape. Traditional Roman/Italian food. Expect EUR 25-35 per person. Reservations recommended in summer (call +39 0774 335 281 or book via Google Maps). Good pasta, good service.</li>
+          <li><strong>Trattoria da Giancarlo:</strong> Small, family-run, cheap and cheerful. EUR 15-25 per person. Standard pasta and meat dishes. Quick service. Good option if you're in a hurry.</li>
+          <li><strong>Casual lunch (non-sit-down):</strong> Pizza by the slice, sandwiches, or panini available from small shops. EUR 8-12. Fine if you want to save time.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>Lunch Timing</h4>
+        <p>Italian restaurants typically open for lunch at 12:00 and close at 14:00-15:00 (siesta). Plan to eat between 12:30-13:45. If you arrive after 14:00, many places will be closed.</p>
+      </div>
+
+      <h2>Hadrian's Villa (Villa Adriana)</h2>
+
+      <h3>Why Visit</h3>
+
+      <p>Hadrian's Villa is the ruins of a 2nd-century Roman palace complex built by Emperor Hadrian (76-138 AD) around 120 AD. It's a UNESCO World Heritage site and one of the most important archaeological complexes in Italy. Unlike Villa d'Este (Renaissance), this is ancient Rome frozen in stone.</p>
+
+      <p>You'll walk through the Canopus (a canal lined with sculptures), the palace rooms (mostly roofless now but still evocative), the baths, libraries, theaters, and gardens. It's a massive site covering 120 hectares. Budget 2-3 hours.</p>
+
+      <h3>Getting There From Tivoli Center</h3>
+
+      <p>Hadrian's Villa is 6km south of Tivoli town center. Your options:</p>
+
+      <ul>
+        <li><strong>Taxi:</strong> EUR 15-20. Simplest. Ask at your restaurant or call a local taxi. Tell them "Villa Adriana" (Italian name).</li>
+        <li><strong>Bus 4:</strong> Departs Piazza Trevi every 20 minutes. Ask locals or check at a newsstand. EUR 1.50. Takes 15-20 minutes.</li>
+        <li><strong>Walking:</strong> Possible but tedious (30 minutes downhill on a main road with minimal sidewalk).</li>
+      </ul>
+
+      <div class="villa-section">
+        <h3>Entry & Hours</h3>
+        <ul>
+          <li><strong>Cost:</strong> EUR 10 (same as Villa d'Este)</li>
+          <li><strong>Hours:</strong> April-October: 9:00am-7:00pm | November-March: 9:00am-4:30pm</li>
+          <li><strong>Audio guide:</strong> EUR 5. Highly recommended for archaeological context.</li>
+          <li><strong>Booking:</strong> Not required. Walk-up is standard.</li>
+        </ul>
+      </div>
+
+      <div class="villa-section">
+        <h3>Key Sections (2-3 hour route)</h3>
+        <ul>
+          <li><strong>Canopus:</strong> The signature feature. A 120-meter canal with a portico and statues. The most visually striking section.</li>
+          <li><strong>Palazzo (Palace):</strong> The main residential quarters. Mostly foundations and column bases now, but the scale is evident.</li>
+          <li><strong>Piscina (Swimming pools):</strong> The large rectangular pool where Hadrian swam. Imagine the marble that was here.</li>
+          <li><strong>Terme (Baths):</strong> Complex bathing structures. Warm room, cold room, exercise areas.</li>
+          <li><strong>Teatrino (Small Theater):</strong> For private performances and gatherings.</li>
+          <li><strong>Ninfeo (Nymph sanctuary):</strong> A water feature and garden retreat.</li>
+        </ul>
+      </div>
+
+      <div class="villa-section">
+        <h3>Practical Notes</h3>
+        <ul>
+          <li><strong>Walking distance:</strong> 4-5km (you'll walk the entire site). Mostly flat with some slopes.</li>
+          <li><strong>Shade:</strong> Very limited. Summer heat is a real factor. Start early (before 14:30) if possible.</li>
+          <li><strong>Bathrooms:</strong> Basic facilities near the entrance.</li>
+          <li><strong>Water:</strong> Bring plenty. There are refill points but they're not ubiquitous.</li>
+          <li><strong>Photos:</strong> Excellent for photography. The ruins are dramatic and less crowded than Villa d'Este.</li>
+        </ul>
+      </div>
+
+      <h2>Optional: Villa Gregoriana</h2>
+
+      <p>If you have extra time (and energy), Villa Gregoriana is a third option in Tivoli. It's smaller, less famous, but offers a dramatic waterfall and gorge walk. EUR 7 entry. 1-1.5 hours. Located downhill from the town center (easy walk). Only add this if you're doing a late return train (19:00 or later).</p>
+
+      <h2>Return to Rome</h2>
+
+      <p>Trains depart Tivoli to Roma Tiburtina hourly (roughly 17:00, 18:00, 19:00). The journey is 1 hour. Buy your return ticket at the station or use your round-trip ticket (if you purchased one earlier).</p>
+
+      <p>You'll arrive back at Tiburtina around 18:00-19:00. From there, metro back to your neighborhood (Line B).</p>
+
+      <div class="cost-box">
+        <h4>Cost Breakdown (Per Person)</h4>
+        <div class="cost-item">
+          <span class="cost-label">Train Roma Tiburtina -- Tivoli round-trip</span>
+          <span class="cost-amount">EUR 7</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Villa d'Este entry</span>
+          <span class="cost-amount">EUR 10</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Villa d'Este audio guide</span>
+          <span class="cost-amount">EUR 6</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Hadrian's Villa entry</span>
+          <span class="cost-amount">EUR 10</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Hadrian's Villa audio guide</span>
+          <span class="cost-amount">EUR 5</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Local bus or taxi (Villa d'Este -- Hadrian's Villa)</span>
+          <span class="cost-amount">EUR 3-15</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Lunch (Ristorante Sibilla mid-range)</span>
+          <span class="cost-amount">EUR 25-35</span>
+        </div>
+        <div class="cost-total">
+          <span class="cost-label">Total</span>
+          <span class="cost-amount">EUR 66-93</span>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <h4>Budget Optimization</h4>
+        <p>Skip the audio guides (save EUR 11) and use free information plaques at each site. Eat a cheaper lunch at Trattoria da Giancarlo (save EUR 10-15). Use bus instead of taxi to Hadrian's Villa (save EUR 10-15). Revised total: EUR 45-60 per person without compromising the experience.</p>
+      </div>
+
+      <h2>The Route on a Map</h2>
+
+      <div id="map"></div>
+
+      <p>Map shows Rome Tiburtina station, Tivoli town center, Villa d'Este, and Hadrian's Villa with approximate distances.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">How do you get from Rome to Tivoli?</div>
+        <div class="faq-answer">Take the Trenitalia regional train FL2 from Roma Tiburtina to Tivoli. One hour journey, EUR 3.50 one-way. Trains depart hourly. This is the only practical way without a car.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How long does it take to visit Villa d'Este?</div>
+        <div class="faq-answer">Plan 2.5-3 hours depending on pace and interest level. In summer heat, you might move faster (2 hours). In cooler seasons with lingering, 3 hours is realistic. Audio guide adds 30 minutes to pace.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is Hadrian's Villa worth the extra effort?</div>
+        <div class="faq-answer">Yes, if you're interested in Roman history and have the time. It's a UNESCO site and beautifully preserved. If you're tired after Villa d'Este and prefer to relax, skip it. You won't regret either choice.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can you visit both villas in one day?</div>
+        <div class="faq-answer">Yes, but it requires discipline. Start early (8:00 train), spend 2.5 hours at Villa d'Este, quick lunch, 2 hours at Hadrian's Villa, return by 18:00. Tight but doable if you skip Villa Gregoriana and don't dawdle.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What's the best time of day to visit Tivoli?</div>
+        <div class="faq-answer">Arrive before 10:00am to avoid tour group crowds at Villa d'Este. If that's not possible, go after 14:00 (afternoon light is beautiful anyway). Summer hours extend to 7:45pm so you have flexibility.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is this day trip suitable for a first-timer?</div>
+        <div class="faq-answer">Yes. It's one of the simplest and most rewarding day trips from Rome. Train is straightforward (no transfers), town is easy to navigate, attractions are well-signposted. Very beginner-friendly.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do the fountains run in winter?</div>
+        <div class="faq-answer">Most fountains run year-round, but some are turned off during winter for maintenance (November-March). The major ones (Fountain of the Oval, Neptune) usually run. Best water flow is spring-autumn.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can children do this day trip?</div>
+        <div class="faq-answer">Yes. Kids enjoy the fountains and gardens. The walking is moderate (3-4km spread over the day). Bring plenty of water and snacks. Younger kids might fatigue at Hadrian's Villa (less visually immediate than fountains). Plan shorter visits (1.5 hours each) if you have young children.</div>
+      </div>
+
+      <h2>Final Tips</h2>
+
+      <ul>
+        <li><strong>Comfortable shoes:</strong> Non-negotiable. You're walking 5-6km on stone paths and stairs.</li>
+        <li><strong>Sunscreen and hat:</strong> Shade is limited. Bring good sunscreen and reapply after each water feature (sweat washes it off).</li>
+        <li><strong>Water bottle:</strong> Bring a large reusable bottle and refill at fountains. You'll drink 1-2 liters.</li>
+        <li><strong>Light layers:</strong> Early morning and late evening cool, midday hot. Layers give you flexibility.</li>
+        <li><strong>Phone battery:</strong> The walk through Hadrian's Villa is long. Have 30% battery or bring a portable charger for navigation and photos.</li>
+        <li><strong>Language:</strong> English is spoken at entry points and some restaurants, but having basic Italian phrases helps (buongiorno, grazie, scusi). Translation app on your phone for menus.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Explore More Day Trips</h3>
+        <p>Tivoli is just one of five great day trips from Rome. Check out our complete guide to day trips from Rome including Pompeii, Tuscany, the Amalfi Coast, and Castelli Romani.</p>
+        <a href="/blog/blog-post-16.html" class="cta-button">View All Day Trips</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved. | <a href="https://dolcevitaroma.com/privacy">Privacy Policy</a> | <a href="https://dolcevitaroma.com/contact">Contact</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([41.95, 12.7], 10);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    const markers = [
+      { name: 'Roma Tiburtina Station', lat: 41.9163, lng: 12.5156, color: '#C8352B' },
+      { name: 'Tivoli Town Center', lat: 41.9631, lng: 12.7989, color: '#C9A84C' },
+      { name: 'Villa d\'Este', lat: 41.9658, lng: 12.7956, color: '#2B3A1B' },
+      { name: 'Hadrian\'s Villa', lat: 41.9531, lng: 12.7736, color: '#2B3A1B' }
+    ];
+
+    markers.forEach(m => {
+      L.circleMarker([m.lat, m.lng], {
+        radius: 8,
+        fillColor: m.color,
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(m.name).addTo(map);
+    });
+
+    const route = L.polyline([
+      [41.9163, 12.5156],
+      [41.9631, 12.7989],
+      [41.9658, 12.7956],
+      [41.9531, 12.7736]
+    ], {
+      color: '#2B3A1B',
+      weight: 2,
+      opacity: 0.6,
+      dashArray: '5, 5'
+    }).addTo(map);
+  </script>
+</body>
+</html>

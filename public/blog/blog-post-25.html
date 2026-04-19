@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walking Rome Neighborhoods: 3 Self-Guided Routes & Footwear Tips | Dolce Vita Roma</title>
+  <meta name="description" content="Complete walking guide for Rome: why the city is walkable, 3 self-guided routes (Baroque Heart, Trastevere, Ancient Rome), best neighborhoods, and cobblestone tips.">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/walking-rome-neighborhoods-guide">
+
+  <meta property="og:title" content="Walking Rome Neighborhoods: 3 Self-Guided Routes & Footwear Tips">
+  <meta property="og:description" content="Discover Rome on foot: 3 detailed self-guided walking routes, neighborhood recommendations, water fountains, and best times to walk.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/transport/rome-walking-routes.jpg">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/walking-rome-neighborhoods-guide">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Walking Rome Neighborhoods: 3 Self-Guided Routes & Footwear Tips">
+  <meta name="twitter:description" content="Discover Rome on foot: 3 detailed self-guided walking routes, neighborhood recommendations, water fountains, and best times to walk.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/images/transport/rome-walking-routes.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    :root {
+      --color-green: #2B3A1B;
+      --color-cream: #F5EBD8;
+      --color-gold: #C9A84C;
+      --color-salmon: #E8614B;
+      --color-red: #C8352B;
+      --color-border: #E0D5C4;
+      --color-text-light: #7A6F5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: #2c2c2c;
+      background: #fafaf8;
+    }
+
+    header {
+      background: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--color-gold);
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: white;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-salmon);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    article {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+    }
+
+    .toc {
+      background: #f9f7f3;
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .toc h2 {
+      font-size: 1.1rem;
+      color: var(--color-green);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .toc ol {
+      margin-left: 1.5rem;
+      list-style-position: inside;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .toc a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--color-green);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.3rem;
+      color: var(--color-salmon);
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+
+    strong {
+      color: var(--color-green);
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: rgba(201, 168, 76, 0.1);
+      border-left: 3px solid var(--color-gold);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .warning {
+      background: rgba(232, 97, 75, 0.08);
+      border-left: 3px solid var(--color-salmon);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .info-box {
+      background: rgba(43, 58, 27, 0.05);
+      border: 1px solid var(--color-border);
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .route-card {
+      background: #f9f7f3;
+      border-left: 4px solid var(--color-salmon);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .route-card h3 {
+      margin-top: 0;
+      color: var(--color-salmon);
+    }
+
+    .duration {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 0.95rem;
+    }
+
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .faq-section {
+      margin: 2.5rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: #f9f7f3;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: #f3f0eb;
+    }
+
+    .faq-question.active {
+      background: var(--color-gold);
+      color: white;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1.2rem;
+      background: white;
+      border-top: 1px solid var(--color-border);
+      line-height: 1.7;
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--color-green) 0%, rgba(43, 58, 27, 0.8) 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 6px;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    .cta-box h3 {
+      color: var(--color-cream);
+      margin-top: 0;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.95);
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: var(--color-salmon);
+      color: white;
+    }
+
+    .author-bio {
+      background: #f9f7f3;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-gold);
+    }
+
+    .author-bio h4 {
+      color: var(--color-green);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .author-bio p {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .back-to-pillar {
+      display: inline-block;
+      background: var(--color-green);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 2rem 0;
+      transition: background 0.3s;
+    }
+
+    .back-to-pillar:hover {
+      background: var(--color-salmon);
+    }
+
+    footer {
+      background: var(--color-green);
+      color: var(--color-cream);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      #map {
+        height: 350px;
+      }
+
+      article {
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BlogPosting", "FAQPage"],
+    "headline": "Walking Rome Neighborhoods: 3 Self-Guided Routes & Footwear Tips",
+    "description": "Complete walking guide for Rome: why the city is walkable, 3 self-guided routes, best neighborhoods, and cobblestone tips.",
+    "image": "https://dolcevitaroma.com/images/transport/rome-walking-routes.jpg",
+    "datePublished": "2026-04-19",
+    "dateModified": "2026-04-19",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "url": "https://dolcevitaroma.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dolcevitaroma.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://dolcevitaroma.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Getting Around Rome",
+          "item": "https://dolcevitaroma.com/blog/rome-transportation-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Walking Neighborhoods",
+          "item": "https://dolcevitaroma.com/blog/walking-rome-neighborhoods-guide"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="https://dolcevitaroma.com/blog">Blog</a>
+        <span>/</span>
+        <a href="blog-post-22.html">Getting Around Rome</a>
+        <span>/</span>
+        <span>Walking Neighborhoods</span>
+      </div>
+
+      <h1>Walking Rome Neighborhoods: 3 Self-Guided Routes & Footwear Tips</h1>
+
+      <div class="post-meta">
+        <div class="meta-item">
+          <span>By Dolce Vita Roma</span>
+        </div>
+        <div class="meta-item">
+          <span>Published April 19, 2026</span>
+        </div>
+        <div class="meta-item">
+          <span>2,000 words</span>
+        </div>
+      </div>
+
+      <img src="/images/transport/rome-walking-routes.jpg" alt="Rome's historic cobblestone streets in Centro Storico neighborhood" class="hero-image" loading="lazy">
+
+      <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="#walkable">Why Rome is Walkable</a></li>
+          <li><a href="#neighborhoods">Best Walking Neighborhoods</a></li>
+          <li><a href="#walk1">Walk 1: The Baroque Heart (2.5 hours)</a></li>
+          <li><a href="#walk2">Walk 2: Trastevere Evening (1.5 hours)</a></li>
+          <li><a href="#walk3">Walk 3: Ancient Rome (3 hours)</a></li>
+          <li><a href="#practical">Practical Walking Tips</a></li>
+          <li><a href="#maps">Walking Routes Map</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ol>
+      </div>
+
+      <h2 id="walkable">Why Rome is Walkable</h2>
+
+      <p>Rome's historic center is surprisingly compact and pedestrian-friendly. The city's density, medieval street layouts, and car-restricted zones (ZTL -- Zona Traffico Limitato) make walking the most enjoyable way to explore. Most major tourist sites are within 3km of each other. You can visit the Colosseum, Roman Forum, Pantheon, Trevi Fountain, Spanish Steps, and Vatican in a few days entirely on foot.</p>
+
+      <h3>The Numbers</h3>
+      <ul>
+        <li>Colosseum to Pantheon: 25 minutes walking</li>
+        <li>Pantheon to Trevi Fountain: 10 minutes</li>
+        <li>Trevi to Spanish Steps: 12 minutes</li>
+        <li>Spanish Steps to Piazza del Popolo: 18 minutes</li>
+        <li>Historic center (Centro Storico): 5.5 km² and entirely walkable</li>
+      </ul>
+
+      <p>Walking reveals Rome at street level -- the medieval alleys, hidden piazzas, local bars, and neighborhood character you'd miss from a bus or metro. It's also free and the best way to stumble upon small museums, Renaissance palaces, and that restaurant locals are queuing for.</p>
+
+      <div class="highlight">
+        <strong>ZTL (Limited Traffic Zone):</strong> The centro storico and Trastevere are ZTL-restricted 6:30am--6pm weekdays (residents only). This makes street-level walking safe and enjoyable -- no cars speeding down narrow cobblestone alleys. Perfect for pedestrians.
+      </div>
+
+      <h2 id="neighborhoods">Best Walking Neighborhoods</h2>
+
+      <h3>Centro Storico (Historic Center)</h3>
+      <p>The heart of Rome. Medieval and Renaissance streets weaving around baroque churches and piazzas. Contains Piazza Navona, Campo de' Fiori, Pantheon, Largo Argentina, Trevi Fountain. Very touristy but genuinely atmospheric. Walking is the only way to navigate the maze.</p>
+
+      <h3>Trastevere</h3>
+      <p>Charming riverside neighborhood with cobblestone lanes, ivy-covered buildings, local restaurants, and views of the Tiber. Less touristy than Centro but increasingly popular. Best explored on foot, especially at dusk (6--8pm). It's compact and walkable in 1--2 hours if you're aimless.</p>
+
+      <h3>Testaccio</h3>
+      <p>Working-class neighborhood south of the center, authentic and younger than Centro Storico. Known for traditional cuisine, vintage bars, and a younger Roman expat crowd. Less walkable for tourism (no major monuments), but excellent for living and experiencing real Rome.</p>
+
+      <h3>Prati (Vatican Area)</h3>
+      <p>Grid-like residential neighborhood north of Vatican. Tree-lined streets, quieter than Centro. Good base for Vatican-focused visitors. Less medieval than Centro, more modern and organized. Good walkability between Castel Sant'Angelo and Vatican Museums.</p>
+
+      <h3>Jewish Ghetto</h3>
+      <p>Historic medieval quarter, cramped alleyways stacked with renaissance palazzi and modern apartment blocks (post-1870). Kosher restaurants, Jewish museums, deeply atmospheric. One of Rome's most undervisited neighborhoods despite proximity to Pantheon. Compact, walkable, and genuinely unique.</p>
+
+      <h2 id="walk1">Walk 1: The Baroque Heart (2.5 hours, 4km)</h2>
+
+      <div class="route-card">
+        <h3>The Baroque Heart of Rome</h3>
+        <p class="duration">Duration: 2.5 hours | Distance: 4km</p>
+        <p>A walking tour through Rome's Baroque period, connecting iconic churches and piazzas. Start mid-morning (10am) or afternoon (3pm) to avoid crowds and heat.</p>
+      </div>
+
+      <ol>
+        <li><strong>Piazza Navona (starting point):</strong> Bernini's Four Rivers Fountain, obelisk, baroque churches surrounding the square. Borromini's Church of Sant'Agnese in Agone. Arrive early for photos before crowds. (15 min)</li>
+
+        <li><strong>Via della Cuccagna south:</strong> Wander the medieval lanes south from Piazza Navona, passing small shops and bars. (10 min)</li>
+
+        <li><strong>Campo de' Fiori:</strong> Historic flower and vegetable market (8am--2pm weekdays, mornings only). Surrounded by renaissance buildings. Statue of Giordano Bruno (philosopher burned here in 1600). (20 min)</li>
+
+        <li><strong>Via dei Baullari southeast:</strong> Continue through medieval streets toward Largo Argentina. (10 min)</li>
+
+        <li><strong>Largo Argentina:</strong> Ruins of ancient temples (including Julius Caesar assassination site). Free open-air archaeological site. Cat sanctuary operates here. (20 min)</li>
+
+        <li><strong>Via del Gesù northeast:</strong> Head toward Piazza Venezia. (10 min)</li>
+
+        <li><strong>Piazza Venezia:</strong> Monumental Vittoriano (Il Vittoriano) -- free admission, rooftop views. Palace of Venice Renaissance building. (30 min)</li>
+
+        <li><strong>Via Sacra / Via dei Fori Imperiali:</strong> Roman Imperial forums walking tour. Arch of Constantine, Colosseum exterior (can't enter without ticket, but impressive from outside). (30 min)</li>
+
+        <li><strong>Return to start via different route</strong> or take metro from Colosseo back to Navona area. (transportation as needed)</li>
+      </ol>
+
+      <p><strong>Best time:</strong> October--March (less heat). Early morning (7--9am) beats crowds; evening (6--8pm) gives golden light. Avoid midday (11am--3pm) when sun is harsh and crowds peak.</p>
+
+      <h2 id="walk2">Walk 2: Trastevere Evening Walk (1.5 hours, 2km)</h2>
+
+      <div class="route-card">
+        <h3>Trastevere at Sunset</h3>
+        <p class="duration">Duration: 1.5 hours | Distance: 2km</p>
+        <p>An evening stroll through Trastevere's charming piazzas and medieval lanes. Best done 6pm--8pm for golden hour light and aperitivo (drinks).</p>
+      </div>
+
+      <ol>
+        <li><strong>Ponte Sisto (starting point):</strong> Bridge over the Tiber with views upstream and downstream. Street musicians often perform here. Sunset views at 7pm (Apr). (15 min)</li>
+
+        <li><strong>Via della Lungara northwest:</strong> Walk along the river. See Santa Maria in Trastevere church ahead. (10 min)</li>
+
+        <li><strong>Piazza di Santa Maria in Trastevere:</strong> The heart of Trastevere. 12th-century church with beautiful mosaics inside (free entry). Square surrounded by restaurants and bars. Bar San Calisto on the square is a Roman favorite for cheap wine and snacks. (30 min)</li>
+
+        <li><strong>Via della Pelliccia east:</strong> Wander the medieval lanes east of the piazza. Feel the neighborhood vibe. (15 min)</li>
+
+        <li><strong>Piazza Trilussa:</strong> Small piazza with Fountain of the Naiads. Less crowded than main square. Local bars and casual restaurants. (10 min)</li>
+
+        <li><strong>Wander medieval lanes:</strong> Via del Moro, Vicolo dell'Atleta, Via dei Servi. Get lost on purpose. Discover hole-in-the-wall trattorias and wine bars. (20 min)</li>
+
+        <li><strong>Return via different route or take Tram 8</strong> back to Largo Argentina if tired. (transportation as needed)</li>
+      </ol>
+
+      <p><strong>Best time:</strong> April--September, 6pm--8pm for sunset. Arrive before 7pm to secure aperitivo seating at Bar San Calisto or nearby restaurants.</p>
+
+      <h2 id="walk3">Walk 3: Ancient Rome Route (3 hours, 5km)</h2>
+
+      <div class="route-card">
+        <h3>Ancient Rome Archaeology Walk</h3>
+        <p class="duration">Duration: 3 hours | Distance: 5km</p>
+        <p>A walking tour of Rome's most important ancient monuments. Covers approximately 2,000 years of Roman history. Best done early morning (8am start) to beat crowds.</p>
+      </div>
+
+      <ol>
+        <li><strong>Circus Maximus (starting point):</strong> Take metro Line B to Circo Massimo station. Massive oval chariot-racing track (4th century BC to 6th century AD). Now a grassy park, free to explore. Walk the track perimeter. (20 min)</li>
+
+        <li><strong>Palatine Hill & Roman Forum (combined ticket EUR 18):</strong> The archaeological heart of Rome. Walking through temple ruins, senate buildings, villas of emperors. Plan 90 min minimum if entering (separate ticket required). Steep walks, no shade -- bring water. (90 min)</li>
+
+        <li><strong>Arch of Titus (exit Palatine/Forum):</strong> Triumphal arch from AD 81 commemorating the destruction of the Second Temple of Jerusalem. Climb the arch (free, no ticket needed). (10 min)</li>
+
+        <li><strong>Via Sacra:</strong> Ancient Roman main street through the forum. Walk its length toward the Colosseum. (10 min)</li>
+
+        <li><strong>Colosseum (Colosseo metro station):</strong> Can view exterior for free from outside. Ticket required to enter (EUR 18). Even without entering, the exterior is iconic and photogenic. (15 min)</li>
+
+        <li><strong>Trajan's Column & Markets (optional detour north):</strong> Via dei Fori Imperiali -- see Trajan's Column (marble column with 2,662 figures spiraling up). Free to view exterior. Roman Markets museum if interested (separate ticket EUR 10). (15 min)</li>
+
+        <li><strong>Piazza Venezia & Vittoriano (exit via dei Fori Imperiali north):</strong> Monumental complex, free admission, rooftop views of entire city. Good spot to rest and process what you've seen. (20 min)</li>
+
+        <li><strong>Return to start via metro:</strong> Take Line A west or taxi. (transportation as needed)</li>
+      </ol>
+
+      <p><strong>Best time:</strong> Early morning (8am start). Ancient monuments have minimal shade -- summer heat makes this walk brutal. Bring 1.5L water minimum, wear sunscreen, comfortable walking shoes mandatory.</p>
+
+      <h2 id="practical">Practical Walking Tips</h2>
+
+      <h3>Footwear: Critical for Rome</h3>
+
+      <p>Rome's cobblestones are ankle-spraining, especially in heels or flip-flops. Wear broken-in, comfortable shoes with good ankle support -- sneakers, walking boots, or flat leather shoes. Locals wear sneakers or flat boots, never heels. Cobblestones are beautiful but genuinely uneven and dangerous for unsupported feet.</p>
+
+      <div class="warning">
+        <strong>Blister Prevention:</strong> Even comfortable shoes can cause blisters on a 3-hour walk. Bring blister treatment (compeed patches), extra socks, or moleskin. Prevention beats treating blisters mid-walk.
+      </div>
+
+      <h3>Water Fountains: 2,500 Free "Nasoni"</h3>
+
+      <p>Rome has 2,500+ free public drinking fountains called "Nasoni" (big noses, due to their shape). Tap water is clean, cold, and free. Download the app "Where's the Fountain" (iOS/Android) to find nearby fountains. Refill your reusable bottle constantly -- dehydration is real in summer walks.</p>
+
+      <h3>Maps & Navigation</h3>
+
+      <p>Download Google Maps offline for Rome before walking. Wifi is patchy in historic areas. The app will keep you oriented even without data. Follow the blue line on the map, and you won't get lost. Getting lost is sometimes fun, but having a map backup is wise.</p>
+
+      <h3>Best Times to Walk</h3>
+
+      <ul>
+        <li><strong>Early morning (7--9am):</strong> Before crowds, cooler temperatures, beautiful light on ancient stones. Most pleasant time to walk.</li>
+        <li><strong>Golden hour (6--8pm):</strong> Evening light is magical for photography. Cooler than midday. Good for Trastevere and sunset walks.</li>
+        <li><strong>Avoid 11am--3pm:</strong> Heat, harsh light, massive crowds. Locals stay indoors during siesta hours.</li>
+      </ul>
+
+      <h3>Seasonal Considerations</h3>
+
+      <ul>
+        <li><strong>April--May and September--October:</strong> Perfect walking weather. Warm but not scorching. Moderate crowds.</li>
+        <li><strong>June--August:</strong> Extremely hot (30--35C), crowds peak, and many locals leave for vacation. Doable but challenging.</li>
+        <li><strong>November--March:</strong> Cooler (10--15C), fewer crowds, short daylight hours. Good for long walks if you don't mind the cold.</li>
+      </ul>
+
+      <h2 id="maps">Walking Routes Map</h2>
+
+      <p>Below is an interactive map showing all three walking routes. Zoom in/out to explore each path.</p>
+
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Explore Rome On Foot</h3>
+        <p>Walking is the best way to discover Rome's authentic character. Combine these routes for a complete experience of history, art, and neighborhood life.</p>
+        <a href="blog-post-22.html" class="cta-button">Back to Transportation Guide</a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>How much walking is involved in visiting Rome's main sites?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A lot, but it's manageable. The Colosseum to Pantheon is 25 minutes walking. If you're visiting 5--6 major sites in a day, expect 3--4 hours of continuous walking plus time spent at each site. Wear good shoes, bring water, and break it up with cafe stops. Walking is the best way to see Rome, so embrace it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Are Rome's streets safe to walk alone at night?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Generally safe in well-lit historic areas (Centro Storico, Trastevere) until 10--11pm. Avoid Termini station area after dark. Walk in groups if possible on quiet streets. Avoid parks (Villa Borghese, etc.) after dark. If out late, use a taxi or Uber rather than walking isolated streets. Common sense applies -- stay on busy main streets, avoid dark alleys.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>What if my feet hurt during a long walk?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Stop and rest. Cafe stops are frequent -- order a coffee or aperitivo (wine) and sit for 20 minutes. Your feet will recover. Rome is not a race. Many walks are designed with natural stopping points (piazzas, churches) where you can rest and take in the scenery. Take breaks liberally -- that's part of the Roman walking experience.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Can I walk to the Vatican from the city center?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, about 25--30 minutes from Piazza Navona or the Pantheon. Cross the Tiber, head northwest through Prati neighborhood, and arrive at Vatican Museums. It's entirely walkable and you'll pass local neighborhoods and get a feel for Rome beyond the historic center. The walk is pleasant and not exhausting.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>What's a "Nasone" and where can I find one?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A "Nasone" (big nose) is Rome's iconic public drinking fountain. They're brass spouts that squirt cold, clean tap water. 2,500+ exist throughout the city. They're free, the water is safe, and they're lifesavers on hot walks. Download the "Where's the Fountain" app (iOS/Android) to locate nearby fountains. They're scattered throughout Centro Storico and every neighborhood.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Which season is best for walking Rome?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>April--May and September--October are ideal. Temperatures are 18--25C, crowds are moderate, and light is beautiful. June--August is hot (30--35C) and crowded but doable if you walk early (7am) and rest midday. November--March is cool (10--15C) and quiet, good for long walks if you don't mind the cold and shorter daylight hours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Do I need a tour guide for these walks?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No. These routes are designed for self-guided exploration using Google Maps and basic knowledge of what you're visiting. A guidebook or audio guide (Rick Steves, Audible) adds context, but walking on your own gives you the freedom to go at your pace, take breaks, and discover off-route surprises. Self-guided walks are often better than crowded group tours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Can I combine multiple walks in one day?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely. Walk 1 and Walk 2 can be combined (Centro + Trastevere evening). Walk 3 is usually a full-day activity due to museums/sites. Fitness level and foot condition matter -- you'll accumulate 8--10km walking plus museum time. Break it up with long cafe stops and rest. Many visitors do all three walks across 2--3 days, which is comfortable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="author-bio">
+        <h4>About This Guide</h4>
+        <p>Walking guide for Rome based on actual street routes and visitor experience. Includes timings, distances, seasonal advice, and footwear warnings. Updated April 2026.</p>
+      </div>
+
+      <a href="blog-post-22.html" class="back-to-pillar">Back to Rome Transportation Guide</a>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Rome Expat Life & Community -- Your guide to living, working, and thriving in Rome.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([41.9028, 12.4964], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Walk 1: Baroque Heart (red line)
+    const walk1 = [
+      [41.8967, 12.4735],  // Piazza Navona
+      [41.8945, 12.4729],  // Via della Cuccagna
+      [41.8922, 12.4733],  // Campo de' Fiori
+      [41.8906, 12.4773],  // Largo Argentina
+      [41.8955, 12.4788],  // Via del Gesù
+      [41.8956, 12.4848]   // Piazza Venezia
+    ];
+
+    // Walk 2: Trastevere (green line)
+    const walk2 = [
+      [41.8881, 12.4671],  // Ponte Sisto
+      [41.8878, 12.4699],  // Via della Lungara
+      [41.8902, 12.4738],  // Piazza Santa Maria in Trastevere
+      [41.8914, 12.4743],  // Via della Pelliccia
+      [41.8897, 12.4770]   // Piazza Trilussa
+    ];
+
+    // Walk 3: Ancient Rome (blue line)
+    const walk3 = [
+      [41.8836, 12.4836],  // Circo Massimo
+      [41.8873, 12.4856],  // Palatine/Forum
+      [41.8893, 12.4923],  // Arch of Titus
+      [41.8902, 12.4917],  // Colosseum
+      [41.8917, 12.4864],  // Trajan's Column
+      [41.8956, 12.4848]   // Piazza Venezia
+    ];
+
+    // Add routes as polylines
+    L.polyline(walk1, { color: '#E8614B', weight: 4, opacity: 0.8 })
+      .bindPopup('Walk 1: The Baroque Heart (2.5 hours)')
+      .addTo(map);
+
+    L.polyline(walk2, { color: '#2B3A1B', weight: 4, opacity: 0.8 })
+      .bindPopup('Walk 2: Trastevere Evening (1.5 hours)')
+      .addTo(map);
+
+    L.polyline(walk3, { color: '#2b7acc', weight: 4, opacity: 0.8 })
+      .bindPopup('Walk 3: Ancient Rome (3 hours)')
+      .addTo(map);
+
+    // Add start/end markers
+    L.marker([41.8967, 12.4735], {
+      icon: L.divIcon({
+        className: 'start-icon',
+        html: '<div style="background: #E8614B; color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 12px;">Navona</div>'
+      })
+    }).addTo(map);
+
+    L.marker([41.8881, 12.4671], {
+      icon: L.divIcon({
+        className: 'start-icon',
+        html: '<div style="background: #2B3A1B; color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 12px;">Trastevere</div>'
+      })
+    }).addTo(map);
+
+    L.marker([41.8836, 12.4836], {
+      icon: L.divIcon({
+        className: 'start-icon',
+        html: '<div style="background: #2b7acc; color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 12px;">Circo Max</div>'
+      })
+    }).addTo(map);
+  </script>
+</body>
+</html>

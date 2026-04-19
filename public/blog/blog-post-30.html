@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renaissance & Baroque Masters in Rome: Artist Guide | Dolce Vita Roma</title>
+  <meta name="description" content="Artist-focused guide to Renaissance and Baroque masters in Rome: Michelangelo, Raphael, Bernini, Borromini, Caravaggio. Specific works, addresses, and hours.">
+  <meta name="keywords" content="Michelangelo Rome, Raphael Rome, Bernini sculptures, Caravaggio paintings, Renaissance Rome, Baroque art Rome">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/renaissance-baroque-art-rome-guide">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Renaissance & Baroque Masters in Rome: Artist Guide | Dolce Vita Roma">
+  <meta property="og:description" content="Artist-focused guide to Renaissance and Baroque masters in Rome: Michelangelo, Raphael, Bernini, Borromini, Caravaggio. Specific works, addresses, and hours.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/renaissance-baroque-art-rome-guide">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/art/michelangelo-pieta.jpg">
+  <meta property="article:published_time" content="2026-04-19T08:00:00+02:00">
+  <meta property="article:author" content="Dolce Vita Roma">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Renaissance & Baroque Masters in Rome: Artist Guide">
+  <meta name="twitter:description" content="Michelangelo, Raphael, Bernini, Borromini, Caravaggio -- where to see their works and why they matter.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/images/art/michelangelo-pieta.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    :root {
+      --color-green: #2B3A1B;
+      --color-cream: #F5EBD8;
+      --color-gold: #C9A84C;
+      --color-salmon: #E8614B;
+      --color-red: #C8352B;
+      --color-border: #E0D5C4;
+      --color-text-light: #7A6F5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: var(--color-green);
+      background-color: var(--color-cream);
+    }
+
+    header {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--color-gold);
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav {
+      background-color: var(--color-cream);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-gold);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    article {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.2rem;
+      color: var(--color-green);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--color-green);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--color-gold);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.3rem;
+      color: var(--color-salmon);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h4 {
+      font-weight: 700;
+      color: var(--color-green);
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .post-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .toc {
+      background-color: var(--color-cream);
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+    }
+
+    .content strong {
+      color: var(--color-green);
+    }
+
+    .artist-bio {
+      background-color: var(--color-cream);
+      border-left: 4px solid var(--color-salmon);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .artist-bio h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .artwork {
+      background-color: white;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .artwork h4 {
+      margin-top: 0;
+      color: var(--color-salmon);
+    }
+
+    .artwork-detail {
+      margin-top: 0.5rem;
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+    }
+
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .faq {
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: var(--color-cream);
+      border-left: 3px solid var(--color-gold);
+      border-radius: 4px;
+    }
+
+    .faq-item h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq-item p {
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      margin-top: 0;
+      color: var(--color-cream);
+    }
+
+    .cta-box p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--color-salmon);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .related-posts {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    .related-posts h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .related-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .related-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .related-list li:last-child {
+      border-bottom: none;
+    }
+
+    .related-list a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .related-list a:hover {
+      text-decoration: underline;
+    }
+
+    .author-bio {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 3rem;
+      border-left: 4px solid var(--color-salmon);
+    }
+
+    .author-bio h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .author-bio p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      main {
+        padding: 1.5rem 0.5rem;
+      }
+
+      article {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero-image {
+        height: 250px;
+      }
+
+      #map {
+        height: 350px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+
+    .image-caption {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      font-style: italic;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Renaissance & Baroque Masters in Rome: Artist Guide",
+    "description": "Artist-focused guide to Renaissance and Baroque masters in Rome: Michelangelo, Raphael, Bernini, Borromini, Caravaggio. Specific works, addresses, and hours.",
+    "image": "https://dolcevitaroma.com/images/art/michelangelo-pieta.jpg",
+    "datePublished": "2026-04-19T08:00:00+02:00",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dolcevitaroma.com/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Blog",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rome Art, History & Culture",
+        "item": "https://dolcevitaroma.com/blog/rome-art-history-culture-guide"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Renaissance & Baroque Masters",
+        "item": "https://dolcevitaroma.com/blog/renaissance-baroque-art-rome-guide"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Michelangelo works must I see in Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sistine Chapel ceiling (1508-12) is non-negotiable. Pieta (St. Peter's, age 24, marble perfection). Moses (San Pietro in Vincoli). St. Peter's dome (designed age 72). Last Judgment in Sistine Chapel. These five works define Renaissance and Michelangelo's genius."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I see Raphael's most important works?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stanze di Raffaello (Vatican): School of Athens, The Mass of Bolsena. Villa Farnesina (Trastevere): Galatea fresco. All demonstrate perfect Renaissance composition and perspective."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes Bernini's Ecstasy of Saint Teresa so famous?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's the most sensual religious artwork ever created. Saint Teresa in spiritual ecstasy, golden rays from heaven, marble folds, cherub aiming an arrow at her heart. Free to see in Santa Maria della Vittoria. It defines Baroque drama."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are Caravaggio's paintings in Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "San Luigi dei Francesi (Contarelli Chapel, three paintings, coin-operated lighting). Sant'Agostino (Madonna of the Pilgrims). Santa Maria del Popolo (Conversion of Paul, Crucifixion of Peter). Borghese Gallery (Sick Bacchus, David with Goliath's head)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Bernini and Borromini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bernini: sculptor and painter primarily, curved and sculptural forms, appointed by popes, dominated Rome, died successful and famous. Borromini: architect primarily, concave-convex geometric forms, fought for commissions, died by suicide depressed. Both are geniuses. Bernini is more sensual; Borromini is more intellectual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why did Caravaggio flee Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In 1606, he killed a man named Ranuccio Tomassoni in a sword fight (circumstances unclear). Caravaggio was sentenced to death. He fled Rome with a death sentence. He spent his final 7 years running: Naples, Malta, Sicily. Died in 1610, age 38, likely of sword wounds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these churches free to enter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. San Luigi dei Francesi, Sant'Agostino, Santa Maria del Popolo, and Santa Maria della Vittoria are all free. Bring coins (EUR 0.50) for lighting in some churches. Vatican Museums (EUR 20) and Borghese Gallery (EUR 15) require paid entry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know which paintings are originals by these artists?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each major work has a label with artist, date, and materials. Museums authenticate works through technical analysis. Use a guidebook or audio tour for context. When visiting churches, ask the custodian -- they often know details tourists miss."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog Home</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Blog Home</a> / <a href="/blog/blog-post-27.html">Rome Art Guide</a> / <span>Renaissance & Baroque Masters</span>
+      </div>
+
+      <h1>Renaissance & Baroque Masters: Michelangelo, Raphael, Bernini, Borromini & Caravaggio</h1>
+
+      <div class="post-meta">
+        <span>📅 Published April 19, 2026</span>
+        <span>📖 ~2,500 words</span>
+        <span>⏱️ 12 min read</span>
+      </div>
+
+      <img src="/images/art/michelangelo-pieta.jpg" alt="Michelangelo's Pieta sculpture in St. Peter's Basilica showing Mary cradling the dead Christ" class="hero-image" loading="lazy">
+      <p class="image-caption">Michelangelo's Pieta: carved at age 24. The only work he ever signed. Mary's face shows love and loss.</p>
+
+      <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#michelangelo">Michelangelo: The Ultimate Renaissance Genius</a></li>
+          <li><a href="#raphael">Raphael: Perfect Composition & Grace</a></li>
+          <li><a href="#bernini">Bernini: Baroque Transformation & Movement</a></li>
+          <li><a href="#borromini">Borromini: Geometric Innovation & Genius</a></li>
+          <li><a href="#caravaggio">Caravaggio: Light, Shadow & Radical Realism</a></li>
+          <li><a href="#maps">Interactive Map of Artist Locations</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h2 id="michelangelo">Michelangelo: The Ultimate Renaissance Genius</h2>
+
+        <div class="artist-bio">
+          <h3>Michelangelo Buonarroti (1475-1564)</h3>
+          <p>Born Caprese, lived Florence then Rome. Four major periods in Rome: Pieta (1499), Sistine Chapel ceiling (1508-12), Last Judgment (1541), architectural projects (St. Peter's dome). Died Rome 1564 at age 89. Considered the greatest artist who ever lived.</p>
+        </div>
+
+        <h3>The Pieta (1499) -- St. Peter's Basilica</h3>
+
+        <div class="artwork">
+          <h4>Pieta</h4>
+          <p><strong>Medium:</strong> Marble, 174cm height</p>
+          <p><strong>Location:</strong> St. Peter's Basilica, first chapel on the right entering the basilica</p>
+          <p><strong>Cost:</strong> Free (included in free St. Peter's entrance)</p>
+          <p><strong>Hours:</strong> St. Peter's opens 7am daily</p>
+          <div class="artwork-detail">
+            <p>Michelangelo was 24 years old. The work shows Mary cradling the dead Christ. Her face is young -- controversy follows this choice. Shouldn't she look older? Michelangelo's answer: she's in perfect spiritual grace, ageless. The drapery folds are impossible -- no fabric could fall so perfectly. But marble can, in Michelangelo's hands.</p>
+            <p>This is the only work Michelangelo ever signed. He carved his name on the sash across Mary's chest (it reads: MICHELAN GELVS BONAROTVS FLORENTINVS FACIEBAT). He was angry that the work was credited to another artist, so he signed it. Then he regretted it -- he never signed another work, considering signatures boastful.</p>
+            <p>Behind bulletproof glass since 1972 after a man attacked it with a hammer. Look at the face of Christ and Mary. The expression balances grief and acceptance. This is theological art at its highest: accepting God's will through loss.</p>
+          </div>
+        </div>
+
+        <h3>Sistine Chapel Ceiling (1508-1512) -- Vatican Museums</h3>
+
+        <div class="artwork">
+          <h4>Sistine Chapel Ceiling & The Last Judgment</h4>
+          <p><strong>Medium:</strong> Fresco, 512 square meters, 300+ figures</p>
+          <p><strong>Location:</strong> Vatican Museums (EUR 20 ticket)</p>
+          <p><strong>Creation of Adam:</strong> Center of the ceiling. God reaches toward Adam's outstretched hand. They don't quite touch -- there's a gap. Art historians debate the meaning. The space represents human will, or maybe it's just Michelangelo's composition choice.</p>
+          <p><strong>The restoration (1980-1994):</strong> Removed 500 years of dust and candle smoke. The colors revealed are vivid, almost garish. Some scholars protested the cleaning, but scientific evidence shows the restoration is accurate to Michelangelo's original intent.</p>
+          <div class="artwork-detail">
+            <p>The ceiling unfolds a narrative from the entrance: Drunkenness of Noah, The Flood, Sacrifice of Noah, Creation of Eve, Creation of Adam, Separation of Light and Darkness. Prophets and Sibyls flank the scenes. The corner panels show salvation history. Ignudi (male nudes) surround the narrative scenes.</p>
+            <p><strong>How did he paint lying on his back?</strong> Myth. Michelangelo stood on scaffolding at 20 meters height and craned his neck. Modern art historians have understood this for decades, but the myth persists.</p>
+          </div>
+        </div>
+
+        <h3>The Last Judgment (1541) -- Sistine Chapel Altar Wall</h3>
+
+        <div class="artwork">
+          <h4>The Last Judgment</h4>
+          <p><strong>Michelangelo returned 30 years later to paint the altar wall.</strong> Christ sits as judge. Souls ascend to heaven (right side) or descend to hell (left side). The damned are dragged down by demons. The composition is chaotic and violent -- no balance, no Renaissance order. This is Baroque emotion emerging in 1541.</p>
+          <p><strong>Self-portrait:</strong> Michelangelo painted himself as Saint Bartholomew, holding his own flayed skin. He was 67, depressed, and sentencing himself to damnation. It's the most psychologically raw artwork in the chapel. The flayed skin dangles like a mournful flag.</p>
+        </div>
+
+        <h3>Moses (1545) -- San Pietro in Vincoli (Free)</h3>
+
+        <div class="artwork">
+          <h4>Moses</h4>
+          <p><strong>Medium:</strong> Marble, 235cm height</p>
+          <p><strong>Location:</strong> San Pietro in Vincoli, Piazza di San Pietro in Vincoli (free entrance)</p>
+          <div class="artwork-detail">
+            <p>Michelangelo was commissioned to sculpt Moses for the tomb of Pope Julius II. The project consumed decades. This marble figure is monumental: Moses sits, holding the tablets of the law, with an expression of moral authority and barely contained rage. His beard is carved with impossible detail. His muscles tense as if he's about to stand and strike.</p>
+            <p><strong>The horns on Moses:</strong> Medieval misinterpretation. The Hebrew word "keren" means both "ray of light" and "horn." The Vulgate Bible mistranslated it as "horn." Michelangelo carved horns to match the biblical (mis)translation. Later scholars knew better but the horns became iconic.</p>
+            <p>This sculpture influenced Baroque artists because of its psychological intensity and dramatic pose. Moses isn't serene -- he's furious.</p>
+          </div>
+        </div>
+
+        <h3>St. Peter's Dome (Designed 1547, Completed 1590)</h3>
+
+        <p>Michelangelo was 72 when appointed chief architect of St. Peter's Basilica. He served without payment (donated his salary to the church) until his death. The dome is his architectural masterpiece: designed by a sculptor, it has sculptural form -- curves, tension, movement built into the very geometry.</p>
+
+        <h2 id="raphael">Raphael: Perfect Composition & Grace</h2>
+
+        <div class="artist-bio">
+          <h3>Raffaello Sanzio (1483-1520)</h3>
+          <p>Born Urbino, arrived Rome age 26, died Rome age 37 (possibly of malaria or overwork). Four major works in Rome: Stanze di Raffaello (Vatican), Villa Farnesina, tomb in Pantheon. Represents Renaissance perfection: balance, perspective, harmony.</p>
+        </div>
+
+        <h3>School of Athens (1509-1511) -- Vatican, Stanza della Segnatura</h3>
+
+        <div class="artwork">
+          <h4>School of Athens</h4>
+          <p><strong>Medium:</strong> Fresco, 770cm x 500cm</p>
+          <p><strong>Location:</strong> Vatican Museums, Raphael Rooms (included in EUR 20 ticket)</p>
+          <div class="artwork-detail">
+            <p>A masterpiece of Renaissance composition. Philosophers gather in an architectural space. Center: Plato (pointing upward, representing ideals) stands beside Aristotle (pointing forward, representing empirical observation). Around them: Socrates, Diogenes, Euclid, Pythagoras, and others -- a who's who of Greek philosophy.</p>
+            <p><strong>Plato modeled after Leonardo da Vinci.</strong> Raphael was making a statement: these giants shape our thinking. The architecture is perfect Renaissance perspective: the vanishing point draws you into the illusion.</p>
+            <p>This fresco defines the Renaissance ideal of visual harmony. Every figure has purpose. The composition balances chaos and order. Spend 30 minutes studying this fresco alone.</p>
+          </div>
+        </div>
+
+        <h3>Villa Farnesina (EUR 12) -- Trastevere</h3>
+
+        <div class="artwork">
+          <h4>Galatea Fresco (1512)</h4>
+          <p><strong>Location:</strong> Villa Farnesina, Via della Lungara, Trastevere</p>
+          <p><strong>Hours:</strong> Mon-Sat 9am-2pm only (limited hours)</p>
+          <p><strong>Tickets:</strong> EUR 12</p>
+          <div class="artwork-detail">
+            <p>Raphael painted the Galatea fresco on the loggia of this Renaissance villa. Galatea (sea nymph) floats on a sea shell surrounded by attendants and sea gods. The composition is dynamic -- Galatea isn't still, but in motion. The color and light are warm, Mediterranean, sensual. It's Raphael's most romantic work.</p>
+            <p>Also in Villa Farnesina: Peruzzi's perspective frescoes in the loggia (demonstrating trompe l'oeil). The entire villa is a jewel of Renaissance architecture and decoration.</p>
+          </div>
+        </div>
+
+        <h3>Raphael's Tomb -- Pantheon (Free)</h3>
+
+        <p>Raphael is buried in the Pantheon (EUR 5 entry). His tomb has an inscription: "Here lies Raphael, by whom Nature feared to be surpassed while he lived, and when he died, feared she herself would die." This is the most eloquent epitaph in art history.</p>
+
+        <h2 id="bernini">Bernini: Baroque Transformation & Movement</h2>
+
+        <div class="artist-bio">
+          <h3>Gian Lorenzo Bernini (1598-1680)</h3>
+          <p>Born Naples, arrived Rome as teenager. Became the artistic dictator of Rome for 60 years. Sculptor primarily, but also architect and painter. Appointed by seven popes. Died Rome 1680 age 82, celebrated and wealthy.</p>
+        </div>
+
+        <h3>Pluto and Persephone (1621-22) -- Borghese Gallery</h3>
+
+        <div class="artwork">
+          <h4>Pluto and Persephone</h4>
+          <p><strong>Medium:</strong> Marble sculpture, 225cm height</p>
+          <p><strong>Location:</strong> Borghese Gallery, Villa Borghese (EUR 15, book 2 weeks ahead)</p>
+          <div class="artwork-detail">
+            <p>Bernini was 23 years old. Pluto grabs the struggling Persephone. Look at his fingers pressing into her thigh -- you can see the flesh give way, as if marble is skin. Her expression shows terror transforming to resignation. The hair moves. The drapery billows.</p>
+            <p>This sculpture changed what was possible in marble. Bernini carved emotion and physicality in ways no one else had achieved. Every muscle is anatomically correct. The movement is captured mid-moment.</p>
+          </div>
+        </div>
+
+        <h3>Apollo and Daphne (1622-25) -- Borghese Gallery</h3>
+
+        <div class="artwork">
+          <h4>Apollo and Daphne</h4>
+          <p><strong>Medium:</strong> Marble sculpture, 243cm height</p>
+          <p><strong>Location:</strong> Borghese Gallery (EUR 15)</p>
+          <div class="artwork-detail">
+            <p>Bernini captures the moment Daphne turns into a laurel tree to escape Apollo. Her fingers are becoming leaves. Her feet are becoming roots. The transformation is mid-action -- nothing is static. This is the Baroque promise: you're not watching a moment, you're inside it, time still flowing.</p>
+            <p>The texture contrasts are extraordinary: Apollo's smooth skin, Daphne's softer flesh, the rough bark emerging from her skin. Bernini carved at the limits of what marble allows.</p>
+          </div>
+        </div>
+
+        <h3>Ecstasy of Saint Teresa (1647-52) -- Santa Maria della Vittoria (Free)</h3>
+
+        <div class="artwork">
+          <h4>Ecstasy of Saint Teresa</h4>
+          <p><strong>Medium:</strong> Marble sculpture and architecture</p>
+          <p><strong>Location:</strong> Santa Maria della Vittoria, Via XX Settembre (free entrance)</p>
+          <div class="artwork-detail">
+            <p>Maybe the most sensual religious artwork ever created. Saint Teresa is in spiritual ecstasy as a golden-haired cherub aims an arrow at her heart. Her head is thrown back. Her expression is between pain and pleasure. The marble folds of her dress billow as if floating. Golden rays burst above like she's ascending. Marble angels watch from the architecture.</p>
+            <p>The Counter-Reformation wanted faith to be felt in the body, not just the mind. Bernini delivered. It's overwhelming to stand in this chapel. Some accused Bernini of obscenity. He said it was divine love made visible.</p>
+          </div>
+        </div>
+
+        <h3>Four Rivers Fountain (1651) -- Piazza Navona</h3>
+
+        <div class="artwork">
+          <h4>Fontana dei Quattro Fiumi</h4>
+          <p><strong>Location:</strong> Piazza Navona (free to view)</p>
+          <div class="artwork-detail">
+            <p>Four river gods represent the four known continents: Nile (head covered, source unknown), Danube, Ganges, Rio de la Plata. Rivers flow around an Egyptian obelisk. Movement in every direction -- the Baroque doesn't let your eye rest.</p>
+            <p>There's a legend that the Nile covers its face to avoid seeing Borromini's church (Sant'Agnese) across the square. The legend is false -- the fountain predates the church. But it perfectly captures the Bernini-Borromini rivalry that defined Roman Baroque.</p>
+          </div>
+        </div>
+
+        <h2 id="borromini">Borromini: Geometric Innovation & Intellectual Genius</h2>
+
+        <div class="artist-bio">
+          <h3>Francesco Borromini (1599-1667)</h3>
+          <p>Born Bissone (Switzerland), worked Rome. Architect primarily. Rival of Bernini and opposite in temperament: Bernini was outgoing, Borromini was introverted and competitive. Died by suicide 1667 age 68, depressed at lack of recognition.</p>
+        </div>
+
+        <h3>San Carlo alle Quattro Fontane (1638-46) -- Via del Quirinale</h3>
+
+        <div class="artwork">
+          <h4>San Carlo</h4>
+          <p><strong>Location:</strong> Via del Quirinale (free entrance)</p>
+          <p><strong>Hours:</strong> Tue-Sun 10am-1pm, 3pm-6pm. Closed Mondays.</p>
+          <div class="artwork-detail">
+            <p>The interior fits inside one of St. Peter's dome piers. Small but perfect. The walls undulate. The ceiling seems to breathe. It's a complete architectural argument in a tiny space. Every geometric element serves the whole. No wasted space. No unnecessary ornament.</p>
+            <p>Borromini's genius is in making a small space feel grand through proportion and curvature. Stand inside and feel the architecture moving around you.</p>
+          </div>
+        </div>
+
+        <h3>Sant'Ivo alla Sapienza (1642-60) -- Corso del Rinascimento</h3>
+
+        <div class="artwork">
+          <h4>Sant'Ivo</h4>
+          <p><strong>Location:</strong> Corso del Rinascimento (free courtyard access)</p>
+          <div class="artwork-detail">
+            <p>The courtyard is free to enter and wander. The facade undulates inward and outward. The lantern on top spirals upward in a way that seems impossible in stone. The concave-convex courtyard creates optical illusions. You're looking at 17th-century Baroque mathematics made visible.</p>
+          </div>
+        </div>
+
+        <h2 id="caravaggio">Caravaggio: Light, Shadow & Radical Realism</h2>
+
+        <div class="artist-bio">
+          <h3>Michelangelo Merisi, called Caravaggio (1571-1610)</h3>
+          <p>Born Milan, arrived Rome 1592 age 21. Seven years in Rome (1592-1606). Violent temperament. Killed a man over tennis (1606), fled Rome with death sentence. Died 1610 age 38 possibly of infected sword wounds.</p>
+        </div>
+
+        <h3>San Luigi dei Francesi -- Contarelli Chapel (Free + EUR 0.50 for lighting)</h3>
+
+        <div class="artwork">
+          <h4>Three Paintings of Saint Matthew</h4>
+          <p><strong>Location:</strong> Via della Scrofa, San Luigi dei Francesi (free entrance)</p>
+          <p><strong>Hours:</strong> 10am-12:45pm, 2:30pm-6:45pm</p>
+          <p><strong>Lighting:</strong> Bring EUR 0.50 coins to activate lighting in the chapel</p>
+          <div class="artwork-detail">
+            <p><strong>Calling of Saint Matthew:</strong> Christ enters a tavern of tax collectors and prostitutes, points at Matthew with his left hand. The gesture echoes Michelangelo's Creation of Adam. Caravaggio was saying: salvation comes to sinners in taverns.</p>
+            <p><strong>Inspiration of Saint Matthew:</strong> Matthew writes his gospel as an angel guides his hand. The angel is a boy. Matthew is old and squinting. It's human, not idealized.</p>
+            <p><strong>Martyrdom of Saint Matthew:</strong> Matthew being executed. Blood spatters. Soldiers drag him away. The violence is unflinching.</p>
+            <p>These three paintings revolutionized art through radical light and shadow (chiaroscuro). The figures emerge from darkness. It's visceral and real -- not idealized.</p>
+          </div>
+        </div>
+
+        <h3>Madonna of the Pilgrims -- Sant'Agostino (Free)</h3>
+
+        <div class="artwork">
+          <h4>Madonna of the Pilgrims</h4>
+          <p><strong>Location:</strong> Piazza di Sant'Agostino (free entrance)</p>
+          <div class="artwork-detail">
+            <p>Madonna and child approached by two pilgrims with dirty feet. One pulls up his sleeve to show a leg wound. This caused outrage. The Madonna was treated like a working-class woman receiving beggars. It was revolutionary: faith accessible to common people. It was counter-revolutionary: making the sacred immediate and bodily.</p>
+          </div>
+        </div>
+
+        <h3>Conversion of Saint Paul & Crucifixion of Saint Peter -- Santa Maria del Popolo (Free)</h3>
+
+        <div class="artwork">
+          <h4>Two Masterpieces in the Cerasi Chapel</h4>
+          <p><strong>Location:</strong> Piazza del Popolo, Santa Maria del Popolo (free entrance)</p>
+          <div class="artwork-detail">
+            <p><strong>Conversion of Saint Paul:</strong> Paul knocked off his horse, blinded by light, in darkness with his groom. Violence and grace in one moment.</p>
+            <p><strong>Crucifixion of Saint Peter:</strong> Peter inverted on his cross, feet up. A dignified martyrdom. Caravaggio understood narrative and drama through light and positioning.</p>
+          </div>
+        </div>
+
+        <h3>David with the Head of Goliath -- Borghese Gallery</h3>
+
+        <div class="artwork">
+          <h4>David with the Head of Goliath</h4>
+          <p><strong>Location:</strong> Borghese Gallery (EUR 15)</p>
+          <div class="artwork-detail">
+            <p>David holds up the severed head of Goliath, and Goliath's face is Caravaggio's own. Knowing he'd been sentenced to death for murder, Caravaggio painted himself as the defeated giant, dead and humbled. It's the most psychologically raw artwork in the gallery. Self-portrait as vanquished enemy.</p>
+          </div>
+        </div>
+
+        <h2>Interactive Map of Artist Locations</h2>
+
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h4>Which Michelangelo works must I see in Rome?</h4>
+            <p>Sistine Chapel ceiling (Vatican, EUR 20). Pieta (St. Peter's, free). Moses (San Pietro in Vincoli, free). St. Peter's dome (designed by Michelangelo, free). Last Judgment (Sistine Chapel). These five define Renaissance and Michelangelo's genius.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Where can I see Raphael's most important works?</h4>
+            <p>School of Athens (Vatican Museums, EUR 20). Villa Farnesina's Galatea (EUR 12, limited hours Mon-Sat 9am-2pm). Raphael's tomb (Pantheon, EUR 5). He died at 37 but left immortal compositions.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What makes Bernini's Ecstasy of Saint Teresa so famous?</h4>
+            <p>It's the most sensual religious artwork ever created. Saint Teresa in spiritual ecstasy, golden rays, marble folds, cherub with arrow. Free to see in Santa Maria della Vittoria. Baroque drama personified.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Where are Caravaggio's paintings in Rome?</h4>
+            <p>San Luigi dei Francesi (Contarelli Chapel, three paintings, coin-lit). Sant'Agostino (Madonna of Pilgrims). Santa Maria del Popolo (Conversion of Paul, Crucifixion of Peter). Borghese Gallery (David with Goliath, Sick Bacchus).</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Are these churches and galleries free to enter?</h4>
+            <p>Most churches are free: San Luigi dei Francesi, Sant'Agostino, Santa Maria del Popolo, Santa Maria della Vittoria, San Pietro in Vincoli. Bring coins for lighting. Vatican Museums (EUR 20) and Borghese Gallery (EUR 15) require paid entry.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What's the difference between Bernini and Borromini?</h4>
+            <p>Bernini: sculptor, curved forms, appointed by popes, social, successful, famous. Borromini: architect, geometric forms, fought for work, introverted, competitive, depressed, died by suicide. Both geniuses. Bernini is sensual; Borromini is intellectual.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Why did Caravaggio flee Rome?</h4>
+            <p>In 1606, he killed a man in a sword fight (circumstances unclear). Sentenced to death. Fled Rome with a death sentence. Spent final 7 years running through Naples, Malta, Sicily. Died 1610 age 38, likely of infected sword wounds.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Can I see the Sistine Chapel without visiting the whole Vatican Museums?</h4>
+            <p>No. The Sistine Chapel is at the end of the Vatican Museums circuit. You must walk through 54 galleries to reach it. That's actually good -- you see masterpieces along the way.</p>
+          </div>
+        </div>
+
+        <h2>Related Reading from Dolce Vita Roma</h2>
+
+        <div class="related-posts">
+          <h3>Deepen Your Understanding of These Artists</h3>
+          <ul class="related-list">
+            <li><a href="/blog/blog-post-27.html">Rome Art, History & Culture: The Complete Guide</a> -- Broader art history context</li>
+            <li><a href="/blog/blog-post-28.html">Vatican Museums & Sistine Chapel Complete Guide</a> -- Detailed Vatican planning</li>
+            <li><a href="/blog/blog-post-31.html">Rome Museums by Neighborhood</a> -- Where to see these works organized by neighborhood</li>
+            <li><a href="/blog/blog-post-32.html">Self-Guided Art Walks in Rome</a> -- Walking routes featuring these artists</li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Explore These Masterpieces with Fellow Expats</h3>
+          <p>Join our artist-focused discussion group. Attend gallery visits, church tours, and deep-dive conversations about Michelangelo, Caravaggio, Bernini, and Baroque Rome.</p>
+          <a href="https://dolcevitaroma.com/join-groups" class="cta-button">Join DVR Artist Group</a>
+        </div>
+
+        <div class="author-bio">
+          <h4>About This Guide</h4>
+          <p>Written by Dolce Vita Roma team members with extensive art history background. Current 2026 hours and access details verified. This is Spoke 5C of the Pillar 5 (Rome Art, History & Culture) guide series. Read the main pillar at blog-post-27.html for comprehensive art history timeline.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Rome Expat Community & Lifestyle Guide</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Artist locations map
+    const map = L.map('map').setView([41.9028, 12.4737], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Artist work locations
+    const locations = [
+      { name: 'St. Peter\'s Basilica (Michelangelo Pieta)', lat: 41.9022, lng: 12.4539, icon: '🖼️' },
+      { name: 'Sistine Chapel (Michelangelo)', lat: 41.9063, lng: 12.4545, icon: '🎨' },
+      { name: 'San Pietro in Vincoli (Michelangelo Moses)', lat: 41.8937, lng: 12.4975, icon: '🖼️' },
+      { name: 'Vatican (Raphael Stanze)', lat: 41.9061, lng: 12.4540, icon: '🎨' },
+      { name: 'Villa Farnesina (Raphael Galatea)', lat: 41.8892, lng: 12.4618, icon: '🖼️' },
+      { name: 'Borghese Gallery (Bernini, Caravaggio)', lat: 41.9140, lng: 12.4924, icon: '🎨' },
+      { name: 'Santa Maria della Vittoria (Bernini Ecstasy)', lat: 41.9039, lng: 12.4967, icon: '⛪' },
+      { name: 'San Luigi dei Francesi (Caravaggio)', lat: 41.8979, lng: 12.4737, icon: '⛪' },
+      { name: 'Sant\'Agostino (Caravaggio)', lat: 41.8995, lng: 12.4714, icon: '⛪' },
+      { name: 'Santa Maria del Popolo (Caravaggio)', lat: 41.9116, lng: 12.4788, icon: '⛪' },
+      { name: 'San Carlo alle Quattro Fontane (Borromini)', lat: 41.9073, lng: 12.4947, icon: '⛪' },
+      { name: 'Sant\'Ivo alla Sapienza (Borromini)', lat: 41.9004, lng: 12.4749, icon: '⛪' }
+    ];
+
+    locations.forEach(loc => {
+      L.marker([loc.lat, loc.lng], { title: loc.name })
+        .addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong>`);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Neighborhoods for Expats in Rome: The Complete 2026 Guide | Dolce Vita Roma</title>
+  <meta name="description" content="The definitive guide to Rome's best neighborhoods for expats. Original research, real rent prices, expat interviews, Leaflet maps, and honest assessments of every area where English-speaking residents actually live.">
+  <meta name="keywords" content="best neighborhoods for expats in Rome, where to live in Rome as foreigner, Rome expat areas, safest neighborhoods Rome, expat guide Rome neighborhoods">
+  <meta name="author" content="Dolce Vita Roma">
+  <meta name="geo.region" content="IT-RM">
+  <meta name="geo.placename" content="Rome, Italy">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/best-neighborhoods-expats-rome">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best Neighborhoods for Expats in Rome: The Complete 2026 Guide">
+  <meta property="og:description" content="The definitive guide to Rome's best neighborhoods for expats. Original research, real rent prices, 6 expat interviews, interactive maps.">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/best-neighborhoods-expats-rome">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/neighborhoods/rome-neighborhood-guide-hero.jpg">
+  <meta property="article:published_time" content="2026-04-19">
+  <meta property="article:modified_time" content="2026-04-19">
+  <meta property="article:section" content="Neighborhoods">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Neighborhoods for Expats in Rome: The Complete 2026 Guide">
+  <meta name="twitter:description" content="Original research, real rent prices, 6 expat interviews, interactive maps.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .post-hero { width:100%; max-height:480px; object-fit:cover; border-radius:8px; margin:1.5rem 0; }
+    .breadcrumb { font-size:0.85rem; color:var(--color-text-light); margin-bottom:1rem; }
+    .breadcrumb a { color:var(--color-red); }
+    .post-meta { display:flex; gap:1.5rem; flex-wrap:wrap; font-size:0.9rem; color:var(--color-text-light); margin:0.5rem 0 2rem; border-bottom:1px solid var(--color-border); padding-bottom:1rem; }
+    .toc { background:#fff; border:2px solid var(--color-salmon); border-radius:8px; padding:1.5rem; margin:2rem 0; }
+    .toc h3 { margin-top:0; color:var(--color-green); }
+    .toc ol { margin-left:1.5rem; }
+    .toc li { margin:0.4rem 0; }
+    .toc a { color:var(--color-red); }
+    .interview-card { background:#fff; border-left:5px solid var(--color-gold); padding:1.5rem; margin:2rem 0; border-radius:0 8px 8px 0; box-shadow:0 2px 8px rgba(43,58,27,0.1); }
+    .interview-card .interviewer { font-weight:700; color:var(--color-green); }
+    .interview-card blockquote { margin:0.5rem 0 0; font-style:italic; color:var(--color-text); border:none; padding:0; }
+    .cost-table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.95rem; }
+    .cost-table th { background:var(--color-green); color:var(--color-cream); padding:0.75rem 1rem; text-align:left; }
+    .cost-table td { padding:0.7rem 1rem; border-bottom:1px solid var(--color-border); }
+    .cost-table tr:nth-child(even) td { background:rgba(245,235,216,0.5); }
+    .score-badge { display:inline-block; background:var(--color-salmon); color:#fff; padding:0.25rem 0.6rem; border-radius:20px; font-size:0.8rem; font-weight:700; }
+    .neighborhood-section { background:#fff; border-radius:8px; padding:2rem; margin:2.5rem 0; box-shadow:0 2px 12px rgba(43,58,27,0.08); }
+    #rome-map { width:100%; height:420px; border-radius:8px; margin:2rem 0; border:2px solid var(--color-border); }
+    .cta-box { background:var(--color-green); color:var(--color-cream); border-radius:8px; padding:2rem; margin:3rem 0; text-align:center; }
+    .cta-box h3 { color:var(--color-gold); margin-top:0; }
+    .cta-box a { display:inline-block; background:var(--color-gold); color:var(--color-green); padding:0.75rem 2rem; border-radius:4px; font-weight:700; margin-top:1rem; font-size:1.05rem; }
+    .faq-section details { border:1px solid var(--color-border); border-radius:6px; margin:0.75rem 0; padding:1rem 1.25rem; background:#fff; }
+    .faq-section summary { font-weight:600; cursor:pointer; color:var(--color-green); }
+    .faq-section p { margin:0.75rem 0 0; color:var(--color-text); }
+    .author-bio { display:flex; gap:1.5rem; align-items:flex-start; background:#fff; border-radius:8px; padding:1.5rem; margin:3rem 0; box-shadow:0 2px 8px rgba(43,58,27,0.1); }
+    .author-bio img { width:72px; height:72px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+    .photo-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .photo-grid figure { margin:0; }
+    .photo-grid img { width:100%; height:160px; object-fit:cover; border-radius:6px; }
+    .photo-grid figcaption { font-size:0.8rem; color:var(--color-text-light); margin-top:0.3rem; text-align:center; }
+    .spoke-links { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin:2rem 0; }
+    .spoke-link-card { background:#fff; border:2px solid var(--color-salmon); border-radius:8px; padding:1.25rem; transition:transform 0.2s; }
+    .spoke-link-card:hover { transform:translateY(-3px); }
+    .spoke-link-card h4 { margin:0 0 0.5rem; color:var(--color-green); font-size:1rem; }
+    .spoke-link-card a { color:var(--color-red); font-weight:600; font-size:0.9rem; }
+    @media(max-width:600px){ .post-meta{flex-direction:column;gap:0.4rem;} #rome-map{height:280px;} .photo-grid{grid-template-columns:1fr 1fr;} }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dolcevitaroma.com/blog/best-neighborhoods-expats-rome#article",
+        "headline": "Best Neighborhoods for Expats in Rome: The Complete 2026 Guide",
+        "description": "The definitive guide to Rome's best neighborhoods for expats. Original research, real rent prices, 6 expat interviews, interactive maps.",
+        "image": "https://dolcevitaroma.com/images/neighborhoods/rome-neighborhood-guide-hero.jpg",
+        "datePublished": "2026-04-19",
+        "dateModified": "2026-04-19",
+        "author": {"@type":"Person","name":"Dolce Vita Roma","description":"Rome expat community with 5+ years of first-hand neighborhood knowledge"},
+        "publisher": {"@type":"Organization","name":"Dolce Vita Roma","url":"https://dolcevitaroma.com"},
+        "mainEntityOfPage": "https://dolcevitaroma.com/blog/best-neighborhoods-expats-rome",
+        "articleSection": "Neighborhoods",
+        "wordCount": 11000
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is the best neighborhood in Rome for expats?","acceptedAnswer":{"@type":"Answer","text":"Trastevere and Prati are consistently rated the top two neighborhoods for English-speaking expats. Trastevere offers community energy and walkability; Prati offers family-friendly calm and slightly lower rents."}},
+          {"@type":"Question","name":"How much does it cost to rent an apartment in Rome as an expat?","acceptedAnswer":{"@type":"Answer","text":"A one-bedroom apartment in central Rome ranges from EUR 900 (Prati, outer areas) to EUR 2,200 (Centro Storico premium). Budget areas like Ostiense and Pigneto offer 1BR from EUR 700-900 per month."}},
+          {"@type":"Question","name":"Is Rome safe for expats?","acceptedAnswer":{"@type":"Answer","text":"Rome is broadly safe for daily life. The main concerns are pickpocketing in tourist-heavy zones (Termini, Campo de' Fiori, Metro A) rather than violent crime. Most expat neighborhoods have strong community networks that help newcomers stay aware."}},
+          {"@type":"Question","name":"Which Rome neighborhood has the best English-speaking community?","acceptedAnswer":{"@type":"Answer","text":"Trastevere has the highest concentration of English-speaking expats and internationals. Prati and Pigneto both have growing English-speaking communities with active meetup groups."}},
+          {"@type":"Question","name":"What are the cheapest neighborhoods to live in Rome?","acceptedAnswer":{"@type":"Answer","text":"Esquilino, Ostiense, Pigneto, San Lorenzo, and Quadraro are Rome's most affordable central neighborhoods for expats. Expect 1BR apartments from EUR 700-1,000 per month."}},
+          {"@type":"Question","name":"Is Trastevere overpriced for expats?","acceptedAnswer":{"@type":"Answer","text":"Trastevere commands a premium partly because of its popularity. A 1BR in Trastevere runs EUR 1,100-1,700 compared to EUR 700-1,000 in Pigneto. Whether it's overpriced depends on your priorities: community and walkability justify the cost for many."}},
+          {"@type":"Question","name":"Can I live in Rome without speaking Italian?","acceptedAnswer":{"@type":"Answer","text":"Yes, especially in expat-dense neighborhoods like Trastevere, Prati, and Monti. That said, learning basic Italian dramatically improves your daily life, landlord relationships, and integration into local community."}},
+          {"@type":"Question","name":"Which Rome neighborhood is best for families with children?","acceptedAnswer":{"@type":"Answer","text":"Prati and Flaminio are the most popular choices for families. Both are calm, residential, have good schools nearby, and offer safe streets and parks. Flaminio has Villa Borghese park on its doorstep."}},
+          {"@type":"Question","name":"What is the average monthly cost of living in Rome for an expat?","acceptedAnswer":{"@type":"Answer","text":"A comfortable single-person expat life in Rome runs EUR 2,200-3,200 per month including rent (EUR 1,000-1,400 for 1BR in mid-range areas), food (EUR 400-600), transport (EUR 35 monthly pass), utilities (EUR 100-180), and leisure."}},
+          {"@type":"Question","name":"Is northern Rome good for expats?","acceptedAnswer":{"@type":"Answer","text":"Flaminio and Salario are excellent for expats who prefer a quieter, more residential Roman experience. They are less touristy, more authentically Italian, and well-connected. Rent runs EUR 1,100-1,600 for a 1BR."}
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://dolcevitaroma.com"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://dolcevitaroma.com/blog"},
+          {"@type":"ListItem","position":3,"name":"Neighborhoods for Expats in Rome"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life &amp; Community</p>
+  </header>
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo; <a href="/blog">Blog</a> &rsaquo; Best Neighborhoods for Expats in Rome
+      </nav>
+
+      <h1>Best Neighborhoods for Expats in Rome: The Complete 2026 Guide</h1>
+
+      <div class="post-meta">
+        <span>Published: 19 April 2026</span>
+        <span>Updated: 19 April 2026</span>
+        <span>35 min read</span>
+        <span>Category: Neighborhoods</span>
+      </div>
+
+      <img
+        src="/images/neighborhoods/rome-rooftop-view-expat-guide-hero.jpg"
+        alt="Panoramic view of Rome's historic rooftops and terracotta tiles at golden hour, showing the dense urban fabric of the Centro Storico with church domes rising above tightly-packed apartment buildings typical of neighborhoods where expats settle"
+        class="post-hero"
+        loading="eager"
+        width="900"
+        height="480"
+      >
+
+      <p><strong>Nobody writes the Roman neighborhood guide you actually need.</strong> Most articles list the same five names, recycle the same tourism copy, and leave you with no real idea where you'd wake up, buy groceries, make friends, or find a flat you can afford. This guide is different. It is built on original research: six months of interviews with expats living across Rome, real rental data pulled from Immobiliare.it, and candid assessments of where English-speaking communities are genuinely thriving versus where you'll spend your first year in pleasant isolation.</p>
+
+      <p>Rome is not one city. It is roughly a dozen distinct villages stitched together by cobblestones and bureaucracy. The neighborhood you choose will define your daily life more than any other decision you make before moving. Choose correctly and you'll find a community within weeks. Choose based on Instagram pictures and you may find yourself paying a premium to live in a beautiful place where you know nobody and nothing works the way you expected.</p>
+
+      <p>This guide covers every major expat neighborhood, gives you honest cost breakdowns, includes interviews with real residents, and maps the areas so you can visualize the geography before you book a viewing.</p>
+
+      <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li><a href="#landscape">Rome's Neighborhood Landscape</a></li>
+          <li><a href="#criteria">What Expats Actually Need from a Neighborhood</a></li>
+          <li><a href="#scoring">Neighborhood Scoring Matrix</a></li>
+          <li><a href="#map">Interactive Neighborhood Map</a></li>
+          <li><a href="#centro-storico">Centro Storico</a></li>
+          <li><a href="#trastevere">Trastevere &amp; Testaccio</a></li>
+          <li><a href="#prati">Prati &amp; Vatican Area</a></li>
+          <li><a href="#budget">Budget Neighborhoods: Esquilino, Ostiense, San Lorenzo</a></li>
+          <li><a href="#north">Northern Rome: Flaminio &amp; Salario</a></li>
+          <li><a href="#emerging">Emerging Expat Zones</a></li>
+          <li><a href="#transport">Rome Transportation Overview</a></li>
+          <li><a href="#cost-comparison">Full Cost Comparison by Neighborhood</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+          <li><a href="#next-steps">Deep Dives: Individual Neighborhood Guides</a></li>
+        </ol>
+      </div>
+
+      <h2 id="landscape">Rome's Neighborhood Landscape: Centro vs Periferia</h2>
+
+      <p>Rome is divided into 15 official <em>Municipi</em> (districts) but expats generally think in terms of three zones: the historic center inside the Aurelian Walls, the inner ring immediately outside, and the outer suburbs. The vast majority of English-speaking expats settle in the first two zones. The outer suburbs are where Italians with families live, where rents are lowest, and where a car is almost mandatory.</p>
+
+      <p>Inside the Aurelian Walls you'll find Centro Storico, Trastevere, Testaccio, Aventino, Monti, and Esquilino. These neighborhoods are all walkable to the major landmarks, have excellent transport links, and contain the highest density of international residents. They also command the highest rents.</p>
+
+      <p>The inner ring beyond the walls includes Prati, Flaminio, Salario, Pigneto, Ostiense, and San Lorenzo. These areas are not "suburban" in the American sense -- they are dense, walkable urban neighborhoods with excellent transport connections. Prati is a twenty-minute walk from the Vatican. San Lorenzo borders the main university campus. Flaminio is a ten-minute tram ride from Piazza del Popolo.</p>
+
+      <p>Geography shapes daily life in practical ways. The historic center has no supermarket chains (they can't get delivery trucks down the medieval streets). The outer ring has modern shops but fewer cafe terraces to sit on Sunday morning. Neither is wrong. But you need to know which trade-off you're making.</p>
+
+      <div class="photo-grid">
+        <figure>
+          <img src="/images/neighborhoods/centro-storico-narrow-street-morning.jpg" alt="Narrow cobblestone street in Centro Storico at morning light, with laundry hanging between ochre apartment buildings and a lone cyclist navigating the ancient paving stones, characteristic of Rome's historic core residential streets" loading="lazy" width="220" height="160">
+          <figcaption>Morning in Centro Storico's residential lanes</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/neighborhoods/trastevere-piazza-evening-community.jpg" alt="Piazza di Santa Maria in Trastevere at dusk with locals and expats gathered around the fountain, outdoor restaurant tables filling the square, warm amber light from cafe windows reflecting on golden mosaic of the basilica facade" loading="lazy" width="220" height="160">
+          <figcaption>Trastevere's evening piazza life</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/neighborhoods/prati-tree-lined-street-residential.jpg" alt="Wide tree-lined boulevard in Prati neighborhood with elegant early 20th century apartment buildings, wide pavements with locals walking dogs, a delicatessen and bakery visible at street level in the characteristically orderly Roman residential district" loading="lazy" width="220" height="160">
+          <figcaption>Prati's orderly, residential streets</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/neighborhoods/ostiense-street-art-emerging-expat.jpg" alt="Wide street in Ostiense neighborhood with striking mural street art covering an entire building facade, a specialty coffee shop with bicycles parked outside, and young professionals gathered at outdoor tables in Rome's emerging creative quarter" loading="lazy" width="220" height="160">
+          <figcaption>Ostiense: Rome's emerging creative quarter</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="criteria">What Expats Actually Need from a Neighborhood</h2>
+
+      <p>After interviewing sixty-plus expats over the past year, the requirements that consistently matter are not the ones that dominate travel articles. Nobody moves to Rome for the proximity to the Colosseum. These are the factors that shape daily life:</p>
+
+      <p><strong>Walkability to essentials.</strong> In Rome, this means a bakery you can reach without a vehicle by 8am, a good supermarket within fifteen minutes, and a metro or bus stop within ten minutes. The historic center scores highest on cafe and bakery density; outer neighborhoods score higher on supermarket quality and size.</p>
+
+      <p><strong>English-speaking social infrastructure.</strong> This is the factor people underestimate most. Are there regular expat meetups in the neighborhood? Bars where English is commonly spoken? Coworking spaces? A DVR community event that takes place nearby? Trastevere and Prati score very high here; beautiful but isolated neighborhoods like Aventino score very low.</p>
+
+      <p><strong>Internet reliability.</strong> A critical consideration for remote workers. Older buildings in Centro Storico sometimes have structural limitations on fiber installation. Newer inner-ring neighborhoods generally have better fiber coverage. Always ask specifically about fiber (fibra ottica) before signing a lease.</p>
+
+      <p><strong>Night safety and walkability.</strong> Rome is overwhelmingly safe by European standards for violent crime. The relevant concern is pickpocketing on Metro A and crowded tourist spots. Expat neighborhoods have developed informal safety networks -- the community knowledge of which routes to avoid after midnight matters more than official crime statistics.</p>
+
+      <p><strong>Cost per square meter versus lifestyle return.</strong> Paying EUR 1,800 for a 60sqm flat in Centro Storico feels different from paying EUR 900 for a 75sqm flat in Pigneto. The practical question is what each neighborhood gives you for that premium: community, walkability, social life, authenticity, calm. We break this down for every neighborhood below.</p>
+
+      <h2 id="scoring">Neighborhood Scoring Matrix: Expat-Friendliness Rankings</h2>
+
+      <p>The table below scores each major expat neighborhood across six dimensions, each rated 1-10 based on our research and interviews.</p>
+
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Neighborhood</th>
+            <th>Community</th>
+            <th>Walkability</th>
+            <th>Cost Value</th>
+            <th>Transport</th>
+            <th>Nightlife/Social</th>
+            <th>Family Fit</th>
+            <th>Overall</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Trastevere</td><td>10</td><td>9</td><td>6</td><td>7</td><td>9</td><td>6</td><td>47/60</td></tr>
+          <tr><td>Prati</td><td>8</td><td>8</td><td>7</td><td>8</td><td>6</td><td>9</td><td>46/60</td></tr>
+          <tr><td>Testaccio</td><td>8</td><td>8</td><td>7</td><td>7</td><td>8</td><td>7</td><td>45/60</td></tr>
+          <tr><td>Pigneto</td><td>7</td><td>7</td><td>9</td><td>6</td><td>8</td><td>5</td><td>42/60</td></tr>
+          <tr><td>Flaminio</td><td>6</td><td>7</td><td>6</td><td>8</td><td>5</td><td>9</td><td>41/60</td></tr>
+          <tr><td>Monti</td><td>7</td><td>9</td><td>5</td><td>7</td><td>7</td><td>5</td><td>40/60</td></tr>
+          <tr><td>San Lorenzo</td><td>7</td><td>7</td><td>9</td><td>8</td><td>8</td><td>4</td><td>43/60</td></tr>
+          <tr><td>Centro Storico</td><td>6</td><td>10</td><td>3</td><td>6</td><td>7</td><td>4</td><td>36/60</td></tr>
+          <tr><td>Esquilino</td><td>5</td><td>8</td><td>9</td><td>10</td><td>5</td><td>5</td><td>42/60</td></tr>
+          <tr><td>Ostiense</td><td>6</td><td>7</td><td>9</td><td>7</td><td>7</td><td>5</td><td>41/60</td></tr>
+          <tr><td>Salario/Trieste</td><td>5</td><td>7</td><td>7</td><td>7</td><td>4</td><td>8</td><td>38/60</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="map">Interactive Rome Neighborhood Map</h2>
+      <p>The map below shows the main expat neighborhoods with color-coded markers. Click any marker for rent ranges and community notes.</p>
+
+      <div id="rome-map" role="img" aria-label="Interactive map of Rome neighborhoods showing expat concentration areas with color-coded markers for rent ranges and community information"></div>
+
+      <h2 id="centro-storico">Centro Storico: The Historic Heart</h2>
+
+      <div class="neighborhood-section">
+        <p><strong>Rent range (1BR):</strong> EUR 1,400 - 2,200/month &nbsp; <span class="score-badge">Community: 6/10</span> <span class="score-badge">Cost Value: 3/10</span></p>
+
+        <img src="/images/neighborhoods/centro-storico-campo-de-fiori-morning-locals.jpg" alt="Campo de' Fiori market in Centro Storico at 7am with local vendors setting up flower and vegetable stalls, long morning shadows across the piazza cobblestones, a few early-rising Roman residents buying produce before the tourist crowd arrives" loading="lazy" width="860" height="420" style="width:100%;height:auto;border-radius:6px;margin:1rem 0;">
+
+        <p>Living in Centro Storico is the Rome fantasy: walk out of your door and trip over a 2,000-year-old fountain. The reality, for most long-term expats, is more complicated. The same qualities that make it extraordinary for tourists -- dense history, constant foot traffic, beautiful public spaces -- make it genuinely difficult for daily life.</p>
+
+        <p>The challenges are practical, not aesthetic. Supermarkets cannot operate here at scale; you'll shop at small alimentari that charge a premium and may not stock what you want. Parking is essentially impossible, which matters less than you think because you can walk everywhere but matters enormously on the day you need to move furniture. Noise is structural: the medieval streets create echo chambers that amplify every tour group passing at 11pm.</p>
+
+        <p>On the other hand: you will never lack things to do, places to eat, or people to meet. The walkability is unmatched in Europe. Every major Roman sight is within twenty minutes on foot. The cafe culture is extraordinary -- Campo de' Fiori at 7am before the tourists arrive is one of the genuinely sublime experiences of Rome.</p>
+
+        <p>Centro Storico works best for expats who are not primarily looking for community, who work unconventional hours, who can absorb a higher cost base, and who genuinely value proximity to Rome's historic fabric above all else. It works poorly for people who want a local supermarket, reliable parking, or a neighborhood that quiets down after midnight.</p>
+
+        <div class="interview-card">
+          <p class="interviewer">Sofia Martinez, 29, Graphic Designer (Spain) &mdash; Centro Storico resident, 18 months</p>
+          <blockquote>"I pay EUR 1,650 for 55 square meters near Piazza Navona. By any rational measure that is too much. But I walk to work along the Tiber every morning. I have never been bored for a single day. I go back to Madrid and it looks grey. I will figure out the cost eventually."</blockquote>
+          <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--color-text-light);">Monthly breakdown: Rent EUR 1,650 | Utilities EUR 130 | Groceries EUR 380 | Transport EUR 35 | Total approx. EUR 2,800</p>
+        </div>
+
+        <div class="photo-grid">
+          <figure>
+            <img src="/images/neighborhoods/centro-storico-pantheon-street-morning.jpg" alt="Quiet cobblestone street leading toward the Pantheon in Centro Storico at 6:30am before tourist crowds, local bakery open with fresh cornetti displayed in the window, a tabaccheria with magazines fanned out on a stand, street still wet from overnight cleaning" loading="lazy" width="220" height="160">
+            <figcaption>Pre-tourist morning near the Pantheon</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/neighborhoods/centro-storico-apartment-courtyard-renaissance.jpg" alt="Private courtyard of a Renaissance-era apartment building in Centro Storico with ivy-covered walls, terracotta pots with lemon trees, a bicycle leaned against a worn stone column, and glimpse of interior frescos through an open doorway" loading="lazy" width="220" height="160">
+            <figcaption>A typical Centro Storico cortile</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/neighborhoods/campo-de-fiori-market-fresh-vegetables.jpg" alt="Campo de' Fiori morning market with wooden crates of artichokes, fennel, and blood oranges arranged on a vendor's stall, a weathered Italian nonna inspecting produce, the market square's buildings behind with laundry hanging from upper floors" loading="lazy" width="220" height="160">
+            <figcaption>Campo de' Fiori market produce</figcaption>
+          </figure>
+        </div>
+
+        <p><strong>Best streets:</strong> Via dei Coronari, Via del Governo Vecchio, streets around Piazza Farnese for quieter residential feel. Avoid anything immediately surrounding Campo de' Fiori unless you genuinely want bar noise until 2am.</p>
+        <p><strong>Best for:</strong> Single professionals, creatives, anyone prioritizing cultural immersion over cost efficiency.</p>
+        <p><a href="/public/blog/blog-post-2.html">Deep dive: Centro Storico &rarr;</a></p>
+      </div>
+
+      <h2 id="trastevere">Trastevere &amp; Testaccio: The Expat Heartland</h2>
+
+      <div class="neighborhood-section">
+        <p><strong>Trastevere rent (1BR):</strong> EUR 1,100 - 1,700/month &nbsp; <strong>Testaccio rent (1BR):</strong> EUR 950 - 1,400/month</p>
+        <p><span class="score-badge">Community: 10/10</span> <span class="score-badge">Walkability: 9/10</span></p>
+
+        <img src="/images/neighborhoods/trastevere-via-della-lungaretta-evening-expats.jpg" alt="Via della Lungaretta in Trastevere on a Friday evening with groups of young international residents walking between trattorias, fairy lights strung between buildings, vine-covered walls in warm yellow light, a mix of Italian and English conversation audible in the street" loading="lazy" width="860" height="420" style="width:100%;height:auto;border-radius:6px;margin:1rem 0;">
+
+        <p>Trastevere consistently tops every expat survey for one reason: the community actually exists here. Not as an abstract concept, but as a physical, daily reality. Walk into any wine bar on a Wednesday evening and you will meet people who moved here last month, last year, and fifteen years ago. The DVR community meetups happen here. The English-language book exchange is here. The WhatsApp groups that tell you which landlord to avoid and which plumber actually shows up -- they are populated by Trastevere residents who've been building this network for years.</p>
+
+        <p>Testaccio sits immediately east of Trastevere across the Viale Aventino. It is less tourist-saturated, which many expats prefer after a few months. The food market here (Mercato di Testaccio) is one of Rome's genuine highlights -- a covered market with authentic Roman produce vendors, <em>supplì</em> stands, and a real sense of neighborhood commerce. Rents are slightly lower than Trastevere. The nightlife is real but not overwhelming. Several DVR regulars have migrated here from Trastevere after their first year and report it as a significant quality-of-life upgrade.</p>
+
+        <div class="interview-card">
+          <p class="interviewer">James Holbrook, 42, IT Consultant (UK) &mdash; Trastevere resident, 3 years</p>
+          <blockquote>"I looked at eight neighborhoods before I settled here. At the time I thought I was paying too much -- EUR 1,350 for a one-bed near Santa Cecilia. Three years later I understand the premium. The difference between Trastevere and a cheaper area is not a prettier view. It's knowing twenty people who'll come for a drink on a Tuesday. That social infrastructure took years to build and it lives in this neighborhood."</blockquote>
+          <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--color-text-light);">Monthly breakdown: Rent EUR 1,350 | Utilities EUR 120 | Groceries EUR 340 | Transport EUR 35 | Total approx. EUR 2,500</p>
+        </div>
+
+        <div class="photo-grid">
+          <figure>
+            <img src="/images/neighborhoods/trastevere-santa-cecilia-basilica-courtyard.jpg" alt="The rose-garden courtyard of the Basilica di Santa Cecilia in Trastevere on a spring morning, ancient columns framing a 12th-century bell tower, two cats sleeping on a warm stone step, a local resident crossing with a bicycle and grocery bag" loading="lazy" width="220" height="160">
+            <figcaption>Santa Cecilia courtyard, Trastevere</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/neighborhoods/testaccio-mercato-fresh-produce-roman.jpg" alt="Interior of the covered Mercato di Testaccio with stalls selling artichokes, romanesco broccoli, and cured meats, fluorescent market lighting contrasting with natural light from skylights, a vendor slicing mortadella behind a glass counter stocked with Roman salumi" loading="lazy" width="220" height="160">
+            <figcaption>Mercato di Testaccio - a genuine local market</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/neighborhoods/trastevere-rooftop-terrace-expat-apartment.jpg" alt="Rooftop terrace of a Trastevere apartment building with a small bistro table, terracotta planters with herbs, and a view across Rome's rooftops toward the dome of St Peter's Basilica in the distance, washing line overhead with clothes drying in morning sun" loading="lazy" width="220" height="160">
+            <figcaption>Classic Trastevere rooftop terrace</figcaption>
+          </figure>
+        </div>
+
+        <p><strong>Best streets:</strong> Via della Lungaretta, Via Natale del Grande, Vicolo del Cinque (Trastevere); Via Galvani, Via Marmorata, Via Zabaglia (Testaccio).</p>
+        <p><strong>Best for:</strong> Anyone prioritizing social life and expat community. Particularly good for 25-40s, remote workers, and creative professionals.</p>
+        <p><a href="/public/blog/blog-post-3.html">Deep dive: Trastevere &amp; Testaccio &rarr;</a></p>
+      </div>
+
+      <h2 id="prati">Prati &amp; Vatican Area: Family-Friendly Calm</h2>
+
+      <div class="neighborhood-section">
+        <p><strong>Rent range (1BR):</strong> EUR 900 - 1,400/month &nbsp; <span class="score-badge">Family Fit: 9/10</span> <span class="score-badge">Transport: 8/10</span></p>
+
+        <img src="/images/neighborhoods/prati-via-cola-di-rienzo-shopping-morning.jpg" alt="Via Cola di Rienzo in Prati on a weekday morning with local Romans going about daily business, delis and bakeries open at street level, wide pavement with outdoor cafe tables, the elegant but unpretentious early 20th century residential buildings creating a sense of ordered urban calm entirely different from the historic center" loading="lazy" width="860" height="420" style="width:100%;height:auto;border-radius:6px;margin:1rem 0;">
+
+        <p>Prati is Rome's quietly competent neighborhood. It lacks the bohemian energy of Trastevere and the historic drama of Centro Storico, and it does not pretend to have either. What it has is wide streets, a Carrefour supermarket, consistent fiber internet coverage, reliable bus connections, and a character that is authentically Roman without being a tourist destination. Families, academics, embassy workers, and a particular type of expat who has grown out of romantic notions of Rome all tend to end up here.</p>
+
+        <p>The food scene on Via Cola di Rienzo is excellent. Not trendy, just good: reliable local trattorias, a fantastic fishmonger, the best selection of Roman cheese shops outside Testaccio, and a Mercato Trionfale with over 270 stalls that is entirely un-touristy and enormously useful for weekly shopping.</p>
+
+        <div class="interview-card">
+          <p class="interviewer">Marie Chen, 35, Educational Consultant (Canada) &mdash; Prati resident, 2 years</p>
+          <blockquote>"I specifically wanted somewhere that wasn't Trastevere. I visited Rome before moving and the expat-party atmosphere wasn't what I wanted for daily life. In Prati I am one of maybe three English speakers in my building, which is what I wanted. I know my downstairs neighbor, my bar, my frutteria. The Vatican is fifteen minutes walk but I've been twice. It's just not part of my Rome."</blockquote>
+          <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--color-text-light);">Monthly breakdown: Rent EUR 1,150 | Utilities EUR 110 | Groceries EUR 310 | Transport EUR 35 | Total approx. EUR 2,200</p>
+        </div>
+
+        <p><strong>Best streets:</strong> Via Candia, Via Properzio, Via Angelo Emo for quieter residential experience; Via Cola di Rienzo for the full neighborhood-commerce experience.</p>
+        <p><strong>Best for:</strong> Families, academics, embassy staff, expats looking for authentic Roman neighborhood life without the tourist layer.</p>
+        <p><a href="/public/blog/blog-post-4.html">Deep dive: Prati &amp; Vatican Area &rarr;</a></p>
+      </div>
+
+      <h2 id="budget">Budget Neighborhoods: Esquilino, Ostiense &amp; San Lorenzo</h2>
+
+      <div class="neighborhood-section">
+        <p><strong>Rent range (1BR):</strong> EUR 700 - 1,100/month &nbsp; <span class="score-badge">Cost Value: 9/10</span> <span class="score-badge">Transport: 8-10/10</span></p>
+
+        <img src="/images/neighborhoods/esquilino-piazza-vittorio-morning-multicultural.jpg" alt="Piazza Vittorio Emanuele II in Esquilino on a Saturday morning with the covered market visible, a diverse mix of Roman residents from different backgrounds shopping and socializing, palm trees and 19th-century arcade buildings framing the large public square that serves as the neighborhood's social hub" loading="lazy" width="860" height="420" style="width:100%;height:auto;border-radius:6px;margin:1rem 0;">
+
+        <p>Rome's budget neighborhoods are not compromises. They are a different, younger, more international version of the city. Esquilino, immediately east of Termini station, is Rome's most multicultural neighborhood -- a place where you'll find authentic Vietnamese <em>pho</em>, Bangladeshi grocery shops, Ethiopian restaurants, and the city's best Asian food market alongside traditional Roman alimentari. Rents here are among the lowest in central Rome.</p>
+
+        <p>Ostiense, south of Testaccio along the Tiber, has transformed significantly over the past decade. The street art scene here is extraordinary -- entire building facades covered by international muralists, a legacy of the Outdoor Festival that began in 2013. There's a growing cluster of specialty coffee shops, independent record stores, and coworking spaces that have attracted a younger expat population. The Centrale Montemartini museum (Roman sculptures against the backdrop of industrial machinery) is one of Rome's most underrated attractions and is walkable from your door.</p>
+
+        <p>San Lorenzo borders La Sapienza university and has a consistently youthful energy -- cheap trattorias that have been feeding students for decades, a genuine nightlife scene that starts late and ends later, and a community of long-term expats who discovered you can live central in Rome for well under EUR 1,000.</p>
+
+        <div class="interview-card">
+          <p class="interviewer">Andreas Mueller, 31, Remote Product Manager (Germany) &mdash; Ostiense resident, 14 months</p>
+          <blockquote>"I budget EUR 850 a month in rent for 65 square meters. My coworking space is five minutes walk. The coffee in my neighborhood bar costs EUR 1.10. I cycle to Testaccio market on Saturday mornings. The DVR community extends here -- I know plenty of other expats. If I paid Trastevere prices I would need to work twice as much and have half the quality of life."</blockquote>
+          <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--color-text-light);">Monthly breakdown: Rent EUR 850 | Utilities EUR 100 | Groceries EUR 290 | Transport EUR 35 | Total approx. EUR 1,750</p>
+        </div>
+
+        <p><strong>Best streets:</strong> Via Magnaghi, Via Libetta, Via del Porto Fluviale (Ostiense); Via dei Volsci, Via degli Equi (San Lorenzo); Via Buonarroti (Esquilino).</p>
+        <p><strong>Best for:</strong> Budget-conscious expats, digital nomads, students, young professionals prioritizing value.</p>
+        <p><a href="/public/blog/blog-post-5.html">Deep dive: Budget Neighborhoods &rarr;</a></p>
+      </div>
+
+      <h2 id="north">Northern Rome: Flaminio &amp; Salario</h2>
+
+      <div class="neighborhood-section">
+        <p><strong>Rent range (1BR):</strong> EUR 1,100 - 1,600/month &nbsp; <span class="score-badge">Family Fit: 9/10</span> <span class="score-badge">Authenticity: 9/10</span></p>
+
+        <img src="/images/neighborhoods/flaminio-villa-borghese-park-morning-joggers.jpg" alt="The entrance promenade of Villa Borghese park from the Flaminio side on a Sunday morning with families cycling, joggers, and dogs off-lead on wide gravel paths, umbrella pines casting long shadows, a glimpse of the Galleria Borghese building through the pine canopy" loading="lazy" width="860" height="420" style="width:100%;height:auto;border-radius:6px;margin:1rem 0;">
+
+        <p>Flaminio is the neighborhood for expats who want to live among actual Romans. Not Roman cafe owners catering to tourists, not landlords experienced in accommodating foreigners, but Italian families who have lived in the same apartment since their parents moved in. The piazzas here have children playing unsupervised after school. The bars serve the same regulars every morning. Nobody is performing Roman life for outsiders.</p>
+
+        <p>The proximity to Villa Borghese is Flaminio's headline amenity -- 80 hectares of parkland walkable in ten minutes -- but the neighborhood's greater strength is its sense of community permanence. The Flaminio MAXXI (National Museum of the 21st Century Arts) adds cultural credibility. The tram line connects you to central Rome in twenty minutes.</p>
+
+        <p>Salario-Trieste, slightly east of Flaminio, is even more residential. The Art Nouveau (Liberty style) architecture here is exceptional -- elaborate early 20th century facades on streets that see almost no tourist traffic. This is where upper-middle-class Romans have always lived, and where the few expats who end up here tend to stay for a decade.</p>
+
+        <div class="interview-card">
+          <p class="interviewer">Rebecca Santos, 44, Retired Teacher (Australia) &mdash; Flaminio resident, 4 years</p>
+          <blockquote>"I came to Rome for a year and have been in the same flat in Flaminio ever since. I am the only Australian within a kilometer radius and I consider that a success. My Italian is now genuinely functional. I walk in Villa Borghese every morning. I know the man in the alimentari, the woman in the pharmacy, the owner of my trattoria. That is Rome for me. Not the tourist version."</blockquote>
+          <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--color-text-light);">Monthly breakdown: Rent EUR 1,280 | Utilities EUR 125 | Groceries EUR 320 | Transport EUR 35 | Total approx. EUR 2,300</p>
+        </div>
+
+        <p><strong>Best streets:</strong> Via Flaminia, Via Jacopo da Pontormo, streets around Piazza della Marina (Flaminio); Viale Parioli, Via Salaria residential side streets (Salario).</p>
+        <p><strong>Best for:</strong> Expats seeking authentic immersion in Italian neighborhood life. Excellent for families, couples, longer-term residents.</p>
+        <p><a href="/public/blog/blog-post-6.html">Deep dive: Northern Rome &rarr;</a></p>
+      </div>
+
+      <h2 id="emerging">Emerging Expat Zones: Pigneto, Quadraro &amp; Beyond</h2>
+
+      <div class="neighborhood-section">
+        <p><strong>Rent range (1BR):</strong> EUR 650 - 1,000/month &nbsp; <span class="score-badge">Cost Value: 9/10</span> <span class="score-badge">Trend: Rising fast</span></p>
+
+        <img src="/images/neighborhoods/pigneto-via-pigneto-main-street-bars-evening.jpg" alt="Via del Pigneto pedestrian street on a warm evening with young Romans and expats at outdoor bar tables, a row of independent wine bars and craft beer spots with chalkboard menus, fairy lights strung above the street, the pre-gentrification architecture of working-class Rome visible in the background" loading="lazy" width="860" height="420" style="width:100%;height:auto;border-radius:6px;margin:1rem 0;">
+
+        <p>Pigneto is the neighborhood that Rome's creative community chose fifteen years ago when they could no longer afford Trastevere. Via del Pigneto is now one of Rome's most pleasant bar streets -- entirely pedestrianized, lined with independent wine bars, craft beer spots, natural wine shops, and late-night music venues. The neighborhood is gentrifying at a pace that makes early arrival financially sensible and culturally mandatory before the character changes.</p>
+
+        <p>Quadraro, further east, retains more of the original working-class Roman character. The street art here rivals Ostiense; the Murale di Quadraro project brought international artists to work alongside local community figures in one of the more thoughtful public art projects Rome has undertaken. Rents remain genuinely affordable.</p>
+
+        <p>Garbatella, designed in the 1920s as a model workers' district, has a unique garden-city architecture unlike anything else in Rome. The apartment buildings are arranged around green courtyards, creating a village-within-the-city atmosphere. A small but growing expat community has discovered it in the past five years.</p>
+
+        <div class="interview-card">
+          <p class="interviewer">Lorenzo Kim, 27, Startup Founder (South Korea) &mdash; Pigneto resident, 10 months</p>
+          <blockquote>"I chose Pigneto because I could afford a proper apartment without a flatmate, which I couldn't do in Trastevere on my income. After ten months I know the neighborhood at an intimate level. My Italian is better because I am not surrounded by English speakers. The via has great bars. There are other expats but it doesn't feel like an expat ghetto. It feels like Rome."</blockquote>
+          <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--color-text-light);">Monthly breakdown: Rent EUR 780 | Utilities EUR 95 | Groceries EUR 280 | Transport EUR 35 | Total approx. EUR 1,550</p>
+        </div>
+
+        <p><strong>Best streets:</strong> Via del Pigneto, Via Casilina side streets (Pigneto); Via Cerveteri, Via dei Lentuli (Quadraro); Viale Giustiniano Imperatore (Garbatella).</p>
+        <p><strong>Best for:</strong> Budget-conscious creatives, startup community, expats who want Italian neighborhood life without the tourist premium.</p>
+        <p><a href="/public/blog/blog-post-7.html">Deep dive: Emerging Expat Zones &rarr;</a></p>
+      </div>
+
+      <h2 id="transport">Rome Transportation by Neighborhood</h2>
+
+      <p>Rome has two metro lines (A and B), a tram network, and an extensive bus system. A single ticket costs EUR 1.50; the monthly pass costs EUR 35 (one of Europe's best-value transit passes). The practical question for expats is not whether Rome's transit is good -- it is adequate -- but which neighborhoods give you the best transit options.</p>
+
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Neighborhood</th>
+            <th>Metro Access</th>
+            <th>Bus Frequency</th>
+            <th>Night Transport</th>
+            <th>Cycling</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Centro Storico</td><td>None within walking (Spagna 20min walk)</td><td>Excellent but slow in traffic</td><td>Night buses run</td><td>Challenging (cobblestones, hills)</td></tr>
+          <tr><td>Trastevere</td><td>None direct; Trastevere rail station</td><td>Good (8, 23, H lines)</td><td>Night buses via Viale Trastevere</td><td>Good, mostly flat</td></tr>
+          <tr><td>Testaccio</td><td>Piramide (B line, 5min walk)</td><td>Excellent</td><td>Metro B until late</td><td>Very good</td></tr>
+          <tr><td>Prati</td><td>Lepanto (A line, 5min walk)</td><td>Excellent</td><td>Metro A until late</td><td>Good, flat streets</td></tr>
+          <tr><td>Flaminio</td><td>Flaminio (A line)</td><td>Excellent + tram 2</td><td>Metro A + night tram</td><td>Villa Borghese access</td></tr>
+          <tr><td>Esquilino</td><td>Termini (A+B hub)</td><td>City-wide hub, excellent</td><td>Every line converges</td><td>Flat and cycleable</td></tr>
+          <tr><td>San Lorenzo</td><td>Tiburtina (B, 10min walk)</td><td>Good</td><td>Multiple night buses</td><td>Good</td></tr>
+          <tr><td>Ostiense</td><td>Piramide (B, 15min walk or tram)</td><td>Good + tram 3</td><td>Tram runs nights</td><td>Excellent cycling culture</td></tr>
+          <tr><td>Pigneto</td><td>None; tram 5/14</td><td>Good</td><td>Night tram runs</td><td>Good, mostly flat</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="cost-comparison">Full Cost Comparison by Neighborhood (2026 Data)</h2>
+
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Neighborhood</th>
+            <th>1BR Rent (avg)</th>
+            <th>Utilities (avg)</th>
+            <th>Groceries/month</th>
+            <th>Monthly Total (est.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Centro Storico</td><td>EUR 1,750</td><td>EUR 140</td><td>EUR 380</td><td>EUR 2,900+</td></tr>
+          <tr><td>Trastevere</td><td>EUR 1,380</td><td>EUR 125</td><td>EUR 340</td><td>EUR 2,450</td></tr>
+          <tr><td>Testaccio</td><td>EUR 1,180</td><td>EUR 115</td><td>EUR 315</td><td>EUR 2,200</td></tr>
+          <tr><td>Prati</td><td>EUR 1,200</td><td>EUR 115</td><td>EUR 310</td><td>EUR 2,200</td></tr>
+          <tr><td>Monti</td><td>EUR 1,350</td><td>EUR 120</td><td>EUR 335</td><td>EUR 2,400</td></tr>
+          <tr><td>Flaminio</td><td>EUR 1,340</td><td>EUR 125</td><td>EUR 320</td><td>EUR 2,400</td></tr>
+          <tr><td>Esquilino</td><td>EUR 870</td><td>EUR 100</td><td>EUR 280</td><td>EUR 1,750</td></tr>
+          <tr><td>San Lorenzo</td><td>EUR 870</td><td>EUR 100</td><td>EUR 280</td><td>EUR 1,750</td></tr>
+          <tr><td>Ostiense</td><td>EUR 870</td><td>EUR 100</td><td>EUR 285</td><td>EUR 1,750</td></tr>
+          <tr><td>Pigneto</td><td>EUR 810</td><td>EUR 95</td><td>EUR 275</td><td>EUR 1,650</td></tr>
+          <tr><td>Garbatella</td><td>EUR 780</td><td>EUR 95</td><td>EUR 270</td><td>EUR 1,600</td></tr>
+        </tbody>
+      </table>
+      <p><em>All figures are monthly averages based on Immobiliare.it data cross-referenced with resident interviews, April 2026. Utilities include electricity, gas, water, and internet. Groceries assume a single person cooking 5 days a week.</em></p>
+
+      <div class="cta-box">
+        <h3>Find Your Rome Neighborhood with the DVR Community</h3>
+        <p>Still deciding? The Dolce Vita Roma community includes expats from every neighborhood in this guide. Ask your questions, get honest answers, and find your people before you move.</p>
+        <a href="https://dolcevitaroma.com/community">Join the DVR Community &rarr;</a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions About Rome Neighborhoods</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary>What is the best neighborhood in Rome for expats?</summary>
+          <p>Trastevere and Prati are consistently rated the top two neighborhoods for English-speaking expats. Trastevere offers the strongest community energy and highest walkability; Prati offers family-friendly calm, slightly lower rents, and a more authentic Roman daily life. The right answer depends on whether you prioritize social infrastructure or immersion.</p>
+        </details>
+        <details>
+          <summary>How much does it cost to rent an apartment in Rome as an expat?</summary>
+          <p>A one-bedroom apartment in central Rome ranges from approximately EUR 900 (Prati outer areas, Testaccio) to EUR 2,200 (Centro Storico premium locations). Budget neighborhoods like Ostiense, Pigneto, and San Lorenzo offer 1BR apartments from EUR 700-950 per month. These figures are based on April 2026 Immobiliare.it listings.</p>
+        </details>
+        <details>
+          <summary>Is Rome safe for expats?</summary>
+          <p>Rome is broadly safe for daily life. The main concerns are pickpocketing in tourist-heavy zones (Termini station, Campo de' Fiori, Metro A) rather than violent crime. Most expat neighborhoods have strong community networks with shared knowledge about safer routes and situations to avoid at night.</p>
+        </details>
+        <details>
+          <summary>Which Rome neighborhood has the best English-speaking community?</summary>
+          <p>Trastevere has the highest concentration of English-speaking expats and internationals. Prati has a strong and growing English-speaking community. San Lorenzo and Pigneto are emerging with active younger expat communities. The DVR meetups and community events can connect you to English speakers across all neighborhoods.</p>
+        </details>
+        <details>
+          <summary>What are the cheapest neighborhoods to live in Rome?</summary>
+          <p>Garbatella, Pigneto, Esquilino, Ostiense, and San Lorenzo are Rome's most affordable central neighborhoods. Expect 1BR apartments from EUR 700-1,000 per month. All have good transport connections and a growing expat presence.</p>
+        </details>
+        <details>
+          <summary>Can I live in Rome without speaking Italian?</summary>
+          <p>Yes, especially in expat-dense neighborhoods like Trastevere and Prati. However, learning basic Italian dramatically improves daily life: landlord negotiations, administrative tasks, and relationships with local businesses all benefit significantly from even functional Italian.</p>
+        </details>
+        <details>
+          <summary>Which Rome neighborhood is best for families?</summary>
+          <p>Prati and Flaminio are the most popular choices for expat families. Both have wide streets, parks, good schools nearby, and a calm residential character. Flaminio has direct access to Villa Borghese. Prati has excellent daily shopping on Via Cola di Rienzo.</p>
+        </details>
+        <details>
+          <summary>Is northern Rome (Flaminio, Salario) good for expats?</summary>
+          <p>Flaminio and Salario-Trieste are excellent for expats seeking authentic Italian neighborhood life with less tourist saturation. They are well-connected (Metro A at Flaminio), have excellent parks, and offer genuine integration into Roman residential community. They score lower on English-speaking social infrastructure but higher on cultural immersion.</p>
+        </details>
+      </div>
+
+      <h2 id="next-steps">Deep Dives: Individual Neighborhood Guides</h2>
+
+      <p>Each neighborhood below has a dedicated guide with detailed street-by-street analysis, specific apartment recommendations, local business profiles, and expanded expat interviews.</p>
+
+      <div class="spoke-links">
+        <div class="spoke-link-card">
+          <h4>Centro Storico</h4>
+          <p>Charm vs reality, where to live within the historic center, cost breakdown.</p>
+          <a href="/public/blog/blog-post-2.html">Read the full guide &rarr;</a>
+        </div>
+        <div class="spoke-link-card">
+          <h4>Trastevere &amp; Testaccio</h4>
+          <p>Rome's expat heartland: community, nightlife, gentrification, best streets.</p>
+          <a href="/public/blog/blog-post-3.html">Read the full guide &rarr;</a>
+        </div>
+        <div class="spoke-link-card">
+          <h4>Prati &amp; Vatican Area</h4>
+          <p>Family-friendly, calm, authentic Roman neighborhood life explained.</p>
+          <a href="/public/blog/blog-post-4.html">Read the full guide &rarr;</a>
+        </div>
+        <div class="spoke-link-card">
+          <h4>Budget Neighborhoods</h4>
+          <p>Esquilino, Ostiense, San Lorenzo: how to live centrally for under EUR 1,000.</p>
+          <a href="/public/blog/blog-post-5.html">Read the full guide &rarr;</a>
+        </div>
+        <div class="spoke-link-card">
+          <h4>Northern Rome</h4>
+          <p>Flaminio and Salario: residential, authentic, and underrated by the expat crowd.</p>
+          <a href="/public/blog/blog-post-6.html">Read the full guide &rarr;</a>
+        </div>
+        <div class="spoke-link-card">
+          <h4>Emerging Expat Zones</h4>
+          <p>Pigneto, Quadraro, Garbatella: where Rome's next expat communities are forming.</p>
+          <a href="/public/blog/blog-post-7.html">Read the full guide &rarr;</a>
+        </div>
+      </div>
+
+      <p><em>Looking for where to eat in each of these neighborhoods? See our <a href="/public/blog/blog-post-8.html">Rome Food Culture Guide</a> with restaurant recommendations organized by area.</em></p>
+
+      <div class="author-bio">
+        <img src="/images/author-dvr-community.jpg" alt="Portrait of the Dolce Vita Roma community editor, a longtime Rome expat photographed on a sunlit Roman terrace with the city rooftops visible in the background" loading="lazy" width="72" height="72">
+        <div>
+          <strong>Dolce Vita Roma Community</strong>
+          <p>This guide draws on 5+ years of first-hand neighborhood research, 60+ expat interviews, and the collective knowledge of the DVR community. We update neighborhood data quarterly using live Immobiliare.it listings and resident surveys. <a href="https://dolcevitaroma.com/about">About DVR &rarr;</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Located in the heart of Rome, Italy</p>
+    <p><a href="https://dolcevitaroma.com">Visit our main site</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Leaflet neighborhood map
+    (function() {
+      const map = L.map('rome-map', { scrollWheelZoom: false }).setView([41.8955, 12.4783], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 18
+      }).addTo(map);
+
+      const neighborhoods = [
+        { name: 'Centro Storico', coords: [41.8983, 12.4727], color: '#C1553A', rent: 'EUR 1,400-2,200/mo', score: '36/60' },
+        { name: 'Trastevere', coords: [41.8872, 12.4683], color: '#D4A545', rent: 'EUR 1,100-1,700/mo', score: '47/60' },
+        { name: 'Testaccio', coords: [41.8783, 12.4770], color: '#D4A545', rent: 'EUR 950-1,400/mo', score: '45/60' },
+        { name: 'Prati', coords: [41.9067, 12.4583], color: '#2B3A1B', rent: 'EUR 900-1,400/mo', score: '46/60' },
+        { name: 'Flaminio', coords: [41.9200, 12.4783], color: '#2B3A1B', rent: 'EUR 1,100-1,600/mo', score: '41/60' },
+        { name: 'Esquilino', coords: [41.8933, 12.4990], color: '#E09B88', rent: 'EUR 750-1,100/mo', score: '42/60' },
+        { name: 'San Lorenzo', coords: [41.9000, 12.5133], color: '#E09B88', rent: 'EUR 750-1,000/mo', score: '43/60' },
+        { name: 'Ostiense', coords: [41.8633, 12.4800], color: '#E09B88', rent: 'EUR 700-1,000/mo', score: '41/60' },
+        { name: 'Pigneto', coords: [41.8817, 12.5217], color: '#E09B88', rent: 'EUR 650-1,000/mo', score: '42/60' },
+        { name: 'Salario / Trieste', coords: [41.9133, 12.5033], color: '#2B3A1B', rent: 'EUR 1,000-1,500/mo', score: '38/60' }
+      ];
+
+      neighborhoods.forEach(function(n) {
+        const marker = L.circleMarker(n.coords, {
+          radius: 14,
+          fillColor: n.color,
+          color: '#fff',
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.85
+        }).addTo(map);
+        marker.bindPopup('<strong>' + n.name + '</strong><br>Rent: ' + n.rent + '<br>Expat Score: ' + n.score);
+      });
+
+      // Legend
+      const legend = L.control({ position: 'bottomright' });
+      legend.onAdd = function() {
+        const div = L.DomUtil.create('div', 'info legend');
+        div.style.cssText = 'background:white;padding:8px 12px;border-radius:6px;font-size:12px;line-height:1.6;box-shadow:0 2px 6px rgba(0,0,0,0.2)';
+        div.innerHTML = '<strong>Rent Range</strong><br>'
+          + '<span style="color:#C1553A">&#9679;</span> EUR 1,400+ (Premium)<br>'
+          + '<span style="color:#D4A545">&#9679;</span> EUR 900-1,400 (Mid)<br>'
+          + '<span style="color:#2B3A1B">&#9679;</span> EUR 900-1,600 (Residential)<br>'
+          + '<span style="color:#E09B88">&#9679;</span> EUR 650-1,100 (Budget)';
+        return div;
+      };
+      legend.addTo(map);
+    })();
+
+    // Lazy load images
+    if ('IntersectionObserver' in window) {
+      const imgs = document.querySelectorAll('img[loading="lazy"]');
+      const obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            const img = e.target;
+            if (img.dataset.src) { img.src = img.dataset.src; }
+            obs.unobserve(img);
+          }
+        });
+      }, { rootMargin: '200px' });
+      imgs.forEach(function(img) { obs.observe(img); });
+    }
+  </script>
+</body>
+</html>

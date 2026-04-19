@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Castelli Romani & Coastal Beaches Day Trip from Rome | Dolce Vita Roma</title>
+  <meta name="description" content="Quick day trips from Rome: Castelli Romani wine country (Frascati, Castel Gandolfo), Lago Albano, Ostia Antica, Sperlonga beach. EUR 25-45 total.">
+  <meta name="keywords" content="Castelli Romani, Frascati wine, day trip Rome, Castel Gandolfo, Ostia Antica, Sperlonga beach">
+  <meta name="author" content="Dolce Vita Roma">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/day-trip-castelli-romani-rome">
+  <meta property="og:title" content="Castelli Romani & Coastal Beaches Day Trip from Rome">
+  <meta property="og:description" content="Budget-friendly half-day and full-day options: wine country, lakes, beaches. Start at 9am, be back by 5pm.">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/day-trip-castelli-romani-rome">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/day-trips/frascati-wine-country-villa.jpg">
+  <meta property="article:published_time" content="2026-04-19">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .itinerary {
+      background: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-gold);
+    }
+    .itinerary h3 {
+      margin: 0 0 1.5rem 0;
+      color: var(--color-green);
+    }
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline li {
+      padding: 1rem;
+      border-left: 3px solid var(--color-gold);
+      margin-bottom: 1rem;
+      background: white;
+      border-radius: 4px;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 1.5rem;
+      width: 16px;
+      height: 16px;
+      background: var(--color-gold);
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+    .timeline-time {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 0.95rem;
+    }
+    .timeline-event {
+      margin: 0.25rem 0 0 0;
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .cost-box {
+      background: #F0F8F0;
+      border: 2px solid var(--color-green);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .cost-box h4 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+    }
+    .cost-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(43, 58, 27, 0.2);
+    }
+    .cost-item:last-child {
+      border-bottom: none;
+    }
+    .cost-label {
+      font-weight: 500;
+      color: var(--color-green);
+    }
+    .cost-amount {
+      color: var(--color-text-light);
+    }
+    .cost-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid var(--color-green);
+      font-weight: 600;
+      color: var(--color-green);
+    }
+    .tip-box {
+      background: #FFFBF0;
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .tip-box h4 {
+      margin: 0 0 0.5rem 0;
+      color: #D4A574;
+    }
+    .tip-box p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    #map {
+      height: 450px;
+      margin: 2rem 0;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .section {
+      background: white;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    .section h3 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 0.5rem;
+    }
+    .section ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    .option-box {
+      background: #F9F6F2;
+      border: 2px solid var(--color-border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    .option-box h3 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+    .faq-answer {
+      color: var(--color-text-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2.5rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .cta-box h3 {
+      color: var(--color-gold);
+      margin: 0 0 1rem 0;
+    }
+    .cta-box p {
+      margin: 0 0 1.5rem 0;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    .cta-button {
+      background-color: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #B09440;
+    }
+    .back-link {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .post-meta {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      #map {
+        height: 300px;
+      }
+      .cost-item {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .cost-total {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BlogPosting", "Article"],
+    "headline": "Castelli Romani & Coastal Beaches Day Trip from Rome",
+    "description": "Quick and budget-friendly day trips: Castelli Romani wine country (Frascati, Castel Gandolfo), coastal beaches (Ostia Antica, Sperlonga). Complete itineraries and logistics.",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "datePublished": "2026-04-19",
+    "image": "https://dolcevitaroma.com/images/day-trips/frascati-wine-country-villa.jpg",
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Castelli Romani?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Castelli Romani is a wine region 30-40km southeast of Rome, including towns like Frascati, Castel Gandolfo, and Nemi. Known for Frascati Classico white wine (dry, crisp). Easily accessible by metro + bus (EUR 2-3 total) for a day escape."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you do Castelli Romani as a last-minute day trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It's the easiest day trip to do spontaneously. No train booking needed. Metro to Anagnina + COTRAL bus to Frascati = EUR 2.20 total. You can decide at breakfast and be in wine country by 11:00am."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Ostia Antica worth visiting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It's an ancient Roman port city (lesser known than Pompeii but well-preserved). EUR 12 entry, 45 minutes by metro from Rome. Combine with Ostia Beach (15 min walk) for a half-day trip."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best beach near Rome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sperlonga is the prettiest beach (1h 20m from Rome by train). Ostia Beach is the closest (45 min metro). Fregene is easier but less scenic. For quality, Sperlonga wins. For convenience, Ostia wins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you do wine tasting in Castelli Romani?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Wine bars and cantinas are abundant in Frascati. No appointments needed -- just walk in. Most do wine by the glass (EUR 4-6). Some offer light snacks (porchetta sandwich, cheese). Open daily afternoon-early evening."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Castel Gandolfo worth visiting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It's the papal summer residence. The palace is closed to public (papal property) but Lago Albano lake is open for swimming, paddleboats, and lakeside lunch. Worth 2-3 hours if you're doing Castelli Romani."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do day trips to Castelli Romani cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EUR 25-45 per person: Transport EUR 3-5, wine/lunch EUR 15-25, optional activities EUR 0-15. One of the cheapest day trip options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you do this trip on a weekday?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, better than weekends. Romans do Castelli Romani and beaches on weekends (crowded). Weekdays are quieter. Wine bars are open same hours (afternoon/evening)."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dolce Vita Roma",
+        "item": "https://dolcevitaroma.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Day Trips",
+        "item": "https://dolcevitaroma.com/blog/best-day-trips-from-rome"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Castelli Romani & Beaches",
+        "item": "https://dolcevitaroma.com/blog/day-trip-castelli-romani-rome"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/blog/blog-post-16.html">Day Trips</a> / Castelli Romani & Beaches
+      </div>
+
+      <a href="/blog/blog-post-16.html" class="back-link">Back to Day Trips Guide</a>
+
+      <h1>Castelli Romani & Coastal Beaches Day Trip from Rome</h1>
+
+      <div class="post-meta">
+        Published April 19, 2026 | Updated April 2026 | Reading time: 7 minutes
+      </div>
+
+      <img src="/images/day-trips/frascati-wine-country-villa.jpg" alt="Frascati hilltop town overlooking Roman Castelli wine region and countryside" loading="eager" style="width: 100%; height: auto; margin-bottom: 2rem; border-radius: 8px;">
+
+      <h2>The Essentials</h2>
+
+      <p>Castelli Romani and coastal beaches are the "last-minute" day trips. No booking needed. No trains to schedule. No long waits at popular sites. You can decide at breakfast, be in wine country by 11:00am, and sipping Frascati white wine by lunch.</p>
+
+      <p>This guide covers two distinct day trip options: Castelli Romani (45 minutes from Rome, wine country and lakes) and Coastal Beaches (Ostia Antica + beach, 45 minutes by metro; or Sperlonga, 1.5 hours by train). Both are accessible, affordable (EUR 25-45 total), and perfect for spontaneous days off or when other day trips feel too ambitious.</p>
+
+      <h2>Option 1: Castelli Romani Wine Country (Half or Full Day)</h2>
+
+      <div class="option-box">
+        <h3>Quick Overview</h3>
+        <p><strong>Duration:</strong> 4-6 hours. <strong>Cost:</strong> EUR 25-45 per person. <strong>Distance:</strong> 30-40km southeast. <strong>Transport:</strong> Metro + COTRAL bus or regional train. <strong>Best for:</strong> Last-minute escapes, wine lovers, peaceful towns, people who want authentic Lazio experience (not tourist-heavy).</p>
+      </div>
+
+      <h3>The Route</h3>
+
+      <div class="itinerary">
+        <h3>Castelli Romani Itinerary</h3>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-time">09:00</div>
+            <div class="timeline-event">Leave apartment. Head to Anagnina metro (Line A, red)</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:15</div>
+            <div class="timeline-event">Metro arrives Anagnina station (end of Line A). Exit toward bus bays</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:30</div>
+            <div class="timeline-event">COTRAL bus departs Frascati direction (various routes, roughly hourly). Cost EUR 2.20. Journey 45 minutes uphill</div>
+          </li>
+          <li>
+            <div class="timeline-time">10:15</div>
+            <div class="timeline-event">Arrive Frascati. Historic hill town overlooking Rome plain. Population 20,000, medieval center</div>
+          </li>
+          <li>
+            <div class="timeline-time">10:15--12:00</div>
+            <div class="timeline-event">Frascati exploration: Villa Aldobrandini (free garden walk, panoramic views), historic center, wine bars</div>
+          </li>
+          <li>
+            <div class="timeline-time">11:00 or 11:30</div>
+            <div class="timeline-event">Optional: Enter Villa Aldobrandini gardens (free, open daily). Walk the terrace for views back to Rome (clear days you see St. Peter's).</div>
+          </li>
+          <li>
+            <div class="timeline-time">12:00--13:00</div>
+            <div class="timeline-event">Lunch at a local wine bar or trattoria. Porchetta sandwich, local cheeses, Frascati wine (EUR 20-25 total)</div>
+          </li>
+          <li>
+            <div class="timeline-time">13:15</div>
+            <div class="timezone-event">Optional: Bus to Castel Gandolfo (20 min, EUR 1.50). Visit Lago Albano (lake) for paddleboat and lakeside lunch, OR return to Rome</div>
+          </li>
+          <li>
+            <div class="timezone-time">14:00--16:00</div>
+            <div class="timezone-event">Castel Gandolfo: Papal summer residence town. Palace closed to public, but Lago Albano lake is open. Swimming, paddleboat (EUR 5/hour), Ristorante Acquaviva (EUR 15-20)</div>
+          </li>
+          <li>
+            <div class="timeline-time">16:30</div>
+            <div class="timezone-event">Return to Rome: Bus back to Anagnina + metro home (1 hour total), OR train from Frascati back to Roma Termini (30 min, EUR 2.70)</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Transport Options from Rome</h3>
+        <ul>
+          <li><strong>Metro + COTRAL Bus (cheapest):</strong> Metro A to Anagnina + COTRAL bus to Frascati (EUR 2.20). Takes 1.5 hours total (45 min bus). No booking needed.</li>
+          <li><strong>Train from Roma Termini to Frascati (fastest):</strong> Regional train departs Termini roughly hourly. Journey 30 minutes. Cost EUR 2.70. Buy at Termini ticket window.</li>
+          <li><strong>Recommendation:</strong> Train is faster and direct. If you're already near Termini, take the train. If you're home on the west side of Rome, metro + bus is fine.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Frascati: What to See</h3>
+        <ul>
+          <li><strong>Villa Aldobrandini:</strong> A 16th-century cardinal's villa. The gardens are free and open daily (10:00-sunset). Terraces with panoramic views back toward Rome. In clear weather you see St. Peter's dome. 45 minutes leisurely walk.</li>
+          <li><strong>Historic center:</strong> Medieval streets, fountain, local shops. Small and quiet. 30 minutes of wandering.</li>
+          <li><strong>Wine bars (Enoteca):</strong> Scattered throughout town. No bookings needed. Walk in, order wine (EUR 4-6 per glass), eat porchetta sandwich (EUR 5-8), local cheese plate (EUR 8-12). Very casual, very local.</li>
+          <li><strong>Nemi (optional):</strong> Another Castelli town, 20km away, famous for strawberries. Requires extra bus ride. Only add if you have extra time and interest in a third town.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>Wine Strategy</h4>
+        <p>Frascati wine (Frascati Classico DOC) is a dry white wine, crisp and light. Perfect for lunch in warm weather. EUR 8-12 per bottle in wine shops. If you want to bring a bottle home, buy here (cheaper than Rome, better selection).</p>
+      </div>
+
+      <div class="section">
+        <h3>Castel Gandolfo (Optional Extension)</h3>
+        <p>If you're enjoying wine country and want a full day, bus from Frascati to Castel Gandolfo (20 minutes, EUR 1.50). It's a hilltop town that serves as the Pope's summer palace. The palace itself is closed to the public (it's papal property) but the lakeside is open.</p>
+        <ul>
+          <li><strong>Lago Albano:</strong> A crater lake surrounded by the town. Swimming is possible (20-24C in summer). Paddleboat rentals available (EUR 5/hour). Lakeside restaurants (Ristorante Acquaviva, EUR 15-20 for simple pasta/fish).</li>
+          <li><strong>Time commitment:</strong> 2-3 hours. Bus back to Frascati, then train or bus to Rome.</li>
+        </ul>
+      </div>
+
+      <div class="cost-box">
+        <h4>Cost Breakdown: Castelli Romani (Frascati only)</h4>
+        <div class="cost-item">
+          <span class="cost-label">Metro + COTRAL bus Rome -- Frascati round-trip</span>
+          <span class="cost-amount">EUR 5 (or EUR 5.40 by train)</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Villa Aldobrandini entry</span>
+          <span class="cost-amount">Free (donations welcome)</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Lunch (wine bar, sandwich, wine)</span>
+          <span class="cost-amount">EUR 15-25</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Wine bottle to take home (optional)</span>
+          <span class="cost-amount">EUR 8-15 (optional)</span>
+        </div>
+        <div class="cost-total">
+          <span class="cost-label">Total</span>
+          <span class="cost-amount">EUR 20-45</span>
+        </div>
+      </div>
+
+      <h2>Option 2: Coastal Beaches</h2>
+
+      <div class="option-box">
+        <h3>Two Beach Options</h3>
+        <p><strong>Ostia Antica + Ostia Beach:</strong> 45 min metro, EUR 12 entry, best for history + beach combo. <strong>Sperlonga:</strong> 1h 20m train, prettier beach, less crowded, best for serious beach day. Choose based on priorities.</p>
+      </div>
+
+      <h3>Option 2A: Ostia Antica + Ostia Beach</h3>
+
+      <p>Ostia is the ancient Roman port city (harbor of Rome). It's less famous than Pompeii but well-preserved and far less crowded. You can combine an archaeological morning with beach afternoon.</p>
+
+      <div class="itinerary">
+        <h3>Ostia Itinerary</h3>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-time">09:00</div>
+            <div class="timeline-event">Metro B to Piramide station. Follow signs to "Roma Lido" train platform (integrated metro/train system)</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:15</div>
+            <div class="timeline-event">Roma Lido train departs to Ostia Antica (45 minutes). Cost EUR 2.70 (integrated ticket).</div>
+          </li>
+          <li>
+            <div class="timeline-time">10:00</div>
+            <div class="timeline-event">Arrive Ostia Antica. Exit train and follow signs to "Scavi" (excavations). 5-minute walk uphill.</div>
+          </li>
+          <li>
+            <div class="timeline-time">10:15--12:15</div>
+            <div class="timeline-event">Ostia Antica excavations (EUR 12 entry). Walk 2km through Roman streets, buildings, theaters. 2 hours sufficient.</div>
+          </li>
+          <li>
+            <div class="timeline-time">12:30</div>
+            <div class="timeline-event">Walk from Ostia Antica to Ostia Beach (15 min downhill). Or take local bus (small fee).</div>
+          </li>
+          <li>
+            <div class="timeline-time">12:45--16:00</div>
+            <div class="timeline-event">Ostia Beach: Swimming, beach lunch, rest. Water 20-24C in summer. Crowded on weekends, quieter on weekdays.</div>
+          </li>
+          <li>
+            <div class="timeline-time">16:15</div>
+            <div class="timezone-event">Roma Lido train back to Piramide (45 min). Home by 17:15.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Ostia Antica Details</h3>
+        <ul>
+          <li><strong>Cost:</strong> EUR 12 entry (book online at ostiaantica.beniculturali.it, same-day walk-up is fine)</li>
+          <li><strong>Time on site:</strong> 1.5-2 hours. It's smaller than Pompeii (25 hectares vs 66), so moves faster.</li>
+          <li><strong>Highlights:</strong> Theater (seats 3,500, still standing), forum, temples, apartment buildings (insulae), mosaics</li>
+          <li><strong>Atmosphere:</strong> Less crowded than Pompeii, peaceful, feels like your own private Roman city</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Ostia Beach</h3>
+        <ul>
+          <li><strong>Access:</strong> Walk from Ostia Antica excavations (15 min) or take local bus</li>
+          <li><strong>Quality:</strong> Sandy beach, decent water quality, crowded July-August, quiet May-June and September-October</li>
+          <li><strong>Facilities:</strong> Lifeguards, showers, restaurants/bars, lounge chair rentals (EUR 5-10)</li>
+          <li><strong>Cost:</strong> Free beach access, lounge chair optional</li>
+        </ul>
+      </div>
+
+      <h3>Option 2B: Sperlonga Beach (The Pretty Option)</h3>
+
+      <p>Sperlonga is consistently rated the prettiest beach near Rome. Smaller than Ostia, more boutique feel, crystalline water, charming old town above the beach. Takes longer to reach (1.5 hours) but worth it if you're prioritizing beach quality over archaeology.</p>
+
+      <div class="itinerary">
+        <h3>Sperlonga Itinerary</h3>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-time">08:00</div>
+            <div class="timeline-event">Roma Termini. Train to Fondi-Sperlonga (1h 20m, regional train). Cost EUR 9. Buy at Termini ticket window.</div>
+          </li>
+          <li>
+            <div class="timezone-time">09:20</div>
+            <div class="timeline-event">Arrive Fondi-Sperlonga station (rural location, not Sperlonga town). Taxi to Sperlonga beach/town (EUR 10-15, 10 minutes). OR walk (30 min)</div>
+          </li>
+          <li>
+            <div class="timezone-time">09:45</div>
+            <div class="timeline-event">Arrive Sperlonga. Explore old town (narrow streets, restaurants, boutiques) or go straight to beach</div>
+          </li>
+          <li>
+            <div class="timezone-time">10:00--14:00</div>
+            <div class="timezone-event">Sperlonga Beach. Swimming, sunbathing, exploring sea caves</div>
+          </li>
+          <li>
+            <div class="timezone-time">14:00--15:00</div>
+            <div class="timezone-event">Lunch in old town or beachside restaurant (EUR 20-30)</div>
+          </li>
+          <li>
+            <div class="timezone-time">15:00--16:00</div>
+            <div class="timezone-event">Last beach time or explore shops</div>
+          </li>
+          <li>
+            <div class="timezone-time">16:15</div>
+            <div class="timezone-event">Taxi back to Fondi-Sperlonga station (EUR 10-15)</div>
+          </li>
+          <li>
+            <div class="timeline-time">17:00</div>
+            <div class="timezone-event">Train back to Roma Termini (1h 20m, arrive 18:20)</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cost-box">
+        <h4>Cost Breakdown: Coastal Beaches</h4>
+        <div class="cost-item">
+          <span class="cost-label">Ostia: Metro/train Rome -- Ostia round-trip</span>
+          <span class="cost-amount">EUR 5.40</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Ostia Antica entry</span>
+          <span class="cost-amount">EUR 12</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Beach lunch</span>
+          <span class="cost-amount">EUR 15-25</span>
+        </div>
+        <div class="cost-total">
+          <span class="cost-label">Ostia Total</span>
+          <span class="cost-amount">EUR 32-42</span>
+        </div>
+        <div class="cost-item" style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid rgba(43, 58, 27, 0.2);">
+          <span class="cost-label">Sperlonga: Train Rome -- Sperlonga round-trip</span>
+          <span class="cost-amount">EUR 18</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Taxi to/from station</span>
+          <span class="cost-amount">EUR 20-30</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Beach lunch</span>
+          <span class="cost-amount">EUR 20-30</span>
+        </div>
+        <div class="cost-total">
+          <span class="cost-label">Sperlonga Total</span>
+          <span class="cost-amount">EUR 58-78</span>
+        </div>
+      </div>
+
+      <h2>The Route on a Map</h2>
+
+      <div id="map"></div>
+
+      <p>Map shows Rome, Castelli Romani towns (Frascati, Castel Gandolfo), Ostia Antica, and Sperlonga beach.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">Which is better: Castelli Romani or Ostia Antica?</div>
+        <div class="faq-answer">Different experiences. Castelli Romani is relaxed wine country escape (45 min away, EUR 25-40, spontaneous, perfect for a lazy afternoon). Ostia Antica is archaeology + beach combo (45 min away, EUR 32-42, more structured). Choose Castelli for wine/winedown, choose Ostia for active afternoon.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can you do Castelli Romani without a car?</div>
+        <div class="faq-answer">Yes, easily. Metro to Anagnina + COTRAL bus to Frascati (EUR 2.20, no booking needed). This is how locals do it. Alternatively, train from Roma Termini to Frascati (EUR 2.70, 30 min, more direct).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is Ostia Antica as good as Pompeii?</div>
+        <div class="faq-answer">No -- Pompeii is larger and more famous. But Ostia Antica is well-preserved, less crowded, and closer (45 min vs 2.5 hours). If you want archaeology without the epic day trip, Ostia is excellent.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Which beach is best for first-timers?</div>
+        <div class="faq-answer">Ostia for convenience (45 min, easy metro). Sperlonga for beauty (1.5 hours but prettier water, quieter vibe). If you want quick beach fix, Ostia. If you want to escape fully, Sperlonga.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can you do Castelli Romani on a Thursday morning spontaneously?</div>
+        <div class="faq-answer">Absolutely. This is the biggest advantage over the other day trips. No booking required, buses run hourly, wine bars are always open. Decide at 8:00am breakfast, be in Frascati by 10:30am.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is the water clean at Ostia Beach?</div>
+        <div class="faq-answer">Generally yes. Ostia is a working beach with lifeguards and testing. Water quality is decent (meets EU standards). It's not pristine like Sperlonga, but it's swimmable. Quality varies day-to-day and by location along the beach.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What should you pack for Castelli Romani day trip?</div>
+        <div class="faq-answer">Light layers (early morning cool, midday warm), comfortable walking shoes, sunscreen, water bottle, hat, casual clothes suitable for wine bars. No swimwear needed unless you're adding Castel Gandolfo lake.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Best time of year for these day trips?</div>
+        <div class="faq-answer">Castelli Romani: year-round (wine country is good in winter too). Beaches: May-June and September-October (water 20-24C, crowds moderate). Avoid July-August (water warm but beaches packed).</div>
+      </div>
+
+      <h2>Final Tips</h2>
+
+      <ul>
+        <li><strong>Castelli Romani is the "lazy" day trip:</strong> Minimal planning, maximum relaxation. Good for tired weeks.</li>
+        <li><strong>Ostia Antica is the "balanced" day trip:</strong> Culture + beach, 4-6 hours, EUR 32-42, doable whenever.</li>
+        <li><strong>Sperlonga is the "beach escape":</strong> Best beaches, longest travel, worth it if you want serious beach time.</li>
+        <li><strong>Weekdays are better than weekends:</strong> All these spots are quieter Monday-Friday.</li>
+        <li><strong>Bring sunscreen:</strong> Non-negotiable for beaches. Castelli Romani you won't need as much shade.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Explore More Day Trips</h3>
+        <p>These are the easiest and most budget-friendly day trips from Rome. Check out our guides to Tivoli, Pompeii, Tuscany, and the Amalfi Coast for longer escapes.</p>
+        <a href="/blog/blog-post-16.html" class="cta-button">View All Day Trips</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved. | <a href="https://dolcevitaroma.com/privacy">Privacy Policy</a> | <a href="https://dolcevitaroma.com/contact">Contact</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([41.7, 13.1], 9);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    const markers = [
+      { name: 'Roma Termini', lat: 41.9009, lng: 12.5021, color: '#C8352B' },
+      { name: 'Frascati', lat: 41.8092, lng: 12.6800, color: '#2B3A1B' },
+      { name: 'Castel Gandolfo', lat: 41.7480, lng: 12.6529, color: '#2B3A1B' },
+      { name: 'Nemi', lat: 41.7263, lng: 12.6794, color: '#C9A84C' },
+      { name: 'Ostia Antica', lat: 41.7428, lng: 12.2972, color: '#2B3A1B' },
+      { name: 'Ostia Beach', lat: 41.7339, lng: 12.2857, color: '#2B3A1B' },
+      { name: 'Sperlonga', lat: 41.2295, lng: 13.4282, color: '#E8614B' }
+    ];
+
+    markers.forEach(m => {
+      L.circleMarker([m.lat, m.lng], {
+        radius: 8,
+        fillColor: m.color,
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(m.name).addTo(map);
+    });
+
+    const castelli = L.polyline([
+      [41.9009, 12.5021],
+      [41.8092, 12.6800],
+      [41.7480, 12.6529]
+    ], {
+      color: '#C9A84C',
+      weight: 2,
+      opacity: 0.6,
+      dashArray: '5, 5'
+    }).addTo(map);
+
+    const ostia = L.polyline([
+      [41.9009, 12.5021],
+      [41.7428, 12.2972],
+      [41.7339, 12.2857]
+    ], {
+      color: '#2B3A1B',
+      weight: 2,
+      opacity: 0.6,
+      dashArray: '5, 5'
+    }).addTo(map);
+
+    const sperlonga = L.polyline([
+      [41.9009, 12.5021],
+      [41.2295, 13.4282]
+    ], {
+      color: '#E8614B',
+      weight: 2,
+      opacity: 0.6,
+      dashArray: '5, 5'
+    }).addTo(map);
+  </script>
+</body>
+</html>

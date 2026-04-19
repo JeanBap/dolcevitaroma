@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rome Art, History & Culture: The Complete Guide | Dolce Vita Roma</title>
+  <meta name="description" content="Complete guide to Rome's 2,800 years of art history: ancient engineering, Renaissance masterpieces, Baroque transformation, and modern galleries. Includes Vatican, Colosseum, museums, and self-guided walks.">
+  <meta name="keywords" content="Rome art history guide, Rome museums, Vatican, Colosseum, Renaissance Rome, Baroque art">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/rome-art-history-culture-guide">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Rome Art, History & Culture: The Complete Guide | Dolce Vita Roma">
+  <meta property="og:description" content="Complete guide to Rome's 2,800 years of art history: ancient engineering, Renaissance masterpieces, Baroque transformation, and modern galleries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/rome-art-history-culture-guide">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/art/colosseum-rome-hero.jpg">
+  <meta property="article:published_time" content="2026-04-19T08:00:00+02:00">
+  <meta property="article:author" content="Dolce Vita Roma">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rome Art, History & Culture: The Complete Guide">
+  <meta name="twitter:description" content="Complete guide to Rome's 2,800 years of art history: ancient engineering, Renaissance masterpieces, Baroque transformation, and modern galleries.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/images/art/colosseum-rome-hero.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    :root {
+      --color-green: #2B3A1B;
+      --color-cream: #F5EBD8;
+      --color-gold: #C9A84C;
+      --color-salmon: #E8614B;
+      --color-red: #C8352B;
+      --color-border: #E0D5C4;
+      --color-text-light: #7A6F5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: var(--color-green);
+      background-color: var(--color-cream);
+    }
+
+    header {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--color-gold);
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav {
+      background-color: var(--color-cream);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-gold);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    article {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.2rem;
+      color: var(--color-green);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--color-green);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--color-gold);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.3rem;
+      color: var(--color-salmon);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .post-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .toc {
+      background-color: var(--color-cream);
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+    }
+
+    .content strong {
+      color: var(--color-green);
+    }
+
+    .content em {
+      font-style: italic;
+      color: var(--color-salmon);
+    }
+
+    .timeline {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-salmon);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--color-gold);
+    }
+
+    .timeline-item h4 {
+      font-weight: 700;
+      color: var(--color-green);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-item .date {
+      color: var(--color-gold);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .spoke-links {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    .spoke-links h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .spoke-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .spoke-card {
+      background-color: white;
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .spoke-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .spoke-card h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .spoke-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 1rem;
+    }
+
+    .spoke-card a {
+      display: inline-block;
+      background-color: var(--color-gold);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+    }
+
+    .spoke-card a:hover {
+      background-color: var(--color-salmon);
+    }
+
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .faq {
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: var(--color-cream);
+      border-left: 3px solid var(--color-gold);
+      border-radius: 4px;
+    }
+
+    .faq-item h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq-item p {
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      margin-top: 0;
+      color: var(--color-cream);
+    }
+
+    .cta-box p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--color-salmon);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .author-bio {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 3rem;
+      border-left: 4px solid var(--color-salmon);
+    }
+
+    .author-bio h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .author-bio p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    .related-posts {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    .related-posts h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .related-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .related-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .related-list li:last-child {
+      border-bottom: none;
+    }
+
+    .related-list a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .related-list a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      main {
+        padding: 1.5rem 0.5rem;
+      }
+
+      article {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero-image {
+        height: 250px;
+      }
+
+      #map {
+        height: 350px;
+      }
+
+      .spoke-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .image-caption {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      font-style: italic;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Rome Art, History & Culture: The Complete Guide",
+    "description": "Complete guide to Rome's 2,800 years of art history: ancient engineering, Renaissance masterpieces, Baroque transformation, and modern galleries. Includes Vatican, Colosseum, museums, and self-guided walks.",
+    "image": "https://dolcevitaroma.com/images/art/colosseum-rome-hero.jpg",
+    "datePublished": "2026-04-19T08:00:00+02:00",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dolcevitaroma.com/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rome Art, History & Culture",
+        "item": "https://dolcevitaroma.com/blog/rome-art-history-culture-guide"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are Rome's most important art historical periods?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rome spans 2,800 years of art history: Ancient Rome (753 BC-476 AD) gave us engineering genius and fresco techniques. Medieval Rome (476-1400) saw the rise of early Christian basilicas. The Renaissance (1400-1600) brought papal patronage and Michelangelo's Sistine Chapel. Baroque (1600-1750) transformed Rome through Bernini and Borromini. Modern Rome continues to be a living artistic center."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Rome's 'must-see' art sites for first-time visitors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with the Vatican Museums (book tickets online to avoid 3-hour queues), Sistine Chapel, and St. Peter's Basilica. Then visit the Colosseum and Roman Forum to understand ancient engineering. Spend a morning in the Galleria Borghese (book 2 weeks ahead) for Bernini sculptures and Caravaggio paintings. Walk through Piazza Navona to see Bernini's fountains and Borromini's church."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much time do I need to see Rome's art properly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimum: 4 days for the major sites (Vatican, Colosseum, Forum, one major gallery). Better: 1 week to include Borghese Gallery, multiple churches, neighborhood walks, and deeper museum time. Ideal: 10-14 days to truly understand Rome's layers and lesser-known masterpieces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What free art sites are worth visiting in Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dozens of churches are free and contain world-class art: San Luigi dei Francesi (Caravaggio triptych), Sant'Agostino (Caravaggio, Raphael), Santa Maria del Popolo (Caravaggio, Raphael, Bernini), and Sant'Ignazio (trompe-l'oeil dome). Plus free exteriors: Trajan's Column, Largo Argentina, Roman Forum perimeter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is the best time to visit Rome's museums?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Visit museums early (opening at 9am) or late afternoon (after 3:30pm). Avoid Tue-Thu 10am-2pm (heaviest crowds). First Sunday of month brings free entry but massive queues. Last Sunday of month brings free Vatican entry with larger but manageable crowds. Avoid summer (June-Aug) if possible; September-October is ideal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there free walking tours of Rome's art district?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Download Rick Steves Audio Europe for free self-guided Rome tours. Join Context Travel for expert-led walks (paid but worth it). Use the self-guided walks in this guide: Caravaggio Circuit, Baroque Rome Circuit, and Church Art Route are all free once you understand the route."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Michelangelo works must I see in Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sistine Chapel ceiling (1508-12) is non-negotiable -- the most influential artwork in Western history. Pieta (St. Peter's) shows his marble skill at age 24. Moses (San Pietro in Vincoli) reveals his psychological power. St. Peter's dome (designed age 72) demonstrates his architectural genius. The Last Judgment in Sistine Chapel is his final masterpiece."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I know about Rome's current museum closures or restorations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check musei.vaticani.va before Vatican visits -- rooms close periodically. The Colosseum's third ring remains closed for ongoing restoration. Trevi Fountain has seasonal maintenance. Most major sites stay open but verify hours before visiting. Call ahead for smaller churches which may have unpredictable hours."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog Home</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a> / <span>Rome Art, History & Culture</span>
+      </div>
+
+      <h1>Rome Art, History & Culture: The Complete Guide</h1>
+
+      <div class="post-meta">
+        <span>📅 Published April 19, 2026</span>
+        <span>📖 ~9,000 words</span>
+        <span>⏱️ 25 min read</span>
+      </div>
+
+      <img src="/images/art/colosseum-rome-hero.jpg" alt="The Colosseum in Rome, ancient Roman engineering masterpiece" class="hero-image" loading="lazy">
+      <p class="image-caption">The Colosseum: 2,000 years of Roman engineering excellence. Opened 80 AD, still standing.</p>
+
+      <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#executive-summary">Executive Summary: 2,800 Years of Art</a></li>
+          <li><a href="#ancient-rome">Ancient Rome: Engineering & Fresco</a></li>
+          <li><a href="#medieval">Medieval Rome: Basilicas & Power</a></li>
+          <li><a href="#renaissance">Renaissance in Rome: Michelangelo & Raphael</a></li>
+          <li><a href="#baroque">Baroque Transformation: Bernini vs. Borromini</a></li>
+          <li><a href="#caravaggio">Caravaggio's Radical Vision</a></li>
+          <li><a href="#timeline">Art History Timeline: Visual Overview</a></li>
+          <li><a href="#museums">Museum Overview & Collections</a></li>
+          <li><a href="#key-sites">The Foundational Sites</a></li>
+          <li><a href="#restorations">Current Restorations & Hours (2026)</a></li>
+          <li><a href="#maps">Interactive Map of Key Sites</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+          <li><a href="#spokes">Explore the Detailed Guides</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h2 id="executive-summary">Executive Summary: 2,800 Years of Art</h2>
+
+        <p>Rome isn't just a city with art. Rome IS art, frozen in stone and paint across 2,800 years of uninterrupted creation. You walk past a 2,000-year-old column on your morning espresso run. You pray in a church painted by Renaissance masters. You see the same streets that Caravaggio walked fleeing a murder charge.</p>
+
+        <p>This guide takes you through Rome's five art historical periods, helping you understand not just WHAT you're seeing, but WHY it matters. Whether you have four days or four weeks, you'll learn to decode the genius behind Rome's greatest works.</p>
+
+        <p>Here's the arc: Ancient Rome gave us engineering that still astounds (the Pantheon's dome, unreplicated for 1,300 years). Medieval Rome built basilicas that shaped Christian iconography. The Renaissance brought papal wealth and competitive genius (Michelangelo vs. Raphael). Baroque transformed Rome into a city of movement and drama. And Caravaggio? He changed everything about how we see light and shadow in art.</p>
+
+        <p>Let's start with the big picture.</p>
+
+        <h2 id="ancient-rome">Ancient Rome: Engineering Genius & Immortal Techniques</h2>
+
+        <p>The Romans were not the greatest painters or sculptors in the ancient world. That honor belonged to the Greeks. But what the Romans did was take Greek aesthetics and scale them up with engineering that seems impossible even today.</p>
+
+        <p><strong>The Pantheon (125 AD)</strong> is exhibit A. Stand inside, look up at a perfectly round oculus (8.9 meters diameter), and understand that this dome is wider than the distance between home plate and first base. It's made of concrete, not steel. The weight is distributed through coffering and aggregate that gets progressively lighter as it rises (pumice near the top instead of stone). No one replicated this engineering for 1,300 years. When you stand under it, you're in the most perfectly preserved building from ancient Rome. Take 20 minutes and sit in the light shaft that moves across the floor with the sun.</p>
+
+        <p><strong>The Colosseum (80 AD)</strong> announced Rome's power to the world. It held 50,000-80,000 people watching gladiatorial games, animal hunts (9,000 animals were slaughtered in the opening 100 days), and executions staged as myth reenactments. The engineering genius was invisible: an underground hypogeum (basement) with 80 trapdoors allowed animals and scenery to emerge suddenly, creating what we'd call special effects. The building stood for 2,000 years. The third ring is still undergoing restoration as of 2026, but the first two rings and arena floor level access give you the complete picture.</p>
+
+        <p><strong>Roman frescoes</strong> cover the walls of Pompeii and Herculaneum (preserved by Vesuvius's eruption in 79 AD). The technique: paint on wet plaster so the pigment becomes part of the wall itself. This is why Roman frescoes survive. Romans had a palette of about 100 colors, including the expensive purples and reds derived from marine mollusks. When a Roman wanted to show wealth, they painted entire rooms in red or purple. These colors meant money.</p>
+
+        <p><strong>Roman mosaics</strong> are thumbnails of ancient painting. In the Palazzo Massimo (which we cover in detail in our Museums Guide), you'll see the Alexander Mosaic -- showing Alexander the Great at the Battle of Issus with thousands of tiny tiles creating a narrative that rivals oil painting in complexity. The Romans were mosaic masters because they controlled trade routes for the semiprecious stone pieces.</p>
+
+        <p><strong>The Roman Forum</strong> was not a marketplace but a civic and religious center. Walking through it today, you see the Temple of Saturn (497 BC, Rome's oldest temple), the House of the Vestals (where the priestesses who tended Rome's eternal flame lived), and the spot where Julius Caesar was assassinated (people still leave flowers at the Temple of Julius Caesar -- visitors treat it like a shrine). The Forum tells Rome's political story in stone.</p>
+
+        <h2 id="medieval">Medieval Rome: Basilicas & Early Christian Power</h2>
+
+        <p>When Christianity became Rome's official religion (380 AD), the city transformed. Pagan temples were either destroyed or converted to churches. New basilicas were built using a design: a long central nave with lower side aisles, culminating in an altar. This shape became the template for Christian churches for 1,500 years.</p>
+
+        <p><strong>Santa Maria Maggiore</strong> (432 AD) is the oldest and most magnificent. The nave is covered in 5th-century mosaics (pre-Romanesque, raw and powerful). The Salus Populi Romani icon -- believed to be painted by Saint Luke himself (it's definitely medieval, so no) -- sits in the Borghese chapel and draws pilgrims daily. The interior is pure gold leaf and marble.</p>
+
+        <p>Medieval Rome lacked the artistic innovation of Florence or Venice. The city was politically fragmented, the papacy was occasionally corrupt, and resources went to sustaining St. Peter's Basilica rather than new creative projects. But the infrastructure of faith -- the basilicas, the ritual spaces -- was locked in.</p>
+
+        <h2 id="renaissance">Renaissance in Rome: Popes as Patrons & Michelangelo's Genius</h2>
+
+        <p>The Renaissance began in Florence (Giotto, Masaccio, Brunelleschi). Rome didn't become the artistic capital until Pope Julius II arrived in 1503. Julius II was a warrior pope with enormous wealth. He made two decisions that changed Western art forever:</p>
+
+        <p><strong>Decision One: Commission Michelangelo to paint the Sistine Chapel ceiling (1508-1512).</strong></p>
+
+        <p>Michelangelo was 33 years old and had never fresco painted on this scale. The Sistine Chapel is 130 meters long. The ceiling is 512 square meters covered in paint. The project took four years of Michelangelo lying (he stood, craned his neck) on scaffolding at 20 meters height.</p>
+
+        <p>The imagery unfolds from the altar: the Creation of Adam (where God reaches out and gives Adam life with a single finger touch), the Separation of Light and Darkness, the Flood, Noah drunk after the wine. The side panels show Prophets and Sibyls -- pagan prophetesses included because Renaissance thinkers believed classical wisdom prefigured Christianity.</p>
+
+        <p>The Creation of Adam is the most recognizable painting in Western art. But here's what most people miss: God's arm doesn't actually touch Adam's. There's a gap. Art historians debate whether this gap represents the human will -- the space where we choose our own path. Or maybe Michelangelo just didn't want them touching.</p>
+
+        <p>In 1541, 30 years later, Michelangelo returned to paint the Last Judgment on the altar wall. By then he was 67 and darker in temperament. Christ is a judge, not a savior. The damned are dragged to Hell. Michelangelo painted himself as Saint Bartholomew, holding his own flayed skin -- a portrait of suffering.</p>
+
+        <p>The colors you see today are from the 1994 cleaning, which removed 500 years of dust and candle smoke. The original colors are vivid, almost garish. Some scholars felt the cleaning made them too bright, but the evidence is clear: Michelangelo intended these colors.</p>
+
+        <p><strong>Decision Two: Bring Raphael to paint the Stanze di Raffaello (Raphael Rooms, 1509-1511).</strong></p>
+
+        <p>While Michelangelo was on his back in the Sistine Chapel, Raphael was painting the Pope's apartments next door. Raphael was 26. The Stanze are a masterclass in Renaissance composition.</p>
+
+        <p>The School of Athens (Room of the Signature) depicts a debate between philosophy and theology. Plato stands center with a book pointing upward (the world of ideals). Aristotle stands beside him pointing forward (the empirical world). Plato is modeled on Leonardo da Vinci. Aristotle is Michelangelo. Raphael was making a statement: these giants shape our thinking.</p>
+
+        <p>Look at the architecture: Raphael drew perfect Renaissance perspective. The vanishing point draws you into the room. It's the most perfectly balanced composition in Renaissance art.</p>
+
+        <p><strong>Pope Leo X continued the patronage.</strong> The papal family (Medici, from Florence) flooded Rome with commissions. This is when Rome became the artistic capital of the Renaissance -- not because Romans were more talented, but because Rome had money and papal power.</p>
+
+        <p>By 1520, Rome had become the city where artistic ambition went to achieve immortality.</p>
+
+        <h2 id="baroque">The Baroque Transformation: Drama, Movement & Bernini vs. Borromini</h2>
+
+        <p>In 1534, the Protestant Reformation split Christianity. The Catholic Church's response was the Counter-Reformation: a deliberate artistic strategy to make religion visceral, emotional, and undeniable.</p>
+
+        <p>Enter the Baroque, art's most dramatic period. Where Renaissance art was balanced and rational, Baroque art moved, curved, and dragged you emotionally into the scene. Saints didn't sit contemplatively. They ecstasied. Angels swarmed. Light burst through clouds like divine intervention.</p>
+
+        <p><strong>Gian Lorenzo Bernini (1598-1680)</strong> was the architect and sculptor of Rome's transformation. Bernini was born in Naples, arrived in Rome as a teenager, and became the city's artistic dictator for 60 years. Popes competed to commission him. By age 23, he was carving marble with god-like skill.</p>
+
+        <p><strong>Pluto and Persephone (1621-22, Borghese Gallery)</strong> shows Bernini's genius in marble. Pluto grabs the struggling Persephone. Look at his fingers pressing into her thigh -- you can see the flesh give way. Her expression is terror turning to resignation. Bernini carved this at 23. He understood anatomy, emotion, and narrative in ways no one else did.</p>
+
+        <p><strong>Apollo and Daphne (1622-25, Borghese Gallery)</strong> captures the moment Daphne turns into a laurel tree to escape Apollo. Her fingers are becoming leaves. Her feet become roots. Bernini carved the transformation mid-action -- nothing is static. This is Baroque's promise: you're not watching a moment, you're inside it, time still flowing.</p>
+
+        <p><strong>Ecstasy of Saint Teresa (1647-52, Santa Maria della Vittoria)</strong> is maybe the most sensual religious artwork ever created. Saint Teresa is in spiritual ecstasy as a cherub aims an arrow at her heart. Her head is thrown back. Her expression is between pain and pleasure. The marble folds of her dress billow like she's floating. Marble angels watch from the architecture around the chapel. Golden rays burst above like she's ascending. The effect is overwhelming. You understand why some people called it obscene. The Counter-Reformation wanted to feel God in your body, not just your mind. Bernini delivered.</p>
+
+        <p><strong>Four Rivers Fountain (1651, Piazza Navona)</strong> shows Bernini's architectural vision. Four river gods represent the four known continents: the Nile (head covered -- Romans didn't know its source), the Danube, Ganges, and Rio de la Plata. The rivers flow around an Egyptian obelisk. There's movement in every direction. The Baroque doesn't let your eye rest.</p>
+
+        <p>There's a legend that the Nile god covers his face to avoid seeing Borromini's church (Sant'Agnese) across the square, and the Rio de la Plata raises his hand to block the view. Actually, the fountain predates the church, so the legend is wrong. But it captures the real Bernini-Borromini rivalry that defined Rome's Baroque period.</p>
+
+        <p><strong>Francesco Borromini (1599-1667)</strong> was Bernini's rival and opposite. Where Bernini was sculptural and curving, Borromini was architectural and concave-convex. Bernini was appointed by popes. Borromini fought for commissions and died by suicide at 68, reportedly depressed at his lack of recognition compared to Bernini.</p>
+
+        <p><strong>San Carlo alle Quattro Fontane (1638-46)</strong> is Borromini's masterpiece. The interior is tiny -- it fits inside one of St. Peter's dome piers. But the design is dazzling. The walls undulate. The ceiling seems to breathe. It's a complete architectural argument in a small space. You step inside and feel like you've entered a jewel box.</p>
+
+        <p><strong>Sant'Ivo alla Sapienza (1642-60)</strong> has an exterior that looks simple, then you see the courtyard and the facade undulates inward and outward. The lantern on top spirals upward in a way that seems impossible in stone. Borromini's churches are exercises in geometry and illusion.</p>
+
+        <p>The Baroque made Rome a city of drama. Every church became a stage. Every chapel was an event. The architecture said: God is here, present, moving, alive in the world. This was the Counter-Reformation's artistic strategy, and it worked.</p>
+
+        <h2 id="caravaggio">Caravaggio: Light, Shadow & Radical Realism</h2>
+
+        <p>While Bernini was sculpting divine forms and Borromini was designing spiraling buildings, Michelangelo Merisi (known as Caravaggio, born 1571 in the Lombard town of Caravaggio) was revolutionizing painting.</p>
+
+        <p><strong>Caravaggio arrived in Rome in 1592 at age 21.</strong> He was poor, violent, and brilliant. He killed a man over a tennis match. He slashed people with his sword. He was arrested repeatedly. And he painted like no one in history.</p>
+
+        <p>Caravaggio's innovation: radical light and shadow (chiaroscuro). His paintings feel lit by a single divine source -- usually off-canvas. The figures emerge from darkness. The contrast is shocking. And he painted ordinary people, not idealized forms. When he painted the Calling of Saint Matthew, the saint was a boy in tavern clothes, looking startled as Jesus points at him. Scandalous. Saint Matthew wasn't noble or ethereal. He was a kid being called from sin.</p>
+
+        <p><strong>San Luigi dei Francesi (free, Via della Scrofa)</strong> holds Caravaggio's Contarelli Chapel: three paintings of Saint Matthew's life. Bring coins (EUR 0.50) to turn on the lights to see them properly. The Calling of Saint Matthew shows Christ entering a tavern of tax collectors and prostitutes, and pointing at Matthew with his left hand -- the same gesture God uses to wake Adam in Michelangelo's Sistine ceiling. Caravaggio was saying: salvation comes to sinners in taverns, not temples.</p>
+
+        <p>The Inspiration of Saint Matthew shows Matthew writing his gospel as an angel guides his hand. The angel is a boy. Matthew is an old man squinting at the page. It's human, not divine.</p>
+
+        <p><strong>Sant'Agostino (free, Piazza di Sant'Agostino)</strong> holds Madonna of the Pilgrims. The Madonna and child are approached by two pilgrims with dirty feet. One pulls up his sleeve to show a leg wound. This caused outrage. The Madonna was treated like a working-class woman receiving beggars. It was revolutionary and counter-revolutionary at once: revolutionary because it painted the sacred as real, counter-revolutionary because it made faith accessible to common people.</p>
+
+        <p><strong>Santa Maria del Popolo (free, Piazza del Popolo)</strong> contains two Caravaggio masterpieces in the Cerasi Chapel: the Conversion of Saint Paul and the Crucifixion of Saint Peter. The Conversion shows Paul knocked off his horse, blinded by light, in the dark with his groom. It's violence and grace. The Crucifixion shows Peter inverted on his cross, feet up, a dignified martyr. Caravaggio understood how to tell a story with light and emotion.</p>
+
+        <p><strong>In 1606, Caravaggio killed a man named Ranuccio Tomassoni.</strong> The circumstances are unclear -- possibly a fight, possibly a planned attack, possibly self-defense. Caravaggio fled Rome with a death sentence. He spent the last seven years of his life running, painting in Naples, Malta, and Sicily. He died in 1610 at age 38, likely of infected wounds from a sword fight.</p>
+
+        <p>But in seven years in Rome, Caravaggio changed painting forever. Every painter after him who used dramatic lighting and ordinary subjects as sacred was following Caravaggio. He made art that looked like life lived in real light, not idealized light. He made the sacred immediate.</p>
+
+        <p><strong>David with the Head of Goliath (Borghese Gallery)</strong> is Caravaggio's greatest self-portrait. David holds up the severed head of Goliath, and Goliath's face is Caravaggio's own. Knowing he'd been sentenced to death, Caravaggio painted himself as the defeated giant, dead and humbled. It's the most psychologically raw artwork in the collection.</p>
+
+        <h2 id="timeline">Art History Timeline: Visual Narrative of Rome</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Ancient Rome: Foundation</h4>
+            <div class="date">753 BC - 476 AD</div>
+            <p>From legendary founding by Romulus to the fall of the Western Roman Empire. Roman engineering perfected: concrete domes, vaulted ceilings, fresco and mosaic techniques, urban planning. Key sites: Colosseum (80 AD), Pantheon (125 AD), Roman Forum, aqueducts, roads.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Medieval Rome: Religious Center</h4>
+            <div class="date">476 AD - 1400</div>
+            <p>Rome fragmented politically but unified religiously. Basilicas built as temples for Christianity. Early Christian mosaics in Santa Maria Maggiore (432). St. Peter's Basilica construction begins under Constantine and continues through the Middle Ages. Rome became the Christian capital, popes wielded spiritual power while political power decayed.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Renaissance: Rebirth of Classicism</h4>
+            <div class="date">1400 - 1600</div>
+            <p>Florence begins the Renaissance. Rome joins late (1500s) when popes like Julius II bring wealth and patronage. Michelangelo (Sistine Chapel ceiling 1508-12, Pieta 1499). Raphael (Stanze di Raffaello 1509-11). Popes compete for genius. Rome becomes the artistic capital by 1520.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Counter-Reformation & Baroque: Emotional Intensity</h4>
+            <div class="date">1534 - 1750</div>
+            <p>Catholic Church responds to Protestantism with emotional, dramatic art. Bernini dominates Rome (1598-1680) with dynamic sculpture and architectural vision. Borromini competes with revolutionary church designs. Caravaggio (1571-1610) invents chiaroscuro painting. Rome becomes a Baroque city of movement, light, and divine drama.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Neoclassical & Modern: New Narratives</h4>
+            <div class="date">1750 - Present</div>
+            <p>Rome's artistic energy continues. The 19th century saw the popes lose temporal power (Pope Pius IX's last territories seized 1870). Modern Rome developed new museums, restorations, and contemporary art scenes. Today Rome is both a museum of its own history and a living artistic center.</p>
+          </div>
+        </div>
+
+        <h2 id="museums">Museum Overview & Major Collections</h2>
+
+        <p><strong>Musei Vaticani (Vatican Museums)</strong> is the largest museum complex in the world. 54 galleries, 20,000 works on display. The Sistine Chapel is included. Raphael Rooms, Gallery of Maps, Pinacoteca (paintings), sculpture galleries. You cannot see everything in one visit. EUR 20 admission, book online (museivaticani.va) to add EUR 4 but save hours of waiting. (See detailed guide: blog-post-28.html)</p>
+
+        <p><strong>Galleria Borghese</strong> is Rome's most rewarding museum: small (20 works in one room, spread across two floors), intimate, and museum-perfect. Twenty Bernini sculptures, six Caravaggio paintings, Titian, Raphael, and others. EUR 15, but bookings are strictly enforced (2-hour visits only). Book two weeks ahead at galleriaborghese.beniculturali.it. The most important two hours you'll spend in Rome. (See detailed guide: blog-post-31.html)</p>
+
+        <p><strong>Capitoline Museums (Musei Capitolini)</strong> opened in 1471 as the world's first public museum. Two palaces designed by Michelangelo around Piazza del Campidoglio with a view of the Forum. Contains the original Marcus Aurelius equestrian statue (a copy is in the square), the Dying Gaul, She-Wolf (the symbol of Rome), and Greek original sculptures. EUR 15. The terrace view of the Forum is worth the admission alone. (See detailed guide: blog-post-31.html)</p>
+
+        <p><strong>Palazzo Massimo alle Terme</strong> has Rome's finest mosaics and frescoes: the Alexander Mosaic, the Nile mosaic, reconstructed room from Livia's villa. EUR 10. Often overlooked but essential for understanding Roman domestic art. (See detailed guide: blog-post-31.html)</p>
+
+        <p><strong>Palazzo Altemps</strong> has Greek originals and Roman copies: Ludovisi Gaul, throne of Ludovisi, and other sculpture. EUR 10. Via Sant'Apollinare 46. (See detailed guide: blog-post-31.html)</p>
+
+        <p><strong>Villa Farnesina (EUR 12)</strong> has Raphael frescoes including the Galatea fresco (1512) and Peruzzi's perspective paintings. Only open Mon-Sat 9am-2pm. Small, intimate, often overlooked. (See detailed guide: blog-post-31.html)</p>
+
+        <h2 id="key-sites">The Foundational Sites: What You Cannot Miss</h2>
+
+        <p><strong>The Colosseum (Colosseo)</strong> represents Roman engineering and power. Walk the arena floor where gladiators fought. The engineering hidden in the stone -- the vaulting systems, the corridors, the trapdoors -- is as important as the spectacle. Metro B: Colosseo. EUR 18 (combined with Forum and Palatine). (Detailed guide: blog-post-29.html)</p>
+
+        <p><strong>Roman Forum (Foro Romano)</strong> is Rome's civic and religious center. The Temple of Saturn (497 BC, oldest), Arch of Septimius Severus, House of the Vestals, Temple of Julius Caesar (assassination site). Walk slowly. Imagine thousands of Romans conducting business, performing rituals. Included in Colosseum ticket. (Detailed guide: blog-post-29.html)</p>
+
+        <p><strong>Pantheon</strong> is the most perfectly preserved ancient Roman building. The dome unreplicated for 1,300 years. Stand inside, look up, understand engineering. Free on first Sunday of month (crowded), otherwise EUR 5. (Detailed guide: blog-post-29.html)</p>
+
+        <p><strong>Vatican Museums & Sistine Chapel</strong> holds the most important single artwork in Western art (Sistine ceiling) and the largest collection of Renaissance and classical art. EUR 20, book online. Half-day minimum time needed. (Detailed guide: blog-post-28.html)</p>
+
+        <p><strong>St. Peter's Basilica</strong> is free to enter (separate from Vatican Museums). Michelangelo's Pieta, Bernini's baldachin, the dome. Dome climb EUR 8 (stairs) or EUR 10 (lift+stairs), 551 steps. (Detailed guide: blog-post-28.html)</p>
+
+        <p><strong>Galleria Borghese</strong> combines sculpture (Bernini), painting (Caravaggio, Titian, Raphael), and location (Villa Borghese park). Book ahead. EUR 15. (Detailed guide: blog-post-31.html)</p>
+
+        <p><strong>Baroque churches</strong> are free and world-class: San Luigi dei Francesi (Caravaggio), Sant'Agostino (Caravaggio, Raphael), Santa Maria del Popolo (Caravaggio, Raphael, Bernini sculptures), Santa Maria della Vittoria (Bernini's Ecstasy of Saint Teresa), Sant'Ivo alla Sapienza (Borromini's masterpiece), San Carlo alle Quattro Fontane (Borromini). (Detailed guide: blog-post-30.html)</p>
+
+        <h2 id="restorations">Current Restorations & Hours (2026)</h2>
+
+        <p><strong>Vatican Museums:</strong> Check musei.vaticani.va before visiting. Rooms close periodically for conservation. Hours generally Mon-Sat 9am-6pm (last entry 4pm), closed Sundays except the last Sunday of each month (free but very crowded). Expect 2-3 hour queues without online booking.</p>
+
+        <p><strong>Colosseum:</strong> The third ring remains closed for ongoing restoration as of 2026. First two rings, arena floor (extra fee), and hypogeum tours (bookable) are open. Periodic maintenance may close sections. Check coopculture.it or parcoarcheologico.it before visiting.</p>
+
+        <p><strong>Sistine Chapel:</strong> Ongoing conservation but the chapel remains open during regular Vatican Museum hours. Check for occasional room closures for conservation work.</p>
+
+        <p><strong>Trevi Fountain:</strong> Periodic maintenance happens seasonally. The fountain may be drained and roped off 1-2 weeks per year. Check comune.roma.it for scheduled maintenance dates.</p>
+
+        <p><strong>General note:</strong> Roman churches keep irregular hours. Some open 7am-noon and 3pm-6pm. Some close mid-week afternoons. Always verify hours before visiting lesser-known churches. Call ahead for small chapels.</p>
+
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h4>What are Rome's most important art historical periods?</h4>
+            <p>Rome spans 2,800 years of art history: Ancient Rome (753 BC-476 AD) gave us engineering genius and fresco techniques. Medieval (476-1400) saw early Christian basilicas. Renaissance (1400-1600) brought papal patronage and Michelangelo's Sistine Chapel. Baroque (1600-1750) transformed Rome through Bernini and Borromini. Modern Rome continues as a living artistic center.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What are Rome's "must-see" art sites for first-time visitors?</h4>
+            <p>Start with the Vatican Museums (book online), Sistine Chapel, and St. Peter's Basilica. Then visit the Colosseum and Roman Forum to understand ancient engineering. Spend a morning in Galleria Borghese (book two weeks ahead) for Bernini sculptures and Caravaggio paintings. Walk through Piazza Navona to see Bernini's fountains and Borromini's church.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>How much time do I need to see Rome's art properly?</h4>
+            <p>Minimum: 4 days for major sites (Vatican, Colosseum, Forum, one major gallery). Better: 1 week to include Borghese Gallery, churches, neighborhood walks, and deeper museum time. Ideal: 10-14 days to understand Rome's layers and lesser-known masterpieces.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What free art sites are worth visiting in Rome?</h4>
+            <p>Dozens of churches are free and contain world-class art: San Luigi dei Francesi (Caravaggio triptych), Sant'Agostino (Caravaggio, Raphael), Santa Maria del Popolo (Caravaggio, Raphael, Bernini), and Sant'Ignazio (trompe-l'oeil dome). Plus free exteriors: Trajan's Column, Largo Argentina, Roman Forum perimeter.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>When is the best time to visit Rome's museums?</h4>
+            <p>Visit museums early (opening at 9am) or late afternoon (after 3:30pm). Avoid Tue-Thu 10am-2pm (heaviest crowds). First Sunday of month brings free entry but massive queues. Last Sunday of month brings free Vatican entry. Avoid summer (June-Aug) if possible; September-October is ideal.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Are there free walking tours of Rome's art district?</h4>
+            <p>Yes. Download Rick Steves Audio Europe for free self-guided Rome tours. Use the self-guided walks in this guide: Caravaggio Circuit, Baroque Rome Circuit, and Church Art Route are all free once you understand the route. Join Dolce Vita Roma's art appreciation group for expert company.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Which Michelangelo works must I see in Rome?</h4>
+            <p>Sistine Chapel ceiling (1508-12) is non-negotiable -- the most influential artwork in Western history. Pieta (St. Peter's) shows his marble skill at age 24. Moses (San Pietro in Vincoli) reveals his psychological power. St. Peter's dome (designed age 72) demonstrates his architectural genius. The Last Judgment in Sistine Chapel is his final masterpiece.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What should I know about Rome's current museum closures or restorations?</h4>
+            <p>Check musei.vaticani.va before Vatican visits. The Colosseum's third ring remains closed for ongoing restoration. Trevi Fountain has seasonal maintenance. Most major sites stay open but verify hours before visiting. Call ahead for smaller churches which may have unpredictable hours.</p>
+          </div>
+        </div>
+
+        <h2 id="spokes">Explore the Detailed Guides (The Five Spokes)</h2>
+
+        <div class="spoke-links">
+          <p>This pillar guide covers Rome's art history and major sites. For detailed planning, use our five specialized guides:</p>
+
+          <div class="spoke-grid">
+            <div class="spoke-card">
+              <h4>Spoke 5A: Vatican Museums & Sistine Chapel</h4>
+              <p>Complete Vatican guide: ticket strategies, must-see galleries, Raphael Rooms, how to avoid crushing crowds, dress code, photography rules, and St. Peter's Basilica details.</p>
+              <a href="/blog/blog-post-28.html">Read Guide →</a>
+            </div>
+
+            <div class="spoke-card">
+              <h4>Spoke 5B: Ancient Roman Ruins</h4>
+              <p>Colosseum, Forum, Palatine Hill, Pantheon, Baths of Caracalla, Circus Maximus, and lesser-known sites like Largo Argentina and Mausoleum of Augustus with practical details.</p>
+              <a href="/blog/blog-post-29.html">Read Guide →</a>
+            </div>
+
+            <div class="spoke-card">
+              <h4>Spoke 5C: Renaissance & Baroque Masters</h4>
+              <p>Artist-focused deep dives: Michelangelo (Pieta, Sistine, Moses), Raphael (Stanze, Galatea), Bernini (Ecstasy, Apollo & Daphne, Four Rivers Fountain), Borromini (San Carlo, Sant'Ivo), and Caravaggio.</p>
+              <a href="/blog/blog-post-30.html">Read Guide →</a>
+            </div>
+
+            <div class="spoke-card">
+              <h4>Spoke 5D: Rome Museums by Neighborhood</h4>
+              <p>All of Rome's major and hidden museums organized by neighborhood: Borghese Gallery, Capitoline, Palazzo Massimo, Villa Farnesina, Doria Pamphilj, and museum passes explained.</p>
+              <a href="/blog/blog-post-31.html">Read Guide →</a>
+            </div>
+
+            <div class="spoke-card">
+              <h4>Spoke 5E: Self-Guided Art Walks</h4>
+              <p>Four detailed walking routes with maps: Caravaggio Circuit (2.5 hrs), Baroque Rome (3 hrs), Ancient Rome (2.5 hrs), and Church Art Route (2 hrs). Include photo spots and timing.</p>
+              <a href="/blog/blog-post-32.html">Read Guide →</a>
+            </div>
+          </div>
+        </div>
+
+        <h2>Related Guides from Dolce Vita Roma</h2>
+
+        <div class="related-posts">
+          <h3>Deepen Your Rome Knowledge</h3>
+          <ul class="related-list">
+            <li><a href="/blog/blog-post-1.html">Rome by Neighborhood: Where Expats Live & Play</a> -- Understand which neighborhoods have the best art scene (Centro Storico, Trastevere, Campo de' Fiori)</li>
+            <li><a href="/blog/blog-post-22.html">Rome Transport Guide: Metro, Buses & Walking</a> -- Get to all these art sites efficiently</li>
+            <li><a href="/blog/blog-post-2.html">Practical Rome Guide for Expats</a> -- Visas, housing, daily life essentials</li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Join Rome's Art Appreciation Community</h3>
+          <p>Explore Rome's masterpieces with other expats and locals who share your passion for art history. Attend museum tours, church walks, and studio visits with contemporary Roman artists.</p>
+          <a href="https://dolcevitaroma.com/join-groups" class="cta-button">Join DVR Art Group</a>
+        </div>
+
+        <div class="author-bio">
+          <h4>About This Guide</h4>
+          <p>Written by Dolce Vita Roma's team of Rome-based expats and art historians. This guide is based on resident knowledge, museum research, and current 2026 opening hours and prices. Rome's art sites are constantly being restored, so always verify hours before visiting using the official museum websites. This is Part 5 (Rome Art, History & Culture) of the Dolce Vita Roma Pillar & Spoke Guides. Read all six pillars at dolcevitaroma.com/blog.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Rome Expat Community & Lifestyle Guide</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Initialize Leaflet map with Rome's key art sites
+    const map = L.map('map').setView([41.9028, 12.4964], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Key art sites markers
+    const sites = [
+      { name: 'Colosseum', lat: 41.8902, lng: 12.4916, icon: '🏛️' },
+      { name: 'Vatican Museums', lat: 41.9022, lng: 12.4539, icon: '🎨' },
+      { name: 'Galleria Borghese', lat: 41.9140, lng: 12.4924, icon: '🖼️' },
+      { name: 'Pantheon', lat: 41.8986, lng: 12.4769, icon: '⛪' },
+      { name: 'Piazza Navona', lat: 41.8993, lng: 12.4730, icon: '⛲' },
+      { name: 'Roman Forum', lat: 41.8925, lng: 12.4857, icon: '🏛️' },
+      { name: 'Capitoline Museums', lat: 41.8933, lng: 12.4859, icon: '🎨' }
+    ];
+
+    sites.forEach(site => {
+      L.marker([site.lat, site.lng], {
+        title: site.name
+      }).addTo(map).bindPopup(
+        `<strong>${site.name}</strong><br/>Tap for details`
+      );
+    });
+
+    // Add a custom control with legend
+    const legend = L.control({position: 'bottomright'});
+    legend.onAdd = function() {
+      const div = L.DomUtil.create('div', 'info legend');
+      div.style.backgroundColor = 'white';
+      div.style.padding = '10px';
+      div.style.borderRadius = '5px';
+      div.style.boxShadow = '0 0 15px rgba(0,0,0,0.2)';
+      div.innerHTML = '<p style="margin: 0; font-weight: bold; font-size: 12px;">Rome Art Sites</p>';
+      return div;
+    };
+    legend.addTo(map);
+  </script>
+</body>
+</html>

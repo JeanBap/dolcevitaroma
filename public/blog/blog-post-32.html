@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Guided Art Walks in Rome: 4 Walking Routes | Dolce Vita Roma</title>
+  <meta name="description" content="Four detailed self-guided walking routes through Rome: Caravaggio Circuit, Baroque Rome, Ancient Rome morning, and Church Art Route. Maps, times, and photo spots included.">
+  <meta name="keywords" content="Rome walking tours, self-guided walks Rome, art walks Rome, Caravaggio walks, Baroque Rome, ancient Rome walks">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/self-guided-art-walks-rome">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Self-Guided Art Walks in Rome: 4 Walking Routes | Dolce Vita Roma">
+  <meta property="og:description" content="Four detailed self-guided walking routes through Rome: Caravaggio Circuit, Baroque Rome, Ancient Rome morning, and Church Art Route. Maps, times, and photo spots.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/self-guided-art-walks-rome">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/art/piazza-navona-fountain.jpg">
+  <meta property="article:published_time" content="2026-04-19T08:00:00+02:00">
+  <meta property="article:author" content="Dolce Vita Roma">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Self-Guided Art Walks in Rome: 4 Walking Routes">
+  <meta name="twitter:description" content="Free walking routes through Rome's art districts with detailed timing and directions.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/images/art/piazza-navona-fountain.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    :root {
+      --color-green: #2B3A1B;
+      --color-cream: #F5EBD8;
+      --color-gold: #C9A84C;
+      --color-salmon: #E8614B;
+      --color-red: #C8352B;
+      --color-border: #E0D5C4;
+      --color-text-light: #7A6F5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: var(--color-green);
+      background-color: var(--color-cream);
+    }
+
+    header {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--color-gold);
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav {
+      background-color: var(--color-cream);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-gold);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    article {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.2rem;
+      color: var(--color-green);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--color-green);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--color-gold);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.3rem;
+      color: var(--color-salmon);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h4 {
+      font-weight: 700;
+      color: var(--color-green);
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .post-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .toc {
+      background-color: var(--color-cream);
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+    }
+
+    .content strong {
+      color: var(--color-green);
+    }
+
+    .walk-card {
+      background-color: var(--color-cream);
+      border-left: 4px solid var(--color-salmon);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .walk-card h3 {
+      margin-top: 0;
+    }
+
+    .walk-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      color: var(--color-salmon);
+      font-size: 0.95rem;
+    }
+
+    .walk-stop {
+      background-color: white;
+      border-left: 3px solid var(--color-gold);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    .walk-stop strong {
+      color: var(--color-salmon);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .faq {
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: var(--color-cream);
+      border-left: 3px solid var(--color-gold);
+      border-radius: 4px;
+    }
+
+    .faq-item h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq-item p {
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      margin-top: 0;
+      color: var(--color-cream);
+    }
+
+    .cta-box p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--color-salmon);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .related-posts {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    .related-posts h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .related-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .related-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .related-list li:last-child {
+      border-bottom: none;
+    }
+
+    .related-list a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .related-list a:hover {
+      text-decoration: underline;
+    }
+
+    .author-bio {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 3rem;
+      border-left: 4px solid var(--color-salmon);
+    }
+
+    .author-bio h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .author-bio p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    .tips-box {
+      background-color: white;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .tips-box h4 {
+      margin-top: 0;
+      color: var(--color-salmon);
+    }
+
+    .tips-box ul {
+      margin: 1rem 0 0 1.5rem;
+    }
+
+    .tips-box li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      main {
+        padding: 1.5rem 0.5rem;
+      }
+
+      article {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero-image {
+        height: 250px;
+      }
+
+      #map {
+        height: 350px;
+      }
+
+      .walk-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+
+    .image-caption {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      font-style: italic;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Self-Guided Art Walks in Rome: 4 Walking Routes",
+    "description": "Four detailed self-guided walking routes through Rome: Caravaggio Circuit, Baroque Rome, Ancient Rome morning, and Church Art Route. Maps, times, and photo spots.",
+    "image": "https://dolcevitaroma.com/images/art/piazza-navona-fountain.jpg",
+    "datePublished": "2026-04-19T08:00:00+02:00",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dolcevitaroma.com/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Blog",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rome Art, History & Culture",
+        "item": "https://dolcevitaroma.com/blog/rome-art-history-culture-guide"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Self-Guided Art Walks",
+        "item": "https://dolcevitaroma.com/blog/self-guided-art-walks-rome"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are self-guided walks safe in Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. These routes are in well-traveled Centro Storico and tourist areas. Use normal city precautions: keep valuables secure, stay aware of pickpockets on crowded streets, avoid isolated alleys at night. Daytime walks are very safe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a map or phone app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Download the maps in this guide. Google Maps works well for navigation. Maps.me (offline) is good. Rick Steves Audio Europe app provides free self-guided Rome audio tours. Phone GPS is reliable in Rome."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the best time to do these walks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Caravaggio Circuit: 9am start avoids crowds. Baroque Rome: morning or late afternoon (3:30pm+) for light. Ancient Rome: early morning (8am) for cool air and light. Church walks: any morning 10am-12pm when churches are open."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I combine multiple walks in one day?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Caravaggio + Baroque Rome: 5.5 hours combined (no, too much). Baroque Rome + Church Art: 5 hours (possible with lunch break). Ancient Rome morning + lunch + Baroque afternoon: full day (6-7 hours walking)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What coins do I need for church lighting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bring EUR 0.50 or EUR 1 coins. Most coin boxes in churches accept any denomination. Some have electronic timers (lights stay on 15 minutes). Bring 4-5 EUR worth of small coins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these walks wheelchair accessible?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Partly. The routes use existing Rome streets which have uneven pavement, cobblestones, and stairs. Pantheon entrance is accessible. San Luigi dei Francesi and some other churches have steps. Ancient Rome has significant stairs. Better for walking than wheeling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to book any tickets in advance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No tickets required for these walks -- most sites are churches (free) or outdoor public spaces (free). Pantheon (EUR 5) is optional. These are all free walks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the best restaurant or cafe on each route?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Caravaggio: Caffe Sant'Eustachio (EUR 1.50 espresso, among Rome's best). Baroque: Caffe Sant'Eustachio same location. Ancient Rome: Bar Capitolino (terrace views of Forum, pricey). Church walks: Tazza d'Oro (near Pantheon, great espresso)."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog Home</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Blog Home</a> / <a href="/blog/blog-post-27.html">Rome Art Guide</a> / <span>Self-Guided Art Walks</span>
+      </div>
+
+      <h1>Self-Guided Art Walks in Rome: 4 Walking Routes</h1>
+
+      <div class="post-meta">
+        <span>📅 Published April 19, 2026</span>
+        <span>📖 ~2,500 words</span>
+        <span>⏱️ 12 min read</span>
+      </div>
+
+      <img src="/images/art/piazza-navona-fountain.jpg" alt="Piazza Navona fountain with Bernini's Four Rivers Fountain and Baroque architecture" class="hero-image" loading="lazy">
+      <p class="image-caption">Piazza Navona: centerpiece of the Baroque Rome walk. Free to explore. Best light late afternoon.</p>
+
+      <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#overview">Why Walk Instead of Tour?</a></li>
+          <li><a href="#caravaggio">Walk 1: Caravaggio Circuit (2.5 hours)</a></li>
+          <li><a href="#baroque">Walk 2: Baroque Rome (3 hours)</a></li>
+          <li><a href="#ancient">Walk 3: Ancient Rome Morning (2.5 hours)</a></li>
+          <li><a href="#church-art">Walk 4: Church Art Route (2 hours)</a></li>
+          <li><a href="#maps">Walking Routes Map</a></li>
+          <li><a href="#tips">Walking Tips & Photo Spots</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h2 id="overview">Why Walk Instead of Taking a Tour?</h2>
+
+        <p>Walking on your own gives you three advantages: you control the pace, you can spend 20 minutes in one church if something captivates you, and you see Rome as Romans do -- not as part of a group of 20 tourists being herded through the city.</p>
+
+        <p>These walks are free (except coins for church lighting and optional EUR 5 for Pantheon). They avoid tourist traps. They put you in neighborhoods, not just monuments. Each walk has clear timing and simple directions.</p>
+
+        <p>Download these routes, screenshot them, or print them. Bring comfortable walking shoes and water.</p>
+
+        <h2 id="caravaggio">Walk 1: The Caravaggio Circuit (2.5 hours, 3.5km)</h2>
+
+        <div class="walk-card">
+          <h3>Best for: Understanding Caravaggio's radical realism and light.</h3>
+          <div class="walk-meta">
+            <span>⏱️ 2.5 hours</span>
+            <span>🚶 3.5km</span>
+            <span>🆓 Free + EUR 0.50 coins for lighting</span>
+            <span>🚌 Public transport not needed</span>
+          </div>
+
+          <div class="walk-stop">
+            <strong>9:00am -- San Luigi dei Francesi (Via della Scrofa)</strong>
+            <p>Start at the Contarelli Chapel. Three Caravaggio paintings: Calling of Saint Matthew, Inspiration of Saint Matthew, Martyrdom of Saint Matthew. Bring EUR 0.50 coins to light the chapel. Arrive early -- crowds form by 10am. The Calling of Saint Matthew is the most important. Spend 20 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>9:45am -- Walk east to Sant'Agostino (Piazza di Sant'Agostino)</strong>
+            <p>Walk south on Via del Seminario, then east. 10-minute walk. In Sant'Agostino, find the Madonna of the Pilgrims on the left nave. Caravaggio painted pilgrims with dirty feet kissing the Madonna's feet. Controversial, radical, human. 15 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>10:30am -- Piazza Navona (5-minute walk)</strong>
+            <p>Walk east from Sant'Agostino to Piazza Navona. Bernini's Four Rivers Fountain, not Caravaggio's work, but good context for understanding what Caravaggio was reacting against (Baroque drama vs. Caravaggio's realism). Coffee at Caffe Sant'Eustachio (Via Sant'Eustachio, EUR 1.50, among Rome's best espresso). 15 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:00am -- Largo Argentina (10-minute walk)</strong>
+            <p>Walk south on Via dei Cesarini. Largo Argentina is an open-air excavation of Republican temples. Not Caravaggio-related, but it's a peaceful 5-minute detour if you want to rest. Cats live here -- Rome's feral cat sanctuary.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:30am -- Santa Maria del Popolo (optional extension, 30 minutes)</strong>
+            <p>From Piazza Navona, walk north to Piazza del Popolo (20 minutes). In Santa Maria del Popolo, Cerasi Chapel has two Caravaggio masterpieces: Conversion of Saint Paul and Crucifixion of Saint Peter. The contrast between the two works shows Caravaggio's range. If time allows, include this. Otherwise, end at Piazza Navona and walk to Campo de' Fiori for lunch.</p>
+          </div>
+
+          <div class="tips-box">
+            <h4>Pro Tips</h4>
+            <ul>
+              <li><strong>Coin lighting:</strong> Most churches have electronic timers. EUR 0.50 lights the chapel for 15 minutes. Bring 4-5 EUR in coins.</li>
+              <li><strong>Crowds:</strong> Start at 9am sharp. By 10:30am, tour groups arrive at Caravaggio sites.</li>
+              <li><strong>Lunch:</strong> End at Campo de' Fiori (10-minute walk south from Sant'Agostino). Market, restaurants, neighborhood atmosphere.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="baroque">Walk 2: The Baroque Rome Circuit (3 hours, 4km)</h2>
+
+        <div class="walk-card">
+          <h3>Best for: Understanding Bernini, Borromini, and Counter-Reformation art.</h3>
+          <div class="walk-meta">
+            <span>⏱️ 3 hours</span>
+            <span>🚶 4km</span>
+            <span>🆓 Free + EUR 5 optional (Pantheon)</span>
+            <span>☀️ Best 10am-12pm or 3:30pm-6pm</span>
+          </div>
+
+          <div class="walk-stop">
+            <strong>10:00am -- Piazza Navona</strong>
+            <p>Start at Bernini's Four Rivers Fountain. Study the four river gods and the obelisk. The fountain is pure Baroque movement. Borromini's church (Sant'Agnese in Agone) is across the square -- the concave facade opposes Bernini's convex fountains. This plaza is the Bernini-Borromini rivalry made visible. 15 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>10:30am -- Sant'Ivo alla Sapienza (Corso del Rinascimento, 5-minute walk)</strong>
+            <p>The courtyard is free to enter and wander. Borromini's undulating facade, spiraling lantern, concave-convex geometry. It's intellectual, mathematical, perfect. 20 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:00am -- Piazza della Minerva (10-minute walk)</strong>
+            <p>Bernini's Elephant and Obelisk. The smallest Egyptian obelisk in Rome carried by Bernini's marble elephant. Whimsical and Baroque. Then visit Santa Maria sopra Minerva: Fra Angelico's tomb, Michelangelo's Christ the Redeemer. 20 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:30am -- Pantheon (5-minute walk)</strong>
+            <p>EUR 5. Walk around the dome, look at the oculus. This is ancient engineering, not Baroque, but it influences everything. Raphael's tomb is inside. 20 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>12:00pm -- Piazza della Rotonda Espresso Break</strong>
+            <p>Sit at a cafe facing the Pantheon. Caffe Sant'Eustachio (around the corner, Via Sant'Eustachio) has the best espresso (EUR 1.50). Or Tazza d'Oro (Via degli Orfani) is also excellent. 20 minutes rest.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>1:00pm -- Lunch Break</strong>
+            <p>Campo de' Fiori (15-minute walk south) has restaurants. Or nearby restaurants in Centro Storico. Break for 1 hour.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>3:30pm -- Santa Maria della Vittoria (Via XX Settembre, 20-minute walk or bus 60/81)</strong>
+            <p>Bernini's Ecstasy of Saint Teresa. The most sensual religious artwork ever made. The chapel is small, the sculpture is overwhelming. Bring coins for lighting. 30 minutes. This is the climax of the Baroque walk.</p>
+          </div>
+
+          <div class="tips-box">
+            <h4>Pro Tips</h4>
+            <ul>
+              <li><strong>Light timing:</strong> Late afternoon (3:30pm-6pm) has softer light on facades. Morning has hard shadow.</li>
+              <li><strong>Lunch:</strong> Essential. Baroque walking is intense -- museums without lunch.</li>
+              <li><strong>Transport:</strong> Use public transport or taxi to Santa Maria della Vittoria. It's 20 minutes walk but uphill.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="ancient">Walk 3: Ancient Rome Morning Route (2.5 hours, 3km)</h2>
+
+        <div class="walk-card">
+          <h3>Best for: Understanding Roman engineering and Republican history.</h3>
+          <div class="walk-meta">
+            <span>⏱️ 2.5 hours</span>
+            <span>🚶 3km</span>
+            <span>💶 EUR 18 combined ticket (optional, for interiors)</span>
+            <span>🌅 Best 8am-10am for light</span>
+          </div>
+
+          <div class="walk-stop">
+            <strong>8:45am -- Circus Maximus (Circo Massimo Metro B)</strong>
+            <p>Free, exterior only. 300,000 capacity, largest arena ever built. Now a public park. The outline of the spina (central barrier) is still visible. Walk around and imagine the chariot races. 5 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>9:00am -- Palatine Hill & Roman Forum</strong>
+            <p>EUR 18 combined ticket (Colosseum + Forum + Palatine, valid 2 days). Start on Palatine for views over the Forum and cooler morning air. Farnese Gardens, Domus Augustana, Palatine Museum. 60 minutes walking and exploring.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>10:00am -- Roman Forum</strong>
+            <p>Via Sacra walkway, Temple of Saturn, House of the Vestals, Temple of Julius Caesar (assassination site, people leave flowers), Arch of Titus. Walk slowly. Imagine thousands of Romans here conducting business and rituals. 60 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:00am -- Colosseum (Adjacent)</strong>
+            <p>Exterior is fully visible from the street. Walk around the entire perimeter. Best exterior photo: southeast side from Via Sacra. If you have time and energy, walk the interior (included in EUR 18 ticket, takes 45 minutes). Otherwise, view from outside and walk to nearby Largo Argentina.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:30am -- Trajan's Column (Via dei Fori Imperiali, 10-minute walk)</strong>
+            <p>Free exterior. 38-meter column depicting Dacian campaigns in spiral relief. 2,662 figures. Original pigment traces still visible. Romans colored sculptures bright, not the white marble we expect. 15 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>12:00pm -- End at Piazza Venezia or Bar Capitolino</strong>
+            <p>Walk north to Piazza Venezia. Bar Capitolino (terrace bar on Capitoline Hill above the Forum) has excellent views and Roman atmosphere. Sit and rest. Have espresso or light lunch overlooking the Forum.</p>
+          </div>
+
+          <div class="tips-box">
+            <h4>Pro Tips</h4>
+            <ul>
+              <li><strong>Early start:</strong> 8:45am is crucial. By 10am, tour groups arrive. Ancient sites are exposed -- bring sun protection.</li>
+              <li><strong>Footwear:</strong> Uneven stone and marble. Comfortable, supportive shoes. No heels.</li>
+              <li><strong>Dehydration:</strong> Bring 2 liters of water. No shade on Palatine or Forum.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="church-art">Walk 4: Church Art Route (2 hours, 2.5km)</h2>
+
+        <div class="walk-card">
+          <h3>Best for: Free art in sacred spaces without museum crowds.</h3>
+          <div class="walk-meta">
+            <span>⏱️ 2 hours</span>
+            <span>🚶 2.5km</span>
+            <span>🆓 Free + EUR 0.50 for lighting</span>
+            <span>⛪ 10am-12pm (churches open)</span>
+          </div>
+
+          <div class="walk-stop">
+            <strong>10:00am -- Santa Maria Maggiore (Piazza di Santa Maria Maggiore)</strong>
+            <p>One of Rome's 4 papal basilicas. 5th-century mosaics in the nave -- finest early Christian mosaics in existence. The gold, the raw emotion, the biblical narrative in tile. The Salus Populi Romani icon draws pilgrims daily. 20 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>10:30am -- Sant'Ignazio (Via Sant'Ignazio, 10-minute walk)</strong>
+            <p>Stand on the yellow disc on the floor and look up at the ceiling. Andrea Pozzo's trompe-l'oeil dome (1694) creates the illusion that the flat ceiling extends into a dome. It's an optical trick that still works 330 years later. 15 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:00am -- Gesù (Piazza del Gesù, 5-minute walk)</strong>
+            <p>Triumph of the Name of Jesus ceiling fresco by Baciccio. Bernini's Chapel of Sant'Ignazio inside. The Baroque energy is overwhelming. Light and movement everywhere. 20 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>11:30am -- San Luigi dei Francesi (Via della Scrofa, 10-minute walk)</strong>
+            <p>Caravaggio's Contarelli Chapel again (if you didn't do the Caravaggio Circuit walk). Three paintings in dramatic lighting. Coin-operated lighting (EUR 0.50). 15 minutes.</p>
+          </div>
+
+          <div class="walk-stop">
+            <strong>12:00pm -- Sant'Agostino (Piazza di Sant'Agostino, 5-minute walk)</strong>
+            <p>Madonna of the Pilgrims by Caravaggio. Raphael's Sibyls fresco. The chapel is intimate and moving. 10 minutes.</p>
+          </div>
+
+          <div class="tips-box">
+            <h4>Pro Tips</h4>
+            <ul>
+              <li><strong>Opening hours:</strong> Churches vary. Most open 7am-noon, close 12pm-3pm, reopen 3pm-6pm. Confirm before arriving.</li>
+              <li><strong>Coin lighting:</strong> Essential. Bring EUR 2-3 in EUR 0.50 coins for lighting side chapels.</li>
+              <li><strong>Respectful behavior:</strong> You're in active churches. Mass might be happening. Quiet voices. No photos if Mass is in progress.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Walking Routes Map</h2>
+
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+
+        <h2 id="tips">Walking Tips & Photo Spots</h2>
+
+        <div class="tips-box">
+          <h4>General Walking Tips</h4>
+          <ul>
+            <li><strong>Download offline maps:</strong> Maps.me or Google Maps (download Rome offline). GPS works even without data.</li>
+            <li><strong>Comfortable shoes:</strong> Rome has cobblestones. Bring support. No heels.</li>
+            <li><strong>Water:</strong> Bring 1.5-2 liters per walk. Tap water is free at most cafes (ask for "acqua del rubinetto").</li>
+            <li><strong>Sunscreen & hat:</strong> Rome in spring/summer sun is intense. Protect your skin.</li>
+            <li><strong>Small change:</strong> EUR 1-2 in coins for church lighting, bathroom tips, small purchases.</li>
+            <li><strong>Time flexibility:</strong> These are suggested times. Move at your own pace. If one site captivates you, stay longer.</li>
+          </ul>
+        </div>
+
+        <div class="tips-box">
+          <h4>Best Photo Spots</h4>
+          <ul>
+            <li><strong>Piazza Navona:</strong> Late afternoon light on Bernini fountain (4pm-6pm). From southeast corner facing northwest.</li>
+            <li><strong>Pantheon:</strong> Early morning (7am-8am) light through oculus hits floor. Magical. Or afternoon light (4pm-5pm).</li>
+            <li><strong>Colosseum:</strong> Southeast side from Via Sacra (morning light). North side from Piazza del Colosseo (afternoon light).</li>
+            <li><strong>Roman Forum:</strong> From Capitoline Hill looking down at Forum. Sunset light is best (6pm-7pm).</li>
+            <li><strong>Church interiors:</strong> Morning light through windows. Avoid flash -- it damages art and disturbs worshipers.</li>
+          </ul>
+        </div>
+
+        <div class="tips-box">
+          <h4>Rome Walking Apps</h4>
+          <ul>
+            <li><strong>Rick Steves Audio Europe (free):</strong> Walking tours, art context, history. Download to phone.</li>
+            <li><strong>Context Travel (paid):</strong> Expert guides (in-person or app-based). EUR 60-100 per tour. Worth for deep learning.</li>
+            <li><strong>Google Maps:</strong> Best for navigation. Works offline if downloaded.</li>
+            <li><strong>Maps.me (free):</strong> Good offline map. Works without data.</li>
+          </ul>
+        </div>
+
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h4>Are self-guided walks safe in Rome?</h4>
+            <p>Yes. These routes are in well-traveled Centro Storico and tourist areas. Use normal city precautions: keep valuables secure, avoid isolated alleys at night. Daytime walks in the routes above are very safe.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Do I need a map or phone app?</h4>
+            <p>Download the maps in this guide, screenshot them, or print them. Google Maps works well for navigation. Maps.me (offline) is good. Rick Steves Audio Europe app is excellent.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What's the best time to do these walks?</h4>
+            <p>Caravaggio: 9am start avoids crowds. Baroque: morning or late afternoon for light. Ancient Rome: early morning (8am) for cool air. Church walks: 10am-12pm when churches are open.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Can I combine multiple walks in one day?</h4>
+            <p>Baroque Rome + Church Art: 5 hours combined (possible with lunch). Ancient Rome morning + Baroque afternoon: full day (6-7 hours). Caravaggio + Baroque: too much (5.5 hours non-stop).</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What coins do I need for church lighting?</h4>
+            <p>Bring EUR 0.50 or EUR 1 coins. Most coin boxes accept any denomination. Electronic timers light chapels for 15 minutes. Bring 4-5 EUR worth of small coins.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Are these walks wheelchair accessible?</h4>
+            <p>Partly. Rome streets have uneven pavement and stairs. Pantheon entrance is accessible. Most churches have steps. Ancient Rome has significant stairs. Better for walking than wheeling, but manageable with accommodation.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Do I need to book any tickets in advance?</h4>
+            <p>No tickets required for these walks. Most sites are churches (free) or outdoor spaces (free). Pantheon costs EUR 5. Combined Colosseum/Forum/Palatine ticket is EUR 18 (optional for ancient Rome walk).</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What's the best restaurant on each route?</h4>
+            <p>Caffe Sant'Eustachio (EUR 1.50 espresso, among Rome's best). Campo de' Fiori has many restaurants. Bar Capitolino (overlooks Forum, pricey). Tazza d'Oro (near Pantheon, great espresso).</p>
+          </div>
+        </div>
+
+        <h2>Related Reading from Dolce Vita Roma</h2>
+
+        <div class="related-posts">
+          <h3>Deepen Your Rome Art Experience</h3>
+          <ul class="related-list">
+            <li><a href="/blog/blog-post-27.html">Rome Art, History & Culture: The Complete Guide</a> -- Full art history context for what you see on walks</li>
+            <li><a href="/blog/blog-post-30.html">Renaissance & Baroque Masters in Rome</a> -- Artist deep dives (Caravaggio, Bernini, Borromini)</li>
+            <li><a href="/blog/blog-post-31.html">Rome Museums by Neighborhood</a> -- Indoor museum visits to complement outdoor walks</li>
+            <li><a href="/blog/blog-post-1.html">Rome by Neighborhood</a> -- Understand neighborhoods and transportation</li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Join Rome's Walking Community</h3>
+          <p>Walk with fellow expats and locals. Join guided versions of these routes, discuss what you find, share discoveries.</p>
+          <a href="https://dolcevitaroma.com/join-groups" class="cta-button">Join DVR Walking Group</a>
+        </div>
+
+        <div class="author-bio">
+          <h4>About This Guide</h4>
+          <p>Written by Dolce Vita Roma team members who walk Rome regularly. Timing and routes verified 2026. This is Spoke 5E of the Pillar 5 (Rome Art, History & Culture) guide series. Read the main pillar at blog-post-27.html for comprehensive art history timeline and context.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Rome Expat Community & Lifestyle Guide</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Walking routes map
+    const map = L.map('map').setView([41.8950, 12.4750], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Walk 1: Caravaggio Circuit (red)
+    const caravagioRoute = [
+      [41.8979, 12.4737], // San Luigi dei Francesi
+      [41.8995, 12.4714], // Sant'Agostino
+      [41.8993, 12.4730]  // Piazza Navona
+    ];
+
+    L.polyline(caravagioRoute, {
+      color: '#E8614B',
+      weight: 3,
+      opacity: 0.8,
+      dashArray: '5, 5'
+    }).addTo(map).bindPopup('Walk 1: Caravaggio Circuit');
+
+    // Walk 2: Baroque Rome (gold)
+    const baroqueRoute = [
+      [41.8993, 12.4730], // Piazza Navona
+      [41.9004, 12.4749], // Sant'Ivo
+      [41.8986, 12.4769], // Pantheon
+      [41.9039, 12.4967]  // Santa Maria della Vittoria
+    ];
+
+    L.polyline(baroqueRoute, {
+      color: '#C9A84C',
+      weight: 3,
+      opacity: 0.8
+    }).addTo(map).bindPopup('Walk 2: Baroque Rome');
+
+    // Walk 3: Ancient Rome (green)
+    const ancientRoute = [
+      [41.8808, 12.4889], // Circus Maximus
+      [41.8865, 12.4892], // Palatine
+      [41.8925, 12.4857], // Forum
+      [41.8902, 12.4916]  // Colosseum
+    ];
+
+    L.polyline(ancientRoute, {
+      color: '#2B3A1B',
+      weight: 3,
+      opacity: 0.8,
+      dashArray: '5, 5'
+    }).addTo(map).bindPopup('Walk 3: Ancient Rome');
+
+    // Walk 4: Church Art (salmon)
+    const churchRoute = [
+      [41.8884, 12.4958], // Santa Maria Maggiore
+      [41.8999, 12.4854], // Sant'Ignazio
+      [41.8977, 12.4828], // Gesù
+      [41.8979, 12.4737]  // San Luigi dei Francesi
+    ];
+
+    L.polyline(churchRoute, {
+      color: '#C8352B',
+      weight: 3,
+      opacity: 0.8
+    }).addTo(map).bindPopup('Walk 4: Church Art Route');
+
+    // Add walk start markers
+    const walks = [
+      { name: 'Walk 1 Start', lat: 41.8979, lng: 12.4737, color: '#E8614B' },
+      { name: 'Walk 2 Start', lat: 41.8993, lng: 12.4730, color: '#C9A84C' },
+      { name: 'Walk 3 Start', lat: 41.8808, lng: 12.4889, color: '#2B3A1B' },
+      { name: 'Walk 4 Start', lat: 41.8884, lng: 12.4958, color: '#C8352B' }
+    ];
+
+    walks.forEach(walk => {
+      L.circleMarker([walk.lat, walk.lng], {
+        radius: 10,
+        fillColor: walk.color,
+        color: 'white',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.9
+      }).addTo(map).bindPopup(`<strong>${walk.name}</strong>`);
+    });
+  </script>
+</body>
+</html>

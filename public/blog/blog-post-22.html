@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rome Transportation Guide for Visitors & Expats | Dolce Vita Roma</title>
+  <meta name="description" content="Complete Rome transportation guide covering metro, buses, walking, taxis, and ride-sharing. Real prices, apps, safety tips, and neighborhood navigation for expats and visitors.">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/rome-transportation-guide">
+
+  <meta property="og:title" content="Rome Transportation Guide for Visitors & Expats">
+  <meta property="og:description" content="Master Rome's 4 main transport modes: metro, buses, walking, and taxis. Real prices, apps, and insider tips.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/transport/rome-transportation-hero.jpg">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/rome-transportation-guide">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rome Transportation Guide for Visitors & Expats">
+  <meta name="twitter:description" content="Master Rome's 4 main transport modes: metro, buses, walking, and taxis. Real prices, apps, and insider tips.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/images/transport/rome-transportation-hero.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    :root {
+      --color-green: #2B3A1B;
+      --color-cream: #F5EBD8;
+      --color-gold: #C9A84C;
+      --color-salmon: #E8614B;
+      --color-red: #C8352B;
+      --color-border: #E0D5C4;
+      --color-text-light: #7A6F5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: #2c2c2c;
+      background: #fafaf8;
+    }
+
+    header {
+      background: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--color-gold);
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: white;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-salmon);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    article {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+    }
+
+    .toc {
+      background: #f9f7f3;
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .toc h2 {
+      font-size: 1.1rem;
+      color: var(--color-green);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .toc ol {
+      margin-left: 1.5rem;
+      list-style-position: inside;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .toc a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--color-green);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.3rem;
+      color: var(--color-salmon);
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+
+    strong {
+      color: var(--color-green);
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: rgba(201, 168, 76, 0.1);
+      border-left: 3px solid var(--color-gold);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .warning {
+      background: rgba(232, 97, 75, 0.08);
+      border-left: 3px solid var(--color-salmon);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .info-box {
+      background: rgba(43, 58, 27, 0.05);
+      border: 1px solid var(--color-border);
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    table th {
+      background: var(--color-green);
+      color: white;
+      padding: 0.8rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    table tr:nth-child(even) {
+      background: #fafaf8;
+    }
+
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .spoke-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .spoke-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .spoke-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+      border-color: var(--color-gold);
+    }
+
+    .spoke-card h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .spoke-card p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+    }
+
+    .faq-section {
+      margin: 2.5rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: #f9f7f3;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: #f3f0eb;
+    }
+
+    .faq-question.active {
+      background: var(--color-gold);
+      color: white;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1.2rem;
+      background: white;
+      border-top: 1px solid var(--color-border);
+      line-height: 1.7;
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--color-green) 0%, rgba(43, 58, 27, 0.8) 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 6px;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    .cta-box h3 {
+      color: var(--color-cream);
+      margin-top: 0;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.95);
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: var(--color-salmon);
+      color: white;
+    }
+
+    .author-bio {
+      background: #f9f7f3;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-gold);
+    }
+
+    .author-bio h4 {
+      color: var(--color-green);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .author-bio p {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: var(--color-green);
+      color: var(--color-cream);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .price-table {
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      #map {
+        height: 350px;
+      }
+
+      article {
+        padding: 1.5rem;
+      }
+
+      .spoke-links {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+    }
+
+    .metro-line {
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin: 0 0.3rem;
+    }
+
+    .line-a {
+      background: #ff8c00;
+      color: white;
+    }
+
+    .line-b {
+      background: #2b7acc;
+      color: white;
+    }
+
+    .line-c {
+      background: #00a651;
+      color: white;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BlogPosting", "FAQPage"],
+    "headline": "Rome Transportation Guide for Visitors & Expats",
+    "description": "Complete Rome transportation guide covering metro, buses, walking, taxis, and ride-sharing. Real prices, apps, safety tips, and neighborhood navigation.",
+    "image": "https://dolcevitaroma.com/images/transport/rome-transportation-hero.jpg",
+    "datePublished": "2026-04-19",
+    "dateModified": "2026-04-19",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "url": "https://dolcevitaroma.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dolcevitaroma.com/logo.png"
+      }
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the cheapest way to get around Rome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Walking is free and Rome's historic center is compact -- Colosseum to Pantheon is just 25 minutes on foot. If using transit, a single metro ride costs EUR 1.50. A 48-hour pass (EUR 7) covers unlimited metro, bus, and tram rides and is the best value for short visits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I avoid pickpockets on Rome public transport?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Avoid Bus 40/64 to the Vatican during peak hours if possible. Keep your bag in front on crowded metro lines, especially Line A between Termini and Spanish Steps. Don't use your phone or display valuables on busy routes. Avoid the last metro carriage late at night."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Uber cheaper than taxis in Rome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not necessarily. Uber applies surge pricing, especially during peak hours. For airport transfers, Uber has fixed prices which can be competitive with EUR 55 official taxi fares to Fiumicino. For standard city rides, taxis and Uber are often similar in price -- use whichever app responds faster."
+          }
+        }
+      ]
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dolcevitaroma.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://dolcevitaroma.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Getting Around Rome",
+          "item": "https://dolcevitaroma.com/blog/rome-transportation-guide"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="https://dolcevitaroma.com/blog">Blog</a>
+        <span>/</span>
+        <span>Getting Around Rome</span>
+      </div>
+
+      <h1>Rome Transportation Guide for Visitors & Expats</h1>
+
+      <div class="post-meta">
+        <div class="meta-item">
+          <span>By Dolce Vita Roma</span>
+        </div>
+        <div class="meta-item">
+          <span>Published April 19, 2026</span>
+        </div>
+        <div class="meta-item">
+          <span>8,000+ words</span>
+        </div>
+      </div>
+
+      <img src="/images/transport/rome-transportation-hero.jpg" alt="Rome's historic streets with metro entrance and buses" class="hero-image" loading="lazy">
+
+      <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="#overview">Rome's 4 Transport Modes at a Glance</a></li>
+          <li><a href="#tickets">Tickets & Passes: What to Buy</a></li>
+          <li><a href="#metro">The Metro System Overview</a></li>
+          <li><a href="#buses">Buses & Trams: Coverage Beyond the Metro</a></li>
+          <li><a href="#walking">Walking: The Underrated Option</a></li>
+          <li><a href="#taxis">Taxis: Rules & Rates</a></li>
+          <li><a href="#uber">Ride-Sharing: Uber & Alternatives</a></li>
+          <li><a href="#apps">Best Apps for Navigation</a></li>
+          <li><a href="#safety">Safety & Peak Time Avoidance</a></li>
+          <li><a href="#maps">Interactive Transport Map</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </div>
+
+      <h2 id="overview">Rome's 4 Transport Modes at a Glance</h2>
+
+      <p>Getting around Rome is straightforward once you understand your options. The city offers four primary ways to move: the <strong>Metro</strong> (fast, reliable, covers major areas), <strong>Buses & Trams</strong> (reach neighborhoods the Metro misses), <strong>Walking</strong> (surprisingly practical for the historic center), and <strong>Taxis/Ride-Sharing</strong> (convenient for late night or luggage). Most expats and visitors combine all four depending on the situation.</p>
+
+      <div class="info-box">
+        <strong>Executive Summary:</strong>
+        <ul>
+          <li><strong>Metro:</strong> 3 lines, 73 stations, EUR 1.50 per ride, fastest for long distances</li>
+          <li><strong>Buses/Trams:</strong> 330+ routes, EUR 1.50 per ride, covers areas metro doesn't (Trastevere, Campo de' Fiori, Piazza Navona)</li>
+          <li><strong>Walking:</strong> Free, best for historic center, Colosseum to Pantheon is just 25 minutes</li>
+          <li><strong>Taxis/Uber:</strong> EUR 3.50--6.50 starting fare (taxi), Uber variable pricing, worthwhile after midnight or with luggage</li>
+        </ul>
+      </div>
+
+      <h2 id="tickets">Tickets & Passes: What to Buy</h2>
+
+      <p>Rome uses an integrated ticket system where a single ticket works on the Metro, buses, and trams. The key is understanding which pass makes sense for your length of stay and travel patterns.</p>
+
+      <h3>Individual Tickets & Passes</h3>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Pass Type</th>
+            <th>Price (EUR)</th>
+            <th>Valid For</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single Ride</td>
+            <td>1.50</td>
+            <td>100 min on bus/tram OR 1 metro journey</td>
+            <td>Individual trips</td>
+          </tr>
+          <tr>
+            <td>24-Hour Pass</td>
+            <td>7.00</td>
+            <td>Unlimited metro, bus, tram for 24 hours</td>
+            <td>Day visitors, walking tours</td>
+          </tr>
+          <tr>
+            <td>48-Hour Pass</td>
+            <td>12.50</td>
+            <td>Unlimited transport for 48 hours</td>
+            <td>Weekend trips, 2-day visits</td>
+          </tr>
+          <tr>
+            <td>72-Hour Pass</td>
+            <td>18.00</td>
+            <td>Unlimited transport for 72 hours</td>
+            <td>Short holidays, 3-day city breaks</td>
+          </tr>
+          <tr>
+            <td>Weekly Pass (Roma Pass)</td>
+            <td>24.00</td>
+            <td>7 days unlimited transport</td>
+            <td>Short-term expats, week-long stays</td>
+          </tr>
+          <tr>
+            <td>Monthly Pass</td>
+            <td>35.00</td>
+            <td>Calendar month unlimited transport</td>
+            <td>Expats, long-term residents</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight">
+        <strong>Critical Detail:</strong> You must validate your ticket in the yellow readers before boarding metro or bus. Plain-clothes inspectors fine EUR 100+ for traveling without valid, validated tickets. This happens more than you'd think, especially on tourist-heavy Bus 40/64. Tap, hear the beep, then board.
+      </div>
+
+      <h3>Roma Pass: The Tourist Option</h3>
+
+      <p>The Roma Pass comes in two tiers and includes both transport and museum entry:</p>
+
+      <ul>
+        <li><strong>Roma Pass 48 hours (EUR 29):</strong> Unlimited metro, bus, tram + discounts on 60+ museums. Good if you're sightseeing heavily.</li>
+        <li><strong>Roma Pass 72 hours (EUR 39):</strong> Same benefits as 48hr, but longer validity. Best value for a typical long weekend.</li>
+      </ul>
+
+      <p>The Roma Pass makes sense if you plan to visit 2+ paid attractions (Colosseum, Palatine, Galleria Borghese, Vatican, etc.). Otherwise, just buy the 48/72-hour transport pass.</p>
+
+      <h3>Where to Buy Tickets</h3>
+
+      <ul>
+        <li><strong>Tabacchi shops</strong> (tobacco/convenience stores) -- most convenient, found everywhere</li>
+        <li><strong>Metro station ticket machines</strong> -- accept cash and cards, available at all stations</li>
+        <li><strong>Bus ticket machines</strong> -- some newer bus stops have machines (rare)</li>
+        <li><strong>Airport kiosks</strong> -- Fiumicino and Ciampino, slight markup but convenient</li>
+      </ul>
+
+      <h2 id="metro">The Metro System Overview</h2>
+
+      <p>Rome's Metropolitan system is the fastest way to move across the city. It operates 3 lines with 73 total stations, connecting most major neighborhoods and tourist sites. Understanding the lines and peak times is essential for avoiding crowding.</p>
+
+      <h3>The Three Lines</h3>
+
+      <p><span class="metro-line line-a">Line A (Orange)</span> runs from Battistini (west/Vatican area) to Anagnina (southeast). This is the tourist workhorse, covering Ottaviano (Vatican Museums), Lepanto, Flaminio (Piazza del Popolo), Spagna (Spanish Steps), Barberini (Trevi Fountain), and Repubblica (Termini station). If visiting from a hotel near Termini and going to major sites, Line A will get you everywhere.</p>
+
+      <p><span class="metro-line line-b">Line B (Blue)</span> runs from Jonio to Laurentina and passes through Termini (interchange with Line A), Colosseo (Colosseum), Circo Massimo (Circus Maximus), and south into the Garbatella and EUR districts. Line B1 branches north from Bologna to Jonio (4 modern stations). Use Line B to visit ancient Rome's main sites.</p>
+
+      <p><span class="metro-line line-c">Line C (Green)</span> is the newest, opened 2014--2022, running from Monte Compatri/Pantano to San Giovanni. It's modern, air-conditioned, and driverless -- but covers areas less frequented by tourists. It's expanding and will eventually extend to Clodio (Vatican direction), but that's years away. Line C is useful for residential neighborhoods like San Giovanni.</p>
+
+      <div class="info-box">
+        <strong>Detailed Metro Guides:</strong> See our dedicated guides for more depth on each line:
+        <ul>
+          <li><a href="blog-post-23.html">Full Metro System Guide (Spoke 4A)</a></li>
+          <li>Includes all station names, distances, transfer points, accessibility info</li>
+        </ul>
+      </div>
+
+      <h3>Operating Hours & Frequency</h3>
+
+      <ul>
+        <li><strong>Monday--Thursday, Sunday:</strong> 5:30am to 11:30pm</li>
+        <li><strong>Friday--Saturday:</strong> 5:30am to 1:30am (extended night service)</li>
+        <li><strong>Frequency:</strong> Every 4--7 minutes during peak hours (7:30--9am, 5:30--7:30pm), every 10--15min off-peak</li>
+        <li><strong>No all-night service:</strong> If you're out past midnight on a weeknight, use night buses (N lines), taxi, or Uber</li>
+      </ul>
+
+      <div class="warning">
+        <strong>Peak Hour Crush:</strong> The metro is genuinely crowded 7:30--9am and 5:30--7:30pm. If you can travel outside these windows, do. Spagna and Termini stations are worst. Your phone will get pickpocketed if you're not careful in this crowd.
+      </div>
+
+      <h3>Practical Metro Tips</h3>
+
+      <ul>
+        <li><strong>Validate your ticket</strong> on the yellow readers before entering the barrier. No beep = no entry, no excuses.</li>
+        <li><strong>Stand clear of doors</strong> at Termini and Colosseo stations -- people will literally push past you.</li>
+        <li><strong>Keep your bag in front</strong> on crowded trains. Line A pickpockets are professionals.</li>
+        <li><strong>Last carriage late at night:</strong> Avoid the end carriages after 10pm -- fewer people means less safety.</li>
+        <li><strong>Photography:</strong> Some stations are notable for art (Repubblica has 1970s-era Ромая mosaics). Photos welcome.</li>
+      </ul>
+
+      <h2 id="buses">Buses & Trams: Coverage Beyond the Metro</h2>
+
+      <p>Rome's ATAC network operates 330+ bus routes and 6 tram lines. Buses reach areas the Metro misses entirely -- Trastevere, Campo de' Fiori, Piazza Navona, and the Jewish Ghetto have no metro stations. Buses are less convenient than the Metro (slower, prone to delay), but essential for neighborhood exploration.</p>
+
+      <h3>Key Tourist & Expat Bus Routes</h3>
+
+      <ul>
+        <li><strong>Bus 40 & 64:</strong> The main tourist route from Termini to Vatican. Passes through Historic Center. WARNING: Highest pickpocket concentration in Rome. Stand near the driver if possible, don't use your phone.</li>
+        <li><strong>Bus 23:</strong> Scenic route along the Tiber (Lungotevere), connecting Testaccio in the south to Prati (near Vatican) in the north.</li>
+        <li><strong>Bus H:</strong> Fast, direct route from Termini to Ostiense via Trastevere. Useful for neighborhood hopping.</li>
+        <li><strong>Tram 8:</strong> Connects Largo Argentina to Trastevere via a dedicated track. Most reliable tram line, preferred over buses for this route.</li>
+        <li><strong>Tram 3:</strong> Trastevere to Piazza Thorvaldsen. Good for exploring Trastevere's eastern edge.</li>
+        <li><strong>Bus 590:</strong> Shadows Line A metro route but is cheaper (costs only EUR 1.50 like a single ride). Use if metro is crowded or you want the street-level experience.</li>
+      </ul>
+
+      <h3>Night Buses (Notturno N-Lines)</h3>
+
+      <p>When the Metro closes at 11:30pm (1:30am Fri-Sat), Rome's Night Buses (prefixed N) take over. Routes N1, N2, N3, N4, N5 cover main city corridors midnight to 5:30am. They use the same EUR 1.50 ticket as daytime buses. They're slower (fewer vehicles, late-night stops), but they exist. Avoid waiting at isolated stops alone after midnight -- use taxis or Uber instead.</p>
+
+      <h3>Bus Delays & Reality Check</h3>
+
+      <p>Rome's buses are notorious for delays. It's not unusual for a bus to be 20--30 minutes late, especially on tourist routes like Bus 40/64. The ATAC app provides real-time updates, but unreliably. Your best bet is Google Maps, which pulls live bus tracking data and gives realistic ETAs. Budget extra time if you're on a schedule.</p>
+
+      <div class="highlight">
+        <strong>Pro Tip for Trastevere Fans:</strong> Tram 8 is far more reliable than buses because it runs on a dedicated track. It's slightly slower but will actually arrive on time. If going to Trastevere, choose Tram 8 over Bus H or Bus 23.
+      </div>
+
+      <p>Detailed bus and tram guide with full route maps and transfer points: <a href="blog-post-24.html">Rome Bus & Tram Navigation (Spoke 4B)</a></p>
+
+      <h2 id="walking">Walking: The Underrated Option</h2>
+
+      <p>Rome's historic center is surprisingly walkable. The Colosseum to Pantheon is just 25 minutes on foot. Pantheon to Trevi is 10 minutes. Trevi to Spanish Steps is 12 minutes. Most tourist sites and many residential neighborhoods are within 3km of each other. Walking is free, gives you street-level views you'd miss from the Metro, and is the only way to discover Rome's hidden piazzas.</p>
+
+      <h3>Why Rome is Walkable</h3>
+
+      <ul>
+        <li><strong>Compact historic center:</strong> 5.5 km² containing the Colosseum, Roman Forum, Pantheon, Trevi, Spanish Steps, and Vatican. All reachable on foot.</li>
+        <li><strong>Pedestrian-friendly zones:</strong> ZTL (Zona Traffico Limitato) restricts car traffic in Centro Storico and Trastevere (6:30am--6pm weekdays, residents only). This makes street-level walking safer and more pleasant.</li>
+        <li><strong>Dense neighborhood spacing:</strong> You can walk from Termini (budget hotels) to the Colosseum (5min), then to Largo Argentina (15min), then to Trevi (15min) all on foot.</li>
+      </ul>
+
+      <h3>Best Walking Neighborhoods</h3>
+
+      <ul>
+        <li><strong>Centro Storico (Historic Center):</strong> Piazza Navona, Campo de' Fiori, Largo Argentina, Pantheon, Trevi Fountain. Dense, walkable, medieval streets.</li>
+        <li><strong>Trastevere:</strong> Charming riverside neighborhood, cobblestone lanes, perfect for evening strolls. Can feel touristy but genuinely atmospheric.</li>
+        <li><strong>Testaccio:</strong> Working-class neighborhood, authentic Roman bars, younger expat crowd. Less touristy than Centro or Trastevere.</li>
+        <li><strong>Prati (Vatican area):</strong> Residential, tree-lined streets, grid layout makes it easy to navigate. Good base for Vatican-focused visitors.</li>
+        <li><strong>Ghetto (Historic Jewish Quarter):</strong> Cramped, atmospheric medieval alleys, kosher restaurants, Renaissance palazzi alongside high-rises (post-1870 urban renewal).</li>
+      </ul>
+
+      <h3>Practical Walking Tips</h3>
+
+      <ul>
+        <li><strong>Footwear matters:</strong> Rome's cobblestones are ankle-spraining, especially in heels. Comfortable, broken-in shoes are essential. Locals wear sneakers or flat boots.</li>
+        <li><strong>Water fountains:</strong> Rome has 2,500+ free "Nasoni" (big nose) fountains throughout the city. Tap water is clean and cold. Download "Where's the Fountain" app for locations.</li>
+        <li><strong>Best times:</strong> Early morning (7--9am before crowds) or evening (6--8pm for golden hour light). Midday 11am--3pm is hot, crowded, and harsh light.</li>
+        <li><strong>Maps offline:</strong> Download Google Maps offline for Centro Storico. Wifi is patchy in historic areas.</li>
+        <li><strong>ZTL boundaries:</strong> Stay on pedestrian streets in ZTL zones. Camera-enforced; cars get fined automatically (visitors sometimes receive bills weeks later).</li>
+      </ul>
+
+      <p>Detailed 3 self-guided walking routes with map: <a href="blog-post-25.html">Walking Rome Neighborhoods (Spoke 4C)</a></p>
+
+      <h2 id="taxis">Taxis: Rules & Rates</h2>
+
+      <p>Rome's official taxi system is straightforward: white cars, metered rates, licensed drivers. Unofficial taxis and fake drivers exist (especially at airports and Termini station), but are rare if you know what to look for. Taxis make sense for late night, heavy luggage, or rain.</p>
+
+      <h3>Official Taxi Identification</h3>
+
+      <ul>
+        <li><strong>White body</strong> with an official taxi license number displayed on the door</li>
+        <li><strong>Meter (tassametro)</strong> on the dashboard, running visibly</li>
+        <li><strong>ID card</strong> displayed with driver name and license number</li>
+        <li>If any of the above is missing, do not enter. Walk to the nearest official taxi rank.</li>
+      </ul>
+
+      <h3>Metered Rates (Tariffe)</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Rate Period</th>
+            <th>Starting Fare</th>
+            <th>Per Kilometer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Day (7am--10pm)</td>
+            <td>EUR 3.50</td>
+            <td>EUR 1.10</td>
+          </tr>
+          <tr>
+            <td>Night (10pm--7am)</td>
+            <td>EUR 6.50</td>
+            <td>EUR 1.30</td>
+          </tr>
+          <tr>
+            <td>Sundays & Holidays</td>
+            <td>EUR 5.50</td>
+            <td>EUR 1.30</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Additional charges: EUR 1 per large bag (luggage), EUR 1 if traveling with pets, EUR 3 if the driver dispatches the taxi via radio (otherwise it's a street hail). A typical 5km ride costs EUR 10--15 depending on time of day.</p>
+
+      <h3>Fixed Fares (Tariffe Fisse)</h3>
+
+      <p>Two routes have legally fixed fares:</p>
+
+      <ul>
+        <li><strong>Fiumicino Airport to City Center:</strong> EUR 55 (fixed by law, day or night). Driver must offer this fixed fare upfront. If he doesn't mention it, insist on it.</li>
+        <li><strong>Ciampino Airport to City Center:</strong> EUR 31 (fixed). Same rule -- ask, confirm, insist if needed.</li>
+      </ul>
+
+      <h3>Taxi Ranks (Posteggi Taxi)</h3>
+
+      <p>Official taxi ranks where you can queue and take the first available cab:</p>
+
+      <ul>
+        <li><strong>Roma Termini:</strong> Multiple ranks outside the main entrance, eastern side (via Giolitti). Busy, tourist-heavy.</li>
+        <li><strong>Piazza Venezia:</strong> Central location, moderate wait.</li>
+        <li><strong>Piazza Navona:</strong> Tourist area, longer wait during the day.</li>
+        <li><strong>Trevi Fountain:</strong> Extremely touristy, very long waits.</li>
+        <li><strong>Piazza del Popolo:</strong> Northern edge, shorter waits.</li>
+        <li><strong>Campo de' Fiori:</strong> Market square, morning/early afternoon only.</li>
+      </ul>
+
+      <h3>How to Hail a Taxi</h3>
+
+      <ul>
+        <li><strong>On the street:</strong> Taxis cruising with the light on (top of car) are available. Raise your hand on a main road. Success rate: 50/50 in busy areas.</li>
+        <li><strong>Via app:</strong> Italo Taxi or IT Taxi app (Rome's official taxi app). Shows a fixed price before booking. Easier than taxi ranks.</li>
+        <li><strong>Phone dispatch:</strong> Call a radio taxi company (requires Italian and a local phone). Less practical as a visitor.</li>
+      </ul>
+
+      <h2 id="uber">Ride-Sharing: Uber & Alternatives</h2>
+
+      <p>Uber operates in Rome (UberX and Uber Comfort available) but is not always cheaper than taxis, especially during surge pricing. It excels for airport rides (fixed prices, credit card pre-loaded, familiar app) and situations where taxis are on strike. FREE NOW (formerly mytaxi) books official Rome taxis through an app, eliminating the need to queue at ranks.</p>
+
+      <h3>Uber: Pros & Cons</h3>
+
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Fixed price shown before you book -- no meter surprises</li>
+        <li>Surge pricing visible upfront; you can decide if it's worth waiting</li>
+        <li>Airport rides have fixed prices (e.g., Fiumicino to central Rome, usually EUR 55--70 depending on surge)</li>
+        <li>Excellent for credit card payments; debit cards sometimes decline</li>
+      </ul>
+
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Surge pricing applies frequently, especially 6--8pm and after midnight. A standard EUR 10 ride becomes EUR 15--20 during surge.</li>
+        <li>Waiting time charges pile up in Rome's traffic</li>
+        <li>Often the same price as an official taxi meter, sometimes more</li>
+        <li>Driver phone numbers not given upfront; harder to communicate if lost</li>
+      </ul>
+
+      <h3>FREE NOW: The Taxi App</h3>
+
+      <p>FREE NOW books official Rome taxis (white, metered vehicles) through the app. No surge pricing -- rates are standard taxi meter rates. Estimated price shown before booking. This eliminates taxi rank queues and gives you the safety of metered rides with app convenience. Download and set it up even if you never use it -- good backup.</p>
+
+      <h3>When Taxi Wins Over Uber</h3>
+
+      <ul>
+        <li><strong>Late night after midnight:</strong> Taxis have night rates (EUR 6.50 start), Uber surges hard (often 2--3x normal price)</li>
+        <li><strong>Heavy luggage:</strong> Taxis are metered, so baggage charges are minor (EUR 1 per bag). Uber's time/distance calculation gets expensive with luggage detours.</li>
+        <li><strong>Rain or rush hour:</strong> Surge pricing on Uber can be brutal. Taxi meter is stable.</li>
+        <li><strong>When taxi strike news hits:</strong> Check news before relying on taxis. Strikes happen several times per year; Uber is your backup.</li>
+      </ul>
+
+      <h3>Airport Transfers: Uber vs. Taxi</h3>
+
+      <ul>
+        <li><strong>Fiumicino to central Rome:</strong> Taxi fixed fare EUR 55 vs. Uber EUR 55--75 depending on surge and distance. Often equivalent; Uber useful if you have no luggage to claim and can book immediately.</li>
+        <li><strong>Ciampino to central Rome:</strong> Taxi fixed fare EUR 31 vs. Uber EUR 30--50. Taxi is nearly always better value.</li>
+      </ul>
+
+      <p>Detailed taxi and ride-sharing guide: <a href="blog-post-26.html">Rome Taxis & Ride-Sharing (Spoke 4D)</a></p>
+
+      <h2 id="apps">Best Apps for Navigation</h2>
+
+      <p>Multiple apps work in Rome, each with strengths and weaknesses. Google Maps is the most reliable for Rome's transit system. Citymapper is excellent for Rome but less detailed. The ATAC app (Rome's official app) is unreliable -- skip it.</p>
+
+      <h3>Google Maps</h3>
+
+      <p><strong>Best overall for Rome.** Works offline (download the map first), shows real-time bus/metro arrivals, includes walking routes, and integrates taxis. The app's Rome public transport data is the most accurate. Search "route" for origin and destination, select the transit tab, and you'll see metro, bus, and walking options with timings.</p>
+
+      <ul>
+        <li>Real-time bus tracking is remarkably accurate</li>
+        <li>Offline map download covers Rome city</li>
+        <li>Integration with taxi apps (calls associated taxi numbers)</li>
+      </ul>
+
+      <h3>Citymapper</h3>
+
+      <p>Excellent for Rome and very popular with expats. Shows all transport options (metro, bus, walking, Uber) in a clean interface. Real-time delays flagged clearly. Slightly less detailed than Google Maps on bus stops, but beautifully designed and intuitive.</p>
+
+      <h3>Moovit</h3>
+
+      <p>Another strong option for Rome transit. Shows bus/metro arrivals and real-time delays. Similar to Citymapper; slightly less polished but reliable. Crowdsourced data on crowding (shows if a bus is expected to be full).</p>
+
+      <h3>ATAC App (Rome's Official App)</h3>
+
+      <p>Not recommended. Slow, unreliable real-time data, crashes frequently, and provides incomplete route information. It exists and Roman residents use it out of habit, but tourists and expats should stick with Google Maps or Citymapper.</p>
+
+      <h2 id="safety">Safety & Peak Time Avoidance</h2>
+
+      <p>Rome's public transport is generally safe, but pickpockets are active on crowded lines and buses. Certain routes and times carry higher risk. Know the hotspots, keep valuables secure, and avoid last-minute metro rides after midnight when ridership drops.</p>
+
+      <h3>Pickpocket Hotspots</h3>
+
+      <ul>
+        <li><strong>Bus 40 & 64 (Termini to Vatican):</strong> Worst in Rome. Avoid this route during 8--10am and 4--7pm if possible. If you must ride, stand near the driver, keep your bag in front, and avoid using your phone.</li>
+        <li><strong>Line A Metro (Termini to Spagna):</strong> Heavy tourist traffic = heavy pickpockets. 7:30--9am and 5:30--7:30pm are worst. Crowded platforms are professional operating grounds.</li>
+        <li><strong>Termini Station platform:</strong> Never leave bags unattended. Pickpockets work crowds here.</li>
+        <li><strong>Campo de' Fiori area (evening):</strong> Popular with visitors, crowded evening markets, loose enforcement. Keep valuables close.</li>
+      </ul>
+
+      <h3>Late-Night Safety</h3>
+
+      <ul>
+        <li><strong>After midnight:</strong> Use taxis or Uber instead of night buses. Buses are less frequent (20--30min apart), stops are isolated, and riders are sparse.</li>
+        <li><strong>Last metro carriage:</strong> Avoid after 10pm. Fewer passengers means less foot traffic and more isolation.</li>
+        <li><strong>Avoid Termini area late at night:</strong> Station becomes increasingly sketchy after 11pm. Use taxis or Uber from other starting points if you're going to a late-night venue in that area.</li>
+      </ul>
+
+      <h3>Practical Safety Tips</h3>
+
+      <ul>
+        <li>Wear bags/backpacks in front on crowded metro cars</li>
+        <li>Don't use your phone on Bus 40/64; it's literally asking to be pickpocketed</li>
+        <li>Don't display expensive watches, jewelry, or cameras in crowded areas</li>
+        <li>Travel in groups on night buses if possible</li>
+        <li>Trust your instinct about people -- move if you feel uncomfortable on a train</li>
+      </ul>
+
+      <h2 id="maps">Interactive Transport Map</h2>
+
+      <p>Below is an interactive map showing Rome's metro lines and major transport hubs. Zoom in/out, click stations for more info.</p>
+
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+
+      <h2>Rome Transport Links</h2>
+
+      <p>Dive deeper into specific transport modes:</p>
+
+      <div class="spoke-links">
+        <a href="blog-post-23.html" class="spoke-card">
+          <h3>Metro System Guide</h3>
+          <p>Detailed guide to all 3 lines, all 73 stations, accessibility info, and peak time avoidance.</p>
+        </a>
+        <a href="blog-post-24.html" class="spoke-card">
+          <h3>Bus & Tram Navigation</h3>
+          <p>330+ bus routes, 6 trams, key tourist routes, night buses, and delay expectations.</p>
+        </a>
+        <a href="blog-post-25.html" class="spoke-card">
+          <h3>Walking Rome Neighborhoods</h3>
+          <p>Why Rome is walkable, 3 self-guided routes, best neighborhoods, and footwear tips.</p>
+        </a>
+        <a href="blog-post-26.html" class="spoke-card">
+          <h3>Taxis & Ride-Sharing</h3>
+          <p>Official taxis, metered rates, Uber vs. taxi comparison, airport transfers, and scam avoidance.</p>
+        </a>
+      </div>
+
+      <div class="cta-box">
+        <h3>Navigate Like a Local</h3>
+        <p>Join the Dolce Vita Roma transport tips group for real-time advice on delays, strikes, and neighborhood navigation from other expats and long-term visitors.</p>
+        <a href="https://dolcevitaroma.com/contact" class="cta-button">Join Our Community</a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>What is the cheapest way to get around Rome?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Walking is free and the most practical for Rome's historic center. Colosseum to Pantheon is just 25 minutes on foot. For longer distances, a single EUR 1.50 metro ride is cheapest. A 48-hour pass (EUR 7) or 72-hour pass (EUR 18) offers the best value for tourists planning multiple trips. For expats, a monthly pass (EUR 35) averages to just EUR 1.12 per day of unlimited travel.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>How do I avoid pickpockets on Rome public transport?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Avoid Bus 40/64 to the Vatican if possible, especially 8--10am and 4--7pm. If you must ride, stand near the driver and keep your bag in front. Never use your phone on crowded buses. Keep valuables (cards, passport) in front pockets. On the metro, especially Line A during rush hour, expect pickpocket crowds and act defensively. Avoid the last metro carriage late at night.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Is Uber cheaper than taxis in Rome?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Not necessarily. Uber applies surge pricing during peak hours (6--8pm), late night (after midnight), and weekends. A EUR 10 standard ride becomes EUR 15--20+ under surge. Official taxis use metered rates which don't surge. For airport transfers, Uber's fixed prices are competitive with EUR 55 Fiumicino taxi fares. For city rides, check the Uber app before booking -- if surge is active, use a taxi or FREE NOW instead.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>How often do Roman buses run, and why are they always late?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Buses are scheduled every 10--15 minutes on main routes (like Bus 40/64), less frequently on residential routes. They're routinely 15--30 minutes late due to traffic congestion, especially on tourist corridors. The metro is faster and more reliable. Use Google Maps for real-time bus tracking; ATAC's official app is unreliable. If you're on a tight schedule, take the metro instead.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>What happens if I don't validate my metro/bus ticket?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Plain-clothes transit inspectors will fine you EUR 100+ on the spot. They board metro cars and buses regularly, especially on tourist routes. Validation is non-negotiable -- tap your ticket/card in the yellow reader before boarding and wait for the beep. This applies to all modes: metro, bus, tram. No exceptions, no "I didn't know" excuses. It takes 2 seconds.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Can I take the metro to/from Fiumicino or Ciampino airports?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Fiumicino (FCO, main international airport) has no metro connection. Ciampino (CIA, budget airlines and some EU flights) has no metro either. Fiumicino is served by Leonardo Express (train to Termini, EUR 14, 32 min) and official taxis (EUR 55 fixed). Ciampino is served by ATAC bus (Bus 590 and others, EUR 1.50, slow) or taxi (EUR 31 fixed). Most travelers use taxis or Uber for convenience, despite the cost.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Is the Roma Pass worth it?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>The Roma Pass (EUR 29 for 48hr, EUR 39 for 72hr) includes unlimited transport plus discounts on 60+ museums. It makes sense if you plan to visit 2+ paid attractions (Colosseum EUR 18, Galleria Borghese EUR 17, Vatican EUR 20+, etc.). If you're mostly sightseeing in the free areas (exterior views of Colosseum, Pantheon, churches, walking), just buy the transport pass (EUR 12.50 for 48hr) and skip the Roma Pass.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>What's the best app for navigation in Rome?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Google Maps is most reliable. Download the offline map, search routes, and get real-time metro/bus tracking. Citymapper is excellent and beloved by expats -- clean interface, live delays. Moovit is solid but less polished. Skip Rome's official ATAC app -- it's slow and unreliable. For taxis, use the Italo Taxi / IT Taxi app (official Rome taxi app) or FREE NOW (books licensed taxis with pricing).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>How late does Rome's public transport run?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Metro closes at 11:30pm Mon--Thu and Sunday, 1:30am Fri--Sat. Night buses (N-lines) run midnight--5:30am on main corridors, but less frequently and from less central stops. For travel after 11:30pm on weeknights or 1:30am on weekends, plan to use taxis, Uber, or night buses (avoid isolated stops). Many expats and visitors simply stay out or take a late taxi home rather than rely on night buses.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="author-bio">
+        <h4>About This Guide</h4>
+        <p>Written by Dolce Vita Roma editors based on years of Rome living and frequent visitor insights. This guide is updated regularly as apps, routes, and fares change. Last updated April 2026.</p>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Rome Expat Life & Community -- Your guide to living, working, and thriving in Rome.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Initialize Leaflet map
+    const map = L.map('map').setView([41.9028, 12.4964], 12);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Metro stations
+    const stations = {
+      lineA: [
+        { name: 'Ottaviano', lat: 41.9071, lng: 12.4565 },
+        { name: 'Lepanto', lat: 41.9088, lng: 12.4627 },
+        { name: 'Flaminio', lat: 41.9116, lng: 12.4764 },
+        { name: 'Spagna', lat: 41.9060, lng: 12.4836 },
+        { name: 'Barberini', lat: 41.9014, lng: 12.4859 },
+        { name: 'Repubblica', lat: 41.9066, lng: 12.4990 },
+        { name: 'Termini', lat: 41.9009, lng: 12.5021 }
+      ],
+      lineB: [
+        { name: 'Termini', lat: 41.9009, lng: 12.5021 },
+        { name: 'Colosseo', lat: 41.8902, lng: 12.4917 },
+        { name: 'Circo Massimo', lat: 41.8836, lng: 12.4836 }
+      ]
+    };
+
+    // Add Line A stations (orange markers)
+    stations.lineA.forEach(station => {
+      L.circleMarker([station.lat, station.lng], {
+        radius: 6,
+        fillColor: '#ff8c00',
+        color: '#ffffff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(`<strong>${station.name}</strong><br>Line A (Orange)`).addTo(map);
+    });
+
+    // Add Line B stations (blue markers)
+    stations.lineB.forEach(station => {
+      L.circleMarker([station.lat, station.lng], {
+        radius: 6,
+        fillColor: '#2b7acc',
+        color: '#ffffff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(`<strong>${station.name}</strong><br>Line B (Blue)`).addTo(map);
+    });
+
+    // Add major landmarks
+    const landmarks = [
+      { name: 'Colosseum', lat: 41.8902, lng: 12.4923 },
+      { name: 'Pantheon', lat: 41.8986, lng: 12.4763 },
+      { name: 'Trevi Fountain', lat: 41.9009, lng: 12.4833 },
+      { name: 'Vatican', lat: 41.9029, lng: 12.4534 }
+    ];
+
+    landmarks.forEach(landmark => {
+      L.marker([landmark.lat, landmark.lng], {
+        icon: L.divIcon({
+          className: 'landmark-icon',
+          html: '<div style="background: #C8352B; color: white; padding: 4px 8px; border-radius: 3px; font-size: 12px; font-weight: bold;">' + landmark.name + '</div>'
+        })
+      }).addTo(map);
+    });
+  </script>
+</body>
+</html>

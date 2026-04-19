@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amalfi Coast Day Trip from Rome: Positano & Amalfi | Dolce Vita Roma</title>
+  <meta name="description" content="Complete Amalfi Coast day trip from Rome: Salerno, Amalfi, Positano, ferries, Path of the Gods hike, costs, swimming, and logistics.">
+  <meta name="keywords" content="Amalfi Coast day trip, Positano, Amalfi, day trip from Rome, Salerno">
+  <meta name="author" content="Dolce Vita Roma">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/day-trip-amalfi-coast-from-rome">
+  <meta property="og:title" content="Amalfi Coast Day Trip from Rome: Positano & Amalfi">
+  <meta property="og:description" content="Dramatic coastal scenery, swimming, ferries, and world-class seafood pasta. Complete itinerary and logistics.">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/day-trip-amalfi-coast-from-rome">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/day-trips/positano-vertical-village-sea.jpg">
+  <meta property="article:published_time" content="2026-04-19">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .itinerary {
+      background: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-salmon);
+    }
+    .itinerary h3 {
+      margin: 0 0 1.5rem 0;
+      color: var(--color-green);
+    }
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline li {
+      padding: 1rem;
+      border-left: 3px solid var(--color-salmon);
+      margin-bottom: 1rem;
+      background: white;
+      border-radius: 4px;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 1.5rem;
+      width: 16px;
+      height: 16px;
+      background: var(--color-salmon);
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+    .timeline-time {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 0.95rem;
+    }
+    .timeline-event {
+      margin: 0.25rem 0 0 0;
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .cost-box {
+      background: #F0F8F0;
+      border: 2px solid var(--color-green);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .cost-box h4 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+    }
+    .cost-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(43, 58, 27, 0.2);
+    }
+    .cost-item:last-child {
+      border-bottom: none;
+    }
+    .cost-label {
+      font-weight: 500;
+      color: var(--color-green);
+    }
+    .cost-amount {
+      color: var(--color-text-light);
+    }
+    .cost-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid var(--color-green);
+      font-weight: 600;
+      color: var(--color-green);
+    }
+    .tip-box {
+      background: #FFFBF0;
+      border-left: 4px solid var(--color-salmon);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .tip-box h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--color-salmon);
+    }
+    .tip-box p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    #map {
+      height: 450px;
+      margin: 2rem 0;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .section {
+      background: white;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    .section h3 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+      border-bottom: 2px solid var(--color-salmon);
+      padding-bottom: 0.5rem;
+    }
+    .section ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+    .faq-answer {
+      color: var(--color-text-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2.5rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .cta-box h3 {
+      color: var(--color-salmon);
+      margin: 0 0 1rem 0;
+    }
+    .cta-box p {
+      margin: 0 0 1.5rem 0;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    .cta-button {
+      background-color: var(--color-salmon);
+      color: white;
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #D0523A;
+    }
+    .back-link {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .post-meta {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      #map {
+        height: 300px;
+      }
+      .cost-item {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .cost-total {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BlogPosting", "Article"],
+    "headline": "Amalfi Coast Day Trip from Rome: Positano & Amalfi",
+    "description": "Complete day trip itinerary featuring dramatic coastal villages, ferries, swimming, and world-class seafood dining.",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "datePublished": "2026-04-19",
+    "image": "https://dolcevitaroma.com/images/day-trips/positano-vertical-village-sea.jpg",
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you do the Amalfi Coast as a day trip from Rome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but barely. Total travel time is 5.5-6 hours round trip (Rome to Salerno 2h 45m, Salerno to Amalfi/Positano 1h+, same back). You'll have 4-5 hours at the coast. It's tight and you'll be exhausted, but doable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should you take the bus or ferry to Amalfi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ferry is faster (1 hour vs 1.5 hours by bus) and more scenic (sea views). Cost is similar (EUR 2.50 bus vs EUR 12 ferry). Ferry to Positano exists but costs EUR 8 (30 min). Bus is cheaper if budget is tight; ferry is worth the extra EUR 10."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you swim at the Amalfi Coast in a day trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Spiaggia Grande beach in Positano and Fornillo Beach nearby have free/cheap entry. Water temperature is 18-22C in summer (wettable). You'll have 1-2 hours for swimming/beach time if you prioritize it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Path of the Gods hike worth doing on a day trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Sentiero degli Dei (Path of the Gods) is 12km and 4-5 hours. Doable as a day trip but requires either skipping swimming or returning late. Start early and allow 6+ hours for the full experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should you eat lunch on the Amalfi Coast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Positano has the best restaurants. La Tagliata (on the hill overlooking the coast, EUR 30-40), Ristorante Max (seafood, EUR 25-35), or casual panini shops (EUR 8-12). Avoid tourist traps directly on Spiaggia Grande beach (overpriced)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best time to visit the Amalfi Coast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "May-June and September-October. Water is 20-24C (swimmable). Crowds are moderate. Avoid July-August (extreme heat, extreme crowds, prices triple). Winter is quiet but water is 15-17C (cold)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this day trip exhausting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Very. 6:00am departure, 2h 45m train, boat rides, walking, 2h 45m return train, home 20:00. You'll be tired but exhilarated. Consider it an intense day for memorable payoff."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should you bring to the Amalfi Coast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Swimwear (or buy sarong at destination), sunscreen (non-negotiable), hat, water bottle, light layers, sea bag for wet items, camera. The sun reflects off water and cliffs intensely."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dolce Vita Roma",
+        "item": "https://dolcevitaroma.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Day Trips",
+        "item": "https://dolcevitaroma.com/blog/best-day-trips-from-rome"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Amalfi Coast Day Trip",
+        "item": "https://dolcevitaroma.com/blog/day-trip-amalfi-coast-from-rome"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/blog/blog-post-16.html">Day Trips</a> / Amalfi Coast
+      </div>
+
+      <a href="/blog/blog-post-16.html" class="back-link">Back to Day Trips Guide</a>
+
+      <h1>Amalfi Coast Day Trip from Rome: Positano & Amalfi</h1>
+
+      <div class="post-meta">
+        Published April 19, 2026 | Updated April 2026 | Reading time: 8 minutes
+      </div>
+
+      <img src="/images/day-trips/positano-vertical-village-sea.jpg" alt="Positano's vertical village architecture clinging to cliffs above the Mediterranean Sea" loading="eager" style="width: 100%; height: auto; margin-bottom: 2rem; border-radius: 8px;">
+
+      <h2>The Reality</h2>
+
+      <p>The Amalfi Coast is not a relaxing day trip. It's a 14-hour endurance test that rewards you with some of the most dramatic scenery in Southern Italy. Positano is a vertical village where buildings stack on top of each other like a Jenga tower, descending toward turquoise water. Amalfi is a coastal town with a thousand-year history and a cathedral that survived Crusades and bombs. The ferries cut through Mediterranean blue. The seafood pasta is the best you'll eat all year.</p>
+
+      <p>This is the day trip you'll talk about for months.</p>
+
+      <h2>The Day at a Glance</h2>
+
+      <div class="itinerary">
+        <h3>Complete Timeline (Early Start Essential)</h3>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-time">06:15</div>
+            <div class="timeline-event">Leave apartment. Head to Roma Termini for early Frecciarossa</div>
+          </li>
+          <li>
+            <div class="timeline-time">06:45</div>
+            <div class="timeline-event">Roma Termini. Check in for Frecciarossa to Salerno (high-speed train)</div>
+          </li>
+          <li>
+            <div class="timeline-time">07:00</div>
+            <div class="timeline-event">Frecciarossa departs Roma Termini to Salerno</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:45</div>
+            <div class="timeline-event">Arrive Salerno Centrale (2h 45m journey). Exit toward port/marina area</div>
+          </li>
+          <li>
+            <div class="timeline-time">10:00</div>
+            <div class="timeline-event">SITA bus or ferry departs Salerno for Amalfi (1h by bus, 1h by ferry). Ferry arrives 11:00, bus 11:30.</div>
+          </li>
+          <li>
+            <div class="timezone-time">11:00 or 11:30</div>
+            <div class="timeline-event">Arrive Amalfi. Walk town center: Cathedral di Sant'Andrea, lemon-lined piazza, Paper Museum (optional)</div>
+          </li>
+          <li>
+            <div class="timezone-time">11:00--12:00</div>
+            <div class="timeline-event">Amalfi exploration (1 hour). Cathedral is the main sight.</div>
+          </li>
+          <li>
+            <div class="timezone-time">12:00</div>
+            <div class="timeline-event">Ferry or bus from Amalfi to Positano (30 minutes ferry, 1 hour bus, EUR 8 ferry vs EUR 2 bus)</div>
+          </li>
+          <li>
+            <div class="timezone-time">12:30 or 13:00</div>
+            <div class="timezone-event">Arrive Positano. Explore vertical village: narrow streets, boutique shops, descend to Spiaggia Grande beach</div>
+          </li>
+          <li>
+            <div class="timeline-time">12:30--13:30</div>
+            <div class="timeline-event">Positano exploration (1 hour). Walk the switchbacks, take photos, soak in the atmosphere</div>
+          </li>
+          <li>
+            <div class="timeline-time">13:30--15:00</div>
+            <div class="timeline-event">Lunch at La Tagliata, Ristorante Max, or casual panini (EUR 20-40). Views of coast.</div>
+          </li>
+          <li>
+            <div class="timeline-time">15:00--16:30</div>
+            <div class="timeline-event">Beach time at Spiaggia Grande (swimming 20-30 minutes, rest/dry on beach 1 hour)</div>
+          </li>
+          <li>
+            <div class="timeline-time">16:45</div>
+            <div class="timeline-event">Ferry or bus from Positano to Salerno (1 hour ferry or 1.5 hours bus)</div>
+          </li>
+          <li>
+            <div class="timeline-time">17:45 or 18:15</div>
+            <div class="timeline-event">Arrive Salerno. Return to station (5-minute walk from ferry port, 10 min from bus station)</div>
+          </li>
+          <li>
+            <div class="timeline-time">18:00 or 18:30</div>
+            <div class="timeline-event">Frecciarossa departs Salerno back to Roma Termini (2h 45m)</div>
+          </li>
+          <li>
+            <div class="timeline-time">20:45--21:15</div>
+            <div class="timeline-event">Arrive Roma Termini. Metro home. Collapse with memories.</div>
+          </li>
+        </ul>
+      </div>
+
+      <h2>Getting There: Roma Termini to Salerno</h2>
+
+      <div class="section">
+        <h3>Frecciarossa Train</h3>
+        <ul>
+          <li><strong>Departure:</strong> Roma Termini 07:00 (or 07:30 later option)</li>
+          <li><strong>Arrival:</strong> Salerno Centrale 09:45 (or 10:15)</li>
+          <li><strong>Journey time:</strong> 2 hours 45 minutes</li>
+          <li><strong>Cost:</strong> EUR 25-40 if booked 2-3 weeks ahead, EUR 45-60 walk-up or last-minute</li>
+          <li><strong>Booking:</strong> Go to trenitalia.com 3 weeks before trip. Search "Roma Termini" to "Salerno" for your date, 07:00 departure. Book both outbound and return together (round-trip discount). Alternatively, walk up to Termini ticket window 30 minutes before departure.</li>
+          <li><strong>Return:</strong> Salerno to Roma 18:00-18:30 departure (book same time as outbound)</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>Book Early for Price Lock</h4>
+        <p>Frecciarossa fares to Salerno are the biggest expense. Booking 3 weeks ahead saves EUR 20-30 per person. Set a calendar reminder and book immediately when the date window opens (trenitalia.com releases fares 3 months in advance).</p>
+      </div>
+
+      <h3>Salerno Station to Amalfi</h3>
+
+      <p>Salerno is the gateway to the Amalfi Coast. From the station, you need to get to the port/ferry terminal (for ferry) or bus station (for bus). Both are about 5-10 minutes walk from the train station.</p>
+
+      <div class="section">
+        <h3>Options: Bus vs Ferry to Amalfi</h3>
+        <ul>
+          <li><strong>Ferry (recommended):</strong> Faster (1 hour vs 1.5 hours), more scenic (sea views), arrives directly in Amalfi harbor. Cost EUR 12 (vs EUR 2.50 bus). Departs Salerno 10:00 and 11:00 hourly. Buy ticket at ferry office near harbor.</li>
+          <li><strong>Bus (cheaper):</strong> SITA bus service, EUR 2.50, takes 1.5 hours (winding coastal road), departs Salerno bus station hourly (10:00, 10:30, 11:00, etc.). Takes a scenic road through the coast (worth seeing) but slower.</li>
+          <li><strong>Recommendation:</strong> Take ferry for speed and views. That extra EUR 10 is worth the time saved.</li>
+        </ul>
+      </div>
+
+      <h2>Amalfi: First Stop (1 hour)</h2>
+
+      <p>Amalfi is the "capital" of the Amalfi Coast. A medieval trading republic, it's been a coastal town for a thousand years. The Cathedral of Sant'Andrea (Duomo) is the main attraction -- a stunning structure with a 13th-century bronze door (cast in Constantinople) and the relics of Saint Andrew inside.</p>
+
+      <div class="section">
+        <h3>What to See (1 hour)</h3>
+        <ul>
+          <li><strong>Cathedral of Sant'Andrea:</strong> Free entry (donations welcome), 20-30 minutes inside. Ornate interior, bronze doors, reliquaries. The exterior is white and black marble, dramatic.</li>
+          <li><strong>Piazza Duomo:</strong> The main square with lemon trees (Amalfi lemons are famous). Sit, rest, drink lemon water. 15 minutes.</li>
+          <li><strong>Topical Paper Museum:</strong> EUR 5, optional. Amalfi invented paper manufacturing in medieval times. Small museum showing traditional paper making. Skip if short on time.</li>
+          <li><strong>Wandering the town:</strong> Narrow streets, boutique shops, small cafes. 15-20 minutes of aimless wandering rewarded with hidden courtyards.</li>
+        </ul>
+      </div>
+
+      <h2>Ferry/Bus to Positano (30 min ferry or 1 hour bus)</h2>
+
+      <p>Positano is 5km further along the coast from Amalfi. It's accessible by ferry (faster, scenic) or bus (slower, cheaper, winding road). Ferry departs Amalfi 12:00, 12:30, 13:00, etc. Cost EUR 8 (30 minutes). Bus departs hourly, EUR 2.50, 1 hour.</p>
+
+      <p><strong>Recommendation:</strong> Take the ferry. The 30-minute ride is spectacular -- you're seeing the coast the way Amalfi was originally connected to the world (by sea).</p>
+
+      <h2>Positano: The Main Event (3-4 hours)</h2>
+
+      <p>Positano is the postcard village of the Amalfi Coast. A vertical town where pastel-colored buildings stack on cliffsides, descending toward turquoise water. Population 3,000, but feels like a private village. This is where you spend your afternoon.</p>
+
+      <div class="section">
+        <h3>Positano Exploration (1 hour)</h3>
+        <ul>
+          <li><strong>The village itself:</strong> Walk the switchback streets from top to bottom. Stop at viewpoints. It's all about the atmosphere and photos. 45 minutes of wandering.</li>
+          <li><strong>Spiaggia Grande (main beach):</strong> At the bottom, free access. Lounge chairs EUR 5-10. Umbrella EUR 5. You can stay for 1-2 hours swimming and resting.</li>
+          <li><strong>Boutique shopping:</strong> Designer shops line the streets (Prada, Gucci, local brands). Window shop or buy something overpriced but memorable.</li>
+          <li><strong>Photography:</strong> Every corner is a photo. Budget extra time for this.</li>
+        </ul>
+      </div>
+
+      <h3>Lunch in Positano (1.5-2 hours)</h3>
+
+      <div class="section">
+        <h3>Restaurant Options</h3>
+        <ul>
+          <li><strong>La Tagliata:</strong> Upscale, on the hill overlooking the coast. Reservations essential (+39 089 875 040). Pasta with seafood, fresh vegetables from their garden. EUR 30-45 per person. Possibly the best meal you'll eat in 2026. Worth the reservation.</li>
+          <li><strong>Ristorante Max:</strong> Seafood, waterfront, good service. EUR 25-35 per person. Less famous than Tagliata but excellent. Easier to walk in without reservation.</li>
+          <li><strong>Casual lunch:</strong> Panini or pizza from street vendors (EUR 8-12). Sit on the beach and eat. Not fancy but functional and cheaper.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>The Seafood Pasta Rule</h4>
+        <p>Order pasta with seafood (pasta ai frutti di mare) or spaghetti with clams (spaghetti alle vongole). It's what this coast is famous for. The pasta is handmade, the seafood is caught that morning, the sauce is white wine and garlic. It's life-changing.</p>
+      </div>
+
+      <h3>Beach Time (1-2 hours)</h3>
+
+      <p>After lunch, head to Spiaggia Grande beach. Swim for 20-30 minutes (water is 20-24C in summer, wettable but not warm). Dry off, rest on the beach or at a cafe. The afternoon light is golden. Relax for 1 hour.</p>
+
+      <p>Budget: Lounge chair EUR 5-10 (optional, you can sit on the sand), umbrella EUR 5 (recommended), drink EUR 4-6.</p>
+
+      <div class="tip-box">
+        <h4>Alternative: Path of the Gods Hike</h4>
+        <p>The Sentiero degli Dei (Path of the Gods) is a 12km hiking trail from Praiano (next village) to Positano, featuring dramatic coastal views. If you skip lunch/beach and do the hike instead: 4-5 hours of hiking, dramatic photos, arrive at Positano tired but exhilarated. Only do this if you're fit and have 6+ hours to dedicate.</p>
+      </div>
+
+      <h2>Return to Salerno (Ferry or Bus)</h2>
+
+      <p>Ferry departs Positano around 16:00-16:45 (check schedule when you arrive), arrives Salerno 17:00-17:45 (1 hour). Bus departs similar times, takes 1.5 hours. Either way, you need to be back in Salerno by 17:45 to catch the 18:00-18:30 Frecciarossa to Rome.</p>
+
+      <div class="tip-box">
+        <h4>Timing is Tight</h4>
+        <p>You have 1 hour buffer between arriving Salerno and the 18:00 train departure. If ferry/bus is delayed, you'll miss your train. Confirm return ferry/bus times when you arrive in Positano morning. Have a backup plan (later train at 19:00-20:00).</p>
+      </div>
+
+      <h2>Return Train to Rome</h2>
+
+      <p>Frecciarossa departs Salerno around 18:00-18:30, arrives Roma Termini 20:45-21:15. You'll have gone 14 hours door-to-door. You'll be exhausted. You'll be happy.</p>
+
+      <h2>The Route on a Map</h2>
+
+      <div id="map"></div>
+
+      <p>Map shows Roma Termini, Salerno, Amalfi, and Positano with ferry/bus routes and approximate times.</p>
+
+      <div class="cost-box">
+        <h4>Cost Breakdown (Per Person)</h4>
+        <div class="cost-item">
+          <span class="cost-label">Frecciarossa Roma -- Salerno round-trip (booked 3 weeks ahead)</span>
+          <span class="cost-amount">EUR 50-80</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Ferry Salerno -- Amalfi</span>
+          <span class="cost-amount">EUR 12</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Ferry Amalfi -- Positano</span>
+          <span class="cost-amount">EUR 8</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Ferry Positano -- Salerno</span>
+          <span class="cost-amount">EUR 12</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Lunch (upscale restaurant or casual)</span>
+          <span class="cost-amount">EUR 15-40</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Beach lounge chair & umbrella (optional)</span>
+          <span class="cost-amount">EUR 10 (optional)</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Gelato, drinks, tips</span>
+          <span class="cost-amount">EUR 10-15</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Cathedral entry (if required, usually free/donation)</span>
+          <span class="cost-amount">EUR 0-5</span>
+        </div>
+        <div class="cost-total">
+          <span class="cost-label">Total</span>
+          <span class="cost-amount">EUR 107-165</span>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <h4>Budget Optimization</h4>
+        <p>Use buses instead of ferries (save EUR 20): EUR 87-145. Eat casual lunch on beach (save EUR 20): EUR 67-125. Skip beach lounge chair (sit on sand): EUR 57-115. Realistic bare-bones budget: EUR 57-90 per person if you minimize extras.</p>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">Can you do the Amalfi Coast in a day from Rome?</div>
+        <div class="faq-answer">Yes, barely. Total travel time is 5.5-6 hours round trip. You'll have 4-5 hours at the coast (1 hour Amalfi, 3-4 hours Positano). It's exhausting but rewarding. Most people say it was worth it.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is the ferry worth the extra cost?</div>
+        <div class="faq-answer">Yes. Ferry is 30 minutes faster than bus and far more scenic. You pay EUR 10 extra for saves 30 minutes and unforgettable views. Worth it given the tight schedule.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can you swim in the Amalfi Coast in summer?</div>
+        <div class="faq-answer">Yes. Water temperature is 20-24C in July-August (warmer than you'd expect). It's not tropical but swimmable. Bring swimwear and plan 30-45 minutes for swimming.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is the Path of the Gods hike?</div>
+        <div class="faq-answer">Sentiero degli Dei is a 12km coastal hiking trail from Praiano to Positano with dramatic cliff views. Takes 4-5 hours. Doable on a day trip but requires skipping lunch and beach time. Only do if you're fit.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Where should you eat on the Amalfi Coast?</div>
+        <div class="faq-answer">La Tagliata in Positano is exceptional (reservations essential, EUR 30-40). Ristorante Max is easier walk-in access (EUR 25-35). For budget, casual panini vendors (EUR 8-12). Avoid tourist traps directly on the main beach (overpriced).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is the best time to visit the Amalfi Coast?</div>
+        <div class="faq-answer">May-June and September-October. Weather is warm, water is 20-24C, crowds are moderate. Avoid July-August (extreme heat 35C+, extreme crowds, prices triple). Winter is quiet but water is 15-17C (cold).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Should you stay overnight instead of doing a day trip?</div>
+        <div class="faq-answer">If your budget allows, yes. One night in Positano lets you explore at a sane pace, enjoy dinner without rushing, swim without watching the clock, watch the sunset. Cost is EUR 80-200+ per night. Day trip is budget option (spend only EUR 100-165 total).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What should you bring to the Amalfi Coast?</div>
+        <div class="faq-answer">Swimwear (or buy sarong at destination), sunscreen (non-negotiable -- sea reflects sun intensely), hat, water bottle, light layers, flip-flops, sea bag for wet items, camera. The sun is intense here.</div>
+      </div>
+
+      <h2>Final Thoughts</h2>
+
+      <p>The Amalfi Coast day trip is the most exhausting of the five day trips in this guide. But it's also the most dramatic. You'll see views that appear in travel magazines. You'll eat pasta that tastes like you've never eaten before. You'll swim in Mediterranean water. You'll remember this day for decades.</p>
+
+      <div class="cta-box">
+        <h3>Explore More Day Trips</h3>
+        <p>The Amalfi Coast is one of five great day trips from Rome. Check out our guides to Tivoli, Pompeii, Tuscany, and Castelli Romani.</p>
+        <a href="/blog/blog-post-16.html" class="cta-button">View All Day Trips</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved. | <a href="https://dolcevitaroma.com/privacy">Privacy Policy</a> | <a href="https://dolcevitaroma.com/contact">Contact</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([40.8, 14.5], 9);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    const markers = [
+      { name: 'Roma Termini', lat: 41.9009, lng: 12.5021, color: '#C8352B' },
+      { name: 'Salerno', lat: 40.6824, lng: 14.7681, color: '#C9A84C' },
+      { name: 'Amalfi', lat: 40.6340, lng: 14.6027, color: '#2B3A1B' },
+      { name: 'Positano', lat: 40.6282, lng: 14.4847, color: '#2B3A1B' }
+    ];
+
+    markers.forEach(m => {
+      L.circleMarker([m.lat, m.lng], {
+        radius: 8,
+        fillColor: m.color,
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(m.name).addTo(map);
+    });
+
+    const route = L.polyline([
+      [41.9009, 12.5021],
+      [40.6824, 14.7681],
+      [40.6340, 14.6027],
+      [40.6282, 14.4847],
+      [40.6340, 14.6027],
+      [40.6824, 14.7681],
+      [41.9009, 12.5021]
+    ], {
+      color: '#E8614B',
+      weight: 2,
+      opacity: 0.6,
+      dashArray: '5, 5'
+    }).addTo(map);
+  </script>
+</body>
+</html>

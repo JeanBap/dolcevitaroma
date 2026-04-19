@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rome Museums by Neighborhood: Complete Guide | Dolce Vita Roma</title>
+  <meta name="description" content="Rome museums organized by neighborhood: Vatican, Borghese Gallery, Capitoline, Palazzo Massimo, Villa Farnesina, and hidden gems. Tickets, hours, and what to see.">
+  <meta name="keywords" content="Rome museums, Borghese Gallery, Capitoline Museums, Palazzo Massimo, Vatican Museums, Rome art galleries">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/rome-museums-guide-neighborhood">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Rome Museums by Neighborhood: Complete Guide | Dolce Vita Roma">
+  <meta property="og:description" content="Rome museums organized by neighborhood: Vatican, Borghese Gallery, Capitoline, Palazzo Massimo, Villa Farnesina, and hidden gems.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/rome-museums-guide-neighborhood">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/art/museums-hero.jpg">
+  <meta property="article:published_time" content="2026-04-19T08:00:00+02:00">
+  <meta property="article:author" content="Dolce Vita Roma">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rome Museums by Neighborhood: Complete Guide">
+  <meta name="twitter:description" content="Borghese Gallery, Capitoline, Palazzo Massimo, Vatican, and more -- organized by neighborhood with tickets and hours.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/images/art/museums-hero.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    :root {
+      --color-green: #2B3A1B;
+      --color-cream: #F5EBD8;
+      --color-gold: #C9A84C;
+      --color-salmon: #E8614B;
+      --color-red: #C8352B;
+      --color-border: #E0D5C4;
+      --color-text-light: #7A6F5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: var(--color-green);
+      background-color: var(--color-cream);
+    }
+
+    header {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--color-gold);
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav {
+      background-color: var(--color-cream);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-gold);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    article {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.2rem;
+      color: var(--color-green);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--color-green);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--color-gold);
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.3rem;
+      color: var(--color-salmon);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h4 {
+      font-weight: 700;
+      color: var(--color-green);
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .post-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .toc {
+      background-color: var(--color-cream);
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .content p {
+      margin-bottom: 1rem;
+    }
+
+    .content strong {
+      color: var(--color-green);
+    }
+
+    .museum-card {
+      background-color: var(--color-cream);
+      border-left: 4px solid var(--color-salmon);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .museum-card h4 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .museum-info {
+      background-color: white;
+      padding: 0.8rem;
+      margin: 0.8rem 0;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    .museum-info strong {
+      color: var(--color-salmon);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .faq {
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: var(--color-cream);
+      border-left: 3px solid var(--color-gold);
+      border-radius: 4px;
+    }
+
+    .faq-item h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq-item p {
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      margin-top: 0;
+      color: var(--color-cream);
+    }
+
+    .cta-box p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--color-salmon);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .related-posts {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    .related-posts h3 {
+      margin-top: 0;
+      color: var(--color-green);
+    }
+
+    .related-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .related-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .related-list li:last-child {
+      border-bottom: none;
+    }
+
+    .related-list a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .related-list a:hover {
+      text-decoration: underline;
+    }
+
+    .author-bio {
+      background-color: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 3rem;
+      border-left: 4px solid var(--color-salmon);
+    }
+
+    .author-bio h4 {
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .author-bio p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    .pass-options {
+      background-color: white;
+      border: 2px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .pass-option {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .pass-option:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pass-option h5 {
+      color: var(--color-salmon);
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      main {
+        padding: 1.5rem 0.5rem;
+      }
+
+      article {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero-image {
+        height: 250px;
+      }
+
+      #map {
+        height: 350px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+
+    .image-caption {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      font-style: italic;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Rome Museums by Neighborhood: Complete Guide",
+    "description": "Rome museums organized by neighborhood: Vatican, Borghese Gallery, Capitoline, Palazzo Massimo, Villa Farnesina, and hidden gems.",
+    "image": "https://dolcevitaroma.com/images/art/museums-hero.jpg",
+    "datePublished": "2026-04-19T08:00:00+02:00",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dolcevitaroma.com/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Blog",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rome Art, History & Culture",
+        "item": "https://dolcevitaroma.com/blog/rome-art-history-culture-guide"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Rome Museums by Neighborhood",
+        "item": "https://dolcevitaroma.com/blog/rome-museums-guide-neighborhood"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which museum is most important to visit in Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Borghese Gallery is the most rewarding 2 hours in Rome. Smaller than Vatican but perfectly curated. Twenty Bernini sculptures, six Caravaggios, Titian, Raphael. Book 2 weeks ahead. EUR 15."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the best museum pass for Rome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Roma Pass 72hr (EUR 39) gives 2 free museums + transport. Good if combining Colosseum + Borghese. MIC Card (EUR 12 annual) covers state museums but is only for Romans and residents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I visit all of Rome's major museums in one week?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if you're focused. Borghese (2hr), Vatican (4-6hr), Capitoline (2hr), Palazzo Massimo (2hr), Villa Farnesina (1hr), plus churches with Caravaggio (free). Total: 12-15 hours of museum time spread over 7 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which museum has the best mosaics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Palazzo Massimo alle Terme. Alexander Mosaic and Nile mosaic are the finest Roman mosaics in existence. The reconstructed room from Livia's villa (AD 20) is extraordinary. EUR 10."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Palazzo Altemps worth visiting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Ludovisi Gaul and other Greek originals/Roman copies. EUR 10. Less crowded than larger museums. Via Sant'Apollinare 46."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Doria Pamphilj Gallery and what's special about it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Via del Corso 305 (EUR 13). Velazquez's portrait of Pope Innocent X (the original -- not the famous Francis Bacon screaming popes). Private family collection with audio guide narrated by the current Prince Doria Pamphilj. Unique experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Rome's museums open on Sundays?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most are closed Sundays or have limited hours. Vatican closed Sundays (except last Sunday, free entry). Borghese closed Mondays. Check individual museum websites. First Sunday of month: many state museums free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I bring a bag or backpack to museums?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Large bags must be checked at coat check. Backpacks are often not allowed in galleries. Bring a small shoulder bag or crossbody. Check museum rules before visiting."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog Home</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Blog Home</a> / <a href="/blog/blog-post-27.html">Rome Art Guide</a> / <span>Rome Museums by Neighborhood</span>
+      </div>
+
+      <h1>Rome Museums Guide: Organized by Neighborhood</h1>
+
+      <div class="post-meta">
+        <span>📅 Published April 19, 2026</span>
+        <span>📖 ~2,500 words</span>
+        <span>⏱️ 12 min read</span>
+      </div>
+
+      <img src="/images/art/museums-hero.jpg" alt="Grand interior of a Rome museum featuring Renaissance art and classical architecture" class="hero-image" loading="lazy">
+      <p class="image-caption">Rome's museums span ancient to modern art, organized across multiple neighborhoods. No single museum has everything.</p>
+
+      <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#vatican-prati">Vatican / Prati Neighborhood</a></li>
+          <li><a href="#villa-borghese">Villa Borghese / Parioli</a></li>
+          <li><a href="#centro-storico">Centro Storico (Historic Center)</a></li>
+          <li><a href="#trastevere">Trastevere</a></li>
+          <li><a href="#esquilino">Esquilino / Termini</a></li>
+          <li><a href="#hidden-gems">Hidden Gem Museums</a></li>
+          <li><a href="#passes">Museum Passes Explained</a></li>
+          <li><a href="#maps">Interactive Museums Map</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h2 id="vatican-prati">Vatican / Prati Neighborhood</h2>
+
+        <div class="museum-card">
+          <h4>Musei Vaticani (Vatican Museums)</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Viale Vaticano, 00165 Roma
+            <strong>Hours:</strong> Mon-Sat 9am-6pm (last entry 4pm). Closed Sundays except last Sunday of month (free, no booking)
+            <strong>Tickets:</strong> EUR 20 standard, EUR 8 reduced. Book online museivaticani.va (add EUR 4)
+            <strong>Time needed:</strong> 3-7 hours depending on depth
+            <strong>What to see:</strong> 54 galleries, Sistine Chapel, Raphael Rooms, Pinacoteca, sculpture galleries, Gallery of Maps
+          </div>
+          <p>The world's largest museum. World-class collection but overwhelming size. Book online to skip queues. (See detailed guide: blog-post-28.html)</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Castel Sant'Angelo</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Lungotevere Castello, 50
+            <strong>Hours:</strong> Tue-Sun 9am-7:30pm. Closed Mondays
+            <strong>Tickets:</strong> EUR 15
+            <strong>Metro:</strong> Line A to Lepanto, then 15-minute walk
+            <strong>Time needed:</strong> 1.5 hours
+          </div>
+          <p>Hadrian's mausoleum (138 AD) converted to medieval fortress. Borgia apartments, views over Tiber and Vatican. Less crowded than Vatican Museums. Worth the detour.</p>
+        </div>
+
+        <h2 id="villa-borghese">Villa Borghese / Parioli Neighborhood</h2>
+
+        <div class="museum-card">
+          <h4>Galleria Borghese (MUST VISIT)</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Piazzale Scipione Borghese, 5
+            <strong>Hours:</strong> Tue-Sun 9am-7pm, 2-hour timed entry slots. Closed Mondays
+            <strong>Tickets:</strong> EUR 15. MUST book 2 weeks ahead at galleriaborghese.beniculturali.it
+            <strong>Metro:</strong> Bus 52, 53, 910 to Villa Borghese. Or walk from Spagna (20min)
+            <strong>Time needed:</strong> 2 hours (strictly enforced)
+          </div>
+          <p>The most rewarding museum in Rome. Small, intimate, perfectly curated. Twenty Bernini sculptures. Six Caravaggio paintings. Titian, Raphael, Leonardo. Booking is mandatory -- availability fills 2 weeks ahead. If you visit Rome for 5 days and can only go to one museum, choose this.</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Museo Nazionale Etrusco di Villa Giulia</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Piazzale di Villa Giulia, 9
+            <strong>Hours:</strong> Tue-Sun 8:30am-7:30pm. Closed Mondays
+            <strong>Tickets:</strong> EUR 10
+            <strong>Metro:</strong> Tram 3 to Villa Giulia
+            <strong>Time needed:</strong> 1.5 hours
+          </div>
+          <p>Pre-Roman Etruscan civilization (8th-1st century BC). Sarcophagus of the Spouses (husband and wife reclining together in marble) is the most moving artifact in any Rome museum. Underrated and often overlooked.</p>
+        </div>
+
+        <h2 id="centro-storico">Centro Storico (Historic Center)</h2>
+
+        <div class="museum-card">
+          <h4>Capitoline Museums (Musei Capitolini)</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Piazza del Campidoglio (Michelangelo-designed square)
+            <strong>Hours:</strong> Tue-Sun 9am-8pm. Closed Mondays
+            <strong>Tickets:</strong> EUR 15
+            <strong>Time needed:</strong> 2 hours
+            <strong>What to see:</strong> Original Marcus Aurelius equestrian statue, Dying Gaul, She-Wolf (symbol of Rome), Greek originals and Roman copies
+          </div>
+          <p>World's first public museum (1471). Two palaces on Capitoline Hill connected by underground passage. The Marcus Aurelius statue in the piazza is a copy -- original is inside for conservation. Terrace view of Forum is worth the price alone.</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Palazzo Altemps</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Via Sant'Apollinare, 46
+            <strong>Hours:</strong> Tue-Sun 9am-7:45pm. Closed Mondays
+            <strong>Tickets:</strong> EUR 10
+            <strong>Time needed:</strong> 1.5 hours
+          </div>
+          <p>Branch of National Roman Museum. Greek originals and Roman copies. Ludovisi Gaul, throne of Ludovisi. Less crowded than larger museums. Excellent collection.</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Palazzo Massimo alle Terme</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Piazza dei Cinquecento, 67 (at Termini Station)
+            <strong>Hours:</strong> Tue-Sun 9am-7:45pm. Closed Mondays
+            <strong>Tickets:</strong> EUR 10
+            <strong>Time needed:</strong> 2 hours
+            <strong>Best for:</strong> Roman mosaics and frescoes
+          </div>
+          <p>Often overlooked but essential. Alexander Mosaic, Nile mosaic, reconstructed room from Livia's villa (AD 20). Best Roman domestic art in Rome. Most underrated museum in the city.</p>
+        </div>
+
+        <h2 id="trastevere">Trastevere Neighborhood</h2>
+
+        <div class="museum-card">
+          <h4>Villa Farnesina</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Via della Lungara, 230
+            <strong>Hours:</strong> Mon-Sat 9am-2pm only. Closed Sundays
+            <strong>Tickets:</strong> EUR 12
+            <strong>Time needed:</strong> 1 hour
+          </div>
+          <p>Renaissance villa with Raphael's Galatea fresco (1512) and Peruzzi's trompe-l'oeil perspective rooms. Small, intimate, often overlooked. The limited hours (morning only) are inconvenient but worth planning around.</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Museo di Roma in Trastevere</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Piazza di Sant'Egidio, 1b
+            <strong>Hours:</strong> Tue-Sun 10am-8pm. Closed Mondays
+            <strong>Tickets:</strong> EUR 8
+            <strong>Time needed:</strong> 1.5 hours
+          </div>
+          <p>Rome in the 18th-19th centuries. Photographs, documents, everyday objects. Different from art museums -- it's about how Romans lived, not masterpieces.</p>
+        </div>
+
+        <h2 id="esquilino">Esquilino / Termini Neighborhood</h2>
+
+        <div class="museum-card">
+          <h4>Palazzo Massimo alle Terme (See Above)</h4>
+          <p>Best Roman mosaics. EUR 10. At Termini Station.</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Santa Maria Maggiore (Free)</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Piazza di Santa Maria Maggiore
+            <strong>Hours:</strong> Daily 7am-7pm
+            <strong>Tickets:</strong> Free
+          </div>
+          <p>One of Rome's 4 papal basilicas. 5th-century mosaics in the nave -- finest early Christian mosaics in existence. Salus Populi Romani icon draws pilgrims daily. Free and world-class.</p>
+        </div>
+
+        <h2 id="hidden-gems">Hidden Gem Museums</h2>
+
+        <div class="museum-card">
+          <h4>Crypta Balbi</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Via delle Botteghe Oscure, 31
+            <strong>Hours:</strong> Tue-Sun 9am-7:45pm. Closed Mondays
+            <strong>Tickets:</strong> EUR 10
+          </div>
+          <p>Layers of Rome from ancient to medieval visible in one excavation. The crypto (underground) shows Roman theater remains, then medieval walls, then Renaissance. Vertical archaeology.</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Galleria Doria Pamphilj</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Via del Corso, 305
+            <strong>Hours:</strong> Fri-Wed 10am-5pm. Closed Thursdays
+            <strong>Tickets:</strong> EUR 13
+          </div>
+          <p>Private family collection. Contains Velazquez's portrait of Pope Innocent X (the original, not the Bacon version). Audio guide narrated by the current Prince Doria Pamphilj himself. Unique experience.</p>
+        </div>
+
+        <div class="museum-card">
+          <h4>Casino dell'Aurora</h4>
+          <div class="museum-info">
+            <strong>Address:</strong> Via Veneto (private palazzo)
+            <strong>Access:</strong> Tours via comune.roma.it or guides. Free sometimes, bookable
+          </div>
+          <p>Caravaggio's only ceiling fresco (Jupiter, Neptune, Pluto) in a private palazzo. Rare access. Call ahead for availability.</p>
+        </div>
+
+        <h2 id="passes">Museum Passes & Money-Saving Options</h2>
+
+        <div class="pass-options">
+          <div class="pass-option">
+            <h5>MIC Card (EUR 12 annual)</h5>
+            <p>Covers all state-run museums including Colosseum, Borghese, Palazzo Massimo, Palazzo Altemps, Capitoline. Only available to Rome residents and Italian citizens. Not useful for tourists.</p>
+          </div>
+
+          <div class="pass-option">
+            <h5>Roma Pass 72 hours (EUR 39)</h5>
+            <p>Includes 2 free museum entries (first two museums you visit) + unlimited public transport for 72 hours. Good if combining Colosseum (EUR 18) + Borghese (EUR 15). Break-even at EUR 33, then transport is free.</p>
+          </div>
+
+          <div class="pass-option">
+            <h5>First Sunday of Month (Free Entry)</h5>
+            <p>All state museums free first Sunday of each month, but expect massive queues. Arrive before 8am. Advance booking not allowed. Only worthwhile if you have extreme flexibility.</p>
+          </div>
+
+          <div class="pass-option">
+            <h5>Last Sunday of Month (Vatican Free)</h5>
+            <p>Vatican Museums free last Sunday of month, but advance booking not allowed. Expect 2-3 hour queues. Arrive before 8am. Crowded but manageable.</p>
+          </div>
+
+          <div class="pass-option">
+            <h5>Individual Booking Discounts</h5>
+            <p>Most museums offer EUR 1-2 discounts for online booking. Not significant but adds up across multiple museums.</p>
+          </div>
+        </div>
+
+        <h2>Interactive Museums Map</h2>
+
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h4>Which museum is most important to visit?</h4>
+            <p>Borghese Gallery is the most rewarding 2 hours in Rome. Smaller than Vatican but perfectly curated. Twenty Bernini sculptures, six Caravaggios. Book 2 weeks ahead. EUR 15. If you only visit one museum, choose this.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What's the best museum pass?</h4>
+            <p>Roma Pass 72hr (EUR 39) gives 2 free museums + transport. Good if combining Colosseum + Borghese. MIC Card is only for residents. First Sunday free entry is logistically difficult.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Can I visit all major museums in one week?</h4>
+            <p>Yes: Borghese (2hr), Vatican (4-6hr), Capitoline (2hr), Palazzo Massimo (2hr), Villa Farnesina (1hr) = 11-17 hours spread over 7 days. Doable but exhausting.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Which museum has the best mosaics?</h4>
+            <p>Palazzo Massimo alle Terme. Alexander Mosaic, Nile mosaic, reconstructed Livia villa room. Most underrated museum in Rome. EUR 10.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Are museums open on Sundays?</h4>
+            <p>Most closed Sundays or limited hours. Vatican closed Sundays (except last Sunday). Borghese closed Mondays. Check individual museums. First Sunday: many free but crowded.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Can I bring a bag to museums?</h4>
+            <p>Large bags must be checked. Backpacks often not allowed. Bring small shoulder bag or crossbody. Check rules before visiting.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Which museum is easiest to reach by public transport?</h4>
+            <p>Palazzo Massimo (right at Termini Station). Capitoline (walk from anywhere in Centro Storico). Borghese requires bus or 20-minute walk.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Do I need to book tickets in advance?</h4>
+            <p>Borghese Gallery: MUST book 2 weeks ahead or you won't get in. Vatican: strongly recommended to avoid 2-3 hour queues. Others: not required but shorter wait with online booking.</p>
+          </div>
+        </div>
+
+        <h2>Related Reading from Dolce Vita Roma</h2>
+
+        <div class="related-posts">
+          <h3>Deepen Your Museum Experience</h3>
+          <ul class="related-list">
+            <li><a href="/blog/blog-post-27.html">Rome Art, History & Culture: The Complete Guide</a> -- Broader context for what you're seeing</li>
+            <li><a href="/blog/blog-post-28.html">Vatican Museums & Sistine Chapel Complete Guide</a> -- Detailed Vatican planning</li>
+            <li><a href="/blog/blog-post-30.html">Renaissance & Baroque Masters in Rome</a> -- Artist-focused deep dives into the works</li>
+            <li><a href="/blog/blog-post-1.html">Rome by Neighborhood</a> -- Understand neighborhoods and transport between museums</li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Explore Rome's Museums with Fellow Expats</h3>
+          <p>Join our museum group for docent-led visits, small group tours, and discussion sessions about art, history, and culture.</p>
+          <a href="https://dolcevitaroma.com/join-groups" class="cta-button">Join DVR Museum Group</a>
+        </div>
+
+        <div class="author-bio">
+          <h4>About This Guide</h4>
+          <p>Written by Dolce Vita Roma team members who have visited these museums dozens of times. Current 2026 hours, prices, and booking information verified. This is Spoke 5D of the Pillar 5 (Rome Art, History & Culture) guide series. Read the main pillar at blog-post-27.html for comprehensive art history timeline.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Rome Expat Community & Lifestyle Guide</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Museums map
+    const map = L.map('map').setView([41.9041, 12.4897], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Museum locations with colors
+    const museums = [
+      { name: 'Vatican Museums', lat: 41.9056, lng: 12.4524, color: '#C9A84C' },
+      { name: 'Borghese Gallery', lat: 41.9140, lng: 12.4924, color: '#E8614B' },
+      { name: 'Capitoline Museums', lat: 41.8933, lng: 12.4859, color: '#C9A84C' },
+      { name: 'Palazzo Massimo', lat: 41.8889, lng: 12.4951, color: '#E8614B' },
+      { name: 'Palazzo Altemps', lat: 41.8978, lng: 12.4731, color: '#C9A84C' },
+      { name: 'Villa Farnesina', lat: 41.8892, lng: 12.4618, color: '#E8614B' },
+      { name: 'Villa Giulia', lat: 41.9139, lng: 12.4821, color: '#C9A84C' },
+      { name: 'Castel Sant\'Angelo', lat: 41.9029, lng: 12.4632, color: '#E8614B' },
+      { name: 'Crypta Balbi', lat: 41.8947, lng: 12.4816, color: '#C9A84C' },
+      { name: 'Doria Pamphilj', lat: 41.8999, lng: 12.4865, color: '#E8614B' }
+    ];
+
+    museums.forEach(museum => {
+      L.circleMarker([museum.lat, museum.lng], {
+        radius: 8,
+        fillColor: museum.color,
+        color: '#2B3A1B',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).addTo(map).bindPopup(`<strong>${museum.name}</strong>`);
+    });
+
+    // Add legend
+    const legend = L.control({position: 'bottomright'});
+    legend.onAdd = function() {
+      const div = L.DomUtil.create('div', 'info legend');
+      div.style.backgroundColor = 'white';
+      div.style.padding = '10px';
+      div.style.borderRadius = '5px';
+      div.style.boxShadow = '0 0 15px rgba(0,0,0,0.2)';
+      div.innerHTML = '<p style="margin: 0; font-weight: bold; font-size: 12px;">Rome Museums</p><p style="margin: 5px 0 0 0; font-size: 11px; color: #666;">Click markers for details</p>';
+      return div;
+    };
+    legend.addTo(map);
+  </script>
+</body>
+</html>

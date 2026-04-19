@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rome Metro System Guide: All 3 Lines & 73 Stations | Dolce Vita Roma</title>
+  <meta name="description" content="Complete Rome metro guide covering all 3 lines (A, B, C), 73 stations, peak times, accessibility, and insider tips for tourists and expats.">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/rome-metro-guide">
+
+  <meta property="og:title" content="Rome Metro System Guide: All 3 Lines & 73 Stations">
+  <meta property="og:description" content="Master Rome's 3 metro lines: detailed station lists, key stops, operating hours, peak times, and accessibility info.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/transport/rome-metro-map.jpg">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/rome-metro-guide">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rome Metro System Guide: All 3 Lines & 73 Stations">
+  <meta name="twitter:description" content="Master Rome's 3 metro lines: detailed station lists, key stops, operating hours, peak times, and accessibility info.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/images/transport/rome-metro-map.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    :root {
+      --color-green: #2B3A1B;
+      --color-cream: #F5EBD8;
+      --color-gold: #C9A84C;
+      --color-salmon: #E8614B;
+      --color-red: #C8352B;
+      --color-border: #E0D5C4;
+      --color-text-light: #7A6F5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: #2c2c2c;
+      background: #fafaf8;
+    }
+
+    header {
+      background: var(--color-green);
+      color: var(--color-cream);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--color-gold);
+    }
+
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: white;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-salmon);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    article {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      color: var(--color-green);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+    }
+
+    .toc {
+      background: #f9f7f3;
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .toc h2 {
+      font-size: 1.1rem;
+      color: var(--color-green);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .toc ol {
+      margin-left: 1.5rem;
+      list-style-position: inside;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .toc a {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--color-green);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.3rem;
+      color: var(--color-salmon);
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+
+    strong {
+      color: var(--color-green);
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: rgba(201, 168, 76, 0.1);
+      border-left: 3px solid var(--color-gold);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .warning {
+      background: rgba(232, 97, 75, 0.08);
+      border-left: 3px solid var(--color-salmon);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .info-box {
+      background: rgba(43, 58, 27, 0.05);
+      border: 1px solid var(--color-border);
+      padding: 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    table th {
+      background: var(--color-green);
+      color: white;
+      padding: 0.8rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    table tr:nth-child(even) {
+      background: #fafaf8;
+    }
+
+    .metro-line {
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin: 0 0.3rem;
+    }
+
+    .line-a {
+      background: #ff8c00;
+      color: white;
+    }
+
+    .line-b {
+      background: #2b7acc;
+      color: white;
+    }
+
+    .line-c {
+      background: #00a651;
+      color: white;
+    }
+
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
+    .line-section {
+      background: #f9f7f3;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+      border-left: 4px solid;
+    }
+
+    .line-section.lineA {
+      border-left-color: #ff8c00;
+    }
+
+    .line-section.lineB {
+      border-left-color: #2b7acc;
+    }
+
+    .line-section.lineC {
+      border-left-color: #00a651;
+    }
+
+    .faq-section {
+      margin: 2.5rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: #f9f7f3;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: #f3f0eb;
+    }
+
+    .faq-question.active {
+      background: var(--color-gold);
+      color: white;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1.2rem;
+      background: white;
+      border-top: 1px solid var(--color-border);
+      line-height: 1.7;
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--color-green) 0%, rgba(43, 58, 27, 0.8) 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 6px;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    .cta-box h3 {
+      color: var(--color-cream);
+      margin-top: 0;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.95);
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: var(--color-salmon);
+      color: white;
+    }
+
+    .author-bio {
+      background: #f9f7f3;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-gold);
+    }
+
+    .author-bio h4 {
+      color: var(--color-green);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .author-bio p {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .back-to-pillar {
+      display: inline-block;
+      background: var(--color-green);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 2rem 0;
+      transition: background 0.3s;
+    }
+
+    .back-to-pillar:hover {
+      background: var(--color-salmon);
+    }
+
+    footer {
+      background: var(--color-green);
+      color: var(--color-cream);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      #map {
+        height: 350px;
+      }
+
+      article {
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BlogPosting", "FAQPage"],
+    "headline": "Rome Metro System Guide: All 3 Lines & 73 Stations",
+    "description": "Complete Rome metro guide covering all 3 lines (A, B, C), 73 stations, peak times, accessibility, and insider tips for tourists and expats.",
+    "image": "https://dolcevitaroma.com/images/transport/rome-metro-map.jpg",
+    "datePublished": "2026-04-19",
+    "dateModified": "2026-04-19",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma",
+      "url": "https://dolcevitaroma.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dolcevitaroma.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://dolcevitaroma.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Getting Around Rome",
+          "item": "https://dolcevitaroma.com/blog/rome-transportation-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Metro System Guide",
+          "item": "https://dolcevitaroma.com/blog/rome-metro-guide"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="https://dolcevitaroma.com/blog">Blog</a>
+        <span>/</span>
+        <a href="blog-post-22.html">Getting Around Rome</a>
+        <span>/</span>
+        <span>Metro System</span>
+      </div>
+
+      <h1>Rome Metro System Guide: All 3 Lines & 73 Stations</h1>
+
+      <div class="post-meta">
+        <div class="meta-item">
+          <span>By Dolce Vita Roma</span>
+        </div>
+        <div class="meta-item">
+          <span>Published April 19, 2026</span>
+        </div>
+        <div class="meta-item">
+          <span>2,000 words</span>
+        </div>
+      </div>
+
+      <img src="/images/transport/rome-metro-map.jpg" alt="Rome Metro map showing all 3 lines and 73 stations" class="hero-image" loading="lazy">
+
+      <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="#overview">Metro Overview: 3 Lines, 73 Stations</a></li>
+          <li><a href="#lineA">Line A (Orange): The Tourist Workhorse</a></li>
+          <li><a href="#lineB">Line B & B1 (Blue): Ancient Rome</a></li>
+          <li><a href="#lineC">Line C (Green): The Modern Line</a></li>
+          <li><a href="#practical">Practical Metro Tips & Accessibility</a></li>
+          <li><a href="#peak">Peak Times & Crowding</a></li>
+          <li><a href="#maps">Interactive Metro Map</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ol>
+      </div>
+
+      <h2 id="overview">Metro Overview: 3 Lines, 73 Stations</h2>
+
+      <p>Rome's Metropolitan system consists of three lines (A, B, C) with 73 total stations. It's the fastest way to move across the city, operating 5:30am to 11:30pm (midnight to 1:30am Fri-Sat). Frequency during peak hours (7:30--9am and 5:30--7:30pm) is every 4--7 minutes. Understanding which line serves your destination and avoiding peak hours will make your Rome experience much smoother.</p>
+
+      <div class="info-box">
+        <strong>Quick Stats:</strong>
+        <ul>
+          <li>Line A: 27 stations, Battistini to Anagnina</li>
+          <li>Line B: 22 stations, Jonio to Laurentina</li>
+          <li>Line B1: 4 stations, Bologna to Jonio (branch from Line B)</li>
+          <li>Line C: 22 stations, Monte Compatri to San Giovanni (expanding)</li>
+          <li>Single ride: EUR 1.50 (valid for one journey per line)</li>
+          <li>Operating hours: 5:30am--11:30pm (1:30am Fri-Sat)</li>
+        </ul>
+      </div>
+
+      <h2 id="lineA">Line A (Orange): The Tourist Workhorse</h2>
+
+      <p><span class="metro-line line-a">Line A (Orange)</span> runs from Battistini in the west (Vatican area) to Anagnina in the southeast. This is the line you'll use most often if you're sightseeing or staying near Termini station. It covers nearly all major tourist sites and key residential areas.</p>
+
+      <div class="line-section lineA">
+        <h3>Key Stops (West to East)</h3>
+        <ul>
+          <li><strong>Ottaviano--San Pietro:</strong> Closest station to Vatican Museums (10min walk)</li>
+          <li><strong>Lepanto:</strong> Access to Castel Sant'Angelo and Tiber walks</li>
+          <li><strong>Flaminio:</strong> Gateway to Piazza del Popolo, designer shopping (Via del Corso)</li>
+          <li><strong>Spagna:</strong> Spanish Steps and upscale shopping district</li>
+          <li><strong>Barberini:</strong> Trevi Fountain (5min walk), Palazzo Barberini museum</li>
+          <li><strong>Repubblica:</strong> Train station area, Termini nearby, famous for 1970s mosaics</li>
+          <li><strong>Termini:</strong> Main train station, interchange to Line B, hostel and budget hotel hub</li>
+          <li><strong>Policlinico:</strong> North toward Prati residential area</li>
+          <li><strong>Subaugusta:</strong> Further north, residential</li>
+          <li><strong>Cinecittà:</strong> Film studios (tourists rarely visit)</li>
+        </ul>
+      </div>
+
+      <p><strong>Why Line A is Best for Tourists:</strong> You can visit Ottaviano (Vatican), walk the Spanish Steps at Spagna, see Trevi Fountain from Barberini, and transfer to Line B at Termini for the Colosseum. A single day pass covers all three destinations.</p>
+
+      <div class="highlight">
+        <strong>Line A Peak Time:</strong> 7:30--9am (commuters heading to jobs) and 5:30--7:30pm (workers returning home). Spagna, Barberini, and Termini are dangerously crowded during these windows. Plan sightseeing for 10am--5pm to avoid rush hour crush.
+      </div>
+
+      <h2 id="lineB">Line B & B1 (Blue): Ancient Rome</h2>
+
+      <p><span class="metro-line line-b">Line B (Blue)</span> runs from Jonio to Laurentina, passing through the Colosseum and Circus Maximus. It's essential for anyone visiting ancient Rome's main sites. Line B1 is a 4-station branch that splits at Bologna heading north.</p>
+
+      <div class="line-section lineB">
+        <h3>Key Stops (North to South)</h3>
+        <ul>
+          <li><strong>Termini:</strong> Interchange with Line A, Rome's main rail station</li>
+          <li><strong>Colosseo:</strong> The Colosseum entrance (south side, 3min walk). Main tourist destination.</li>
+          <li><strong>Circo Massimo:</strong> Circus Maximus site (chariot racing track, now a park), free entry</li>
+          <li><strong>Garbatella:</strong> Fascist-era neighborhood with interesting architecture, local restaurants</li>
+          <li><strong>EUR Fermi:</strong> EUR (Esposizione Universale Roma) district, south of city center, modern buildings from 1942</li>
+          <li><strong>Laurentina:</strong> End of Line B, residential suburbs</li>
+        </ul>
+
+        <h3>Line B1 Branch (4 stations)</h3>
+        <ul>
+          <li><strong>Bologna, Policlinico, Castro Pretorio, Jonio</strong> -- modern stations serving northern residential areas, less relevant for tourists</li>
+        </ul>
+      </div>
+
+      <p><strong>Why Line B Matters:</strong> The Colosseum (Colosseo station) is Rome's most iconic sight. Line B gets you there directly from Termini in one stop. Circo Massimo gives access to the Roman Forum via short walk.</p>
+
+      <div class="warning">
+        <strong>Colosseo Station Accessibility:</strong> The Colosseo station has a lift (elevator), making it one of the more accessible metro stations in Rome. However, lift reliability is poor throughout the Roman metro system -- don't count on it being working.
+      </div>
+
+      <h2 id="lineC">Line C (Green): The Modern Line</h2>
+
+      <p><span class="metro-line line-c">Line C (Green)</span> is Rome's newest metro line, opened gradually between 2014 and 2022. It's modern, air-conditioned, and driverless -- a stark contrast to the older, hotter Lines A and B. It runs from Monte Compatri/Pantano to San Giovanni, serving eastern neighborhoods and expanding southward.</p>
+
+      <div class="line-section lineC">
+        <h3>Current Route & Key Stops</h3>
+        <ul>
+          <li><strong>San Giovanni:</strong> Basilica of Saint John (Papal church), southern interchange point</li>
+          <li><strong>Manzoni, Claudia, Tito Livio, Castrense, Malatesta, Borgata Alessandrina:</strong> Residential areas</li>
+          <li><strong>Monte Compatri/Pantano:</strong> End of line heading southeast</li>
+        </ul>
+
+        <h3>Future Expansion</h3>
+        <p>Line C is expanding northward from San Giovanni and eventually will reach Clodio station near the Vatican (years away). This will provide a direct metro route to the Vatican Museum area, but that's not yet available.</p>
+      </div>
+
+      <p><strong>Should You Use Line C?</strong> Probably not, unless you're visiting neighborhoods on the southeast edge. Most tourists never take Line C. It's useful for expats living in San Giovanni or nearby residential zones.</p>
+
+      <h2 id="practical">Practical Metro Tips & Accessibility</h2>
+
+      <h3>Validation: The Most Important Rule</h3>
+
+      <p>You must validate your ticket on the yellow electronic reader before entering the metro barrier. Tap or insert your card/ticket, wait for the beep, then pass through. Plain-clothes transit inspectors (vigilil urbani) board trains regularly and fine EUR 100+ for invalid tickets. This happens more often than you'd think, especially on tourist-heavy routes. No exceptions, no negotiations, no "I didn't know." It takes 2 seconds to validate -- just do it.</p>
+
+      <h3>Ticket Machines</h3>
+
+      <p>Automatic ticket machines are present at all stations. They accept cash (notes and coins) and credit cards. You can buy single rides (EUR 1.50) or passes (24hr, 48hr, 72hr, weekly, monthly). Machines sometimes jam or display errors, but usually work. If a machine is broken, buy from a tabacchi (convenience store) outside the station.</p>
+
+      <h3>Accessibility & Lifts</h3>
+
+      <p>Rome's metro has lifts (elevators) at most stations, but reliability is poor. Many lifts are broken and take months to repair. If you have a wheelchair, crutches, or heavy luggage, don't assume the lift will work -- plan alternative routes or use taxis. Colosseo station (Line B) and a few others near Termini have functioning lifts.</p>
+
+      <h3>Station Art & Photography</h3>
+
+      <p>Several Roma metro stations are notable for artistic design. Repubblica station features a famous mosaic artwork from the 1970s. Many stations allow photography. Take photos if you're interested in the station art -- it's a uniquely Roman experience.</p>
+
+      <h2 id="peak">Peak Times & Crowding</h2>
+
+      <p>The metro is extremely crowded during two peak periods:</p>
+
+      <ul>
+        <li><strong>Morning rush (7:30--9am):</strong> Commuters heading to work. Lines A and B are packed, especially at Termini, Spagna, Barberini, and Colosseo.</li>
+        <li><strong>Evening rush (5:30--7:30pm):</strong> Workers returning home. Same lines, same stations, even more crowded.</li>
+      </ul>
+
+      <p>If you want to sightsee or travel comfortably, avoid these hours. The metro outside rush hours (10am--5pm) is much more pleasant. Off-peak frequency is every 10--15 minutes, still reasonable.</p>
+
+      <h3>Pickpocket Risk During Rush Hour</h3>
+
+      <p>Line A between Termini and Spagna during 7:30--9am is a pickpocket hotspot. Professional thieves work crowded cars. Keep your bag in front, avoid using your phone, and don't flash valuables. If you feel uncomfortable in a car, move to the next one at the next stop.</p>
+
+      <h2 id="maps">Interactive Metro Map</h2>
+
+      <p>Below is an interactive map showing all three metro lines and key stations. Click stations for more details.</p>
+
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Ready to Explore Rome?</h3>
+        <p>Master Rome's full transportation system -- learn about buses, walking routes, taxis, and when to use each mode.</p>
+        <a href="blog-post-22.html" class="cta-button">Back to Transportation Guide</a>
+      </div>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Which metro line should I take to visit the Colosseum?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Take Line B (Blue) to Colosseo station. It's one stop from Termini if you're staying there, or you can transfer from Line A at Termini. Colosseo station has an elevator and is the closest metro station to the Colosseum (3 minute walk to the entrance).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>How do I get to the Vatican using the metro?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Take Line A (Orange) to Ottaviano--San Pietro station. It's the closest metro station to the Vatican Museums (about 10 minute walk). From Termini, it's a direct line ride (no transfers needed) going west.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>What do I do if a metro lift (elevator) is broken?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Use an alternative station or mode of transport. If you have a wheelchair or heavy luggage and a lift is broken, take a taxi or Uber instead -- it's more reliable and less frustrating than searching for functioning lifts. Unfortunately, lift repair in Rome is notoriously slow.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Are single tickets (EUR 1.50) or day passes better value?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Single tickets are EUR 1.50 each. A 24-hour pass is EUR 7, which covers 5+ journeys. If you're sightseeing multiple sites in one day, buy a day pass. For expats making daily commutes, a monthly pass (EUR 35) is cheapest -- about EUR 1.12 per day.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>When does the metro close, and what are night options?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Metro closes at 11:30pm Mon-Thu and Sunday, 1:30am Fri-Sat. After closing, use night buses (N-lines), taxis, or Uber. Night buses run every 20--30 minutes on main routes. Avoid waiting at isolated bus stops alone after midnight -- use a taxi or Uber instead.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>What happens if I don't validate my ticket?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Transit inspectors will fine you EUR 100+ on the spot if caught without validation. They board trains regularly, especially on tourist routes. Validation takes 2 seconds -- just tap your ticket on the yellow reader before boarding. No exceptions, no negotiation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+            <span>Is Line C worth taking for sightseeing?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Not really. Line C serves eastern neighborhoods that most tourists don't visit. It's modern and air-conditioned (better than older lines), but San Giovanni basilica is less central than the main tourist sites on Lines A and B. Use Line C only if you're specifically visiting neighborhoods along the route.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="author-bio">
+        <h4>About This Guide</h4>
+        <p>Detailed metro system guide covering all 73 stations across Rome's 3 lines. Updated April 2026 with current fares, hours, and accessibility information.</p>
+      </div>
+
+      <a href="blog-post-22.html" class="back-to-pillar">Back to Rome Transportation Guide</a>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved.</p>
+    <p>Rome Expat Life & Community -- Your guide to living, working, and thriving in Rome.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([41.9028, 12.4964], 12);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // All Line A stations
+    const lineA = [
+      { name: 'Battistini', lat: 41.9365, lng: 12.4461 },
+      { name: 'Ottaviano', lat: 41.9071, lng: 12.4565 },
+      { name: 'Lepanto', lat: 41.9088, lng: 12.4627 },
+      { name: 'Flaminio', lat: 41.9116, lng: 12.4764 },
+      { name: 'Spagna', lat: 41.9060, lng: 12.4836 },
+      { name: 'Barberini', lat: 41.9014, lng: 12.4859 },
+      { name: 'Repubblica', lat: 41.9066, lng: 12.4990 },
+      { name: 'Termini', lat: 41.9009, lng: 12.5021 },
+      { name: 'Policlinico', lat: 41.9052, lng: 12.5108 },
+      { name: 'Anagnina', lat: 41.8572, lng: 12.5850 }
+    ];
+
+    // All Line B stations
+    const lineB = [
+      { name: 'Termini', lat: 41.9009, lng: 12.5021 },
+      { name: 'Cavour', lat: 41.8975, lng: 12.4958 },
+      { name: 'Colosseo', lat: 41.8902, lng: 12.4917 },
+      { name: 'Circo Massimo', lat: 41.8836, lng: 12.4836 },
+      { name: 'Garbatella', lat: 41.8667, lng: 12.4775 },
+      { name: 'Laurentina', lat: 41.8333, lng: 12.4658 }
+    ];
+
+    // Add Line A stations
+    lineA.forEach(station => {
+      L.circleMarker([station.lat, station.lng], {
+        radius: 5,
+        fillColor: '#ff8c00',
+        color: '#ffffff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(`<strong>${station.name}</strong><br>Line A (Orange)`).addTo(map);
+    });
+
+    // Add Line B stations
+    lineB.forEach(station => {
+      L.circleMarker([station.lat, station.lng], {
+        radius: 5,
+        fillColor: '#2b7acc',
+        color: '#ffffff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(`<strong>${station.name}</strong><br>Line B (Blue)`).addTo(map);
+    });
+  </script>
+</body>
+</html>

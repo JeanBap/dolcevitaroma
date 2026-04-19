@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuscany Day Trip from Rome: Siena & San Gimignano | Dolce Vita Roma</title>
+  <meta name="description" content="Complete Tuscany day trip itinerary from Rome: Siena, San Gimignano medieval towers, wine, Gelateria Dondoli, transport, costs, and logistics.">
+  <meta name="keywords" content="Tuscany day trip, Siena, San Gimignano, day trip from Rome, Siena Italy">
+  <meta name="author" content="Dolce Vita Roma">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/day-trip-tuscany-siena-rome">
+  <meta property="og:title" content="Tuscany Day Trip from Rome: Siena & San Gimignano">
+  <meta property="og:description" content="Medieval towns, wine country, world-class gelato, and sunset views in Tuscany. Complete itinerary and insider tips.">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/day-trip-tuscany-siena-rome">
+  <meta property="og:image" content="https://dolcevitaroma.com/images/day-trips/siena-piazza-del-campo-sunset.jpg">
+  <meta property="article:published_time" content="2026-04-19">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .itinerary {
+      background: var(--color-cream);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-gold);
+    }
+    .itinerary h3 {
+      margin: 0 0 1.5rem 0;
+      color: var(--color-green);
+    }
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline li {
+      padding: 1rem;
+      border-left: 3px solid var(--color-gold);
+      margin-bottom: 1rem;
+      background: white;
+      border-radius: 4px;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 1.5rem;
+      width: 16px;
+      height: 16px;
+      background: var(--color-gold);
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+    .timeline-time {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 0.95rem;
+    }
+    .timeline-event {
+      margin: 0.25rem 0 0 0;
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .cost-box {
+      background: #F0F8F0;
+      border: 2px solid var(--color-green);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .cost-box h4 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+    }
+    .cost-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(43, 58, 27, 0.2);
+    }
+    .cost-item:last-child {
+      border-bottom: none;
+    }
+    .cost-label {
+      font-weight: 500;
+      color: var(--color-green);
+    }
+    .cost-amount {
+      color: var(--color-text-light);
+    }
+    .cost-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid var(--color-green);
+      font-weight: 600;
+      color: var(--color-green);
+    }
+    .tip-box {
+      background: #FFFBF0;
+      border-left: 4px solid var(--color-salmon);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .tip-box h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--color-salmon);
+    }
+    .tip-box p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    #map {
+      height: 450px;
+      margin: 2rem 0;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .section {
+      background: white;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    .section h3 {
+      margin: 0 0 1rem 0;
+      color: var(--color-green);
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 0.5rem;
+    }
+    .section ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: var(--color-green);
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+    .faq-answer {
+      color: var(--color-text-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cta-box {
+      background-color: var(--color-green);
+      color: var(--color-cream);
+      padding: 2.5rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .cta-box h3 {
+      color: var(--color-gold);
+      margin: 0 0 1rem 0;
+    }
+    .cta-box p {
+      margin: 0 0 1.5rem 0;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    .cta-button {
+      background-color: var(--color-gold);
+      color: var(--color-green);
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #B09440;
+    }
+    .back-link {
+      color: var(--color-green);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .post-meta {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      #map {
+        height: 300px;
+      }
+      .cost-item {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .cost-total {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BlogPosting", "Article"],
+    "headline": "Tuscany Day Trip from Rome: Siena & San Gimignano",
+    "description": "Complete itinerary for visiting medieval Siena and San Gimignano towers, wine country, and world-class gelato in one day.",
+    "author": {
+      "@type": "Organization",
+      "name": "Dolce Vita Roma"
+    },
+    "datePublished": "2026-04-19",
+    "image": "https://dolcevitaroma.com/images/day-trips/siena-piazza-del-campo-sunset.jpg",
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you visit Siena and San Gimignano in one day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Siena (2.5 hours from Rome) and San Gimignano (1.5 hours from Siena) are connected by regular buses. Standard itinerary: arrive Siena 9:30am, explore 3.5 hours, lunch, bus to San Gimignano 14:30, explore 1.5-2 hours, bus back 17:30, train Rome 19:00, arrive 21:30."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Piazza del Campo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main public square in Siena, shaped like a scallop shell. One of the most beautiful plazas in Italy. Home to the famous Palio horse race (July 2 and August 16). In April-May, it's the epicenter of Siena tourism."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Gelateria Dondoli the best gelato in the world?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It has won World Gelato Championship 7 times and holds 2 Michelin stars (unusual for gelato). Queue is 30+ minutes most days. Gelato is exceptional and worth the wait. Located in San Gimignano's main square."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should you see in Siena?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Piazza del Campo (free, mandatory), Palazzo Pubblico and Torre del Mangia (EUR 10, climb 500 stairs for panoramic views), Cathedral (EUR 8, ornate interior with marble floor), Baptistry (EUR 3, Renaissance sculpture). Skip museums unless you have extra time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to see San Gimignano?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1.5-2 hours covers the main attractions: 14 medieval towers, Piazza della Cisterna (central square), Gelateria Dondoli queue and gelato (45 minutes), Museo del Vino (optional). You'll see it all without feeling rushed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you explore Chianti wine while on this day trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not properly. Chianti is between Rome and Siena (requires car to access wineries). Instead, buy wine in Siena or San Gimignano town shops: Chianti Classico (red, route Rome-Siena) or Vernaccia di San Gimignano (white wine produced there). Taste in wine bars during lunch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the best time to visit Tuscany day trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Spring (April-May) for wildflowers and mild weather. Autumn (September-October) for perfect weather and harvest season. Avoid July-August (heat, extreme crowds, expensive hotels). Winter is quiet and budget-friendly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you need a car for this Tuscany day trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Trains connect Rome to Siena directly (2.5 hours). Regular buses connect Siena and San Gimignano (1.5 hours). All towns are walkable once you arrive. Car is optional and adds complexity."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Dolce Vita Roma",
+        "item": "https://dolcevitaroma.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://dolcevitaroma.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Day Trips",
+        "item": "https://dolcevitaroma.com/blog/best-day-trips-from-rome"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Tuscany Day Trip",
+        "item": "https://dolcevitaroma.com/blog/day-trip-tuscany-siena-rome"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>DOLCE VITA ROMA</h1>
+    <p>Rome Expat Life & Community</p>
+  </header>
+  <nav>
+    <a href="/">Blog</a>
+    <a href="https://dolcevitaroma.com" target="_blank">Main Site</a>
+    <a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a>
+  </nav>
+  <main>
+    <article>
+      <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/blog/blog-post-16.html">Day Trips</a> / Tuscany
+      </div>
+
+      <a href="/blog/blog-post-16.html" class="back-link">Back to Day Trips Guide</a>
+
+      <h1>Tuscany Day Trip from Rome: Siena & San Gimignano</h1>
+
+      <div class="post-meta">
+        Published April 19, 2026 | Updated April 2026 | Reading time: 8 minutes
+      </div>
+
+      <img src="/images/day-trips/siena-piazza-del-campo-sunset.jpg" alt="Siena's Piazza del Campo at sunset with medieval buildings and terracotta tiles" loading="eager" style="width: 100%; height: auto; margin-bottom: 2rem; border-radius: 8px;">
+
+      <h2>The Essentials</h2>
+
+      <p>Tuscany is the Italy you've imagined. Medieval hilltop towns. Wine-dark vineyards rolling to the horizon. Pasta made by people whose families have been making it for 400 years. Streets so narrow you can touch both walls walking through them. This day trip combines two of Tuscany's most iconic towns -- Siena (ancient art and architecture) and San Gimignano (14 medieval towers frozen in time) -- into one long, thoroughly rewarding day.</p>
+
+      <p>You'll take a single train from Rome to Siena (2 hours 30 minutes), explore for 3.5 hours, bus to San Gimignano (1.5 hours), explore for 1.5-2 hours, and return to Rome by 21:30. By evening, you'll have memories of places that feel unchanged since the Renaissance.</p>
+
+      <h2>The Day at a Glance</h2>
+
+      <div class="itinerary">
+        <h3>Complete Timeline</h3>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-time">07:00</div>
+            <div class="timeline-event">Leave apartment. Head to Roma Termini for 7:30 or 8:00 regional train to Siena</div>
+          </li>
+          <li>
+            <div class="timeline-time">07:30 or 08:00</div>
+            <div class="timeline-event">Train departs Roma Termini to Siena (Intercity or Regionale, 2h 20m-2h 40m depending on stops)</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:30 or 10:00</div>
+            <div class="timeline-event">Arrive Siena train station. Walk 15-20 minutes uphill to Piazza del Campo (the main square and entry point)</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:45 or 10:15</div>
+            <div class="timeline-event">Explore Siena: Piazza del Campo, Palazzo Pubblico, Cathedral, Baptistry. Walk the narrow streets.</div>
+          </li>
+          <li>
+            <div class="timeline-time">09:45--13:15</div>
+            <div class="timeline-event">Siena exploration (3.5 hours). See Piazza, climb tower (30 min + queue), Cathedral (1 hour), wander side streets</div>
+          </li>
+          <li>
+            <div class="timeline-time">13:15--14:15</div>
+            <div class="timeline-event">Lunch in Siena. Eat on Piazza del Campo overlooking the square or at Osteria Le Logge (local favorite, upscale, EUR 25-35)</div>
+          </li>
+          <li>
+            <div class="timeline-time">14:30</div>
+            <div class="timeline-event">SENA or Tiemme bus departs Siena for San Gimignano (1h 15m, EUR 6). Buy ticket at bus station (near train station)</div>
+          </li>
+          <li>
+            <div class="timeline-time">15:45</div>
+            <div class="timeline-event">Arrive San Gimignano. Walk to town center (5 minutes downhill from bus stop)</div>
+          </li>
+          <li>
+            <div class="timeline-time">15:50--17:30</div>
+            <div class="timeline-event">San Gimignano exploration: 14 towers, Piazza della Cisterna, churches, Museo del Vino (wine museum, optional), shopping</div>
+          </li>
+          <li>
+            <div class="timeline-time">16:30--17:30</div>
+            <div class="timeline-event">Gelateria Dondoli pilgrimage. Accept the 30+ minute queue. Get world-championship gelato.</div>
+          </li>
+          <li>
+            <div class="timeline-time">17:45</div>
+            <div class="timeline-event">Bus back to Siena (1h 15m). Depart around 17:45 or 18:15 depending on schedules</div>
+          </li>
+          <li>
+            <div class="timeline-time">19:00 or 19:30</div>
+            <div class="timeline-event">Arrive Siena. Walk to train station (15 minutes)</div>
+          </li>
+          <li>
+            <div class="timeline-time">19:00--21:30</div>
+            <div class="timeline-event">Train back to Roma Termini (Intercity, 2h 20m-2h 40m). Buy ticket at Siena station</div>
+          </li>
+          <li>
+            <div class="timeline-time">21:30</div>
+            <div class="timezone-event">Arrive Roma Termini. Metro home. Collapse satisfied.</div>
+          </li>
+        </ul>
+      </div>
+
+      <h2>Getting There: Roma Termini to Siena</h2>
+
+      <div class="section">
+        <h3>The Train</h3>
+        <ul>
+          <li><strong>Departure:</strong> Roma Termini at 7:30 or 8:00am (several options per morning)</li>
+          <li><strong>Train type:</strong> Intercity (stops at fewer stations, ~2h 20m) or Regionale (more stops, ~2h 40m). Both arrive around 9:30-10:15am.</li>
+          <li><strong>Cost:</strong> EUR 12-18 one-way if booked in advance, EUR 18-25 walk-up. No need to book ahead (trains run frequently).</li>
+          <li><strong>Booking:</strong> Walk up to Termini ticket window and ask for Siena train (mattina/morning). Or use Trenitalia app 30 minutes before departure.</li>
+          <li><strong>Return train:</strong> Evening departure 19:00-20:00 from Siena back to Rome (2h 20m-2h 40m, arrive Rome 21:30-22:00). Book at Siena station or on the Trenitalia app.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>Train Timing Strategy</h4>
+        <p>Earlier departure (7:30) gives you 9:30am arrival and more time in San Gimignano. Later departure (8:00) is more relaxed but reduces San Gimignano time by 30 minutes. Choose based on whether you prefer early mornings or extra time in San Gimignano.</p>
+      </div>
+
+      <h3>Siena Station to Piazza del Campo</h3>
+
+      <p>Siena train station is about 1km south of the historic city center. Exit the station and follow signs toward "Centro" or "Piazza del Campo." The walk is 15-20 minutes uphill on regular streets. Not strenuous, just a climb. No bus needed unless you're tired.</p>
+
+      <p>You'll know you've arrived when you see the medieval walls and narrow streets. Piazza del Campo is the unmistakable central square (you'll see tourists).</p>
+
+      <h2>Siena: What You'll See (3.5 hours)</h2>
+
+      <div class="section">
+        <h3>Piazza del Campo</h3>
+        <p>The heart of Siena. A scallop-shaped piazza (main plaza) surrounded by centuries-old buildings. Free to walk and explore. This is the epicenter of Siena tourism and rightfully so -- it's one of the most beautiful public squares in the world. Sit at a cafe, eat a panini, watch the square. 1 hour minimum just to breathe the place in.</p>
+      </div>
+
+      <div class="section">
+        <h3>Palazzo Pubblico & Torre del Mangia</h3>
+        <p><strong>Cost:</strong> EUR 10 combined entry. <strong>Time:</strong> 30-45 minutes. Palazzo Pubblico is the Gothic town hall (14th century) overlooking Piazza del Campo. Torre del Mangia (bell tower) is adjacent. You can climb 500 stairs to the top for panoramic views of Siena and the surrounding Tuscan countryside (queue time can add 20 minutes).</p>
+      </div>
+
+      <div class="section">
+        <h3>Siena Cathedral (Cattedrale di Santa Maria Assunta)</h3>
+        <p><strong>Cost:</strong> EUR 8 entry (or pay per sight: EUR 5 Cathedral, EUR 3 Baptistry, EUR 3 Opera Museum). <strong>Time:</strong> 45-60 minutes. The cathedral is stunning -- ornate facade, marble floors in intricate patterns, Renaissance frescoes and sculptures. Less crowded than the Torre climb. Worth your time.</p>
+      </div>
+
+      <div class="section">
+        <h3>Baptistry of San Giovanni</h3>
+        <p><strong>Cost:</strong> EUR 3 (or combined Cathedral ticket). <strong>Time:</strong> 20 minutes. Renaissance baptistry adjacent to the Cathedral with beautiful relief sculptures. Smaller and less overwhelming than the Cathedral but worth seeing if you have the EUR 3.</p>
+      </div>
+
+      <div class="section">
+        <h3>Wandering the Streets</h3>
+        <p>Siena's back alleys are designed to get you lost. Narrow streets with overhanging buildings, hidden courtyards, artisan shops (leather, ceramics, wine). Budget 1 hour for purposeless wandering. This is often the best part of any medieval Italian town.</p>
+      </div>
+
+      <div class="tip-box">
+        <h4>Crowd-Beating Strategy in Siena</h4>
+        <p>Arrive by 9:45am before tour bus groups (they arrive 10:30am). Do Piazza del Campo and the Cathedral first. By 11:00, tour groups will cluster around Torre del Mangia, so skip the tower or do it after 12:30. Use your 1 hour pre-lunch wander to explore side streets away from the main squares.</p>
+      </div>
+
+      <h2>Lunch in Siena (13:15-14:15)</h2>
+
+      <div class="section">
+        <h3>Lunch Options</h3>
+        <ul>
+          <li><strong>Eating on Piazza del Campo:</strong> Many casual cafes and restaurants border the piazza. Average EUR 15-20 per person for casual meal (pasta, pizza, salad). Not fine dining but perfect for soaking in the atmosphere.</li>
+          <li><strong>Osteria Le Logge:</strong> Upscale traditional Sienese restaurant. Reservations recommended (+39 0577 48013 or via Google Maps). EUR 25-35 per person. Incredible homemade pasta, wine list focused on local Chianti. If you can book ahead, this is worth the splurge.</li>
+          <li><strong>Panini or quick lunch:</strong> Grab bread, cheese, prosciutto, and wine at a local market. EUR 8-12. Eat on the Piazza. Efficient and atmospheric.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>Wine at Lunch</h4>
+        <p>Siena is in Chianti wine country. Order a glass of Chianti Classico (red wine produced in nearby hills) at lunch. EUR 4-6 per glass. Pairs perfectly with pasta and local cheese.</p>
+      </div>
+
+      <h2>San Gimignano: Medieval Towers (1.5-2 hours)</h2>
+
+      <p>San Gimignano is 30km southwest of Siena. It's famous for 14 well-preserved medieval towers rising from the town center. In the 12th-14th centuries, wealthy families built competing towers (tower height = status). Most were destroyed or reduced by wars, but 14 remain, creating a unique skyline.</p>
+
+      <h3>Getting There From Siena</h3>
+
+      <p>SENA or Tiemme buses run from Siena to San Gimignano (1 hour 15 minutes, EUR 6). Depart Siena around 14:30. You'll arrive San Gimignano around 15:45. The bus is comfortable and the drive winds through Tuscan countryside (worth seeing). Buy ticket at Siena bus station (near train station).</p>
+
+      <div class="section">
+        <h3>What to See in San Gimignano (1.5-2 hours)</h3>
+        <ul>
+          <li><strong>Piazza della Cisterna:</strong> The central triangular plaza surrounded by towers. This is the postcard view. Spend 15 minutes here drinking it in. Eat gelato here.</li>
+          <li><strong>The 14 Towers:</strong> You can see most of them by walking 20 minutes through the town. Some are partially open to climb (requires paid entry, not essential). Just walking past them is sufficient.</li>
+          <li><strong>Churches (San Bartolo, Sant'Agostino):</strong> Small churches with Renaissance art. Optional. EUR 3-5 each.</li>
+          <li><strong>Museo del Vino (Wine Museum):</strong> Optional, EUR 6. Showcases local Vernaccia di San Gimignano white wine production. Comes with a small taste at the end. Nice if you're wine-interested; skip if time is short.</li>
+          <li><strong>Shopping for local products:</strong> Ceramic shops, wine shops, honey, chestnuts. San Gimignano specializes in local crafts. Budget 30 minutes for browsing.</li>
+        </ul>
+      </div>
+
+      <h3>Gelateria Dondoli: The Pilgrimage</h3>
+
+      <p>Gelateria Dondoli won the World Gelato Championship 7 times and holds 2 Michelin stars (extraordinary for gelato). It's located on Piazza della Cisterna. The queue is 30-40 minutes on most days. Popular flavors: Cream (basic but perfect), Pistachio, Ginger & Rosemary (house specialty).</p>
+
+      <p><strong>Honest take:</strong> The gelato is exceptional and the accolade is earned, but you're also paying for the name and queue. Budget 45 minutes from entering the queue to eating. If you're time-pressed, there are other good gelato shops with no queue. But if you're doing Tuscany, Dondoli is the Instagram-worthy choice.</p>
+
+      <div class="tip-box">
+        <h4>Gelato Timing</h4>
+        <p>Get in the Dondoli queue around 16:30 while exploring San Gimignano. You'll exit around 17:15 with gelato in hand. By 17:45, you need to be heading to the bus stop for your 18:00 return to Siena.</p>
+      </div>
+
+      <h2>Return to Siena & Rome</h2>
+
+      <p>SENA/Tiemme bus back to Siena departs San Gimignano around 17:45 or 18:00 (check the schedule when you arrive). Journey 1 hour 15 minutes, arrive Siena ~19:00-19:15. Walk to Siena train station (15 minutes downhill). Board Intercity train to Rome around 19:00-20:00 (2h 20m-2h 40m, arrive Roma Termini 21:30-22:00).</p>
+
+      <h2>The Route on a Map</h2>
+
+      <div id="map"></div>
+
+      <p>Map shows Rome Termini, Siena, and San Gimignano with approximate distances and train/bus connections.</p>
+
+      <div class="cost-box">
+        <h4>Cost Breakdown (Per Person)</h4>
+        <div class="cost-item">
+          <span class="cost-label">Train Roma -- Siena round-trip</span>
+          <span class="cost-amount">EUR 24-36</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Bus Siena -- San Gimignano round-trip</span>
+          <span class="cost-amount">EUR 12</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Palazzo Pubblico & Torre</span>
+          <span class="cost-amount">EUR 10</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Cathedral (EUR 8) + Baptistry (EUR 3)</span>
+          <span class="cost-amount">EUR 11</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Lunch (casual on Piazza or cafe)</span>
+          <span class="cost-amount">EUR 15-20</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Gelateria Dondoli gelato (2 scoops)</span>
+          <span class="cost-amount">EUR 5-6</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Optional: Museo del Vino San Gimignano</span>
+          <span class="cost-amount">EUR 6 (optional)</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Optional: Wine bottle to take home</span>
+          <span class="cost-amount">EUR 8-15 (optional)</span>
+        </div>
+        <div class="cost-total">
+          <span class="cost-label">Total (core experience)</span>
+          <span class="cost-amount">EUR 77-97</span>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <h4>Budget Optimization</h4>
+        <p>Skip Torre del Mangia (EUR 10) if heights intimidate you or if you want views without climbing. Skip Cathedral entry (EUR 8) and see it from outside. Eat cheap lunch on Piazza (EUR 12 instead of EUR 20). Skip Dondoli if queue is too long and get gelato elsewhere (EUR 3 without name premium). Revised budget: EUR 50-65 per person.</p>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">Can you visit Siena and San Gimignano in one day?</div>
+        <div class="faq-answer">Yes. Standard day trip departs Rome 7:30-8:00am, arrives Siena 9:30-10:00am, explores 3.5 hours, buses to San Gimignano 14:30-15:45, explores 1.5-2 hours, buses back to Siena, trains back to Rome by 21:30. Tight but doable and widely done.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is Piazza del Campo and why is it famous?</div>
+        <div class="faq-answer">The main public plaza in Siena, shaped like a scallop shell with 9 sections (representing the 9 magistrates who governed medieval Siena). Home to the Palio horse race twice yearly (July 2 and August 16). It's one of the most beautiful and iconic squares in Italy.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is Gelateria Dondoli worth the queue?</div>
+        <div class="faq-answer">The gelato is genuinely exceptional (7 World Championships, 2 Michelin stars). But 30-40 minute queue is a time commitment on a day trip. If you hate queuing, skip it (there's other good gelato). If you're doing Tuscany as a memorable experience, Dondoli is worth the line.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What wine should you buy in Siena/San Gimignano?</div>
+        <div class="faq-answer">Chianti Classico (red wine, grown around Siena) or Vernaccia di San Gimignano (white wine, only produced in San Gimignano area). Both are excellent and inexpensive (EUR 8-15 for good bottles in wine shops). Vernaccia is a lighter sipper, Chianti is more food-friendly.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can you explore wine estates while on this day trip?</div>
+        <div class="faq-answer">Not properly. Wine estates (Chianti wineries, Vernaccia producers) require 2+ hours per estate, car rental, and appointment. Save winery visits for a separate overnight trip or car-based day. For this trip, taste wine at lunch in Siena and buy a bottle in San Gimignano.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What's the best time to do this Tuscany day trip?</div>
+        <div class="faq-answer">Spring (April-May) for wildflowers and mild weather. Autumn (September-October) for perfect weather and harvest season. Avoid July-August (heat, extreme crowds). Winter is quiet but some sites have reduced hours.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you need a car for this day trip?</div>
+        <div class="faq-answer">No. Trains connect Rome to Siena directly. Buses connect Siena to San Gimignano. Both towns are walkable. Car is optional and adds complexity (parking, driving on narrow roads). Public transport is simpler for this itinerary.</div>
+      </div>
+
+      <h2>What to Pack</h2>
+
+      <ul>
+        <li>Comfortable walking shoes (you'll walk 3-4km total through medieval streets)</li>
+        <li>Sunscreen and hat (open plazas have no shade)</li>
+        <li>Light layers (medieval towns stay cool inside buildings, hot in sun)</li>
+        <li>Reusable water bottle (refill at public fountains in town centers)</li>
+        <li>Small backpack or crossbody bag (hands-free for exploring)</li>
+        <li>Camera or phone charged (these towns are extremely photogenic)</li>
+        <li>Small day bag for wine bottle if you're buying (hard to carry glass long-term)</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Explore More Day Trips</h3>
+        <p>Tuscany is one of five great day trips from Rome. Check out our guide to Tivoli, Pompeii, the Amalfi Coast, and Castelli Romani.</p>
+        <a href="/blog/blog-post-16.html" class="cta-button">View All Day Trips</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dolce Vita Roma. All rights reserved. | <a href="https://dolcevitaroma.com/privacy">Privacy Policy</a> | <a href="https://dolcevitaroma.com/contact">Contact</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([42.8, 11.9], 8);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    const markers = [
+      { name: 'Roma Termini', lat: 41.9009, lng: 12.5021, color: '#C8352B' },
+      { name: 'Siena', lat: 43.3187, lng: 11.3318, color: '#2B3A1B' },
+      { name: 'San Gimignano', lat: 43.4676, lng: 11.0432, color: '#2B3A1B' }
+    ];
+
+    markers.forEach(m => {
+      L.circleMarker([m.lat, m.lng], {
+        radius: 8,
+        fillColor: m.color,
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).bindPopup(m.name).addTo(map);
+    });
+
+    const route = L.polyline([
+      [41.9009, 12.5021],
+      [43.3187, 11.3318],
+      [43.4676, 11.0432],
+      [43.3187, 11.3318],
+      [41.9009, 12.5021]
+    ], {
+      color: '#C9A84C',
+      weight: 2,
+      opacity: 0.6,
+      dashArray: '5, 5'
+    }).addTo(map);
+  </script>
+</body>
+</html>
