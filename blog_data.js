@@ -19786,6 +19786,9 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p>Beyond the initial charm, what makes Trastevere special is how it manages to be both authentic and accessible. This isn't a hidden neighborhood that tourists haven't discovered—they have, abundantly. But the neighborhood's infrastructure is strong enough to handle tourism while maintaining resident community. Romans still shop here, still eat here, still live here despite the crowds. It's a neighborhood that serves both residents and visitors simultaneously, which is rare.</p>
 
+<div style="overflow-x:auto;margin:2rem 0"><table style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background:#8B0000;color:#fff"><th style="padding:10px 14px;text-align:left">Neighbourhood</th><th style="padding:10px 14px;text-align:left">Avg Rent/mo (1BR)</th><th style="padding:10px 14px;text-align:left">Tourist Level</th><th style="padding:10px 14px;text-align:left">Transport</th><th style="padding:10px 14px;text-align:left">Best For</th></tr></thead><tbody><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px"><strong>Trastevere</strong></td><td>€1,400</td><td>High</td><td>Bus/Tram</td><td>Tourists, nightlife</td></tr><tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:9px 14px">Testaccio</td><td>€1,200</td><td>Low</td><td>Metro B/Bus</td><td>Young professionals</td></tr><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px">Monti</td><td>€1,500</td><td>Medium</td><td>Metro A+B</td><td>Creatives, dating scene</td></tr></tbody></table></div>
+
+
 <p>The neighborhood's boundaries are clear: west of the Tiber River, south of Vatican City, north of Testaccio. This geographic isolation creates neighborhood identity. You cross the river and enter a distinct zone with its own personality. That clarity—knowing when you enter and exit—matters psychologically. You're not gradually sliding into a neighborhood; you're crossing a boundary into a place.</p>
 
 <p>Trastevere is expensive, yes, but for a specific reason: it's been desirable for centuries. Medieval Romans chose to live here, Renaissance cardinals built villas here, artists have lived here for generations. The desirability isn't new. You're paying for history, location, and a neighborhood that actually functions as a neighborhood, not just as a tourist stage.</p>
@@ -20425,6 +20428,9 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 <h2>Where to Eat: Testaccio's Legendary Food Scene</h2>
 
 <p>Testaccio's reputation is well-earned. It genuinely is where authentic Romans live and eat. The difference between Testaccio and other neighborhoods isn't subtle—it's fundamental. In Testaccio, you eat where Romans eat. You shop where Romans shop. You participate in a neighborhood that functions for residents first, tourists never.</p>
+
+<div style="overflow-x:auto;margin:2rem 0"><table style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background:#8B0000;color:#fff"><th style="padding:10px 14px;text-align:left">Neighbourhood</th><th style="padding:10px 14px;text-align:left">Avg Rent/mo (1BR)</th><th style="padding:10px 14px;text-align:left">Tourist Level</th><th style="padding:10px 14px;text-align:left">Transport</th><th style="padding:10px 14px;text-align:left">Best For</th></tr></thead><tbody><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px"><strong>Testaccio</strong></td><td>€1,200</td><td>Low</td><td>Metro B/Bus</td><td>Real Romans, food</td></tr><tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:9px 14px">Trastevere</td><td>€1,400</td><td>High</td><td>Bus/Tram</td><td>Tourists, nightlife</td></tr><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px">Pigneto</td><td>€900</td><td>Very Low</td><td>Tram</td><td>Young artists</td></tr></tbody></table></div>
+
 
 <p>The neighborhood has changed less than central areas over the past decades. Monte Testaccio itself—the ancient mound of pottery shards—remains. The market still functions much as it did in the 1950s. The trattorias serve the same food. Families who lived here three generations ago might still live here now. That continuity is rare in Rome.</p>
 
@@ -21106,6 +21112,9 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p>Monti's transformation from working-class neighborhood to creative hub happened gradually. The neighborhood's affordability (compared to Trastevere) attracted creative people in the 2000s-2010s. They opened galleries, cafes, boutiques. The neighborhood became fashionable. Now prices have risen significantly, but the creative community persists because it's established.</p>
 
+<div style="overflow-x:auto;margin:2rem 0"><table style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background:#8B0000;color:#fff"><th style="padding:10px 14px;text-align:left">Neighbourhood</th><th style="padding:10px 14px;text-align:left">Avg Rent/mo (1BR)</th><th style="padding:10px 14px;text-align:left">Tourist Level</th><th style="padding:10px 14px;text-align:left">Transport</th><th style="padding:10px 14px;text-align:left">Best For</th></tr></thead><tbody><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px"><strong>Monti</strong></td><td>€1,500</td><td>Medium</td><td>Metro A+B</td><td>Creatives, dating</td></tr><tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:9px 14px">Trastevere</td><td>€1,400</td><td>High</td><td>Bus/Tram</td><td>Tourists, nightlife</td></tr><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px">San Lorenzo</td><td>€1,100</td><td>Very Low</td><td>Bus</td><td>Students</td></tr></tbody></table></div>
+
+
 <p>Walking Monti, you see boutiques that are clearly passion projects: a woman selling vintage clothing she sources specifically, a man roasting coffee he's carefully selected, designers showing their own work. These aren't profit-maximizing businesses; they're creative expression in commercial form.</p>
 
 <p>The neighborhood's proxim to major sites (Colosseum, Roman Forum) brings tourist foot traffic, but the stores aren't catering to tourists. A vintage record shop isn't expecting to sell to passing tourists; it's catering to neighborhood residents and creative types specifically seeking it. That distinction matters—the neighborhood serves a specific community while existing near tourist zones.</p>
@@ -21749,7 +21758,56 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
     "image": "/images/neighborhoods/pigneto-rome.jpg",
     "imageAlt": "Pigneto street art and colorful murals covering building walls in Rome's creative quarter",
     "standaloneUrl": "/public/blog/blog-post-37.html",
-    "body": `<h1>Pigneto Rome: Affordable Creative Quarter with Street Art</h1>
+    "body": `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Pigneto safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it's safe. Street art and creative scene might suggest otherwise, but it's well-used, well-populated, with good police presence. Crime is low."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Pigneto gentrifying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, clearly. Rents are rising, new restaurants opening, young professionals moving in. The working-class character is shifting toward creative-professional. This concerns long-time residents. Change is real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until Pigneto becomes like Monti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unknown. Maybe 5-10 years, maybe longer. The neighborhood's affordability attracts younger demographics. The street art and creative scene accelerates change. It's currently in transition and that's precisely why many people love it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I find restaurants besides pizza?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, growing. Experimental restaurants open regularly. The food scene is less established than Testaccio or Trastevere, but it's developing in interesting ways. Being on the edge of change is part of the appeal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the weekend noise like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bars get loud Friday-Saturday nights, especially late. If noise sensitivity is high, Pigneto might frustrate you. If you enjoy young neighborhood energy, it's perfect."
+      }
+    }
+  ]
+}
+</script>
+
+<h1>Pigneto Rome: Affordable Creative Quarter with Street Art</h1>
 
 <h2>Pigneto: What Makes It Special</h2>
 
@@ -22558,6 +22616,9 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 
 <p>San Lorenzo is the neighborhood you choose if you're young, social, and prioritize community and nightlife over comfort or beauty. This is an honest trade-off: you get vibrant social scene, affordable living, authentic youth culture. You give up quiet, cleanliness, aesthetic appeal, and peace.</p>
 
+<div style="overflow-x:auto;margin:2rem 0"><table style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background:#8B0000;color:#fff"><th style="padding:10px 14px;text-align:left">Neighbourhood</th><th style="padding:10px 14px;text-align:left">Avg Rent/mo (1BR)</th><th style="padding:10px 14px;text-align:left">Tourist Level</th><th style="padding:10px 14px;text-align:left">Transport</th><th style="padding:10px 14px;text-align:left">Best For</th></tr></thead><tbody><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px"><strong>San Lorenzo</strong></td><td>€1,100</td><td>Very Low</td><td>Bus</td><td>Students, nightlife</td></tr><tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:9px 14px">Testaccio</td><td>€1,200</td><td>Low</td><td>Metro B/Bus</td><td>Young professionals</td></tr><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px">Pigneto</td><td>€900</td><td>Very Low</td><td>Tram</td><td>Artists, creatives</td></tr></tbody></table></div>
+
+
 <p>The neighborhood's connection to Sapienza University (Italy's oldest and largest university) defines it. Thousands of students live here. The neighborhood's economic engines are student-focused businesses: cheap restaurants, bars, pizza by the slice, used furniture shops, informal rentals. Everything is priced and paced for student budgets and schedules.</p>
 
 <p>That student focus creates transience. Most people living here plan to move within a few years. Friendships form quickly but don't last long beyond Rome. The neighborhood is a phase in people's lives, which is socially acceptable here in a way it isn't elsewhere. You're not expected to stay forever; you're expected to have an amazing time while you're here.</p>
@@ -23255,6 +23316,9 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 <h2>Where to Eat: Garbatella's Neighborhood Restaurants</h2>
 
 <p>Garbatella is Rome's most unusual neighborhood. Its Fascist-era planned-community origins give it a specific character found nowhere else in Rome. The geometry is intentional. The lotti (housing blocks) were designed as complete units. The parks and schools were planned as integral parts, not afterthoughts. Walking it, you understand that someone designed this deliberately, with specific values: family, community, order, stability.</p>
+
+<div style="overflow-x:auto;margin:2rem 0"><table style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background:#8B0000;color:#fff"><th style="padding:10px 14px;text-align:left">Neighbourhood</th><th style="padding:10px 14px;text-align:left">Avg Rent/mo (1BR)</th><th style="padding:10px 14px;text-align:left">Tourist Level</th><th style="padding:10px 14px;text-align:left">Transport</th><th style="padding:10px 14px;text-align:left">Best For</th></tr></thead><tbody><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px"><strong>Garbatella</strong></td><td>€950</td><td>Very Low</td><td>Metro B</td><td>Families, peace</td></tr><tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:9px 14px">San Lorenzo</td><td>€1,100</td><td>Very Low</td><td>Bus</td><td>Students, nightlife</td></tr><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px">Pigneto</td><td>€900</td><td>Very Low</td><td>Tram</td><td>Young artists</td></tr></tbody></table></div>
+
 
 <p>That planned-ness appeals to some and disturbs others. There's beauty in systematic design—everything has a place, everything functions. But there's also something vaguely controlled or austere about it. It's not chaotic or bohemian or accidentally beautiful; it's deliberately constructed beauty.</p>
 
@@ -23959,6 +24023,9 @@ A: No. Confirm specific requirements with agency first. Some accept photocopies;
 <h2>Where to Eat: Prati's Non-Touristy Roman Dining</h2>
 
 <p>Prati is the neighborhood for people who moved to Rome to live in Rome, not to experience Rome as tourists. It's organized, peaceful, professional. The Tiber River separates it from central chaos. Vatican City is nearby but doesn't dominate the neighborhood (despite proximity). Prati functions as an independent zone with its own character, not as Vatican overflow.</p>
+
+<div style="overflow-x:auto;margin:2rem 0"><table style="width:100%;border-collapse:collapse;font-size:0.9rem"><thead><tr style="background:#8B0000;color:#fff"><th style="padding:10px 14px;text-align:left">Neighbourhood</th><th style="padding:10px 14px;text-align:left">Avg Rent/mo (1BR)</th><th style="padding:10px 14px;text-align:left">Tourist Level</th><th style="padding:10px 14px;text-align:left">Transport</th><th style="padding:10px 14px;text-align:left">Best For</th></tr></thead><tbody><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px"><strong>Prati</strong></td><td>€1,600</td><td>Medium</td><td>Metro A</td><td>Professionals, Vatican</td></tr><tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:9px 14px">Testaccio</td><td>€1,200</td><td>Low</td><td>Metro B/Bus</td><td>Young professionals</td></tr><tr style="border-bottom:1px solid #eee"><td style="padding:9px 14px">Monti</td><td>€1,500</td><td>Medium</td><td>Metro A+B</td><td>Creatives</td></tr></tbody></table></div>
+
 
 <p>Professionals and established expats choose Prati deliberately. It's expensive because it's desirable for people with money and stability seeking peace. The neighborhood doesn't offer the beauty of Trastevere or the authenticity of Testaccio or the creativity of Monti, but it offers something many people value more: functionality, peace, order, the ability to live comfortably without chaos.</p>
 
