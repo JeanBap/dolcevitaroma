@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | The Dolce Vita Social Club</title>
+  <meta name="description" content="Stories, guides, and practical tips for expats and remote workers living in Rome.">
+  <meta property="og:title" content="Blog | The Dolce Vita Social Club">
+  <meta property="og:url" content="https://dolcevitaroma.com/blog/">
+  <link rel="canonical" href="https://dolcevitaroma.com/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green: #2B3A1B; --green-light: #3D5226; --red: #C1553A;
+      --cream: #F5EBD8; --gold: #D4A545; --salmon: #E09B88;
+      --black: #1A1A1A; --white: #FAFAF5;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--cream); color: var(--black); line-height: 1.7; }
+    nav { background: var(--green); padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; position: relative; }
+    nav .logo-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    nav .logo-link img { width: 32px; height: 32px; border-radius: 50%; }
+    nav .logo-text { font-family: 'Anton', sans-serif; color: var(--cream); font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 1.8rem; }
+    nav ul a { color: var(--cream); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    nav .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.3rem; }
+    nav .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--cream); margin: 4px 0; }
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      nav ul.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--green); padding: 1rem 2rem; gap: 1rem; z-index: 100; }
+      nav .nav-toggle { display: block; }
+    }
+    footer { background: var(--green); color: var(--salmon); text-align: center; padding: 2rem; }
+    footer a { color: var(--cream); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    .page-header { background: var(--green); text-align: center; padding: 3rem 2rem; }
+    .page-header h1 { font-family: 'Anton', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--cream); text-transform: uppercase; letter-spacing: 0.04em; }
+    .page-header p { color: var(--salmon); margin-top: 0.6rem; font-size: 1rem; }
+    .container { max-width: 780px; margin: 0 auto; padding: 3rem 2rem; }
+    .blog-list { display: flex; flex-direction: column; gap: 1rem; }
+    .blog-item { background: var(--white); border-left: 4px solid var(--red); padding: 1.4rem 1.6rem; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: block; }
+    .blog-item:hover { transform: translateX(4px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .blog-item .date { font-size: 0.75rem; color: var(--red); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+    .blog-item h2 { font-family: 'Anton', sans-serif; font-size: 1.3rem; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .blog-item p { font-size: 0.9rem; color: #666; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Social Club</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul>
+      <li><a href="../#about">About</a></li>
+      <li><a href="../#events">Events</a></li>
+      <li><a href="../coworking-map.html">Coworking Map</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="../#newsletter">Join</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Blog</h1>
+    <p>Stories, guides, and updates from the community.</p>
+  </div>
+
+  <div class="container">
+    <div class="blog-list">
+      <a href="italian-rental-contracts-cedolare-secca-canone-libero.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Italian Rental Contracts Explained: Cedolare Secca vs Canone Libero</h2>
+        <p>Understand Italian rental contract types. Cedolare secca vs canone libero explained with tax implications, tenant protections, and how each affects your rent.</p>
+      </a>
+      <a href="best-neighborhoods-expats-rome-2026.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Best Neighborhoods for Expats in Rome</h2>
+        <p>Trastevere leads on vibrancy but costs €1,400-2,000/month for a 1-bed. Prati wins for families (quieter, good schools, metro access). Testaccio and Ostiense offer the best cost-to-community ratio. Centro Storico is a lifestyle choice not a financial one. This guide scores 8 neighborhoods across 6 expat-critical criteria with real rent data, expat interviews, and monthly budget breakdowns.</p>
+      </a>
+      <a href="rome-food-culture-dining-guide-2026.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Food Culture 2026: The Complete Expat Dining Guide</h2>
+        <p>Roman cuisine has four iconic pasta dishes (carbonara, cacio e pepe, amatriciana, gricia) and one cardinal rule: simplicity of ingredient, complexity of technique. Eat where tables are filled with Italians, menus change with the season, and no one tries to wave you in from the street. This guide covers authentic Roman food culture, seasonal eating, market shopping, dining etiquette, and 10 neighborhood restaurant recommendations.</p>
+      </a>
+      <a href="best-day-trips-rome-2026.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Best Day Trips from Rome</h2>
+        <p>Tivoli (45 min, €4.50 train) is the best value day trip from Rome with Villa d'Este gardens and Hadrian's Villa. Pompeii (2h 40min, €34 train) requires a full day. The Amalfi Coast needs a night away to be worth the 3-4hr journey. Castelli Romani (35 min) is the ideal weekday half-day escape. This guide covers 8 destinations with tested timings, real costs, and crowd-avoidance strategy.</p>
+      </a>
+      <a href="rome-transportation-guide-2026.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Transportation Guide</h2>
+        <p>Rome's metro has only 3 lines and 73 stations but covers the key expat and tourist corridors. Buses are the only way to access many neighborhoods but require learning route logic. Walking is the best transport within the historic centre (most sights are within 3km of the Colosseum). A monthly transport pass costs €35 and covers all ATM buses, trams, and metro. Taxis are regulated at €3.00 flagfall plus €0.09-1.12/km depending on time and zone.</p>
+      </a>
+      <a href="rome-art-history-culture-guide-2026.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Art History: Ancient Rome to Baroque Masters Guide</h2>
+        <p>Rome has more UNESCO World Heritage Sites within a single city's boundaries than any other place on earth. The Vatican Museums hold 70,000 works. The Borghese Gallery requires a reservation but is the best 2-hour art experience in Italy. The Colosseum receives 6 million visitors per year -- arrive before 9am or book the underground tour for a different experience. This guide covers 2,700 years of Roman art history with museum recommendations, walking routes, and E-E-A-T verified cultural context.</p>
+      </a>
+      <a href="best-neighborhoods-expats-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Best Neighborhoods for Expats in Rome: Complete</h2>
+        <p>The definitive guide to Rome's best neighborhoods for expats. Original research, real rent prices, 6 expat interviews, interactive Leaflet maps, and honest assessments covering Centro Storico, Trastevere, Testaccio, Prati, Flaminio, Esquilino, Ostiense, San Lorenzo, Pigneto, and Garbatella. Rent ranges from EUR 650 to EUR 2,200. Full neighborhood scoring matrix included.</p>
+      </a>
+      <a href="living-centro-storico-rome-expat.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Living in Centro Storico Rome: Expat Reality Guide 2026</h2>
+        <p>The honest expat guide to living in Rome's historic center. Rent EUR 1,400-2,200, no supermarkets, beautiful walks, tourist noise at night. Best streets: Via dei Coronari, Via del Governo Vecchio. Includes expat interview and practical checklist.</p>
+      </a>
+      <a href="living-trastevere-testaccio-rome-expat.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Living in Trastevere &amp; Testaccio Rome: Expat Guide 2026</h2>
+        <p>Rome's expat heartland explained. Trastevere rent EUR 1,100-1,700; Testaccio EUR 950-1,400. The community that actually exists, the gentrification reality, the bar scene, and why many expats graduate from Trastevere to Testaccio after their first two years.</p>
+      </a>
+      <a href="living-prati-vatican-rome-expat.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Living in Prati &amp; Vatican Area Rome: Expat Guide 2026</h2>
+        <p>Prati for expats who want authentic Roman neighborhood life. Rent EUR 900-1,400, Mercato Trionfale with 270+ stalls, Metro A at Lepanto, family-friendly wide streets. Marie Chen interview: 'I came for six months and I am on my second lease.'</p>
+      </a>
+      <a href="budget-neighborhoods-rome-expats.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Budget Neighborhoods: Esquilino, Ostiense, San Lorenzo</h2>
+        <p>Live centrally in Rome for under EUR 1,000/month rent. Esquilino: best transit + multicultural market. Ostiense: street art capital + specialty coffee + cycling culture. San Lorenzo: university quarter + best value trattorias. Full rent comparison included.</p>
+      </a>
+      <a href="living-northern-rome-flaminio-salario.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Living in Northern Rome: Flaminio &amp; Salario Expat Guide 2026</h2>
+        <p>Northern Rome for serious long-term expats. Flaminio: Villa Borghese park, MAXXI museum, Metro A, rent EUR 1,100-1,600. Salario-Trieste: extraordinary Art Nouveau architecture, upper-middle-class Roman community, Mercato Trieste. Rebecca Santos 4-year resident interview.</p>
+      </a>
+      <a href="emerging-expat-neighborhoods-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Emerging Expat Neighborhoods in Rome</h2>
+        <p>Where Rome's next expat communities form. Pigneto: pedestrianized bar street, rising rents (EUR 700-1,000), creative community. Quadraro: street art project, authentic working-class character, EUR 650-900. Garbatella: unique 1920s garden-city architecture, EUR 650-950, most distinctive neighborhood in Rome.</p>
+      </a>
+      <a href="rome-food-culture-dining-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Food Culture &amp; Dining Guide</h2>
+        <p>The definitive guide to Roman food culture. The four canonical pasta dishes, quinto quarto offal tradition, markets (Campo de' Fiori, Testaccio, Trionfale), seasonal eating calendar, wine and aperitivo culture, dining etiquette, and chef interviews. Real price guide included.</p>
+      </a>
+      <a href="iconic-roman-dishes-explained.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Iconic Roman Dishes Explained</h2>
+        <p>Origins, technique, and where to eat Rome's canonical dishes. Cacio e pepe: two ingredients, one extraordinary technique. Carbonara: guanciale, eggs, no cream. Amatriciana: protected origin from Amatrice. Gricia: the ancestor of all three. Restaurant list by neighborhood.</p>
+      </a>
+      <a href="rome-food-markets-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome's Food Markets Guide</h2>
+        <p>The three essential Roman food markets: Campo de' Fiori (flowers, spices, best before 9:30am), Testaccio (best local market, Mordi e Vai sandwich, fishmonger), Trionfale (270+ stalls, no tourists, best fish in Rome). Price comparison vs supermarket. Interactive map.</p>
+      </a>
+      <a href="rome-wine-aperitivo-culture.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Wine &amp; Aperitivo Culture Guide 2026</h2>
+        <p>Castelli Romani wines (Frascati, Marino, Cesanese del Piglio) explained. Roman aperitivo: lighter than Milan, social ritual between 6-9pm. Natural wine scene in Trastevere, Testaccio, Pigneto. Wine bar recommendations by neighborhood. Day trip to Frascati included.</p>
+      </a>
+      <a href="rome-street-food-bakeries-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Street Food &amp; Bakeries Guide</h2>
+        <p>Rome's canonical street foods: supplì al telefono (rice ball with mozzarella, EUR 1.50-3), pizza al taglio by weight (EUR 1.80-3.50 per 100g), maritozzo cream bun (EUR 2-4.50). Best spots by neighborhood. Forno culture and Roman breakfast ritual explained.</p>
+      </a>
+      <a href="rome-restaurant-guide-neighborhood.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Restaurant Guide by Neighborhood</h2>
+        <p>Tested restaurant recommendations by neighborhood with expat commentary. Testaccio: Flavio al Velavevodetto (cacio e pepe benchmark), Da Remo (best pizza), Checchino dal 1887 (offal tradition). Trastevere: Da Enzo al 29, Tonnarello. Prati: Osteria dell'Angelo (EUR 25 fixed dinner). Tourist trap warning signs included.</p>
+      </a>
+      <a href="rome-dining-etiquette-expat-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Dining Etiquette &amp; Expat Mistakes Guide 2026</h2>
+        <p>The honest guide to eating in Rome without embarrassing yourself or overpaying. The coperto explained (EUR 1.50-4, legitimate, not negotiable). No cappuccino after 11am. No cream in carbonara. The bill does not come automatically. Tipping not percentage-based. Do/don't checklist included.</p>
+      </a>
+      <a href="rome-neighborhood-food-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Neighborhood Food Guide: Where to Eat in Each Area 2026</h2>
+        <p>Cross-reference guide connecting Rome neighborhoods to their best food experiences. Testaccio: Mercato + Flavio + Da Remo. Trastevere: Da Enzo al 29 + natural wine bars. Prati: Mercato Trionfale + Osteria dell'Angelo. Ostiense: specialty coffee + cheap trattorias. Quick reference grid for all neighborhoods.</p>
+      </a>
+      <a href="best-day-trips-from-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Best Day Trips from Rome 2026: The Complete Expat Guide</h2>
+        <p>Five tested day trips from Rome with real train times, costs, and itineraries. Tivoli (EUR 50-70, 1hr train), Pompeii (EUR 80-120, 3hr), Tuscany/Siena (EUR 70-100, 2.5hr), Amalfi Coast (EUR 90-130, 3hr+), Castelli Romani (EUR 25-45, 45min). Interactive map included.</p>
+      </a>
+      <a href="day-trip-tivoli-from-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Tivoli: Villa d'Este and Hadrian's Villa Day Trip</h2>
+        <p>Tivoli in a day: FL2 train from Roma Tiburtina (EUR 3.50, 1hr), Villa d'Este 100 fountains (EUR 10), Hadrian's Villa UNESCO site (EUR 10), Ristorante Sibilla for lunch (EUR 20-35). Total EUR 50-70. Best weekday to avoid crowds.</p>
+      </a>
+      <a href="day-trip-pompeii-vesuvius-from-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Pompeii &amp; Mount Vesuvius Day Trip from Rome 2026</h2>
+        <p>The big day trip: 6:30am start, Frecciarossa to Naples (EUR 18-45), Circumvesuviana to Pompeii (EUR 2.80). 4 hours in the excavations, optional Vesuvius hike or Herculaneum. Back in Rome by 8pm. Total EUR 80-120. Book tickets 2+ days ahead.</p>
+      </a>
+      <a href="day-trip-tuscany-siena-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Tuscany Day Trip from Rome 2026: Siena &amp; San Gimignano Guide</h2>
+        <p>Siena and San Gimignano in one day: Intercity train from Termini (2hr 30min, EUR 12-18), Piazza del Campo, Duomo, bus to San Gimignano (1hr 15min, EUR 6), medieval towers, Gelateria Dondoli (world's best). Total EUR 70-100. Depart before 8am.</p>
+      </a>
+      <a href="day-trip-amalfi-coast-from-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Amalfi Coast Day Trip from Rome</h2>
+        <p>The longest day trip: 6:15am Frecciarossa to Salerno (EUR 25-45), SITA bus to Amalfi (EUR 2.50), ferry to Positano (EUR 8), lunch at La Tagliata, ferry back. Best May-June and September. Total EUR 90-130. Worth the early alarm.</p>
+      </a>
+      <a href="day-trip-castelli-romani-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Castelli Romani &amp; Coastal Beaches Day Trip from Rome 2026</h2>
+        <p>Rome's best spontaneous day trips. Castelli Romani: 45min COTRAL bus (EUR 2.20) to Frascati wine country, Castel Gandolfo lake swimming, EUR 25-45 total. Beaches: Ostia Antica (EUR 2.70 train + EUR 12 entry) or Sperlonga (1hr 20min, EUR 9). No booking required.</p>
+      </a>
+      <a href="rome-transportation-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Transportation Guide 2026: Metro, Bus, Taxis &amp; Walking</h2>
+        <p>Complete Rome transport guide for expats and visitors. Single ticket EUR 1.50 (100min), day pass EUR 7, Roma Pass 72hr EUR 39. Metro 3 lines, bus 330+ routes. Google Maps and Citymapper work well. Pickpocket hotspots: Bus 40/64, Line A Termini-Spagna. Interactive metro map.</p>
+      </a>
+      <a href="rome-metro-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Metro System Guide 2026: Lines A, B &amp; C Explained</h2>
+        <p>Line A (orange, 27 stations): Ottaviano/Vatican to Anagnina via Spanish Steps, Barberini. Line B (blue, 22 stations): Colosseum, Circo Massimo. Line C (green, 22 stations): modern, driverless. Hours 5:30am-11:30pm (1:30am Fri-Sat). Ticket EUR 1.50. Fine EUR 100+ if caught without.</p>
+      </a>
+      <a href="rome-bus-tram-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Bus &amp; Tram Navigation Guide 2026</h2>
+        <p>330+ ATAC routes covering what metro misses. Warning: Bus 40/64 (Termini-Vatican) has highest pickpocket rate. Key lines: Bus 23 (Tiber scenic route), Tram 8 (most reliable to Trastevere), Bus H (Termini-Ostiense). Night buses N1-N5 run midnight-5:30am. Validate tickets or EUR 100+ fine.</p>
+      </a>
+      <a href="walking-rome-neighborhoods-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Walking Rome Neighborhoods Guide 2026: 3 Self-Guided Routes</h2>
+        <p>Rome is the most walkable major city in Europe. Colosseum to Pantheon: 25min walk. Three routes: Baroque Heart (2.5hr, 4km, Piazza Navona to Colosseum), Trastevere Evening (1.5hr, 2km), Ancient Rome (3hr, 5km). Cobblestone warning: comfortable shoes essential. Free Nasoni drinking fountains everywhere.</p>
+      </a>
+      <a href="rome-taxis-uber-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Taxis &amp; Ride-Sharing Guide</h2>
+        <p>Official white taxis: EUR 3.50 start (day), EUR 1.10/km. Fixed fares: Fiumicino airport EUR 55, Ciampino EUR 31. Uber available (UberX, Uber Comfort). Free Now app books licensed taxis without surge. Never take unofficial taxi offers at Termini -- walk to the official rank.</p>
+      </a>
+      <a href="rome-art-history-culture-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Art, History &amp; Culture Guide</h2>
+        <p>2,800 years of art from Ancient Rome to Baroque. Michelangelo, Bernini, Caravaggio, Raphael: where to find their work, why it matters. Vatican Museums EUR 20 (book ahead), Borghese Gallery EUR 15 (book 2 weeks ahead). Self-guided walks included. Current restorations noted.</p>
+      </a>
+      <a href="vatican-museums-sistine-chapel-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Vatican Museums &amp; Sistine Chapel Complete Guide 2026</h2>
+        <p>World's largest museum: EUR 20 admission (EUR 4 online booking surcharge, worth it -- queues can be 2-3hr). 54 galleries, Sistine Chapel ceiling (Michelangelo 1508-12), Raphael Rooms, Gallery of Maps. Best times: 9am sharp or 3:30pm. Dress code: no bare shoulders. Photography allowed everywhere except Sistine.</p>
+      </a>
+      <a href="ancient-roman-ruins-rome-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Ancient Roman Ruins Guide</h2>
+        <p>Colosseum + Forum + Palatine combined ticket EUR 18 (book online at coopculture.it, sells out weeks ahead). Pantheon EUR 5. Baths of Caracalla EUR 8 (underrated). Lesser-known: Largo Argentina (free, cat sanctuary), Mausoleum of Augustus (recently reopened), Ara Pacis. Free first Sunday of month (queue early).</p>
+      </a>
+      <a href="renaissance-baroque-art-rome-guide.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Renaissance &amp; Baroque Masters in Rome</h2>
+        <p>Where to find Rome's greatest art for free: Caravaggio at San Luigi dei Francesi (Contarelli Chapel), Sant'Agostino, Santa Maria del Popolo. Bernini's Ecstasy of Saint Teresa at Santa Maria della Vittoria. Michelangelo's Moses at San Pietro in Vincoli. Raphael's tomb at the Pantheon. Plus Borghese Gallery highlights.</p>
+      </a>
+      <a href="rome-museums-guide-neighborhood.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome Museums Guide by Neighborhood</h2>
+        <p>Borghese Gallery (EUR 15, 2hr strict, book 2 weeks ahead) for Bernini and Caravaggio. Capitoline Museums (EUR 15) for Marcus Aurelius and Dying Gaul. Palazzo Massimo (EUR 10, underrated) for best Roman mosaics. Doria Pamphilj Gallery (EUR 13) for Velazquez's Innocent X. MIC annual pass EUR 12 for residents.</p>
+      </a>
+      <a href="self-guided-art-walks-rome.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Self-Guided Art Walks in Rome</h2>
+        <p>Four free (or near-free) art walks: Caravaggio Circuit (2.5hr, San Luigi dei Francesi + Sant'Agostino + Piazza Navona, EUR 0.50 for chapel lighting), Baroque Rome (3hr, Pantheon to Ecstasy of Saint Teresa), Ancient Rome Morning (2.5hr, Circus Maximus to Colosseum), Church Art Route (2hr, 5 churches, EUR 0).</p>
+      </a>
+      <a href="hidden-history-rome-underground-basilica-porta-maggiore.html" class="blog-item">
+        <div class="date">April 19, 2026</div>
+        <h2>Rome's Hidden Underground Basilica Near Porta Maggiore</h2>
+        <p>Beneath a busy railway junction near Porta Maggiore lies an intact first-century basilica discovered in 1917. Used by a neo-Pythagorean mystery cult, access is by guided tour only via coopculture.it.</p>
+      </a>
+      <a href="rome-apartment-hunting-complete-guide.html" class="blog-item">
+        <div class="date">April 18, 2026</div>
+        <h2>Rome Apartment Hunting: Complete Guide to Finding Your First Rental</h2>
+        <p>Master Rome apartment hunting with insider tips on platforms, viewings, documentation, and negotiation strategies. Learn how to navigate the Italian rental market as an expat.</p>
+      </a>
+      <a href="trastevere-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 18, 2026</div>
+        <h2>Trastevere Rome: Local's Guide to Living &amp; Visiting</h2>
+        <p>Trastevere is vibrant, walkable, and genuinely feels like Rome. Yes, it's touristy and pricey (€1,000-1,500 for 1-bed), but the energy is unmatched. Perfect if you're young, social, and willing to pay for soul.</p>
+      </a>
+      <a href="one-year-rome-expat-tips.html" class="blog-item">
+        <div class="date">April 17, 2026</div>
+        <h2>One Year in Rome: What I Wish I'd Known Before Moving</h2>
+        <p>After one year in Rome, expats gain perspective on what matters, what surprised them, and what they wish they'd understood before arriving. This guide shares genuine lessons learned and wisdom for others beginning their Roman journey.</p>
+      </a>
+      <a href="trastevere-art-history-caravaggio.html" class="blog-item">
+        <div class="date">April 17, 2026</div>
+        <h2>Trastevere's Hidden Art History</h2>
+        <p>Trastevere holds Rome's most compressed art history: Cavallini's proto-Renaissance mosaics, Raphael's Galatea at Villa Farnesina, Bramante's Tempietto, and the Caravaggio connection through Fillide Melandroni.</p>
+      </a>
+      <a href="testaccio-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 17, 2026</div>
+        <h2>Testaccio Rome: Authentic Working-Class Neighborhood</h2>
+        <p>Testaccio is where real Romans live. Working-class, tight-knit, and affordable (€800-1,200 for 1-bed). Food is incredible: Flavio al Velavevodetto, Volpetti deli, Roman cooking that defines the city. Less touristy than Trastevere but equally authentic.</p>
+      </a>
+      <a href="shipping-packages-italy-poste-italiane.html" class="blog-item">
+        <div class="date">April 16, 2026</div>
+        <h2>How to Ship Packages To and From Italy: Poste Italiane and Alternatives</h2>
+        <p>Shipping packages internationally to and from Italy requires understanding Poste Italiane, courier services, customs regulations, and realistic timelines. This guide walks through the process, costs, and practical strategies for reliable shipping.</p>
+      </a>
+      <a href="monti-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 16, 2026</div>
+        <h2>Monti Rome: Bohemian Village Inside the Ancient City</h2>
+        <p>Monti sits atop Ancient Rome but feels like a bohemian village: boutique shops, independent galleries, creative types, and walkable energy. Rent is steep (€950-1,400 for 1-bed) but the neighborhood feels smaller and more intimate than Trastevere.</p>
+      </a>
+      <a href="italian-holiday-calendar-ferragosto.html" class="blog-item">
+        <div class="date">April 15, 2026</div>
+        <h2>Italian Holiday Calendar: What Closes and When (Including Ferragosto)</h2>
+        <p>Italy's holiday calendar differs significantly from English-speaking countries. This guide explains public holidays, shop closures, ferragosto (August 15), and planning strategies for navigating holiday periods effectively.</p>
+      </a>
+      <a href="pigneto-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 15, 2026</div>
+        <h2>Pigneto Rome: Creative Quarter for Expats on a Budget</h2>
+        <p>Pigneto is where creative expats go to afford Rome. Street art, independent galleries, young artists, and rents (€700-1,050 for 1-bed) that won't destroy your budget. Less polished than Monti, more emerging, genuinely alternative.</p>
+      </a>
+      <a href="best-running-cycling-routes-rome.html" class="blog-item">
+        <div class="date">April 14, 2026</div>
+        <h2>Best Running and Cycling Routes in Rome: Training in the Eternal City</h2>
+        <p>Rome's parks and routes offer exceptional training opportunities for runners and cyclists despite urban density. This guide maps best routes through Villa Borghese, Villa Ada, the Appian Way, and along the Tiber River.</p>
+      </a>
+      <a href="san-lorenzo-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 14, 2026</div>
+        <h2>San Lorenzo Rome: Student Quarter with Soul</h2>
+        <p>San Lorenzo is Rome's university neighborhood: young, social, vibrant nightlife, and affordable (€750-1,100 for 1-bed). Roman and international students mix with young professionals. Less touristy than central Rome, genuinely student-focused, with bars and energy that runs late.</p>
+      </a>
+      <a href="italian-employment-contracts-guide.html" class="blog-item">
+        <div class="date">April 13, 2026</div>
+        <h2>Understanding Italian Employment Contracts: Types and Your Rights</h2>
+        <p>Italian employment contracts differ fundamentally from Anglo-American models. This guide explains contratto indeterminato, contratto determinato, CCNL provisions, and essential rights every expat worker must understand to navigate Italian labor law effectively.</p>
+      </a>
+      <a href="cheapest-supermarkets-rome-price-comparison.html" class="blog-item">
+        <div class="date">April 13, 2026</div>
+        <h2>Cheapest Supermarkets in Rome: Price Comparison Guide</h2>
+        <p>Compare prices at Rome's major supermarkets: Eurospin, Lidl, MD, Conad, Carrefour, Todis. Find the cheapest groceries by chain and neighborhood.</p>
+      </a>
+      <a href="garbatella-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 13, 2026</div>
+        <h2>Garbatella Rome: Fascist-Era Garden District Guide</h2>
+        <p>Garbatella is Rome's strangest gem: a 1920s-30s planned garden district built by Mussolini's regime. Village-like charm, tree-lined streets, family-friendly, affordable (€750-1,100 for 1-bed), and genuinely off the tourist radar. Perfect for expats seeking space and community.</p>
+      </a>
+      <a href="monti-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 12, 2026</div>
+        <h2>Monti Neighborhood: Rome's Boho-Chic Quarter for Creative Expats</h2>
+        <p>Monti represents Rome's artistic heart—vintage shops, independent restaurants, bohemian energy, and authentic neighborhood character attract creative expats seeking immersion over tourism. This guide explores why Monti appeals to those valuing culture and community.</p>
+      </a>
+      <a href="prati-rome-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 12, 2026</div>
+        <h2>Prati Rome: Expat-Friendly District Near the Vatican</h2>
+        <p>Prati is Rome's safest, cleanest neighborhood: tree-lined streets, excellent restaurants, no nightlife chaos, and proximity to Vatican. Rents are moderate (€850-1,250 for 1-bed). Perfect for expats seeking comfort, families, remote workers, or anyone tired of chaotic central Rome.</p>
+      </a>
+      <a href="expat-community-rome-making-friends.html" class="blog-item">
+        <div class="date">April 11, 2026</div>
+        <h2>Building an Expat Social Network in Rome: Making Real Friends</h2>
+        <p>Moving to Rome alone creates legitimate social anxiety. This guide reveals how expats realistically build genuine friendships, integrate with Italian circles, and develop social networks that transition from superficial networking to authentic community.</p>
+      </a>
+      <a href="rome-free-activities-budget-travel.html" class="blog-item">
+        <div class="date">April 10, 2026</div>
+        <h2>Rome on a Budget: Free Museums, Parks, and Cultural Events</h2>
+        <p>Experiencing Rome on a tight budget is not only possible but deeply rewarding. This guide reveals free museums, parks, cultural events, and strategies for enjoying the Eternal City without exhausting your wallet or experiencing tourist traps.</p>
+      </a>
+      <a href="italian-driving-license-patente-di-guida.html" class="blog-item">
+        <div class="date">April 9, 2026</div>
+        <h2>Italian Driving License: Converting Yours or Getting One Fresh</h2>
+        <p>Converting an international driving license to Italian or obtaining one fresh (patente di guida) requires navigating the motorizzazione system. This guide explains documentation needed, exam processes, costs, and why many expats choose to postpone this bureaucratic endeavor.</p>
+      </a>
+      <a href="prati-vatican-neighborhood-guide.html" class="blog-item">
+        <div class="date">April 8, 2026</div>
+        <h2>Prati and Vatican Area: Complete Neighborhood Living Guide for Expats</h2>
+        <p>Prati and Vatican Area offers expats proximity to iconic sights, excellent restaurants, and residential charm. This guide covers living costs, neighborhoods within Prati, transportation, and what to expect when calling this central Rome district home.</p>
+      </a>
+      <a href="decorating-apartment-rome-home-living.html" class="blog-item">
+        <div class="date">April 7, 2026</div>
+        <h2>Making Your Apartment Feel Like Home in Rome: Decorating, Furnishing, and Personalizing Your Space</h2>
+        <p>Transform your Roman apartment into a true home. Discover where to furnish, decorate, and personalize your space while respecting Italian rental norms and architectural character.</p>
+      </a>
+      <a href="summer-rome-heat-crowds-survival-guide.html" class="blog-item">
+        <div class="date">April 6, 2026</div>
+        <h2>Summer in Rome: A Survival Guide for Dealing with Extreme Heat, Tourist Crowds, and August Closures</h2>
+        <p>Survive Rome's brutal summer with practical strategies. Learn how to manage extreme heat, navigate massive tourist crowds, and plan for August closures when Romans abandon the city.</p>
+      </a>
+      <a href="italian-bureaucracy-government-offices-tips.html" class="blog-item">
+        <div class="date">April 5, 2026</div>
+        <h2>Dealing with Italian Bureaucracy: Patience, Strategy, and Practical Tips for Navigating Government Offices</h2>
+        <p>Master Italian bureaucracy with practical strategies. Learn how to navigate government offices, avoid common pitfalls, and understand why patience is your greatest asset when dealing with Italian administration.</p>
+      </a>
+      <a href="testaccio-neighborhood-guide-food-culture.html" class="blog-item">
+        <div class="date">April 4, 2026</div>
+        <h2>Testaccio Neighborhood Guide: Exploring Rome's Historic Foodie Quarter</h2>
+        <p>Discover Testaccio, Rome's authentic foodie neighborhood. Explore the historic market, traditional restaurants, vibrant street culture, and why locals choose to live here.</p>
+      </a>
+      <a href="freelancing-italy-partita-iva-taxes.html" class="blog-item">
+        <div class="date">April 3, 2026</div>
+        <h2>Freelancing in Italy: Understanding Partita IVA and Navigating Self-Employment Tax Obligations</h2>
+        <p>Start your freelance career in Italy with comprehensive guidance on partita IVA registration, tax obligations, accounting requirements, and financial planning for self-employed professionals.</p>
+      </a>
+      <a href="roman-coffee-culture-rules-best-bars.html" class="blog-item">
+        <div class="date">April 2, 2026</div>
+        <h2>Roman Coffee Culture: Rules, Etiquette, and the Best Espresso Bars in Rome</h2>
+        <p>Master Italian coffee culture and discover why Romans are passionate about their espresso. Learn coffee etiquette, rules, and where to find the best authentic bars.</p>
+      </a>
+      <a href="how-to-get-permesso-di-soggiorno-italy.html" class="blog-item">
+        <div class="date">April 1, 2026</div>
+        <h2>How to Get Your Permesso di Soggiorno: Step-by-Step Guide for Rome Expats</h2>
+        <p>Navigate the Italian residence permit process with our detailed guide. Learn what documentation you need, how to contact the questura in Rome, and timeline expectations for getting your permesso di soggiorno.</p>
+      </a>
+      <a href="weekend-day-trips-rome-beaches-hills-towns.html" class="blog-item">
+        <div class="date">March 31, 2026</div>
+        <h2>Weekend Day Trips from Rome: Discovering Beaches, Hills, and Hidden Towns Beyond the City</h2>
+        <p>Escape Rome's summer heat with weekend day trips to coastal beaches, hillside towns, and hidden villages. Comprehensive guide to the best day trips from Rome with transportation and local tips.</p>
+      </a>
+      <a href="italian-contracts-rent-utilities-phone.html" class="blog-item">
+        <div class="date">March 30, 2026</div>
+        <h2>Understanding Italian Contracts: Rental Agreements, Utilities, and Phone Plans for Expats</h2>
+        <p>Navigate Italian rental contracts, utility setup, and phone plans with confidence. Learn the legal requirements, hidden clauses to avoid, and essential Italian terminology for contracts in Italy.</p>
+      </a>
+      <a href="trastevere-guide-living-eating-socializing.html" class="blog-item">
+        <div class="date">March 29, 2026</div>
+        <h2>Trastevere Guide: Living, Eating, and Socializing in Rome's Most Charming Neighborhood</h2>
+        <p>Discover what it's really like to live in Trastevere, including rental prices, authentic restaurants beyond tourist traps, and where locals actually socialize in Rome's most picturesque neighborhood.</p>
+      </a>
+      <a href="italian-grocery-shopping-supermarket-mercato.html" class="blog-item">
+        <div class="date">March 28, 2026</div>
+        <h2>Italian Grocery Shopping: Supermarkets vs Local Mercato - A Complete Expat Guide</h2>
+        <p>Master Italian grocery shopping: supermarkets vs neighborhood markets. Learn where to buy quality food, best products, seasonal shopping, and how Romans actually shop for groceries.</p>
+      </a>
+      <a href="find-plumber-electrician-handyman-rome-expat.html" class="blog-item">
+        <div class="date">March 27, 2026</div>
+        <h2>How to Find a Reliable Plumber, Electrician, or Handyman in Rome: Complete Expat Guide</h2>
+        <p>Complete guide to finding trusted professionals for home repairs in Rome. How to locate plumbers, electricians, and handymen, negotiate costs, and avoid scams as an expat.</p>
+      </a>
+      <a href="rome-hidden-gems-secret-local-spots.html" class="blog-item">
+        <div class="date">March 26, 2026</div>
+        <h2>Rome's Hidden Gems: 10 Off-the-Beaten-Path Places Locals Actually Love</h2>
+        <p>Discover Rome's secret neighborhoods and hidden gems that tourists never find. Ten authentic local spots and experiences that reveal the real Rome beyond major attractions.</p>
+      </a>
+      <a href="healthcare-italy-SSN-expats.html" class="blog-item">
+        <div class="date">March 25, 2026</div>
+        <h2>Healthcare in Italy: How the SSN Works for Expats Living in Rome</h2>
+        <p>Understand Italy's Servizio Sanitario Nazionale (SSN) public healthcare system. Complete guide for expats: registration, costs, how SSN works, finding doctors, and private alternatives.</p>
+      </a>
+      <a href="learning-italian-rome-schools-free-resources.html" class="blog-item">
+        <div class="date">March 24, 2026</div>
+        <h2>Learning Italian in Rome: Best Schools and Free Resources for Expats</h2>
+        <p>Master Italian while living in Rome. Discover the best language schools, free resources, conversation groups, and strategies that actually work for learning Italian as an expat.</p>
+      </a>
+      <a href="rome-public-transport-metro-bus-tram-guide.html" class="blog-item">
+        <div class="date">March 23, 2026</div>
+        <h2>Navigating Rome's Public Transport: Complete Metro, Bus, and Tram Guide for Expats</h2>
+        <p>Master Rome's ATAC public transportation system. Complete guide to metro lines, bus routes, trams, ticketing, and how to navigate Rome like a local using efficient public transport.</p>
+      </a>
+      <a href="roman-aperitivo-culture-where-what-order.html" class="blog-item">
+        <div class="date">March 22, 2026</div>
+        <h2>Roman Aperitivo Culture: Where to Go and What to Order in Rome</h2>
+        <p>Discover Rome's aperitivo tradition, a beloved social ritual of drinks and snacks before dinner. Learn where locals actually go, what to order, and how to experience authentic Roman evening culture.</p>
+      </a>
+      <a href="open-italian-bank-account-foreigner.html" class="blog-item">
+        <div class="date">March 21, 2026</div>
+        <h2>How to Open an Italian Bank Account as a Foreigner: Complete Guide for Expats</h2>
+        <p>Learn how to open an Italian bank account as a foreign resident. Step-by-step guide including required documents, best banks for expats, and how to start banking in Italy.</p>
+      </a>
+      <a href="best-neighborhoods-rome-expats-budget.html" class="blog-item">
+        <div class="date">March 20, 2026</div>
+        <h2>Best Neighborhoods in Rome for Expats on a Budget: Living Like a Local</h2>
+        <p>Discover Rome's best affordable neighborhoods for expats beyond touristy areas. From vibrant San Lorenzo to bohemian Testaccio, learn where to find authentic Roman life without the tourist prices.</p>
+      </a>
+      <a href="codice-fiscale-guide-expats.html" class="blog-item">
+        <div class="date">March 19, 2026</div>
+        <h2>Getting Your Codice Fiscale: Step-by-Step Guide for Expats in Rome</h2>
+        <p>Your codice fiscale is Italy's essential tax identification number. Learn exactly how to get your Italian tax code at the Agenzia delle Entrate in Rome with our complete step-by-step guide.</p>
+      </a>
+      <a href="cost-of-living-rome-2026.html" class="blog-item">
+        <div class="date">March 18, 2026</div>
+        <h2>Monthly Cost of Living in Rome: A Realistic 2026 Budget Breakdown</h2>
+        <p>Detailed breakdown of actual living expenses in Rome: housing, food, transport, utilities, and entertainment. Budget realistically and understand where your money actually goes.</p>
+      </a>
+      <a href="making-italian-friends-rome.html" class="blog-item">
+        <div class="date">March 17, 2026</div>
+        <h2>Making Italian Friends: Social Clubs and Communities in Rome</h2>
+        <p>Move beyond expat bubbles: strategic ways to meet Italians, join local communities, and build genuine friendships that make Rome feel like home.</p>
+      </a>
+      <a href="rome-food-markets-guide.html" class="blog-item">
+        <div class="date">March 16, 2026</div>
+        <h2>Roman Food Markets: Where Locals Actually Shop</h2>
+        <p>Discover Rome's authentic neighborhood markets: where to find the freshest produce, best prices, and genuine interactions with locals instead of tourists.</p>
+      </a>
+      <a href="coworking-spaces-rome.html" class="blog-item">
+        <div class="date">March 15, 2026</div>
+        <h2>Best Co-Working Spaces in Rome for Digital Nomads and Remote Workers</h2>
+        <p>Find your ideal workspace: top coworking spaces across Rome with reliable internet, community, and the perfect environment to maintain productivity while living la dolce vita.</p>
+      </a>
+      <a href="italian-bureaucracy-expat-documents.html" class="blog-item">
+        <div class="date">March 14, 2026</div>
+        <h2>Navigating Italian Bureaucracy: Essential Documents for Expats in Rome</h2>
+        <p>Demystify Italy's bureaucratic maze: what documents you actually need, where to get them, and how to streamline the process of becoming officially registered.</p>
+      </a>
+      <a href="first-apartment-rome.html" class="blog-item">
+        <div class="date">March 13, 2026</div>
+        <h2>Finding Your First Apartment in Rome: A Practical Expat Guide</h2>
+        <p>Navigate Rome's rental market like a pro: neighborhoods to consider, what to expect in lease terms, red flags to avoid, and how to budget for your first place.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../">Back to Home</a>
+  </footer>
+</body>
+</html>

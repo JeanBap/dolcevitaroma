@@ -1,10 +1,9 @@
 {
-  "buildCommand": "node scripts/generate-sitemap.js",
+  "buildCommand": "node scripts/prerender-blog.js && node scripts/generate-sitemap.js",
   "outputDirectory": ".",
   "rewrites": [
-    {
-      "source": "/post/:slug",
-      "destination": "/post.html"
-    }
+    { "source": "/post/:slug", "destination": "/post.html" },
+    { "source": "/blog/:slug([^.]+)", "destination": "/public/blog/:slug.html" },
+    { "source": "/blog", "destination": "/public/blog/index.html" }
   ]
 }
