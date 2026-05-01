@@ -194,8 +194,18 @@ function renderIndex(posts) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | The Dolce Vita Roma</title>
   <meta name="description" content="Stories, guides, and practical tips for expats and remote workers living in Rome.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Blog | The Dolce Vita Roma">
+  <meta property="og:description" content="Stories, guides, and practical tips for expats and remote workers living in Rome.">
   <meta property="og:url" content="https://dolcevitaroma.com/blog/">
+  <meta property="og:image" content="https://dolcevitaroma.com/og-image.jpg">
+  <meta property="og:image:alt" content="Dolce Vita Roma Blog">
+  <meta property="og:site_name" content="Dolce Vita Roma">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | The Dolce Vita Roma">
+  <meta name="twitter:description" content="Stories, guides, and practical tips for expats and remote workers living in Rome.">
+  <meta name="twitter:image" content="https://dolcevitaroma.com/og-image.jpg">
   <link rel="canonical" href="https://dolcevitaroma.com/blog/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
