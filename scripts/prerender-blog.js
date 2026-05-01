@@ -79,12 +79,16 @@ function renderPost(p) {
   const title     = escHtml(p.title || '');
   const category  = escHtml(p.category || '');
 
+  const imgUrl  = p.image || 'https://dolcevitaroma.com/og-image.jpg';
+  const imgEsc  = escHtml(imgUrl);
+
   // Schema markup
   const schema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": p.title,
     "description": p.metaDescription || p.tldr || '',
+    "image": imgUrl,
     "datePublished": p.publishDate,
     "dateModified": p.publishDate,
     "author": { "@type": "Organization", "name": "Dolce Vita Roma" },
@@ -97,6 +101,7 @@ function renderPost(p) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <title>${title} | Dolce Vita Roma</title>
   <meta name="description" content="${desc}">
   <meta property="og:type" content="article">
@@ -104,9 +109,12 @@ function renderPost(p) {
   <meta property="og:description" content="${desc}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:site_name" content="Dolce Vita Roma">
+  <meta property="og:image" content="${imgEsc}">
+  <meta property="og:image:alt" content="${title}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${desc}">
+  <meta name="twitter:image" content="${imgEsc}">
   <link rel="canonical" href="${canonical}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
