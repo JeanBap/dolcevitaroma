@@ -24,3 +24,4 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://dolcevitaroma.com/sitemap.xml
+LLMs: https://dolcevitaroma.com/llms.txt
