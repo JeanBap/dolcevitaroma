@@ -146,6 +146,7 @@ function renderPost(p) {
   <meta name="twitter:image" content="${imgEsc}">
   <link rel="canonical" href="${canonical}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
   <script type="application/ld+json">${schema}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
@@ -158,7 +159,6 @@ function renderPost(p) {
     .related-cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--red); margin-bottom: 0.3rem; }
     .related-post-title { font-size: 0.9rem; font-weight: 600; color: var(--green); line-height: 1.3; margin-bottom: 0.4rem; }
     .related-date { font-size: 0.75rem; color: #888; }
-  </style>
     .post-header { background: var(--green); text-align: center; padding: 2.5rem 2rem 3rem; }
     .post-header .breadcrumb { font-size: 0.8rem; color: var(--salmon); margin-bottom: 0.5rem; }
     .post-header .breadcrumb a { color: var(--gold); text-decoration: none; }
