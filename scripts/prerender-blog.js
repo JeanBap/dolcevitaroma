@@ -207,6 +207,9 @@ function renderIndex(posts) {
   <meta name="twitter:description" content="Stories, guides, and practical tips for expats and remote workers living in Rome.">
   <meta name="twitter:image" content="https://dolcevitaroma.com/og-image.jpg">
   <link rel="canonical" href="https://dolcevitaroma.com/blog/">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"Dolce Vita Roma Blog","url":"https://dolcevitaroma.com/blog/","description":"Stories, guides, and practical tips for expats and remote workers living in Rome.","publisher":{"@type":"Organization","name":"Dolce Vita Roma","url":"https://dolcevitaroma.com","logo":{"@type":"ImageObject","url":"https://dolcevitaroma.com/og-image.jpg"}},"inLanguage":"en","about":{"@type":"Place","name":"Rome","addressCountry":"IT"}}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
   <style>${SHARED_CSS}
