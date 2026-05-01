@@ -210,7 +210,10 @@ function renderPost(p) {
   </div>
 
   <footer>
-    <a href="../">Back to Home</a>
+    <a href="../">Home</a> &nbsp;&middot;&nbsp;
+    <a href="https://dolcevitaroma.com/contact">Contact</a> &nbsp;&middot;&nbsp;
+    <a href="https://dolcevitaroma.com/privacy">Privacy</a> &nbsp;&middot;&nbsp;
+    <a href="../#newsletter">Newsletter</a>
   </footer>
 </body>
 </html>`;
@@ -290,7 +293,10 @@ ${items}
   </div>
 
   <footer>
-    <a href="../">Back to Home</a>
+    <a href="../">Home</a> &nbsp;&middot;&nbsp;
+    <a href="https://dolcevitaroma.com/contact">Contact</a> &nbsp;&middot;&nbsp;
+    <a href="https://dolcevitaroma.com/privacy">Privacy</a> &nbsp;&middot;&nbsp;
+    <a href="./index.html">All Posts</a>
   </footer>
 </body>
 </html>`;
