@@ -96,6 +96,24 @@ function renderPost(p) {
     "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".post-header h1", ".tldr-box p", ".post-body p:first-of-type"]}
   });
 
+  // FAQ schema — extract h2/h3 + following paragraph pairs (max 6)
+  function buildFaqLd(body) {
+    if (!body) return null;
+    const pairs = [];
+    const re = /<h[23][^>]*>([\s\S]*?)<\/h[23]>\s*(?:<[^>]+>\s*)*<p[^>]*>([\s\S]*?)<\/p>/g;
+    let m;
+    while ((m = re.exec(body)) !== null && pairs.length < 6) {
+      const q = m[1].replace(/<[^>]+>/g,'').trim();
+      const a = m[2].replace(/<[^>]+>/g,'').trim().slice(0, 300);
+      if (q.length > 10 && a.length > 20) {
+        pairs.push({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}});
+      }
+    }
+    if (pairs.length < 2) return null;
+    return JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":pairs});
+  }
+  const faqSchema = buildFaqLd(p.body || '');
+
   const breadcrumbSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -151,6 +169,7 @@ function renderPost(p) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
   <script type="application/ld+json">${schema}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
+  ${faqSchema ? `<script type="application/ld+json">${faqSchema}</script>` : ''}
   <style>${SHARED_CSS}
     .related-posts { max-width: 680px; margin: 0 auto; padding: 2rem 2rem 0; }
     .related-title { font-family: 'Anton', sans-serif; font-size: 1.2rem; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; border-left: 4px solid var(--red); padding-left: 0.8rem; }
