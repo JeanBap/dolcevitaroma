@@ -53,7 +53,7 @@ const SHARED_CSS = `
 // ── nav HTML (from blog/slug.html perspective) ───────────────────────────
 const NAV = `<nav>
     <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Roma</span></a>
-    <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button type="button" class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="./">Blog</a></li>
@@ -254,7 +254,11 @@ function renderIndex(posts) {
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Blog","name":"Dolce Vita Roma Blog","url":"https://dolcevitaroma.com/blog/","description":"Stories, guides, and practical tips for expats and remote workers living in Rome.","publisher":{"@type":"Organization","name":"Dolce Vita Roma","url":"https://dolcevitaroma.com","logo":{"@type":"ImageObject","url":"https://dolcevitaroma.com/og-image.jpg"}},"inLanguage":"en","about":{"@type":"Place","name":"Rome","addressCountry":"IT"}}
   </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dolcevitaroma.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://dolcevitaroma.com/blog/"}]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
   <style>${SHARED_CSS}
     .page-header { background: var(--green); text-align: center; padding: 3rem 2rem; }
@@ -272,7 +276,7 @@ function renderIndex(posts) {
 <body>
   <nav>
     <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Roma</span></a>
-    <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button type="button" class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <ul>
       <li><a href="../">Home</a></li>
       <li><a href="./">Blog</a></li>
