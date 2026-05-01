@@ -92,7 +92,8 @@ function renderPost(p) {
     "dateModified": p.publishDate,
     "author": { "@type": "Organization", "name": "Dolce Vita Roma" },
     "publisher": { "@type": "Organization", "name": "Dolce Vita Roma", "url": "https://dolcevitaroma.com" },
-    "mainEntityOfPage": canonical
+    "mainEntityOfPage": canonical,
+    "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".post-header h1", ".post-body p:first-of-type"]}
   });
 
   const breadcrumbSchema = JSON.stringify({
