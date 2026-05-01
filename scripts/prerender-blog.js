@@ -52,12 +52,12 @@ const SHARED_CSS = `
 
 // ── nav HTML (from blog/slug.html perspective) ───────────────────────────
 const NAV = `<nav>
-    <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Social Club</span></a>
+    <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Roma</span></a>
     <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <ul>
-      <li><a href="../#about">About</a></li>
-      <li><a href="../#events">Events</a></li>
-      <li><a href="../coworking-map.html">Coworking Map</a></li>
+      <li><a href="../">Blog</a></li>
+      <li><a href="https://dolcevitaroma.com" target="_blank">Main Site</a></li>
+      <li><a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a></li>
       <li><a href="./">Blog</a></li>
       <li><a href="../#newsletter">Join</a></li>
     </ul>
@@ -87,8 +87,8 @@ function renderPost(p) {
     "description": p.metaDescription || p.tldr || '',
     "datePublished": p.publishDate,
     "dateModified": p.publishDate,
-    "author": { "@type": "Organization", "name": "Dolce Vita Social Club" },
-    "publisher": { "@type": "Organization", "name": "Dolce Vita Social Club", "url": "https://dolcevitaroma.com" },
+    "author": { "@type": "Organization", "name": "Dolce Vita Roma" },
+    "publisher": { "@type": "Organization", "name": "Dolce Vita Roma", "url": "https://dolcevitaroma.com" },
     "mainEntityOfPage": canonical
   });
 
@@ -97,13 +97,13 @@ function renderPost(p) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title} | Dolce Vita Social Club</title>
+  <title>${title} | Dolce Vita Roma</title>
   <meta name="description" content="${desc}">
   <meta property="og:type" content="article">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${desc}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:site_name" content="Dolce Vita Social Club">
+  <meta property="og:site_name" content="Dolce Vita Roma">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${desc}">
@@ -184,9 +184,9 @@ function renderIndex(posts) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | The Dolce Vita Social Club</title>
+  <title>Blog | The Dolce Vita Roma</title>
   <meta name="description" content="Stories, guides, and practical tips for expats and remote workers living in Rome.">
-  <meta property="og:title" content="Blog | The Dolce Vita Social Club">
+  <meta property="og:title" content="Blog | The Dolce Vita Roma">
   <meta property="og:url" content="https://dolcevitaroma.com/blog/">
   <link rel="canonical" href="https://dolcevitaroma.com/blog/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -206,12 +206,12 @@ function renderIndex(posts) {
 </head>
 <body>
   <nav>
-    <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Social Club</span></a>
+    <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Roma</span></a>
     <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <ul>
-      <li><a href="../#about">About</a></li>
-      <li><a href="../#events">Events</a></li>
-      <li><a href="../coworking-map.html">Coworking Map</a></li>
+      <li><a href="../">Blog</a></li>
+      <li><a href="https://dolcevitaroma.com" target="_blank">Main Site</a></li>
+      <li><a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a></li>
       <li><a href="./">Blog</a></li>
       <li><a href="../#newsletter">Join</a></li>
     </ul>
