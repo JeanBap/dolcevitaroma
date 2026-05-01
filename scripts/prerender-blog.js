@@ -55,10 +55,9 @@ const NAV = `<nav>
     <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Roma</span></a>
     <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <ul>
-      <li><a href="../">Blog</a></li>
-      <li><a href="https://dolcevitaroma.com" target="_blank">Main Site</a></li>
-      <li><a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a></li>
+      <li><a href="../">Home</a></li>
       <li><a href="./">Blog</a></li>
+      <li><a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a></li>
       <li><a href="../#newsletter">Join</a></li>
     </ul>
   </nav>`;
@@ -272,10 +271,9 @@ function renderIndex(posts) {
     <a href="../" class="logo-link"><img src="../images/logo.png" alt="Logo" width="32" height="32"><span class="logo-text">Dolce Vita Roma</span></a>
     <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <ul>
-      <li><a href="../">Blog</a></li>
-      <li><a href="https://dolcevitaroma.com" target="_blank">Main Site</a></li>
-      <li><a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a></li>
+      <li><a href="../">Home</a></li>
       <li><a href="./">Blog</a></li>
+      <li><a href="https://dolcevitaroma.com/contact" target="_blank">Contact</a></li>
       <li><a href="../#newsletter">Join</a></li>
     </ul>
   </nav>
