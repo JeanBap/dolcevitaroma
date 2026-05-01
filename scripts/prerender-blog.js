@@ -96,6 +96,36 @@ function renderPost(p) {
     "mainEntityOfPage": canonical
   });
 
+  const breadcrumbSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dolcevitaroma.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dolcevitaroma.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": p.title, "item": canonical }
+    ]
+  });
+
+  // Related posts: same category first, fallback to recent
+  const sameCat = posts.filter(r => r.slug !== p.slug && r.category === p.category).slice(0, 3);
+  const extra   = posts.filter(r => r.slug !== p.slug && !sameCat.find(x => x.slug === r.slug)).slice(0, 3 - sameCat.length);
+  const related = [...sameCat, ...extra];
+
+  const relatedHtml = related.length ? `
+  <section class="related-posts">
+    <h3 class="related-title">More from the Blog</h3>
+    <div class="related-grid">
+      ${related.map(r => `<a href="${r.slug}.html" class="related-card">
+        <div class="related-cat">${escHtml(r.category || '')}</div>
+        <div class="related-post-title">${escHtml(r.title)}</div>
+        <div class="related-date">${formatDate(r.publishDate)}</div>
+      </a>`).join('\n      ')}
+    </div>
+  </section>` : '';
+
+  // Add lazy loading to body content images
+  const body = (p.body || '').replace(/<img(?![^>]*\bloading=)/g, '<img loading="lazy" decoding="async"');
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,7 +149,17 @@ function renderPost(p) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap">
   <script type="application/ld+json">${schema}</script>
+  <script type="application/ld+json">${breadcrumbSchema}</script>
   <style>${SHARED_CSS}
+    .related-posts { max-width: 680px; margin: 0 auto; padding: 2rem 2rem 0; }
+    .related-title { font-family: 'Anton', sans-serif; font-size: 1.2rem; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; border-left: 4px solid var(--red); padding-left: 0.8rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+    .related-card { display: block; padding: 1rem; background: var(--white); border-radius: 4px; text-decoration: none; border: 1px solid #e0d6c4; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--red); }
+    .related-cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--red); margin-bottom: 0.3rem; }
+    .related-post-title { font-size: 0.9rem; font-weight: 600; color: var(--green); line-height: 1.3; margin-bottom: 0.4rem; }
+    .related-date { font-size: 0.75rem; color: #888; }
+  </style>
     .post-header { background: var(--green); text-align: center; padding: 2.5rem 2rem 3rem; }
     .post-header .breadcrumb { font-size: 0.8rem; color: var(--salmon); margin-bottom: 0.5rem; }
     .post-header .breadcrumb a { color: var(--gold); text-decoration: none; }
@@ -157,8 +197,10 @@ function renderPost(p) {
   </div>
 
   <article class="post-body">
-    ${p.body || ''}
+    ${body}
   </article>
+
+  ${relatedHtml}
 
   <a href="./" class="back-link">← Back to all posts</a>
 
