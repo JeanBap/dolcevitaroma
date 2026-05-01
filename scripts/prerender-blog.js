@@ -93,7 +93,7 @@ function renderPost(p) {
     "author": { "@type": "Organization", "name": "Dolce Vita Roma" },
     "publisher": { "@type": "Organization", "name": "Dolce Vita Roma", "url": "https://dolcevitaroma.com" },
     "mainEntityOfPage": canonical,
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".post-header h1", ".post-body p:first-of-type"]}
+    "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".post-header h1", ".tldr-box p", ".post-body p:first-of-type"]}
   });
 
   const breadcrumbSchema = JSON.stringify({
@@ -178,6 +178,9 @@ function renderPost(p) {
     .post-body td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #e0d6c4; }
     .post-body tr:nth-child(even) td { background: rgba(0,0,0,0.03); }
     .post-body strong { color: var(--black); }
+    .tldr-box { background: #f0ede6; border-left: 4px solid var(--red); border-radius: 0 4px 4px 0; padding: 1.2rem 1.4rem; margin-bottom: 2rem; }
+    .tldr-box .tldr-label { font-family: 'Anton', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--red); margin-bottom: 0.4rem; }
+    .tldr-box p { margin: 0; color: #3A3A3A; font-size: 0.97rem; line-height: 1.65; }
     .post-cta { background: var(--green-light); color: var(--cream); text-align: center; padding: 2.5rem 2rem; margin-top: 3rem; }
     .post-cta h3 { font-family: 'Anton', sans-serif; font-size: 1.4rem; text-transform: uppercase; margin-bottom: 0.6rem; }
     .post-cta p { margin-bottom: 1.2rem; opacity: 0.85; font-size: 0.95rem; }
@@ -197,6 +200,7 @@ function renderPost(p) {
   </div>
 
   <article class="post-body">
+    ${p.tldr ? `<div class="tldr-box"><div class="tldr-label">TL;DR</div><p>${escHtml(p.tldr)}</p></div>` : ''}
     ${body}
   </article>
 
