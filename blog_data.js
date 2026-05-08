@@ -25645,7 +25645,178 @@ function getBlogPosts() {
 }
 
 function getPostBySlug(slug) {
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Date().toISOString().split('T')[0,
+  {
+    num: "078",
+    title: "San Lorenzo, Rome: The Student Quarter That Became Rome's Coolest Neighbourhood",
+    slug: "san-lorenzo-rome-neighborhood-guide-2026",
+    category: "Neighbourhoods",
+    publishDate: "2026-05-11",
+    readTime: "12 min read",
+    tldr: "San Lorenzo is Rome's most vibrant creative neighbourhood, transformed from a WWII bombing site to a university quarter to today's hub of street art, authentic trattorias, and nightlife. Rent ranges from EUR 550-900 for a room to EUR 1,100-1,600 for a flat, with excellent transport links via Tiburtina station.",
+    metaDescription: "Explore San Lorenzo, Rome's coolest neighbourhood. Food, art, nightlife and living costs. Your local guide to this creative hub. Free comparison PDF.",
+    body: `
+<header>
+<div class="breadcrumb">
+<a href="https://www.dolcevitaroma.com">Home</a> / 
+                <a href="https://www.dolcevitaroma.com/blog">Blog</a> / 
+                San Lorenzo Rome
+            </div>
+<h1>San Lorenzo, Rome: The Student Quarter That Became Rome's Coolest Neighbourhood</h1>
+<div class="meta">
+<span>Published: 11 May 2026</span>
+<span>By Yanni Papoutsis</span>
+<span>Reading time: 12 minutes</span>
+</div>
+</header>
+<button class="toc-toggle" onclick="toggleTOC()">📖 Quick Navigation (Click to expand)</button>
+<div class="toc-content" id="toc">
+<ol>
+<li><a href="#history">San Lorenzo DNA: From Rubble to Creative Hub</a></li>
+<li><a href="#food">The Food Scene: Where Rome Actually Eats</a></li>
+<li><a href="#art">Art and Culture: Beyond the Galleries</a></li>
+<li><a href="#nightlife">Nightlife and Aperitivo: The Real Roman Night</a></li>
+<li><a href="#living">Living Here: The Practical Reality</a></li>
+<li><a href="#tips">Insider Tips: How to Do San Lorenzo Like a Local</a></li>
+</ol>
+</div>
+<div class="intro">
+<p>San Lorenzo isn't on most tourist maps, and that's precisely why you should go there. This isn't Rome performing for the camera - it's Rome as Romans actually live it. Once a working-class neighborhood scarred by World War II bombing, then claimed by university students, it's now where the city's creatives, young professionals, and restless souls have made their home. The neighbourhood has San Lorenzo Rome character, gritty charm, and an authenticity that's increasingly rare in the historic centre.</p>
+<div class="highlight">
+<strong>TL;DR:</strong> San Lorenzo is Rome's edgiest, most vibrant neighbourhood. Start your food journey at Necci dal 1924, spend your evening bar-hopping near Via dei Volsci, and stay because the rent is (still) reasonable and the spirit is unmistakably alive.
+            </div>
+</div>
+ Section 1: History 
+<h2 id="history">San Lorenzo DNA: From Rubble to Creative Hub</h2>
+<p>To understand San Lorenzo today, you need to know what it survived. During World War II, this neighbourhood bore the brunt of Allied bombing raids aimed at the railway yards to the north. Entire blocks were flattened. Unlike Trastevere or the Centro Storico, San Lorenzo didn't have centuries of accumulated wealth and political protection to ensure careful post-war reconstruction. It was rebuilt quickly, haphazardly, and affordably.</p>
+<p>That brutal efficiency left the neighbourhood with wide streets, mixed-height buildings, and large open spaces - the very opposite of Rome's medieval tangle. It also left San Lorenzo ordinary and working-class, places where people actually lived rather than performed. When the Sapienza University expanded its main campus here in the 1960s and 70s, the neighbourhood's fate was sealed. Thousands of students needed affordable rooms. Local families rented out spare bedrooms. Cheap bars and pizzerias opened. The university didn't just build buildings; it built an entire culture around San Lorenzo.</p>
+<p>For decades, Sapienza defined the neighbourhood. The energy was youthful, transient, affordable. But something shifted around 2015–2018. Young university graduates didn't leave when they finished their degrees. Instead, they stayed and built lives here. Artists and creatives, priced out of other districts, discovered the neighbourhood's raw potential. Independent galleries opened in abandoned ground-floor rooms. Speakeasy bars appeared in nondescript doorways. Street artists transformed blank walls into conversation pieces. What had been purely a student quarter became something else: a creative hub with depth, staying power, and serious cultural ambitions.</p>
+<p>Today's San Lorenzo is a palimpsest - layers of history visible on every street. You'll see prewar apartment blocks, brutalist university buildings, scrawled street art, boutique coffee roasters next to century-old bakeries, and signs of careful gentrification mixed with proud anti-gentrification sentiment.</p>
+ Section 2: Food 
+<h2 id="food">The Food Scene: Where Rome Actually Eats</h2>
+<p>This is the thing about San Lorenzo: Romans come here to eat. Not tourists. Not Instagram accounts. Actual Italians from other parts of the city show up for dinner. That tells you everything you need to know about the food.</p>
+<h3>The Institutions</h3>
+<p><strong>Necci dal 1924</strong> is the neighbourhood's beating heart. It started as a dumpling shop - necci are a Tuscan chickpea-flour crepe - in 1924, and it never really stopped. The marble counter still gleams, the back room still hums with regulars. Order a necci with ricotta and honey, a coffee, and watch Rome pass by. It's touristy now, yes, but it's touristy because it's good, not the other way round.</p>
+<p><strong>Tram Tram</strong> sits a few blocks away and feels like stepping into a Roman family's kitchen circa 1987. The pasta is handmade, the sauce is exactly what your nonna would make, and the wine list is thoughtfully curated. The room is cramped and warm. You'll share tables with families, couples, and professional San Lorenzo residents taking a break from their workweek.</p>
+<p><strong>Aromaticus</strong> is the food lover's secret. It bills itself as a "restaurant-wine bar," but really it's a place where the owner - who sources obsessively - cooks what he's found that morning at the market. The menu changes constantly. The portions are modest. The flavours are intense. Book ahead; it's tiny.</p>
+<h3>The Chocolate Factory</h3>
+<p><strong>Said</strong> is both a factory and café, and it's been making chocolate in San Lorenzo since 1972. The cacao is sourced directly, the chocolate is made on-site, and the hot chocolate in winter - dark, thick, almost a pudding - is revelatory. This is where chocolate heads come to think.</p>
+<h3>Street Food and Morning Markets</h3>
+<p>San Lorenzo's street food culture is genuinely about affordability and speed, not Instagram styling. You'll find suppli (fried arancini), pizza al taglio, and porchetta sandwiches from carts and hole-in-the-wall counters throughout the neighbourhood. These are where construction workers and students queue shoulder-to-shoulder.</p>
+<p>The morning market that runs through Via Tiburtina on Tuesday, Thursday, and Saturday is one of Rome's least curated. Produce vendors, fishmongers, and butchers set up stalls. Local homemakers do their shopping. The rhythm is purely functional - this is supply meeting demand, not performance art.</p>
+<h3>Post-Dinner Coffee</h3>
+<p>San Lorenzo has embraced speciality coffee culture in the past five years. Several third-wave roasters have opened, and the espresso quality throughout the neighbourhood is now impressively high. Order standing at the counter; that's how Romans do it.</p>
+<p>Internal link: Our guide to <a href="https://www.dolcevitaroma.com/blog/rome-food-markets-buyers-guide-2026">Rome's food markets and where to buy like a local</a> covers the best produce sources across the city.</p>
+ Section 3: Art and Culture 
+<h2 id="art">Art and Culture: Beyond the Galleries</h2>
+<p>San Lorenzo's art scene exists deliberately outside the white-cube gallery world. That's not to say there are no galleries - there are - but the real cultural energy lives in converted warehouses, artist collectives, and independent spaces that feel like you're being let in on something real.</p>
+<h3>Gallery Spaces and Artist Collectives</h3>
+<p><strong>Pastificio San Lorenzo</strong> is a sprawling artist collective housed in what used to be a pasta factory. Ground-floor galleries showcase emerging work. Upstairs, artists maintain studios. Events - exhibitions, performances, talks - happen regularly. The space itself - industrial, cavernous, with original machinery still visible - is the artwork.</p>
+<p><strong>ESC Atelier</strong> is harder to define. It's a workshop, a gallery, an experimental space, and a gathering place for artists working across media. It operates on gift economy and community principles. Simply showing up when something is happening will change how you think about art-making.</p>
+<h3>Street Art Walking Route</h3>
+<p>San Lorenzo's street art isn't concentrated in one Instagram-famous laneway. Instead, it's scattered throughout the neighbourhood in conversation with the architecture. Walk the eastern side of Via dei Volsci, cut through the university campus (yes, you can wander in), and head toward Stazione Tiburtina. You'll see work by both established artists and newcomers, murals that reference pop culture and murals responding to neighbourhood politics, pieces that've been there for years and paste-ups from last week.</p>
+<h3>Cinema and Film Culture</h3>
+<p>Nuovo Cinema Palazzo, a grassroots community cinema, operated in San Lorenzo for two decades, screening films, hosting discussions, and functioning as a cultural anchor for the neighbourhood. Though it's no longer in its original location, its legacy remains part of San Lorenzo's DNA. Indie cinema still thrives through smaller venues and community screenings.</p>
+<h3>Live Music Venues</h3>
+<p>Several small venues throughout San Lorenzo host live music - from experimental electronic to acoustic sets to punk shows. These aren't concert halls; they're bars and clubs where a band might set up in the corner and play for whoever's there.</p>
+<p>Related reading: Explore <a href="https://www.dolcevitaroma.com/blog/hidden-rome-art-history-2026">Rome's hidden art and cultural history</a> for context on how San Lorenzo fits into the broader artistic landscape.</p>
+ Section 4: Nightlife 
+<h2 id="nightlife">Nightlife and Aperitivo: The Real Roman Night</h2>
+<p>San Lorenzo's nightlife isn't about mega-clubs or bottle service. It's about bars where you'll find the same faces night after night, conversations that spill into the street, and the understanding that a good evening is defined by company and wine, not decor.</p>
+<h3>The Aperitivo Culture</h3>
+<p>The paseggiata - the evening stroll - is a Roman institution. It ends at an aperitivo, usually around 19:00 or 19:30. San Lorenzo's bars have embraced aperitivo hour with enthusiasm. Arrive around this time at any bar on Via dei Volsci or Via Tiburtina, and you'll find it packed with office workers, students, and neighbourhood residents. The drinks come with snacks - sometimes simple (olives and chips), sometimes substantial (bruschetta, cold cuts). Prices range from EUR 5–8 for a drink and light snacks.</p>
+<h3>Student Bars and Late-Night Spots</h3>
+<p>Because the neighbourhood is home to thousands of students, the bar scene caters to people with modest budgets. Happy hours are genuinely happy (sometimes 2-for-1 drinks). Student bars stay open late. The atmosphere tends toward chaotic and fun rather than refined.</p>
+<p>Late-night pizza remains the traditional ending to a San Lorenzo evening. Several pizzerias stay open until 23:00 or 24:00, and they're packed with groups finishing their night out with a slice and a beer.</p>
+<h3>Live Music and Smaller Venues</h3>
+<p>Throughout the neighbourhood, small bars host live music - often free entry, often impromptu. A guitarist might set up in a corner. A electronic musician might project visuals on a wall. This is neighbourhood-level cultural production, not professional touring.</p>
+<p>Tip: The best way to discover what's happening is to walk the streets around Via dei Volsci and Via Tiburtina around 21:00. Check posted flyers and ask locals. San Lorenzo's cultural calendar exists mostly offline.</p>
+ Section 5: Living Here 
+<h2 id="living">Living Here: The Practical Reality</h2>
+<p>San Lorenzo has become noticeably more expensive over the past three years, but it remains affordable compared to central neighbourhoods. If you're considering moving here, here's what you need to know.</p>
+<h3>Rental Costs</h3>
+<div class="price-guide">
+<p><strong>Single room in shared flat:</strong> EUR 550–900/month (smaller rooms or less desirable locations on the lower end; bright rooms with balconies on the higher end)</p>
+<p><strong>One-bedroom flat:</strong> EUR 1,100–1,600/month (depends heavily on exact location and condition; lower prices in the eastern part near Stazione Tiburtina, higher near La Sapienza campus)</p>
+<p><strong>Two-bedroom flat:</strong> EUR 1,600–2,200/month (increasingly rare as older flats are converted into student housing)</p>
+<p><em>Note: These figures are based on current Immobiliare.it and Airbnb listings as of May 2026. Prices continue to rise, particularly for furnished flats aimed at expats.</em></p>
+</div>
+<p>For a comparison with another popular neighbourhood, see our <a href="https://www.dolcevitaroma.com/blog/testaccio-rome-neighborhood-guide-2026">Testaccio neighbourhood guide</a>, which offers a quieter, more family-friendly alternative at similar price points. The rental market is tight. Landlords can be pickier. If you're not a Sapienza student (which grants housing office support), expect to provide references, proof of income, and possibly a guarantor. Tourist seasons (May and September) see increased demand and higher prices.</p>
+<h3>Transport Connections</h3>
+<p>San Lorenzo is one of Rome's best-connected neighbourhoods for regional and airport transport. <strong>Stazione Tiburtina</strong> (the main station serving the neighbourhood) has direct trains to both Fiumicino (Leonardo da Vinci) and Ciampino airports, plus regional service to the Castelli Romani, Tivoli, and beyond. Journey times: roughly 35 minutes to Fiumicino, 25 minutes to Ciampino.</p>
+<p>For city transport, the neighbourhood is served by multiple tram lines (3, 5, 14, 19) and numerous bus routes. Tram 5 connects directly to Trastevere and the Vatican. Tram 3 goes to the Colosseum. The neighbourhood is also quite walkable - most places in central Rome are reachable on foot or by a short tram ride.</p>
+<p>More on this: Read our <a href="https://www.dolcevitaroma.com/blog/rome-transit-commute-guide-2026">complete guide to Rome's transport system and commute times</a>.</p>
+<h3>Safety and Quality of Life</h3>
+<p>San Lorenzo is generally safe, with the caveats that apply to any dense urban neighbourhood. Petty theft on public transport and in crowded areas is a Rome-wide issue, not specific to San Lorenzo. The heavy student population and active street life means the neighbourhood feels populated and well-lit, especially in the main streets and around Via dei Volsci.</p>
+<p>Noise can be a real factor, particularly if your flat is on a main street or above a bar. Student housing areas can get loud on weekends. If quiet is essential, look for flats on smaller side streets or further east toward Stazione Tiburtina.</p>
+<p>The neighbourhood lacks the polished feel of Testaccio or Trastevere. Graffiti is common. Rubbish collection, whilst functional, doesn't happen with the frequency it does in wealthier areas. But according to local residents, this roughness is precisely what keeps San Lorenzo interesting.</p>
+<h3>Day-to-Day Living</h3>
+<p>Supermarkets are plentiful. Small grocery shops, butchers, and bakeries operate throughout the neighbourhood. The morning market (Via Tiburtina, Tuesday/Thursday/Saturday) offers the best produce prices. Restaurants and bars are everywhere. Services - hair salons, laundries, pharmacies - are accessible. What you won't find is haute couture shopping; for that, you'll head to the centro or Salaria.</p>
+<p>For expats considering a longer stay, we've written a <a href="https://www.dolcevitaroma.com/blog/rome-expat-operating-manual-2026">complete expat operating manual for Rome</a> covering bureaucracy, healthcare, and settling in.</p>
+ Section 6: Insider Tips 
+<h2 id="tips">Insider Tips: How to Do San Lorenzo Like a Local</h2>
+<h3>Best Times to Visit</h3>
+<p><strong>Late April–May</strong> and <strong>September–October</strong> are ideal. Weather is warm but not scorching. The student population is active. The neighbourhood's outdoor culture - sitting in piazzas, drinking wine on stoops, eating at sidewalk tables - is in full swing.</p>
+<p><strong>June–August</strong> is quieter. Many students leave for summer. Some bars and restaurants reduce hours or close for renovation. But the neighbourhood has a different feel - less buzzing, more atmospheric. Accommodation is often easier to find and slightly cheaper.</p>
+<p><strong>November–February</strong> is quiet and chilly, but beautiful. The pace slows. Neighbourhood life becomes more internal. If you want to understand San Lorenzo's real rhythms without tourist energy, come now.</p>
+<h3>The Sunday Morning Routine</h3>
+<p>If you want to experience San Lorenzo as locals do, do this: Wake early on Sunday. Head to the market on Via Tiburtina (Saturday morning works too). Buy fresh produce, cheese, bread. Pop into Necci dal 1924 for coffee and a necci with honey. Grab the weekend newspapers from a corner kiosk. Head to someone's flat and cook a proper Italian breakfast - not the sweet pastry kind, but the savoury kind with bread and cold cuts and cheese and strong coffee. This is how Romans spend their weekend mornings, and San Lorenzo makes it easy.</p>
+<h3>Hidden Courtyards and Green Spaces</h3>
+<p>San Lorenzo's post-war grid means there are surprising pockets of green scattered throughout - small parks, university courtyards, and residential piazzas that feel removed from the street energy. Explore on foot and you'll find them. The Orto Botanico isn't far; the larger Parco del Colle Oppio (with views toward the Colosseum) is a short walk south.</p>
+<p>The university campus itself is semi-public. You can walk through, visit the bookstore, and sit in student areas. It's a quiet refuge if you need to escape the neighbourhood's buzz.</p>
+<h3>Seasonal Events and Festivals</h3>
+<p>San Lorenzo hosts smaller cultural events throughout the year - artist markets, film screenings, neighborhood-organized festivals. The events calendar isn't widely publicised; you'll discover them by walking the streets, checking local Instagram accounts, and asking at your local bar. That's partly the appeal - these are genuinely grassroots, not tourist-facing productions.</p>
+<h3>Where to Work (If You're Remote)</h3>
+<p>Several cafés and bars in San Lorenzo have embraced the remote-worker crowd without losing neighbourhood character. They offer decent WiFi, comfortable seating, and the assumption that you'll order coffee and stay. Sitting outdoors on a sunny day, laptop open, with an espresso and a pastry, you'll understand why people choose to live here.</p>
+ CTA Section 
+<div class="cta-box">
+<p>Want to compare San Lorenzo with other Rome neighbourhoods? We've created a free, downloadable PDF guide comparing costs, transport, nightlife, and character across Rome's best residential areas.</p>
+<a class="cta-button" href="https://www.dolcevitaroma.com/downloads/rome-neighbourhood-comparison-guide">Download Free Guide (PDF)</a>
+</div>
+ FAQ Section 
+<section class="faq-section">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">Is San Lorenzo safe for tourists and expats?</div>
+<div class="faq-answer">
+<p>San Lorenzo is generally safe, though like most of Rome it requires common-sense precautions. The area is well-populated and well-lit thanks to the student population and nightlife. Petty theft on public transport and in crowded areas is a concern citywide. Most residents report feeling comfortable walking around at night, particularly in the main streets around Via dei Volsci and Via Tiburtina.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">How much does it cost to rent in San Lorenzo?</div>
+<div class="faq-answer">
+<p>Based on current Immobiliare.it listings, a single room in a shared flat ranges from EUR 550–900 per month, depending on size and amenities. A one-bedroom flat typically costs EUR 1,100–1,600, while two-bedroom flats start around EUR 1,600–2,200. Prices have risen noticeably since 2024 as the neighbourhood has gentrified, but remain more affordable than Testaccio or Trastevere.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">What's the best way to get around from San Lorenzo?</div>
+<div class="faq-answer">
+<p>San Lorenzo is well-connected via public transport. Stazione Tiburtina is the main rail hub, offering direct access to Fiumicino and Ciampino airports, plus regional trains. Multiple tram lines (3, 5, 14, 19) cross the neighbourhood, and numerous bus routes connect to the city centre. The area is also very walkable and bikeable for local errands and social life.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">Why do Romans call San Lorenzo the 'student quarter'?</div>
+<div class="faq-answer">
+<p>La Sapienza University's main campus dominates the neighbourhood's architecture and culture. Tens of thousands of students attend classes, live in dorm blocks, and fill the bars and streets. This student presence - even if many are postgraduates or older students - defines the neighbourhood's energy, affordability, and youthful vibe. As students graduate and stay, San Lorenzo retains this character whilst also attracting young professionals and creatives.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">When is the best time to visit San Lorenzo?</div>
+<div class="faq-answer">
+<p>Late April through May and September through October offer ideal weather - warm but not scorching - and the student population is active and the scene is buzzing. June through August can be quiet as many students leave for summer. November through February is quieter but atmospheric, with fewer tourists and lower restaurant crowds. The neighbourhood's street market hums most vividly on Tuesday, Thursday, and Saturday mornings.</p>
+</div>
+</div>
+</section>
+ Closing 
+<p style="margin-top: 2rem; font-size: 1.1rem; font-style: italic; color: #34495e;">San Lorenzo isn't a destination you'll tick off a Rome bucket list. It's a place you discover, then keep coming back to - first as a tourist, then as someone who understands why Romans actually live there. The neighbourhood's authenticity, its refusal to perform, its genuine creative energy: these things matter. They're what make a city liveable rather than just visitable.</p>
+<footer>
+<p>Published on 11 May 2026 | Last updated: 11 May 2026</p>
+<p>Written by Yanni Papoutsis for Dolce Vita Roma</p>
+<p>Questions or corrections? <a href="mailto:hello@dolcevitaroma.com">Get in touch</a></p>
+</footer>
+`
+  }
+];
   const post = BLOG_POSTS.find(p => p.slug === slug && p.publishDate <= today);
   return post || null;
 }
